@@ -1,7 +1,7 @@
 # MASTER PROMPT — Activity Compilation (reusable, ilagay lang ang bagong pangalan)
 
 **Paano gamitin:** kopyahin ang LAHAT ng nasa loob ng code block sa ibaba, palitan lang ang
-7 na linya sa `1) IDENTITY` (pangalan, course, subject, instructor, SY, date, paboritong quote), tapos i-send.
+8 na linya sa `1) IDENTITY` (pangalan, course, subject, instructor, SY, date, paboritong quote, litrato), tapos i-send.
 Automatic nang susundan ng agent ang natitirang rules — walang ibang i-edit.
 
 Kung ang repo na ito ang gagamitin, puwede ring sabihin lang:
@@ -24,6 +24,8 @@ document (DOCX + PDF), tapos bigyan mo ako ng isang zip na pang-download.
 - Date Submitted               : [October 26, 2026]
 - Paboritong quote (About)     : ["The only way to learn a new programming language is by writing programs in it." - Dennis Ritchie]
                                  (kung blangko: hanapin online ayon sa 3 c2)
+- Litrato (About)              : [photo/SONAJO, CHRISTIAN PAOLO.jpg]
+                                 (JPG ng estudyante; ilagay sa folder na `photo/` ng identity)
 
 ===========================================================
 2) SOURCE NG CODE
@@ -61,6 +63,17 @@ c2) Paboritong quote sa About form (`lblQuote` ng `frmAbout`, Act 13): MAGKAIBA 
    - Huwag gamitin ang quote ng ibang identity na nasa repo (ihambing sa lahat ng
      `frmAbout.Designer.vb`), at huwag iwan ang quote ng dating author
    - Dapat lumabas din ito sa Sample Output picture ng `frmAbout`
+c3) Litrato sa About form (`PictureBox1` ng `frmAbout`, Act 13): ang JPG ng estudyante.
+   - Kopyahin ang orihinal sa `photo/<APELYIDO, PANGALAN>.jpg` ng identity folder
+   - Gumawa ng maliit na bersyon (hanggang 640 px ang pinakamahabang gilid, JPEG quality ~88)
+     at ilagay sa `COMPILATION/IntegProgProject2026/IntegProgProject2026/Images/photo.jpg`;
+     nasa `.vbproj` ito bilang `<Content ... CopyToOutputDirectory=PreserveNewest>`
+   - Sa `frmAbout.vb`, binabasa ang `Application.StartupPath\\Images\\photo.jpg` at inilalagay sa
+     `PictureBox1` (`SizeMode = Zoom`). BAWAL ang mahabang Base64 string sa code at hindi dapat
+     mag-crash kapag nawawala ang file
+   - Dapat lumabas ang totoong litrato sa Sample Output picture ng `frmAbout`
+     (`{PHOTO}` token sa `tools/samples.py`)
+   - Huwag gamitin ang litrato ng ibang identity
 d) Compilation document: cover page, header, footer, Appendix B at LAHAT ng Sample Output.
 e) Final check: `grep -ri "<dating pangalan>"` — walang dapat mahanap sa buong repo.
 
@@ -186,8 +199,7 @@ orihinal na proyekto. Ang file na walang form (hal. `Application.vb` / Module) a
 Source Code lang, walang picture.
 - Isama LAHAT ng forms - kahit ang MDI parent (frmMain, grey na workspace + menu +
   status strip) at ang About form. Huwag piliin ang isa lang bilang kinatawan.
-- Ang About form: ilagay ang picture box na may neutral na portrait; ang estudyante
-  na ang magpapalit ng litrato sa dokumento (docs/figures/output_actNN_K.png).
+- Ang About form: nasa picture box ang totoong litrato ng estudyante (tingnan ang c3).
 - Kapag ang form ay buong gawa sa code (walang Designer.vb), gumawa ng picture-only
   layout sa `tools/figure_sources/<Form>.Designer.vb` na kopya ng code - HINDI ito
   isinasama sa COMPILATION at hindi ipinapakita sa Source Code.
@@ -279,6 +291,8 @@ totoong database, parehong gaya ng original, at PAREHO sa lahat ng identity:
 2b. Act 13: `grep -rn "OleDb\|ADOX" COMPILATION/IntegProgProject2026` -> walang output; nasa
    `Forms/frm*.vb` ang `projectDB.sdf` + `INSERT/UPDATE/DELETE`; may `<system.data>` sa `app.config`;
    `lblDatabase` sa Sample Output ay `projectDB.sdf`
+2c. About: may `Images/photo.jpg` sa Act 13 project, may `photo/<pangalan>.jpg` sa identity folder, at litrato
+   ng estudyante (hindi ng iba) ang nasa `output_act13_5.png`
 3. Pictures: buksan ang `docs/figures/` at tingnan ang 3 random na PNG
    (isang design, isang running, isang may ListView) - walang grey bar
 4. Zip: flat ang loob (START_HERE.txt, PDF, DOCX, Master_Prompt.md,

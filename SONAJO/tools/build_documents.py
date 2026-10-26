@@ -31,6 +31,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 COMPILATION = os.path.join(ROOT, "COMPILATION")
 DOCS = os.path.join(ROOT, "docs")
 FIGURES = os.path.join(DOCS, "figures")
+PHOTO_PATH = os.path.join(COMPILATION, "IntegProgProject2026", "IntegProgProject2026", "Images", "photo.jpg")
 
 SURNAME = AUTHOR.split(",")[0].strip()
 GIVEN = AUTHOR.split(",")[1].strip().replace(" ", "")
@@ -94,7 +95,7 @@ def code_blocks_from(files):
 def fill(value):
     """Replace {USER} / {AUTHOR} / {COURSE} tokens inside the sample values."""
     if isinstance(value, str):
-        return value.format(USER=SURNAME, AUTHOR=AUTHOR, COURSE=COURSE)
+        return value.format(USER=SURNAME, AUTHOR=AUTHOR, COURSE=COURSE, PHOTO=PHOTO_PATH)
     if isinstance(value, dict):
         return dict((key, fill(item)) for key, item in value.items())
     if isinstance(value, (list, tuple)):

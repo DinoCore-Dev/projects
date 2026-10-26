@@ -4,6 +4,7 @@ The figure is a documentation drawing built from the coordinates, sizes,
 colors and texts that are declared inside Form*.Designer.vb, so it always
 matches the design that is really saved in the project.
 """
+import os
 import re
 from PIL import Image, ImageDraw, ImageFont
 
@@ -44,6 +45,7 @@ def _color(text):
 
 class Control:
     def __init__(self, name, kind):
+        self.image = None
         self.name = name
         self.kind = kind
         self.loc = (0, 0)
@@ -432,6 +434,8 @@ def apply_overrides(controls, overrides):
                 control.text = value["text"]
             if value.get("back"):
                 control.back = tuple(value["back"])
+            if value.get("image"):
+                control.image = value["image"]
         elif isinstance(value, (list, tuple)):
             if value and isinstance(value[0], (list, tuple)):
                 control.rows = value
@@ -602,7 +606,16 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
             if kind == "PictureBox":
                 draw.rectangle(box, fill=back or (255, 255, 255), outline=(158, 168, 180),
                                width=SCALE)
-                if not design_mode:
+                if not design_mode and c.image and os.path.exists(c.image):
+                    # the real photo of the student, scaled like PictureBoxSizeMode.Zoom
+                    bw, bh = int(box[2] - box[0]), int(box[3] - box[1])
+                    photo = Image.open(c.image).convert("RGB")
+                    ratio = min((bw - 2 * SCALE) / photo.width, (bh - 2 * SCALE) / photo.height)
+                    pw, ph = max(1, int(photo.width * ratio)), max(1, int(photo.height * ratio))
+                    photo = photo.resize((pw, ph), Image.LANCZOS)
+                    img.paste(photo, (int(box[0]) + (bw - pw) // 2, int(box[1]) + (bh - ph) // 2))
+                    draw.rectangle(box, outline=(158, 168, 180), width=SCALE)
+                elif not design_mode:
                     # neutral portrait: the programmer's photo is put in by the student
                     bw, bh = int(box[2] - box[0]), int(box[3] - box[1])
                     tile = Image.new("RGB", (bw, bh), back or (255, 255, 255))
@@ -644,7 +657,7 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
                 total_lines = min(len(lines), max(1, int((h - 1) * SCALE // line_h)) or 1)
                 used = total_lines * line_h
                 start_y = box[1] + 2 * SCALE
-                if total_lines == 1 and h >= c.font_size * 2.6:
+                if total_lines == 1 and h >= c.font_size * 2.6 and c.align and "Middle" in c.align:
                     start_y = box[1] + max(0, (h * SCALE - used) / 2)
                 for index in range(total_lines):
                     line_text = lines[index]

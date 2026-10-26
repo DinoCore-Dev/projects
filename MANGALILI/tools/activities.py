@@ -543,9 +543,8 @@ ACTIVITIES = [
         "notes": [
             "The title of the main form now reads Integrative Project 2026 - Mangalili, Fhetz | "
             "BSIT 3B and the About form is titled About - Mangalili, Fhetz.",
-            "The long Base64 picture data inside frmAbout.vb is left out of this document so "
-            "that the source listing stays readable. The complete file is inside the "
-            "IntegProgProject2026 folder of the compilation.",
+            "The photo of the programmer is the file Images\\photo.jpg of the IntegProgProject2026 "
+            "project; it is copied to bin\\Debug and shown in the picture box of frmAbout.",
         ],
     },
 ]

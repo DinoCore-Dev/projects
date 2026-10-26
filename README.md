@@ -1,23 +1,25 @@
-# Activity Compilation - two students, two separate packages
+# Activity Compilation - four students, four separate packages
 
 Repository for the **Integrative Programming** activity compilation (13 activities each),
 built for **Visual Studio 2010 / .NET Framework 4.0**.
 
-The repository holds **two separate, complete compilations** - one folder and one zip each:
+The repository holds **four separate, complete compilations** - one folder and one zip each:
 
 | Student | Folder (source) | Download zip |
 |---------|-----------------|--------------|
 | **Sonajo, Christian Paolo** - BSIT 3B | `SONAJO/` | `Sonajo_ChristianPaolo_Compilation.zip` |
 | **Mangalili, Fhetz** - BSIT 3B | `MANGALILI/` | `Mangalili_Fhetz_Compilation.zip` |
+| **Lucena, Lyka Joy** - BSIT 3B | `LUCENA/` | `Lucena_LykaJoy_Compilation.zip` |
+| **Deguzman, Liza Gaile** - BSIT 3B | `DEGUZMAN/` | `Deguzman_LizaGaile_Compilation.zip` |
 
-Both zips have the same clean layout: the PDF, the DOCX, the master prompt, the form
+All four zips have the same clean layout: the PDF, the DOCX, the master prompt, the form
 design figures and one numbered folder per activity (`01_ ... 13_ ...`), with a
 `START_HERE.txt` guide at the top. Nothing else, and no nested second zip.
 
 ```
 <Name>_Compilation.zip
 ├── START_HERE.txt
-├── <Name>_Activity_Compilation.pdf        (67 pages, ito ang ipapasa)
+├── <Name>_Activity_Compilation.pdf        (72 pages, ito ang ipapasa)
 ├── <Name>_Activity_Compilation.docx
 ├── Master_Prompt.md
 ├── Form_Designs/                          (22 PNG: 11 form designs + 11 sample outputs)
@@ -53,26 +55,26 @@ There is **no** table of contents, no description, no objectives, no notes, no a
 and no page header or footer. Only a plain cover page at the front.
 
 > **Note on branches:** this Arena session is bound to one branch
-> (`arena/bf05a101-projects`) and cannot create or push a second branch, so the two
-> compilations are separated **inside this branch** by folder (`SONAJO/`, `MANGALILI/`)
+> (`arena/bf05a101-projects`) and cannot create or push a second branch, so the
+> compilations are separated **inside this branch** by folder (`SONAJO/`, `MANGALILI/`, `LUCENA/`, `DEGUZMAN/`)
 > and by zip name. Every file of each student lives only in their own folder - nothing is
 > shared or overwritten.
 
 ---
 
-## The two versions are visually different
+## The versions are visually different
 
-| | Sonajo, Christian Paolo | Mangalili, Fhetz |
-|---|---|---|
-| Colour theme | dark teal / emerald (`#0C4A45`, `#059669`, `#CCFBF1`) | navy / blue (`#1E293B`, `#2563EB`, `#E2E8F0`) |
-| Document accent | teal headings and rules | navy headings and rules |
-| File explorer app name | **Sonajo Explorer** | **Mangalili Explorer** |
-| Console headers, banners, author labels, About form, MDI status strip | Sonajo, Christian Paolo / BSIT 3B | Mangalili, Fhetz / BSIT 3B |
+| | Sonajo, Christian Paolo | Mangalili, Fhetz | Lucena, Lyka Joy | Deguzman, Liza Gaile |
+|---|---|---|---|---|
+| Colour theme | dark teal / emerald (`#0C4A45`, `#059669`) | navy / blue (`#1E293B`, `#2563EB`) | deep violet / purple | wine / rose |
+| File explorer app name | **Sonajo Explorer** | **Mangalili Explorer** | **Lucena Explorer** | **Deguzman Explorer** |
+| About quote | Dennis Ritchie | Chris Pine | Linus Torvalds | Harold Abelson |
+| Console headers, banners, author labels, About form, MDI status strip | own name / BSIT 3B | own name / BSIT 3B | own name / BSIT 3B | own name / BSIT 3B |
 
 Same lesson content and same feature set, different presentation and different colour
-identity, so the two submissions do not look like copies of each other.
+identity, so the submissions do not look like copies of each other.
 
-## Activities (same 13 for both students)
+## Activities (same 13 for every student)
 
 | # | Folder inside the zip | Solution file | Title |
 |---|----------------------|---------------|-------|
@@ -110,10 +112,17 @@ back to its own XML file so the program still runs (`lblDatabase` shows which on
 * Submitted to: blank line, ready to be filled in
 * School year: 2026 - 2027
 
-**Mangalili, Fhetz - BSIT 3B** (`MANGALILI/`)
-* Same details with the author / course identity of Mangalili, Fhetz.
+**Mangalili, Fhetz - BSIT 3B** (`MANGALILI/`), **Lucena, Lyka Joy - BSIT 3B** (`LUCENA/`) and
+**Deguzman, Liza Gaile - BSIT 3B** (`DEGUZMAN/`)
+* Same details with the author / course identity of each student.
 
-In both versions the name appears in the console header and closing line (Act 1-3), the
+Each identity has its own colour theme (Sonajo teal, Mangalili navy, Lucena violet, Deguzman
+wine/rose), its own favourite quote on the About form (Dennis Ritchie, Chris Pine, Linus Torvalds,
+Harold Abelson) and its own photo: the original JPG is in `<FOLDER>/photo/`, a resized copy is
+`Images/photo.jpg` in the Act 13 project (copied to `bin\Debug`, shown in `frmAbout`, and drawn
+in the Sample Output picture of the About form).
+
+In every version the name appears in the console header and closing line (Act 1-3), the
 form title, the banner or rail, an author label inside the designer, the About form, the MDI
 status strip, and in the **Sample Output of every activity** in the document.
 
@@ -139,13 +148,13 @@ python3 SONAJO/tools/build_documents.py
 python3 SONAJO/tools/build_package.py
 ```
 
-The same two commands work inside `MANGALILI/tools/` for the other compilation.
+The same two commands work inside `MANGALILI/tools/`, `LUCENA/tools/` and `DEGUZMAN/tools/`.
 Requirements: `python-docx`, `reportlab`, `pillow`.
 
 The sample values printed inside the Sample Output pictures live in
 `tools/samples.py` (textbox text, label results, ListView rows, TreeView nodes, checked
 radio buttons). It uses `{USER}` / `{AUTHOR}` / `{COURSE}` tokens, so the same file works for
-both students and the name inside the picture always matches the owner of the folder.
+every student and the name inside the picture always matches the owner of the folder.
 
 ## Changing the name
 

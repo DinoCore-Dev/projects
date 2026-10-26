@@ -308,8 +308,8 @@ SAMPLES = {
         },
         {
             "designer": "IntegProgProject2026/IntegProgProject2026/Forms/frmAbout.Designer.vb",
-            "caption": "frmAbout - the About form (the programmer's photo goes in the picture box)",
-            "values": {},
+            "caption": "frmAbout - the About form with the programmer's photo",
+            "values": {"PictureBox1": {"image": "{PHOTO}"}},
         },
     ],
 }
