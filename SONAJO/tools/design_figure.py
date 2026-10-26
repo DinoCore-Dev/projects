@@ -92,7 +92,8 @@ def literal_value(rhs):
     pieces = rhs.split(NEWLINE_MARK)
     out = []
     for piece in pieces:
-        quoted = re.findall(r'"([^"]*)"', piece)
+        # a VB string literal: "" inside the quotes is one escaped quote character
+        quoted = [q.replace('""', '"') for q in re.findall(r'"((?:[^"]|"")*)"', piece)]
         if quoted:
             out.append("".join(quoted))
         elif out:
