@@ -2,7 +2,7 @@
 ' Activity 12 - PanelSplitDemo  (Pastor Explorer)
 ' A small file explorer built with TreeView + ListView + preview
 ' inside nested SplitContainer controls.
-' Author : Pastor, James Lorenz   |   BSIT 3B
+' Author : Pastor, Lorenz James   |   BSIT 3B
 ' ============================================================
 Option Strict On
 Option Explicit On

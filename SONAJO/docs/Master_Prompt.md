@@ -24,7 +24,7 @@ document (DOCX + PDF), tapos bigyan mo ako ng isang zip na pang-download.
 - Date Submitted               : [October 26, 2026]
 - Paboritong quote (About)     : ["The best way to predict the future is to invent it." - Alan Kay]
                                  (kung blangko: hanapin online ayon sa 3 c2)
-- Address (About)              : [Sanpedro, Mallig, Isabela]
+- Address (About)              : [San Pedro, Mallig, Isabela]
                                  (palitan ang `lblAddress` ng `frmAbout`; kapag wala pa, iwan ang placeholder)
 - Litrato (About)              : [photo/SONAJO, CHRISTIAN PAOLO.jpg]
                                  (JPG ng estudyante; ilagay sa folder na `photo/` ng identity)

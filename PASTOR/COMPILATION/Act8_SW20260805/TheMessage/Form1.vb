@@ -2,7 +2,7 @@
 ' Activity 8 - Act8_SW20260805
 ' The Message : composes a MessageBox with a title, a message,
 ' an icon, a button set and a default button.
-' Author : Pastor, James Lorenz   |   BSIT 3B
+' Author : Pastor, Lorenz James   |   BSIT 3B
 ' ============================================================
 Public Class Form1
 

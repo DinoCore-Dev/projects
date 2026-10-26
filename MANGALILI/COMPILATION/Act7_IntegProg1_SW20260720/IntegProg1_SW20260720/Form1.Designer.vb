@@ -416,7 +416,7 @@ Partial Class Form1
         Me.lblAuthor.Name = "lblAuthor"
         Me.lblAuthor.Size = New System.Drawing.Size(572, 20)
         Me.lblAuthor.TabIndex = 1
-        Me.lblAuthor.Text = "Author: Mangalili, Fhetz   |   BSIT 3B   |   Activity 7"
+        Me.lblAuthor.Text = "Author: Mangalili, Fhetz Jherald   |   BSIT 3B   |   Activity 7"
         Me.lblAuthor.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Form1
@@ -428,7 +428,7 @@ Partial Class Form1
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Activity 7 - IntegProg1_SW20260720  |  Mangalili, Fhetz"
+        Me.Text = "Activity 7 - IntegProg1_SW20260720  |  Mangalili, Fhetz Jherald"
         Me.TabControl1.ResumeLayout(False)
         Me.tabInterest.ResumeLayout(False)
         Me.tabInterest.PerformLayout()

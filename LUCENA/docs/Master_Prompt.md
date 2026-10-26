@@ -24,7 +24,7 @@ document (DOCX + PDF), tapos bigyan mo ako ng isang zip na pang-download.
 - Date Submitted               : [October 26, 2026]
 - Paboritong quote (About)     : ["A ship in harbor is safe, but that is not what ships are built for." - John A. Shedd]
                                  (kung blangko: hanapin online ayon sa 3 c2)
-- Address (About)              : [Barucboc, Quezon, Isabela]
+- Address (About)              : [Villa Concepcion, Roxas, Isabela]
                                  (palitan ang `lblAddress` ng `frmAbout`; kapag wala pa, iwan ang placeholder)
 - Litrato (About)              : [photo/LUCENA, LYKA JOY.jpg]
                                  (JPG ng estudyante; ilagay sa folder na `photo/` ng identity)

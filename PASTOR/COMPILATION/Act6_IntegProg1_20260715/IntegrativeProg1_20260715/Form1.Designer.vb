@@ -131,7 +131,7 @@ Partial Class Form1
         Me.lblAuthor.Name = "lblAuthor"
         Me.lblAuthor.Size = New System.Drawing.Size(236, 22)
         Me.lblAuthor.TabIndex = 2
-        Me.lblAuthor.Text = "Pastor, James Lorenz"
+        Me.lblAuthor.Text = "Pastor, Lorenz James"
         Me.lblAuthor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lblCourse
@@ -470,7 +470,7 @@ Partial Class Form1
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Activity 6 - Select Case Grade Evaluation  |  Pastor, James Lorenz"
+        Me.Text = "Activity 6 - Select Case Grade Evaluation  |  Pastor, Lorenz James"
         Me.pnlHeader.ResumeLayout(False)
         Me.pnlLeft.ResumeLayout(False)
         Me.pnlRight.ResumeLayout(False)

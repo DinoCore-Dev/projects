@@ -24,7 +24,7 @@ document (DOCX + PDF), tapos bigyan mo ako ng isang zip na pang-download.
 - Date Submitted               : [October 26, 2026]
 - Paboritong quote (About)     : ["Imagination is more important than knowledge." - Albert Einstein]
                                  (kung blangko: hanapin online ayon sa 3 c2)
-- Address (About)              : [Barucboc, Quezon, Isabela]
+- Address (About)              : [Purok Pag-asa, San Pedro, Mallig, Isabela]
                                  (palitan ang `lblAddress` ng `frmAbout`; kapag wala pa, iwan ang placeholder)
 - Litrato (About)              : [photo/DEGUZMAN, LIZA GAILE.jpg]
                                  (JPG ng estudyante; ilagay sa folder na `photo/` ng identity)

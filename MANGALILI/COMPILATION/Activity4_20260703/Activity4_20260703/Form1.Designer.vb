@@ -143,7 +143,7 @@ Partial Class Form1
         Me.lblAuthorName.Name = "lblAuthorName"
         Me.lblAuthorName.Size = New System.Drawing.Size(226, 22)
         Me.lblAuthorName.TabIndex = 2
-        Me.lblAuthorName.Text = "Mangalili, Fhetz"
+        Me.lblAuthorName.Text = "Mangalili, Fhetz Jherald"
         Me.lblAuthorName.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblAuthorCourse
@@ -552,7 +552,7 @@ Partial Class Form1
         Me.lblFooterAuthor.Name = "lblFooterAuthor"
         Me.lblFooterAuthor.Size = New System.Drawing.Size(264, 15)
         Me.lblFooterAuthor.TabIndex = 1
-        Me.lblFooterAuthor.Text = "Mangalili, Fhetz  |  BSIT 3B"
+        Me.lblFooterAuthor.Text = "Mangalili, Fhetz Jherald  |  BSIT 3B"
         Me.lblFooterAuthor.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Form1
@@ -570,7 +570,7 @@ Partial Class Form1
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Activity 4 - Arithmetic Machine  |  Mangalili, Fhetz"
+        Me.Text = "Activity 4 - Arithmetic Machine  |  Mangalili, Fhetz Jherald"
         Me.pnlBanner.ResumeLayout(False)
         Me.pnlInput.ResumeLayout(False)
         Me.pnlOutput.ResumeLayout(False)

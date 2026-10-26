@@ -2,7 +2,7 @@
 ' Activity 4 - Act4_20260703
 ' Arithmetic Machine : sum, difference, product, quotient and
 ' average of three numbers entered by the user.
-' Author : Mangalili, Fhetz   |   BSIT 3B
+' Author : Mangalili, Fhetz Jherald   |   BSIT 3B
 ' ============================================================
 Public Class Form1
 

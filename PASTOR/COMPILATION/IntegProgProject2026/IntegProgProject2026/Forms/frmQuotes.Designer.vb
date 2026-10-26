@@ -180,7 +180,7 @@ Private Sub InitializeComponent()
         Me.Controls.Add(Me.lblDatabase)
         Me.Name = "frmQuotes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Quotes - Pastor, James Lorenz  |  BSIT 3B"
+        Me.Text = "Quotes - Pastor, Lorenz James  |  BSIT 3B"
         Me.grpDetails.ResumeLayout(False)
         Me.grpDetails.PerformLayout()
         Me.grpRecords.ResumeLayout(False)

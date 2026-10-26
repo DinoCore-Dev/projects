@@ -246,7 +246,7 @@ Partial Class Form1
         Me.lblRailAuthor.Name = "lblRailAuthor"
         Me.lblRailAuthor.Size = New System.Drawing.Size(180, 20)
         Me.lblRailAuthor.TabIndex = 6
-        Me.lblRailAuthor.Text = "Pastor, James Lorenz"
+        Me.lblRailAuthor.Text = "Pastor, Lorenz James"
         '
         'lblRailCourse
         '
@@ -702,7 +702,7 @@ Partial Class Form1
         Me.MinimumSize = New System.Drawing.Size(900, 640)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Activity 10 - Panel Playground  |  Pastor, James Lorenz"
+        Me.Text = "Activity 10 - Panel Playground  |  Pastor, Lorenz James"
         Me.menuMain.ResumeLayout(False)
         Me.pnlRail.ResumeLayout(False)
         Me.pnlMain.ResumeLayout(False)

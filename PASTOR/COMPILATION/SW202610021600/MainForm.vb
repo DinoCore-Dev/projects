@@ -13,7 +13,7 @@ Public Class MainForm
     Private answersTab As TabPage
 
     Public Sub New()
-        Me.Text = "Activity 11 - SW202610021600 - Windows Forms Controls  |  Pastor, James Lorenz"
+        Me.Text = "Activity 11 - SW202610021600 - Windows Forms Controls  |  Pastor, Lorenz James"
         Me.StartPosition = FormStartPosition.CenterScreen
         Me.WindowState = FormWindowState.Maximized
         Me.MinimumSize = New Size(900, 600)
@@ -22,7 +22,7 @@ Public Class MainForm
         statusBar.Height = 24
         statusBar.TextAlign = ContentAlignment.MiddleRight
         statusBar.ForeColor = Color.FromArgb(139, 116, 100)
-        statusBar.Text = "Author: Pastor, James Lorenz   |   BSIT 3B   |   Activity 11 - SW202610021600"
+        statusBar.Text = "Author: Pastor, Lorenz James   |   BSIT 3B   |   Activity 11 - SW202610021600"
         Me.Controls.Add(statusBar)
 
         tabs = New TabControl()
@@ -56,7 +56,7 @@ Public Class MainForm
         text.ReadOnly = True
         text.Font = New Font("Segoe UI", 11.0F)
         text.Text = "Activity 11 - SW202610021600" & Environment.NewLine & _
-                    "Author : Pastor, James Lorenz   |   Course, Year and Section : BSIT 3B" & _
+                    "Author : Pastor, Lorenz James   |   Course, Year and Section : BSIT 3B" & _
                     Environment.NewLine & Environment.NewLine & _
                     "Question 6 - ListView" & Environment.NewLine & _
                     "The ListView examples tab imitates File Explorer with folder browsing, Details/List views, columns, sorting, double-click opening, and a status bar." & Environment.NewLine & Environment.NewLine & _

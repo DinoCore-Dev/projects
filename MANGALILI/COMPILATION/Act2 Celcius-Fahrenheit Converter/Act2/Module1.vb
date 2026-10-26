@@ -1,14 +1,14 @@
 ﻿' ============================================================
 ' Activity 2 - Act2 Celcius-Fahrenheit Converter
 ' Name input and temperature conversion
-' Author : Mangalili, Fhetz   |   BSIT 3B
+' Author : Mangalili, Fhetz Jherald   |   BSIT 3B
 ' ============================================================
 Module Module1
 
     Sub Main()
         ' program header
         Console.WriteLine("Act2 Celcius-Fahrenheit Converter")
-        Console.WriteLine("Author: Mangalili, Fhetz")
+        Console.WriteLine("Author: Mangalili, Fhetz Jherald")
         Console.WriteLine("Course Year Section: BSIT 3B")
         Console.WriteLine()
 
@@ -44,7 +44,7 @@ Module Module1
 
         ' closing line with the name of the author
         Console.WriteLine()
-        Console.WriteLine("Activity 2 completed by: Mangalili, Fhetz  |  BSIT 3B")
+        Console.WriteLine("Activity 2 completed by: Mangalili, Fhetz Jherald  |  BSIT 3B")
         Console.ReadLine()
 
     End Sub

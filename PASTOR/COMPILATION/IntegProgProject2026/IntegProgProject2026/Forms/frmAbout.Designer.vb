@@ -39,7 +39,7 @@ Partial Class frmAbout
         Me.lblName.Name = "lblName"
         Me.lblName.Size = New System.Drawing.Size(150, 20)
         Me.lblName.TabIndex = 1
-        Me.lblName.Text = "Pastor, James Lorenz"
+        Me.lblName.Text = "Pastor, Lorenz James"
         Me.lblCourse.AutoSize = True
         Me.lblCourse.Location = New System.Drawing.Point(218, 151)
         Me.lblCourse.Name = "lblCourse"
@@ -75,7 +75,7 @@ Partial Class frmAbout
         Me.Controls.Add(Me.lblQuote)
         Me.Name = "frmAbout"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "About - Pastor, James Lorenz"
+        Me.Text = "About - Pastor, Lorenz James"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

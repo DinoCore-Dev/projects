@@ -2,7 +2,7 @@
 ' Activity 5 - Ternary2
 ' Displays the remarks, the letter grade and the numeric rating
 ' of an average grade using nested ternary (If) operators.
-' Author : Mangalili, Fhetz   |   BSIT 3B
+' Author : Mangalili, Fhetz Jherald   |   BSIT 3B
 ' ============================================================
 Public Class Form1
 

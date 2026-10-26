@@ -2,7 +2,7 @@
 ' Activity 10 - SW20261002  (SplitContainer Demo)
 ' Nested SplitContainer practice : two panels in the outer
 ' splitter, two panels in the inner splitter.
-' Author : Pastor, James Lorenz   |   BSIT 3B
+' Author : Pastor, Lorenz James   |   BSIT 3B
 ' ============================================================
 Option Strict On
 Option Explicit On

@@ -164,7 +164,7 @@ Partial Class Form1
         Me.lblAuthor.Name = "lblAuthor"
         Me.lblAuthor.Size = New System.Drawing.Size(322, 20)
         Me.lblAuthor.TabIndex = 2
-        Me.lblAuthor.Text = "Mangalili, Fhetz  |  BSIT 3B"
+        Me.lblAuthor.Text = "Mangalili, Fhetz Jherald  |  BSIT 3B"
         Me.lblAuthor.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'btnBack
@@ -616,7 +616,7 @@ Partial Class Form1
         Me.MinimumSize = New System.Drawing.Size(980, 620)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Activity 12 - Mangalili Explorer  |  Mangalili, Fhetz"
+        Me.Text = "Activity 12 - Mangalili Explorer  |  Mangalili, Fhetz Jherald"
         Me.pnlHeader.ResumeLayout(False)
         Me.pnlTools.ResumeLayout(False)
         Me.splRoot.Panel1.ResumeLayout(False)

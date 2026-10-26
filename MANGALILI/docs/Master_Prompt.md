@@ -16,7 +16,7 @@ document (DOCX + PDF), tapos bigyan mo ako ng isang zip na pang-download.
 ===========================================================
 1) IDENTITY  (ITO LANG ANG BABAGUHIN KO SA BAWAT BAGONG PASA)
 ===========================================================
-- Pangalan (author)            : [Mangalili, Fhetz]
+- Pangalan (author)            : [Mangalili, Fhetz Jherald]
 - Course, Year and Section     : [BSIT 3B]
 - Subject                      : [Integrative Programming]
 - Instructor (Submitted to)    : [BLANK / pangalan ng instructor]
@@ -26,7 +26,7 @@ document (DOCX + PDF), tapos bigyan mo ako ng isang zip na pang-download.
                                  (kung blangko: hanapin online ayon sa 3 c2)
 - Address (About)              : [Olango, Mallig, Isabela]
                                  (palitan ang `lblAddress` ng `frmAbout`; kapag wala pa, iwan ang placeholder)
-- Litrato (About)              : [photo/MANGALILI, FHETZ.jpg]
+- Litrato (About)              : [photo/MANGALILI, FHETZ JHERALD.jpg]
                                  (JPG ng estudyante; ilagay sa folder na `photo/` ng identity)
 
 ===========================================================
@@ -326,7 +326,7 @@ totoong database, parehong gaya ng original, at PAREHO sa lahat ng identity:
 ## Notes para sa akin (hindi bahagi ng prompt)
 
 * Naka-set na sa repo na ito ang lahat: `COMPILATION/`, `docs/`, `tools/`, at ang
-  `Mangalili_Fhetz_Compilation.zip`.
+  `Mangalili_FhetzJherald_Compilation.zip`.
 * Kung bagong pangalan lang ang kailangan, ito ang 2 lugar na binabago ng agent:
   1. `tools/activities.py` → `AUTHOR`, `COURSE`, `SUBJECT`, `INSTRUCTOR_LINE`,
      `SCHOOL_YEAR`, `DATE_LINE`

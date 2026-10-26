@@ -8,10 +8,10 @@ The repository holds **eight separate, complete compilations** - one folder and 
 | Student | Folder (source) | Download zip |
 |---------|-----------------|--------------|
 | **Sonajo, Christian Paolo** - BSIT 3B | `SONAJO/` | `Sonajo_ChristianPaolo_Compilation.zip` |
-| **Mangalili, Fhetz** - BSIT 3B | `MANGALILI/` | `Mangalili_Fhetz_Compilation.zip` |
+| **Mangalili, Fhetz Jherald** - BSIT 3B | `MANGALILI/` | `Mangalili_FhetzJherald_Compilation.zip` |
 | **Lucena, Lyka Joy** - BSIT 3B | `LUCENA/` | `Lucena_LykaJoy_Compilation.zip` |
 | **Deguzman, Liza Gaile** - BSIT 3B | `DEGUZMAN/` | `Deguzman_LizaGaile_Compilation.zip` |
-| **Pastor, James Lorenz** - BSIT 3B | `PASTOR/` | `Pastor_JamesLorenz_Compilation.zip` |
+| **Pastor, Lorenz James** - BSIT 3B | `PASTOR/` | `Pastor_LorenzJames_Compilation.zip` |
 | **Marcos, Angela** - BSIT 3B | `MARCOS/` | `Marcos_Angela_Compilation.zip` |
 | **Aniciete, Shane Antoinette** - BSIT 3B | `ANICIETE/` | `Aniciete_ShaneAntoinette_Compilation.zip` |
 | **Marcelo, John Carlo** - BSIT 3B | `MARCELO/` | `Marcelo_JohnCarlo_Compilation.zip` |
@@ -70,11 +70,11 @@ and no page header or footer. Only a plain cover page at the front.
 
 | Student | Folder | Colour theme | Layout code | About quote (verified) |
 |---|---|---|---|---|
-| Mangalili, Fhetz | `MANGALILI/` | navy / blue | 0 (original arrangement) | "The only way to do great work is to love what you do." - Steve Jobs (Stanford commencement, 2005) |
+| Mangalili, Fhetz Jherald | `MANGALILI/` | navy / blue | 0 (original arrangement) | "The only way to do great work is to love what you do." - Steve Jobs (Stanford commencement, 2005) |
 | Sonajo, Christian Paolo | `SONAJO/` | dark teal / emerald | 1 | "The best way to predict the future is to invent it." - Alan Kay (1971) |
 | Lucena, Lyka Joy | `LUCENA/` | deep violet | 2 | "A ship in harbor is safe, but that is not what ships are built for." - John A. Shedd (*Salt from My Attic*, 1928) |
 | Deguzman, Liza Gaile | `DEGUZMAN/` | wine / rose | 3 | "Imagination is more important than knowledge." - Albert Einstein (Saturday Evening Post, 1929) |
-| Pastor, James Lorenz | `PASTOR/` | orange / brown | 4 | "Genius is one percent inspiration, ninety-nine percent perspiration." - Thomas Edison |
+| Pastor, Lorenz James | `PASTOR/` | orange / brown | 4 | "Genius is one percent inspiration, ninety-nine percent perspiration." - Thomas Edison |
 | Marcos, Angela | `MARCOS/` | green | 5 | "You must do the thing you think you cannot do." - Eleanor Roosevelt (*You Learn by Living*, 1960) |
 | Marcelo, John Carlo | `MARCELO/` | olive / lime | 6 | "The only limit to our realization of tomorrow will be our doubts of today." - Franklin D. Roosevelt (1945) |
 | Aniciete, Shane Antoinette | `ANICIETE/` | magenta / plum | 7 | "I can accept failure, everyone fails at something. But I can't accept not trying." - Michael Jordan (1994) |
@@ -138,13 +138,14 @@ the same details with their own author / course identity. Addresses on the About
 
 | Student | Address |
 |---|---|
-| Mangalili, Fhetz | Olango, Mallig, Isabela |
-| Sonajo, Christian Paolo | Sanpedro, Mallig, Isabela |
+| Mangalili, Fhetz Jherald | Olango, Mallig, Isabela |
+| Sonajo, Christian Paolo | San Pedro, Mallig, Isabela |
 | Marcos, Angela | Olango, Mallig, Isabela |
 | Aniciete, Shane Antoinette | Centro 1, Mallig, Isabela |
-| Pastor, James Lorenz | Centro 2, Mallig, Isabela |
+| Pastor, Lorenz James | Centro 2, Mallig, Isabela |
 | Marcelo, John Carlo | Villanueva, San Manuel, Isabela |
-| Lucena, Lyka Joy / Deguzman, Liza Gaile | placeholder `Barucboc, Quezon, Isabela` until supplied |
+| Lucena, Lyka Joy | Villa Concepcion, Roxas, Isabela |
+| Deguzman, Liza Gaile | Purok Pag-asa, San Pedro, Mallig, Isabela |
 
 Each identity has its own colour theme, layout code and favourite quote (see the table above) and
 its own photo: the original JPG is in `<FOLDER>/photo/`, a resized copy is

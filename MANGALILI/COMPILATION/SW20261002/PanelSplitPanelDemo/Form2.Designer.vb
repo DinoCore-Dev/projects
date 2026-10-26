@@ -171,7 +171,7 @@ Partial Class Form2
         Me.lblAuthor.Name = "lblAuthor"
         Me.lblAuthor.Size = New System.Drawing.Size(276, 20)
         Me.lblAuthor.TabIndex = 2
-        Me.lblAuthor.Text = "Mangalili, Fhetz  |  BSIT 3B"
+        Me.lblAuthor.Text = "Mangalili, Fhetz Jherald  |  BSIT 3B"
         Me.lblAuthor.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'pnlTools
@@ -505,7 +505,7 @@ Partial Class Form2
         Me.MinimumSize = New System.Drawing.Size(900, 600)
         Me.Name = "Form2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Activity 10 - Split Container Lab  |  Mangalili, Fhetz"
+        Me.Text = "Activity 10 - Split Container Lab  |  Mangalili, Fhetz Jherald"
         Me.menuMain.ResumeLayout(False)
         Me.pnlTop.ResumeLayout(False)
         Me.pnlTools.ResumeLayout(False)

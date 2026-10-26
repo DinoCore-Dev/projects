@@ -81,7 +81,7 @@ Partial Class frmMain
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Integrative Project 2026 - Pastor, James Lorenz  |  BSIT 3B"
+        Me.Text = "Integrative Project 2026 - Pastor, Lorenz James  |  BSIT 3B"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)

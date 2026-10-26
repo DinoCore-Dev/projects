@@ -2,7 +2,7 @@
 ' Activity 5 - Ternary2
 ' Displays the remarks, the letter grade and the numeric rating
 ' of an average grade using nested ternary (If) operators.
-' Author : Pastor, James Lorenz   |   BSIT 3B
+' Author : Pastor, Lorenz James   |   BSIT 3B
 ' ============================================================
 Public Class Form1
 

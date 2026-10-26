@@ -1,6 +1,6 @@
-"""Activity metadata for the compilation documents of Pastor, James Lorenz."""
+"""Activity metadata for the compilation documents of Pastor, Lorenz James."""
 
-AUTHOR = "Pastor, James Lorenz"
+AUTHOR = "Pastor, Lorenz James"
 COURSE = "BSIT 3B"
 SUBJECT = "Integrative Programming"
 INSTRUCTOR_LINE = "________________________"
@@ -25,7 +25,7 @@ ACTIVITIES = [
             "declares one variable of every basic data type (String, Integer, Double, "
             "Boolean and Char). The program ends with Console.ReadKey() so the console "
             "window stays open until a key is pressed.",
-            "The output starts with the activity name, the author (Pastor, James Lorenz) and the "
+            "The output starts with the activity name, the author (Pastor, Lorenz James) and the "
             "course and section (BSIT 3B), and it ends with a closing line that repeats the "
             "name of the author, so the printed screen already carries the complete identity "
             "of the student.",
@@ -38,10 +38,10 @@ ACTIVITIES = [
         "files": [("Act1_Activity202606241600/Activity202606241600/Module1.vb", "Module1.vb")],
         "output": [
             "Activity202606241600",
-            "Author: Pastor, James Lorenz",
+            "Author: Pastor, Lorenz James",
             "Course Year Section: BSIT 3B",
             "",
-            "Hello Pastor, James Lorenz",
+            "Hello Pastor, Lorenz James",
             "n1        = 0",
             "n2        = 0",
             "isValid   = True",
@@ -49,7 +49,7 @@ ACTIVITIES = [
             "number1   = 12",
             "number2   = 12.12",
             "",
-            "Prepared by: Pastor, James Lorenz  |  BSIT 3B",
+            "Prepared by: Pastor, Lorenz James  |  BSIT 3B",
         ],
         "notes": [],
     },
@@ -73,14 +73,14 @@ ACTIVITIES = [
         "files": [("Act2 Celcius-Fahrenheit Converter/Act2/Module1.vb", "Module1.vb")],
         "output": [
             "Act2 Celcius-Fahrenheit Converter",
-            "Author: Pastor, James Lorenz",
+            "Author: Pastor, Lorenz James",
             "Course Year Section: BSIT 3B",
             "",
             "Hello world",
             "Enter Lastname: Pastor",
-            "Enter Firstname: James Lorenz",
+            "Enter Firstname: Lorenz James",
             "Your Lastname is Pastor",
-            "Your Firstname is James Lorenz",
+            "Your Firstname is Lorenz James",
             "--- Celsius to Fahrenheit Converter ---",
             "Enter Celsius: 37",
             "Result in Fahrenheit: 98.6",
@@ -88,7 +88,7 @@ ACTIVITIES = [
             "Enter Fahrenheit: 98.6",
             "Result in Celsius: 37.0",
             "",
-            "Activity 2 completed by: Pastor, James Lorenz  |  BSIT 3B",
+            "Activity 2 completed by: Pastor, Lorenz James  |  BSIT 3B",
         ],
         "notes": [],
     },
@@ -112,7 +112,7 @@ ACTIVITIES = [
         "files": [("Activity3_20260629/Activity3_20260629/Module1.vb", "Module1.vb")],
         "output": [
             "Activity3_20260629",
-            "Author: Pastor, James Lorenz",
+            "Author: Pastor, Lorenz James",
             "Course Year Section: BSIT 3B",
             "Enter number 1: 10",
             "Enter number 2: 5",
@@ -153,7 +153,7 @@ ACTIVITIES = [
                      "Form design of Activity 4 - Arithmetic Machine")],
         "output": [
             "Banner      : Arithmetic Machine",
-            "Author      : Pastor, James Lorenz   |   BSIT 3B   |   Integrative Programming",
+            "Author      : Pastor, Lorenz James   |   BSIT 3B   |   Integrative Programming",
             "",
             "First number  : 10",
             "Second number : 5",
@@ -166,7 +166,7 @@ ACTIVITIES = [
             "Average    = 5.6667",
             "",
             "Status bar : Average = 5.6667",
-            "Footer     : Pastor, James Lorenz  |  BSIT 3B",
+            "Footer     : Pastor, Lorenz James  |  BSIT 3B",
         ],
         "notes": [
             "Average is highlighted in blue because it is the summary value of the three "
@@ -200,7 +200,7 @@ ACTIVITIES = [
                      "Form design of Activity 5 - Ternary Remarks")],
         "output": [
             "Activity 5  -  Ternary",
-            "Author : Pastor, James Lorenz   |   BSIT 3B   |   Integrative Programming",
+            "Author : Pastor, Lorenz James   |   BSIT 3B   |   Integrative Programming",
             "",
             "Average grade : 88",
             "Remarks 1     : Passed        (shown in green)",
@@ -243,7 +243,7 @@ ACTIVITIES = [
                      "Form design of Activity 6 - Select Case Grade Evaluation")],
         "output": [
             "Banner   : Select Case Grade Evaluation",
-            "Author   : Pastor, James Lorenz   |   BSIT 3B",
+            "Author   : Pastor, Lorenz James   |   BSIT 3B",
             "",
             "Grade 1 : 88",
             "Grade 2 : 92",
@@ -278,8 +278,8 @@ ACTIVITIES = [
         "figures": [("Act7_IntegProg1_SW20260720/IntegProg1_SW20260720/Form1.Designer.vb",
                      "Form design of Activity 7 - the author label is at the bottom right")],
         "output": [
-            "Title  : Activity 7 - IntegProg1_SW20260720  |  Pastor, James Lorenz",
-            "Label  : Author: Pastor, James Lorenz   |   BSIT 3B   |   Activity 7",
+            "Title  : Activity 7 - IntegProg1_SW20260720  |  Pastor, Lorenz James",
+            "Label  : Author: Pastor, Lorenz James   |   BSIT 3B   |   Activity 7",
             "",
             "Tab App: Interest Calculator",
             "  Principal : 1000     Interest rate : 5     Years : 3",
@@ -319,7 +319,7 @@ ACTIVITIES = [
                      "Form design of Activity 8 - The Message")],
         "output": [
             "Header : The Message",
-            "Author : Pastor, James Lorenz   |   BSIT 3B",
+            "Author : Pastor, Lorenz James   |   BSIT 3B",
             "",
             "Title   : Saving the record",
             "Message : Do you want to save this record?",
@@ -355,17 +355,17 @@ ACTIVITIES = [
         "figures": [("SW202609301600/ListViewSample.Designer.vb",
                      "Form design of Activity 9 - the author label shares the status line")],
         "output": [
-            "Title      : Activity 9 - ListView File Explorer  |  Pastor, James Lorenz",
+            "Title      : Activity 9 - ListView File Explorer  |  Pastor, Lorenz James",
             "Path       : C:\\Users\\Pastor\\Documents",
             "Name                    Type            Modified/Size",
             "Documents               Folder          ...",
             "notes.txt               .txt            1.2 KB",
             "Activity1.docx          .docx           24.6 KB",
-            "Status     : 3 item(s)          Author: Pastor, James Lorenz  |  BSIT 3B",
+            "Status     : 3 item(s)          Author: Pastor, Lorenz James  |  BSIT 3B",
         ],
         "notes": [
-            "The form title now reads Activity 9 - ListView File Explorer | Pastor, James Lorenz and "
-            "the author label at the bottom right of the form shows Pastor, James Lorenz | BSIT 3B.",
+            "The form title now reads Activity 9 - ListView File Explorer | Pastor, Lorenz James and "
+            "the author label at the bottom right of the form shows Pastor, Lorenz James | BSIT 3B.",
         ],
     },
     {
@@ -402,14 +402,14 @@ ACTIVITIES = [
              "Form design of Activity 10 - Split Container Lab"),
         ],
         "output": [
-            "Panel Playground      -  Author : Pastor, James Lorenz   |   BSIT 3B",
+            "Panel Playground      -  Author : Pastor, Lorenz James   |   BSIT 3B",
             "01  pnlGroup.Visible = False",
             "02  pnlNested.BackColor changed to blue.",
             "03  Contains -> pnlGroup : True, pnlNested : True, from pnlMain : False",
             "04  pnlNested.Focus() returned True.",
             "    Status bar : 4 action(s) performed",
             "",
-            "Split Container Lab   -  Author : Pastor, James Lorenz   |   BSIT 3B",
+            "Split Container Lab   -  Author : Pastor, Lorenz James   |   BSIT 3B",
             "outer : 220 px      inner : 260 px",
             "splOuter.Panel1Collapsed = True",
             "Orientation = Vertical, the inner panels are now left and right.",
@@ -445,17 +445,17 @@ ACTIVITIES = [
             ("SW202610021600/CombinedSample.vb", "CombinedSample.vb"),
         ],
         "output": [
-            "Title      : Activity 11 - SW202610021600 - Windows Forms Controls  |  Pastor, James Lorenz",
-            "Status bar : Author: Pastor, James Lorenz   |   BSIT 3B   |   Activity 11 - SW202610021600",
+            "Title      : Activity 11 - SW202610021600 - Windows Forms Controls  |  Pastor, Lorenz James",
+            "Status bar : Author: Pastor, Lorenz James   |   BSIT 3B   |   Activity 11 - SW202610021600",
             "",
             "Tab 1  File explorer + dialogs   -> OpenFileDialog / SaveFileDialog demo",
             "Tab 2  ListView examples         -> folder browsing with Details / List view",
             "Tab 3  TreeView examples         -> drives and directories, loaded on expand",
             "Tab 4  Assignment answers        -> Activity 11 - SW202610021600",
-            "                                    Author : Pastor, James Lorenz | BSIT 3B",
+            "                                    Author : Pastor, Lorenz James | BSIT 3B",
         ],
         "notes": [
-            "The main form has a status line at the bottom that prints Author: Pastor, James Lorenz | "
+            "The main form has a status line at the bottom that prints Author: Pastor, Lorenz James | "
             "BSIT 3B, and the same identity is printed at the top of the Assignment answers tab.",
         ],
     },
@@ -489,7 +489,7 @@ ACTIVITIES = [
         "figures": [("FileExplorerClone/PanelSplitDemo/Form1.Designer.vb",
                      "Form design of Activity 12 - Pastor Explorer")],
         "output": [
-            "PASTOR EXPLORER        Author : Pastor, James Lorenz   |   BSIT 3B",
+            "PASTOR EXPLORER        Author : Pastor, Lorenz James   |   BSIT 3B",
             "",
             "Address bar : C:\\Users\\Pastor\\Documents",
             "Contents    : 5 item(s)   |   C:\\Users\\Pastor\\Documents",
@@ -530,19 +530,19 @@ ACTIVITIES = [
             ("IntegProgProject2026/IntegProgProject2026/Forms/frmAbout.vb", "frmAbout.vb"),
         ],
         "output": [
-            "Main form  : Integrative Project 2026 - Pastor, James Lorenz  |  BSIT 3B",
-            "Status strip: UserInfo: Pastor, James Lorenz  |  BSIT 3B",
+            "Main form  : Integrative Project 2026 - Pastor, Lorenz James  |  BSIT 3B",
+            "Status strip: UserInfo: Pastor, Lorenz James  |  BSIT 3B",
             "              CurrentDate: Monday, 26 October 2026",
             "              Current Time: 9:24:41 AM",
             "",
             "Menu -> Schedules     : opened inside the main form",
             "Menu -> Quotes        : opened inside the main form",
             "Menu -> Bible Verse   : opened inside the main form",
-            "Menu -> About         : About - Pastor, James Lorenz",
+            "Menu -> About         : About - Pastor, Lorenz James",
         ],
         "notes": [
-            "The title of the main form now reads Integrative Project 2026 - Pastor, James Lorenz | "
-            "BSIT 3B and the About form is titled About - Pastor, James Lorenz.",
+            "The title of the main form now reads Integrative Project 2026 - Pastor, Lorenz James | "
+            "BSIT 3B and the About form is titled About - Pastor, Lorenz James.",
             "The photo of the programmer is the file Images\\photo.jpg of the IntegProgProject2026 "
             "project; it is copied to bin\\Debug and shown in the picture box of frmAbout.",
         ],

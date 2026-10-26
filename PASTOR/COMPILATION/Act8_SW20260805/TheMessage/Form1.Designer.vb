@@ -139,7 +139,7 @@ Partial Class Form1
         Me.lblAuthor.Name = "lblAuthor"
         Me.lblAuthor.Size = New System.Drawing.Size(256, 20)
         Me.lblAuthor.TabIndex = 2
-        Me.lblAuthor.Text = "Author : Pastor, James Lorenz  |  BSIT 3B"
+        Me.lblAuthor.Text = "Author : Pastor, Lorenz James  |  BSIT 3B"
         Me.lblAuthor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'pnlCompose
@@ -539,7 +539,7 @@ Partial Class Form1
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Activity 8 - The Message  |  Pastor, James Lorenz"
+        Me.Text = "Activity 8 - The Message  |  Pastor, Lorenz James"
         Me.pnlHeader.ResumeLayout(False)
         Me.pnlCompose.ResumeLayout(False)
         Me.pnlIcons.ResumeLayout(False)

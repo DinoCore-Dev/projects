@@ -3,7 +3,7 @@
 ' Demonstrates the most common members of the Panel control :
 ' Visible, BackColor, BorderStyle, BringToFront, SendToBack,
 ' Contains, Focus, Refresh, Invalidate and Dispose.
-' Author : Pastor, James Lorenz   |   BSIT 3B
+' Author : Pastor, Lorenz James   |   BSIT 3B
 ' ============================================================
 Option Strict On
 Option Explicit On

@@ -51,7 +51,7 @@ Partial Class frmAbout
         Me.lblAddress.Name = "lblAddress"
         Me.lblAddress.Size = New System.Drawing.Size(160, 13)
         Me.lblAddress.TabIndex = 3
-        Me.lblAddress.Text = "Address: Sanpedro, Mallig, Isabela"
+        Me.lblAddress.Text = "Address: San Pedro, Mallig, Isabela"
         Me.lblSkills.AutoSize = True
         Me.lblSkills.Location = New System.Drawing.Point(20, 104)
         Me.lblSkills.Name = "lblSkills"

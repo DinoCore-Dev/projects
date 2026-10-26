@@ -2,7 +2,7 @@
 ' Activity 6 - Act6_IntegProg1_20260715
 ' Reads three grades, computes the average and displays three
 ' different remarks using Select Case.
-' Author : Pastor, James Lorenz   |   BSIT 3B
+' Author : Pastor, Lorenz James   |   BSIT 3B
 ' ============================================================
 Public Class Form1
 

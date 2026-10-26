@@ -13,7 +13,7 @@ Public Class MenuForm
     Private exitMenu As ToolStripMenuItem
 
     Public Sub New()
-        Me.Text = "Activity 11 - SW202610021600  |  Mangalili, Fhetz"
+        Me.Text = "Activity 11 - SW202610021600  |  Mangalili, Fhetz Jherald"
         Me.StartPosition = FormStartPosition.CenterScreen
         Me.Size = New Size(720, 400)
         menuStrip1 = New MenuStrip()

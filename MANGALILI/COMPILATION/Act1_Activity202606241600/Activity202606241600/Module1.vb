@@ -1,19 +1,19 @@
 ﻿' ============================================================
 ' Activity 1 - Act1_Activity202606241600
 ' Console basics and data types
-' Author : Mangalili, Fhetz   |   BSIT 3B
+' Author : Mangalili, Fhetz Jherald   |   BSIT 3B
 ' ============================================================
 Module Module1
 
     Sub Main()
         ' program header
         Console.WriteLine("Activity202606241600")
-        Console.WriteLine("Author: Mangalili, Fhetz")
+        Console.WriteLine("Author: Mangalili, Fhetz Jherald")
         Console.WriteLine("Course Year Section: BSIT 3B")
         Console.WriteLine()
 
         ' String variable
-        Dim theName As String = "Mangalili, Fhetz"
+        Dim theName As String = "Mangalili, Fhetz Jherald"
         Console.WriteLine("Hello " + theName)
 
         ' one variable for every basic data type
@@ -33,7 +33,7 @@ Module Module1
         Console.WriteLine()
 
         ' closing line with the name of the author
-        Console.WriteLine("Prepared by: Mangalili, Fhetz  |  BSIT 3B")
+        Console.WriteLine("Prepared by: Mangalili, Fhetz Jherald  |  BSIT 3B")
         Console.ReadKey()
     End Sub
 

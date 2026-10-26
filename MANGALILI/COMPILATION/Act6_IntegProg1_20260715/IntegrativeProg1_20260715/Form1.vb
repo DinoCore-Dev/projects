@@ -2,7 +2,7 @@
 ' Activity 6 - Act6_IntegProg1_20260715
 ' Reads three grades, computes the average and displays three
 ' different remarks using Select Case.
-' Author : Mangalili, Fhetz   |   BSIT 3B
+' Author : Mangalili, Fhetz Jherald   |   BSIT 3B
 ' ============================================================
 Public Class Form1
 

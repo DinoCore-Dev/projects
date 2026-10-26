@@ -199,7 +199,7 @@ Private Sub InitializeComponent()
         Me.Controls.Add(Me.lblDatabase)
         Me.Name = "frmSchedules"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Schedules - Mangalili, Fhetz  |  BSIT 3B"
+        Me.Text = "Schedules - Mangalili, Fhetz Jherald  |  BSIT 3B"
         Me.grpDetails.ResumeLayout(False)
         Me.grpDetails.PerformLayout()
         Me.grpRecords.ResumeLayout(False)
