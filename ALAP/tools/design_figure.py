@@ -825,6 +825,10 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
                                outline=(220, 224, 230), width=SCALE)
                 col_w = (w - 4) / max(len(header_labels), 1)
                 for i, lab in enumerate(header_labels):
+                    if draw.textlength(lab, font=f) > (col_w - 10) * SCALE:
+                        while len(lab) > 1 and draw.textlength(lab + "..", font=f) > (col_w - 10) * SCALE:
+                            lab = lab[:-1]
+                        lab += ".."
                     draw.text((box[0] + (i * col_w + 6) * SCALE, box[1] + 4 * SCALE), lab, font=f,
                               fill=(90, 100, 112))
                 start_row = 1
