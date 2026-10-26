@@ -18,7 +18,7 @@ Partial Class CombinedSample
   Me.components = New System.ComponentModel.Container()
   Me.tree=New TreeView() : Me.lv=New ListView() : Me.open=New Button() : Me.save=New Button() : Me.btnRefresh=New Button()
   Me.SuspendLayout()
-  Me.open.SetBounds(10,10,100,28) : Me.open.Text="Open file" : Me.save.SetBounds(120,10,100,28) : Me.save.Text="Save As" : Me.btnRefresh.SetBounds(230,10,90,28) : Me.btnRefresh.Text="Refresh" : Me.tree.SetBounds(10,50,300,480) : Me.tree.Anchor=AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left : Me.lv.SetBounds(320,50,560,480) : Me.lv.Anchor=AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right : Me.lv.View=View.Details : Me.lv.Columns.Add("Name",300) : Me.lv.Columns.Add("Type",150) : Me.Controls.AddRange(New Control() {Me.tree,Me.lv,Me.open,Me.save,Me.btnRefresh})
+  Me.open.SetBounds(10,10,100,28) : Me.open.Text="Open file" : Me.save.SetBounds(120,10,100,28) : Me.save.Text="Save As" : Me.btnRefresh.SetBounds(230,10,90,28) : Me.btnRefresh.Text="Refresh" : Me.tree.SetBounds(580,50,300,480) : Me.tree.Anchor=AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left : Me.lv.SetBounds(10,50,560,480) : Me.lv.Anchor=AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right : Me.lv.View=View.Details : Me.lv.Columns.Add("Name",300) : Me.lv.Columns.Add("Type",150) : Me.Controls.AddRange(New Control() {Me.tree,Me.lv,Me.open,Me.save,Me.btnRefresh})
   Me.ClientSize = New System.Drawing.Size(900, 560)
   Me.Text = "Question 9 - Combined Explorer"
   Me.StartPosition = FormStartPosition.CenterScreen

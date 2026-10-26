@@ -475,7 +475,7 @@ Partial Class Form1
         Me.btnDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDisplay.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnDisplay.ForeColor = System.Drawing.Color.White
-        Me.btnDisplay.Location = New System.Drawing.Point(24, 13)
+        Me.btnDisplay.Location = New System.Drawing.Point(512, 13)
         Me.btnDisplay.Name = "btnDisplay"
         Me.btnDisplay.Size = New System.Drawing.Size(180, 38)
         Me.btnDisplay.TabIndex = 0
@@ -489,7 +489,7 @@ Partial Class Form1
         Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClear.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnClear.ForeColor = System.Drawing.Color.FromArgb(44, 30, 59)
-        Me.btnClear.Location = New System.Drawing.Point(214, 13)
+        Me.btnClear.Location = New System.Drawing.Point(702, 13)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(110, 38)
         Me.btnClear.TabIndex = 1
@@ -503,7 +503,7 @@ Partial Class Form1
         Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnExit.ForeColor = System.Drawing.Color.White
-        Me.btnExit.Location = New System.Drawing.Point(334, 13)
+        Me.btnExit.Location = New System.Drawing.Point(822, 13)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(110, 38)
         Me.btnExit.TabIndex = 2
@@ -516,12 +516,12 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblStatus.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.lblStatus.ForeColor = System.Drawing.Color.FromArgb(87, 71, 105)
-        Me.lblStatus.Location = New System.Drawing.Point(470, 21)
+        Me.lblStatus.Location = New System.Drawing.Point(24, 21)
         Me.lblStatus.Name = "lblStatus"
         Me.lblStatus.Size = New System.Drawing.Size(462, 22)
         Me.lblStatus.TabIndex = 3
         Me.lblStatus.Text = "Ready. Compose a message to begin."
-        Me.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Form1
         '

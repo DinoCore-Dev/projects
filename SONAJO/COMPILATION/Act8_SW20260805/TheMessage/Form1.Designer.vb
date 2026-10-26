@@ -152,7 +152,7 @@ Partial Class Form1
         Me.pnlCompose.Controls.Add(Me.txtTitle)
         Me.pnlCompose.Controls.Add(Me.lblTitleCaption)
         Me.pnlCompose.Controls.Add(Me.lblComposeTitle)
-        Me.pnlCompose.Location = New System.Drawing.Point(24, 104)
+        Me.pnlCompose.Location = New System.Drawing.Point(496, 104)
         Me.pnlCompose.Name = "pnlCompose"
         Me.pnlCompose.Size = New System.Drawing.Size(440, 420)
         Me.pnlCompose.TabIndex = 1
@@ -231,7 +231,7 @@ Partial Class Form1
         Me.pnlIcons.Controls.Add(Me.rbWarning)
         Me.pnlIcons.Controls.Add(Me.rbInfo)
         Me.pnlIcons.Controls.Add(Me.lblIconsTitle)
-        Me.pnlIcons.Location = New System.Drawing.Point(488, 104)
+        Me.pnlIcons.Location = New System.Drawing.Point(24, 104)
         Me.pnlIcons.Name = "pnlIcons"
         Me.pnlIcons.Size = New System.Drawing.Size(448, 132)
         Me.pnlIcons.TabIndex = 2
@@ -306,7 +306,7 @@ Partial Class Form1
         Me.pnlButtons.Controls.Add(Me.rbOkCancel)
         Me.pnlButtons.Controls.Add(Me.rbOk)
         Me.pnlButtons.Controls.Add(Me.lblButtonsTitle)
-        Me.pnlButtons.Location = New System.Drawing.Point(488, 248)
+        Me.pnlButtons.Location = New System.Drawing.Point(24, 248)
         Me.pnlButtons.Name = "pnlButtons"
         Me.pnlButtons.Size = New System.Drawing.Size(448, 158)
         Me.pnlButtons.TabIndex = 3
@@ -402,7 +402,7 @@ Partial Class Form1
         Me.pnlDefault.Controls.Add(Me.rbDefault2)
         Me.pnlDefault.Controls.Add(Me.rbDefault1)
         Me.pnlDefault.Controls.Add(Me.lblDefaultTitle)
-        Me.pnlDefault.Location = New System.Drawing.Point(488, 418)
+        Me.pnlDefault.Location = New System.Drawing.Point(24, 418)
         Me.pnlDefault.Name = "pnlDefault"
         Me.pnlDefault.Size = New System.Drawing.Size(448, 106)
         Me.pnlDefault.TabIndex = 4

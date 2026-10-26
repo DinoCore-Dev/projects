@@ -28,7 +28,7 @@ import zipfile
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 COMPILATION = os.path.join(ROOT, "COMPILATION")
 DOCS = os.path.join(ROOT, "docs")
-REPO = os.path.dirname(ROOT) if os.path.basename(ROOT) in ("SONAJO", "MANGALILI") else ROOT
+REPO = os.path.dirname(ROOT)
 OUT_ZIP = os.path.join(REPO, "Mangalili_Fhetz_Compilation.zip")
 
 PDF = "Mangalili_Fhetz_Activity_Compilation.pdf"

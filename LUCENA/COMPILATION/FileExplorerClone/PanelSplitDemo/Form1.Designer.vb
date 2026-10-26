@@ -284,7 +284,7 @@ Partial Class Form1
         Me.btnTreeToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnTreeToggle.Font = New System.Drawing.Font("Segoe UI", 8.5!)
         Me.btnTreeToggle.ForeColor = System.Drawing.Color.FromArgb(44, 30, 59)
-        Me.btnTreeToggle.Location = New System.Drawing.Point(16, 7)
+        Me.btnTreeToggle.Location = New System.Drawing.Point(622, 7)
         Me.btnTreeToggle.Name = "btnTreeToggle"
         Me.btnTreeToggle.Size = New System.Drawing.Size(132, 30)
         Me.btnTreeToggle.TabIndex = 0
@@ -298,7 +298,7 @@ Partial Class Form1
         Me.btnPreviewToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPreviewToggle.Font = New System.Drawing.Font("Segoe UI", 8.5!)
         Me.btnPreviewToggle.ForeColor = System.Drawing.Color.FromArgb(44, 30, 59)
-        Me.btnPreviewToggle.Location = New System.Drawing.Point(154, 7)
+        Me.btnPreviewToggle.Location = New System.Drawing.Point(760, 7)
         Me.btnPreviewToggle.Name = "btnPreviewToggle"
         Me.btnPreviewToggle.Size = New System.Drawing.Size(140, 30)
         Me.btnPreviewToggle.TabIndex = 1
@@ -312,7 +312,7 @@ Partial Class Form1
         Me.btnSwapLayout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSwapLayout.Font = New System.Drawing.Font("Segoe UI", 8.5!)
         Me.btnSwapLayout.ForeColor = System.Drawing.Color.FromArgb(44, 30, 59)
-        Me.btnSwapLayout.Location = New System.Drawing.Point(300, 7)
+        Me.btnSwapLayout.Location = New System.Drawing.Point(906, 7)
         Me.btnSwapLayout.Name = "btnSwapLayout"
         Me.btnSwapLayout.Size = New System.Drawing.Size(140, 30)
         Me.btnSwapLayout.TabIndex = 2
@@ -326,7 +326,7 @@ Partial Class Form1
         Me.btnLockSplitters.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLockSplitters.Font = New System.Drawing.Font("Segoe UI", 8.5!)
         Me.btnLockSplitters.ForeColor = System.Drawing.Color.FromArgb(44, 30, 59)
-        Me.btnLockSplitters.Location = New System.Drawing.Point(446, 7)
+        Me.btnLockSplitters.Location = New System.Drawing.Point(1052, 7)
         Me.btnLockSplitters.Name = "btnLockSplitters"
         Me.btnLockSplitters.Size = New System.Drawing.Size(132, 30)
         Me.btnLockSplitters.TabIndex = 3
@@ -338,12 +338,12 @@ Partial Class Form1
         Me.lblSplitInfo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblSplitInfo.Font = New System.Drawing.Font("Consolas", 8.25!)
         Me.lblSplitInfo.ForeColor = System.Drawing.Color.FromArgb(87, 71, 105)
-        Me.lblSplitInfo.Location = New System.Drawing.Point(760, 7)
+        Me.lblSplitInfo.Location = New System.Drawing.Point(16, 7)
         Me.lblSplitInfo.Name = "lblSplitInfo"
         Me.lblSplitInfo.Size = New System.Drawing.Size(424, 30)
         Me.lblSplitInfo.TabIndex = 4
         Me.lblSplitInfo.Text = "splitRoot : 240 px   |   splitWorkspace : 340 px"
-        Me.lblSplitInfo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblSplitInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'splRoot
         '

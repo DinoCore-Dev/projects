@@ -197,7 +197,7 @@ Partial Class Form2
         Me.btnCollapseLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCollapseLeft.Font = New System.Drawing.Font("Segoe UI", 8.5!)
         Me.btnCollapseLeft.ForeColor = System.Drawing.Color.FromArgb(12, 74, 69)
-        Me.btnCollapseLeft.Location = New System.Drawing.Point(14, 12)
+        Me.btnCollapseLeft.Location = New System.Drawing.Point(224, 12)
         Me.btnCollapseLeft.Name = "btnCollapseLeft"
         Me.btnCollapseLeft.Size = New System.Drawing.Size(132, 34)
         Me.btnCollapseLeft.TabIndex = 0
@@ -211,7 +211,7 @@ Partial Class Form2
         Me.btnCollapseTop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCollapseTop.Font = New System.Drawing.Font("Segoe UI", 8.5!)
         Me.btnCollapseTop.ForeColor = System.Drawing.Color.FromArgb(12, 74, 69)
-        Me.btnCollapseTop.Location = New System.Drawing.Point(154, 12)
+        Me.btnCollapseTop.Location = New System.Drawing.Point(364, 12)
         Me.btnCollapseTop.Name = "btnCollapseTop"
         Me.btnCollapseTop.Size = New System.Drawing.Size(132, 34)
         Me.btnCollapseTop.TabIndex = 1
@@ -225,7 +225,7 @@ Partial Class Form2
         Me.btnSwapOrientation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSwapOrientation.Font = New System.Drawing.Font("Segoe UI", 8.5!)
         Me.btnSwapOrientation.ForeColor = System.Drawing.Color.FromArgb(12, 74, 69)
-        Me.btnSwapOrientation.Location = New System.Drawing.Point(294, 12)
+        Me.btnSwapOrientation.Location = New System.Drawing.Point(504, 12)
         Me.btnSwapOrientation.Name = "btnSwapOrientation"
         Me.btnSwapOrientation.Size = New System.Drawing.Size(132, 34)
         Me.btnSwapOrientation.TabIndex = 2
@@ -239,7 +239,7 @@ Partial Class Form2
         Me.btnLock.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLock.Font = New System.Drawing.Font("Segoe UI", 8.5!)
         Me.btnLock.ForeColor = System.Drawing.Color.FromArgb(12, 74, 69)
-        Me.btnLock.Location = New System.Drawing.Point(434, 12)
+        Me.btnLock.Location = New System.Drawing.Point(644, 12)
         Me.btnLock.Name = "btnLock"
         Me.btnLock.Size = New System.Drawing.Size(118, 34)
         Me.btnLock.TabIndex = 3
@@ -253,7 +253,7 @@ Partial Class Form2
         Me.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReset.Font = New System.Drawing.Font("Segoe UI", 8.5!, System.Drawing.FontStyle.Bold)
         Me.btnReset.ForeColor = System.Drawing.Color.White
-        Me.btnReset.Location = New System.Drawing.Point(560, 12)
+        Me.btnReset.Location = New System.Drawing.Point(770, 12)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(118, 34)
         Me.btnReset.TabIndex = 4
@@ -267,7 +267,7 @@ Partial Class Form2
         Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExit.Font = New System.Drawing.Font("Segoe UI", 8.5!, System.Drawing.FontStyle.Bold)
         Me.btnExit.ForeColor = System.Drawing.Color.White
-        Me.btnExit.Location = New System.Drawing.Point(686, 12)
+        Me.btnExit.Location = New System.Drawing.Point(896, 12)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(90, 34)
         Me.btnExit.TabIndex = 5
@@ -279,7 +279,7 @@ Partial Class Form2
         Me.lblSplitInfo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblSplitInfo.Font = New System.Drawing.Font("Consolas", 8.25!)
         Me.lblSplitInfo.ForeColor = System.Drawing.Color.FromArgb(38, 102, 96)
-        Me.lblSplitInfo.Location = New System.Drawing.Point(786, 12)
+        Me.lblSplitInfo.Location = New System.Drawing.Point(14, 12)
         Me.lblSplitInfo.Name = "lblSplitInfo"
         Me.lblSplitInfo.Size = New System.Drawing.Size(200, 34)
         Me.lblSplitInfo.TabIndex = 6

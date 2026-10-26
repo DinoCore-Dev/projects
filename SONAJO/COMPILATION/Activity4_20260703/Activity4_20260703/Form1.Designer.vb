@@ -170,7 +170,7 @@ Partial Class Form1
         Me.pnlInput.Controls.Add(Me.lblSecond)
         Me.pnlInput.Controls.Add(Me.lblFirst)
         Me.pnlInput.Controls.Add(Me.lblInputTitle)
-        Me.pnlInput.Location = New System.Drawing.Point(28, 116)
+        Me.pnlInput.Location = New System.Drawing.Point(472, 116)
         Me.pnlInput.Name = "pnlInput"
         Me.pnlInput.Size = New System.Drawing.Size(400, 224)
         Me.pnlInput.TabIndex = 1
@@ -275,7 +275,7 @@ Partial Class Form1
         Me.pnlOutput.Controls.Add(Me.lblSumValue)
         Me.pnlOutput.Controls.Add(Me.lblSumCaption)
         Me.pnlOutput.Controls.Add(Me.lblOutputTitle)
-        Me.pnlOutput.Location = New System.Drawing.Point(452, 116)
+        Me.pnlOutput.Location = New System.Drawing.Point(28, 116)
         Me.pnlOutput.Name = "pnlOutput"
         Me.pnlOutput.Size = New System.Drawing.Size(420, 224)
         Me.pnlOutput.TabIndex = 2

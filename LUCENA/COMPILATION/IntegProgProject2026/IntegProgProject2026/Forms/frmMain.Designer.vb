@@ -54,7 +54,7 @@ Partial Class frmMain
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(40, 20)
         Me.ExitToolStripMenuItem.Text = "Exit"
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolstripUserInfo, Me.toolstripCurrentDate, Me.toolstripCurrentTime, Me.lblStatusBar})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblStatusBar, Me.toolstripCurrentTime, Me.toolstripCurrentDate, Me.toolstripUserInfo})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 546)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(1024, 22)

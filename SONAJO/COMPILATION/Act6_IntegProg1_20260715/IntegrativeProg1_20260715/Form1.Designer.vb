@@ -159,7 +159,7 @@ Partial Class Form1
         Me.pnlLeft.Controls.Add(Me.lblG2Caption)
         Me.pnlLeft.Controls.Add(Me.lblG1Caption)
         Me.pnlLeft.Controls.Add(Me.lblLeftTitle)
-        Me.pnlLeft.Location = New System.Drawing.Point(24, 112)
+        Me.pnlLeft.Location = New System.Drawing.Point(496, 112)
         Me.pnlLeft.Name = "pnlLeft"
         Me.pnlLeft.Size = New System.Drawing.Size(400, 384)
         Me.pnlLeft.TabIndex = 1
@@ -270,7 +270,7 @@ Partial Class Form1
         Me.pnlRight.Controls.Add(Me.lblAveNote)
         Me.pnlRight.Controls.Add(Me.pnlAveBadge)
         Me.pnlRight.Controls.Add(Me.lblAveCaption)
-        Me.pnlRight.Location = New System.Drawing.Point(444, 112)
+        Me.pnlRight.Location = New System.Drawing.Point(24, 112)
         Me.pnlRight.Name = "pnlRight"
         Me.pnlRight.Size = New System.Drawing.Size(452, 384)
         Me.pnlRight.TabIndex = 2

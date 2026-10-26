@@ -75,7 +75,7 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.tabClassAverage)
         Me.TabControl1.Controls.Add(Me.tabDecimalEquivalent)
         Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Location = New System.Drawing.Point(6, 6)
+        Me.TabControl1.Location = New System.Drawing.Point(6, 30)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(572, 384)
@@ -412,7 +412,7 @@ Partial Class Form1
         '
         Me.lblAuthor.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAuthor.ForeColor = System.Drawing.Color.FromArgb(91, 124, 120)
-        Me.lblAuthor.Location = New System.Drawing.Point(6, 394)
+        Me.lblAuthor.Location = New System.Drawing.Point(6, 6)
         Me.lblAuthor.Name = "lblAuthor"
         Me.lblAuthor.Size = New System.Drawing.Size(572, 20)
         Me.lblAuthor.TabIndex = 1

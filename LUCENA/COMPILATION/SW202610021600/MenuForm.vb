@@ -21,7 +21,7 @@ Public Class MenuForm
         openMenu = New ToolStripMenuItem("OpenFileDialog File Explorer")
         combinedMenu = New ToolStripMenuItem("Combined File Explorer")
         exitMenu = New ToolStripMenuItem("Exit")
-        menuStrip1.Items.AddRange(New ToolStripItem() {treeMenu, openMenu, combinedMenu, exitMenu})
+        menuStrip1.Items.AddRange(New ToolStripItem() {exitMenu, treeMenu, openMenu, combinedMenu})
         menuStrip1.Dock = DockStyle.Top
         Me.Controls.Add(menuStrip1)
         Me.MainMenuStrip = menuStrip1

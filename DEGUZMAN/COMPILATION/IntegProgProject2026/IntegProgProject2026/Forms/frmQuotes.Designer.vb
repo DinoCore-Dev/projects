@@ -51,7 +51,7 @@ Private Sub InitializeComponent()
         Me.grpDetails.Controls.Add(Me.txtSource)
         Me.grpDetails.Controls.Add(Me.lblQuoteDate)
         Me.grpDetails.Controls.Add(Me.dtpQuoteDate)
-        Me.grpDetails.Location = New System.Drawing.Point(12, 12)
+        Me.grpDetails.Location = New System.Drawing.Point(624, 12)
         Me.grpDetails.Name = "grpDetails"
         Me.grpDetails.Size = New System.Drawing.Size(370, 164)
         Me.grpDetails.TabIndex = 0
@@ -113,38 +113,38 @@ Private Sub InitializeComponent()
         Me.dtpQuoteDate.Name = "dtpQuoteDate"
         Me.dtpQuoteDate.Size = New System.Drawing.Size(230, 20)
         Me.dtpQuoteDate.TabIndex = 9
-        Me.addButton.Location = New System.Drawing.Point(12, 186)
+        Me.addButton.Location = New System.Drawing.Point(912, 186)
         Me.addButton.Name = "addButton"
         Me.addButton.Size = New System.Drawing.Size(66, 25)
         Me.addButton.TabIndex = 60
         Me.addButton.Text = "Add"
         Me.addButton.UseVisualStyleBackColor = True
-        Me.updateButton.Location = New System.Drawing.Point(84, 186)
+        Me.updateButton.Location = New System.Drawing.Point(840, 186)
         Me.updateButton.Name = "updateButton"
         Me.updateButton.Size = New System.Drawing.Size(66, 25)
         Me.updateButton.TabIndex = 61
         Me.updateButton.Text = "Update"
         Me.updateButton.UseVisualStyleBackColor = True
-        Me.deleteButton.Location = New System.Drawing.Point(156, 186)
+        Me.deleteButton.Location = New System.Drawing.Point(768, 186)
         Me.deleteButton.Name = "deleteButton"
         Me.deleteButton.Size = New System.Drawing.Size(66, 25)
         Me.deleteButton.TabIndex = 62
         Me.deleteButton.Text = "Delete"
         Me.deleteButton.UseVisualStyleBackColor = True
-        Me.clearButton.Location = New System.Drawing.Point(228, 186)
+        Me.clearButton.Location = New System.Drawing.Point(696, 186)
         Me.clearButton.Name = "clearButton"
         Me.clearButton.Size = New System.Drawing.Size(66, 25)
         Me.clearButton.TabIndex = 63
         Me.clearButton.Text = "Clear"
         Me.clearButton.UseVisualStyleBackColor = True
-        Me.exitButton.Location = New System.Drawing.Point(300, 186)
+        Me.exitButton.Location = New System.Drawing.Point(624, 186)
         Me.exitButton.Name = "exitButton"
         Me.exitButton.Size = New System.Drawing.Size(66, 25)
         Me.exitButton.TabIndex = 64
         Me.exitButton.Text = "Exit"
         Me.exitButton.UseVisualStyleBackColor = True
         Me.grpRecords.Controls.Add(Me.dataGridView1)
-        Me.grpRecords.Location = New System.Drawing.Point(394, 12)
+        Me.grpRecords.Location = New System.Drawing.Point(12, 12)
         Me.grpRecords.Name = "grpRecords"
         Me.grpRecords.Size = New System.Drawing.Size(600, 326)
         Me.grpRecords.TabIndex = 2

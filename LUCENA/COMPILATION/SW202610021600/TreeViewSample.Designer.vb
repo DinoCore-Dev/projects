@@ -16,7 +16,7 @@ Partial Class TreeViewSample
   Me.components = New System.ComponentModel.Container()
   Me.tree=New TreeView() : Me.selectedPath=New TextBox() : Me.btnRefresh=New Button()
   Me.SuspendLayout()
-  Me.tree.SetBounds(10,10,400,520) : Me.tree.Anchor=AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left : Me.selectedPath.SetBounds(430,45,440,25) : Me.selectedPath.ReadOnly=True : Me.btnRefresh.SetBounds(430,10,100,28) : Me.btnRefresh.Text="Refresh" : Me.Controls.AddRange(New Control() {Me.tree,Me.selectedPath,Me.btnRefresh})
+  Me.tree.SetBounds(10,10,400,520) : Me.tree.Anchor=AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left : Me.selectedPath.SetBounds(430,10,440,25) : Me.selectedPath.ReadOnly=True : Me.btnRefresh.SetBounds(430,42,100,28) : Me.btnRefresh.Text="Refresh" : Me.Controls.AddRange(New Control() {Me.tree,Me.selectedPath,Me.btnRefresh})
   Me.ClientSize = New System.Drawing.Size(900, 560)
   Me.Text = "Question 7 - TreeView File Explorer"
   Me.StartPosition = FormStartPosition.CenterScreen

@@ -163,7 +163,7 @@ Partial Class Form1
         Me.pnlRail.Controls.Add(Me.pnlRailRule)
         Me.pnlRail.Controls.Add(Me.lblRailTitle)
         Me.pnlRail.Controls.Add(Me.lblRailBadge)
-        Me.pnlRail.Dock = System.Windows.Forms.DockStyle.Left
+        Me.pnlRail.Dock = System.Windows.Forms.DockStyle.Right
         Me.pnlRail.Location = New System.Drawing.Point(0, 24)
         Me.pnlRail.Name = "pnlRail"
         Me.pnlRail.Size = New System.Drawing.Size(220, 624)
@@ -479,7 +479,7 @@ Partial Class Form1
         Me.pnlInspector.Controls.Add(Me.btnSwapColor)
         Me.pnlInspector.Controls.Add(Me.btnToggleGroup)
         Me.pnlInspector.Controls.Add(Me.lblInspectorTitle)
-        Me.pnlInspector.Location = New System.Drawing.Point(24, 358)
+        Me.pnlInspector.Location = New System.Drawing.Point(24, 458)
         Me.pnlInspector.Name = "pnlInspector"
         Me.pnlInspector.Size = New System.Drawing.Size(672, 156)
         Me.pnlInspector.TabIndex = 3
@@ -626,7 +626,7 @@ Partial Class Form1
         Me.pnlLog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pnlLog.Controls.Add(Me.lstLog)
         Me.pnlLog.Controls.Add(Me.lblLogTitle)
-        Me.pnlLog.Location = New System.Drawing.Point(24, 522)
+        Me.pnlLog.Location = New System.Drawing.Point(24, 358)
         Me.pnlLog.Name = "pnlLog"
         Me.pnlLog.Size = New System.Drawing.Size(672, 92)
         Me.pnlLog.TabIndex = 4

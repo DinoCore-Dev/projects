@@ -102,7 +102,7 @@ Partial Class Form1
         Me.pnlRail.Controls.Add(Me.pnlRailRule)
         Me.pnlRail.Controls.Add(Me.lblRailTitle)
         Me.pnlRail.Controls.Add(Me.lblRailBadge)
-        Me.pnlRail.Dock = System.Windows.Forms.DockStyle.Left
+        Me.pnlRail.Dock = System.Windows.Forms.DockStyle.Right
         Me.pnlRail.Location = New System.Drawing.Point(0, 0)
         Me.pnlRail.Name = "pnlRail"
         Me.pnlRail.Size = New System.Drawing.Size(260, 560)
@@ -266,7 +266,7 @@ Partial Class Form1
         Me.lblCardsHeading.AutoSize = True
         Me.lblCardsHeading.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.lblCardsHeading.ForeColor = System.Drawing.Color.FromArgb(139, 100, 110)
-        Me.lblCardsHeading.Location = New System.Drawing.Point(24, 198)
+        Me.lblCardsHeading.Location = New System.Drawing.Point(24, 294)
         Me.lblCardsHeading.Name = "lblCardsHeading"
         Me.lblCardsHeading.Size = New System.Drawing.Size(88, 15)
         Me.lblCardsHeading.TabIndex = 3
@@ -279,7 +279,7 @@ Partial Class Form1
         Me.pnlCard1.Controls.Add(Me.lblCard1Note)
         Me.pnlCard1.Controls.Add(Me.lblCard1Value)
         Me.pnlCard1.Controls.Add(Me.lblCard1Title)
-        Me.pnlCard1.Location = New System.Drawing.Point(24, 220)
+        Me.pnlCard1.Location = New System.Drawing.Point(24, 316)
         Me.pnlCard1.Name = "pnlCard1"
         Me.pnlCard1.Size = New System.Drawing.Size(160, 122)
         Me.pnlCard1.TabIndex = 4
@@ -323,7 +323,7 @@ Partial Class Form1
         Me.pnlCard2.Controls.Add(Me.lblCard2Note)
         Me.pnlCard2.Controls.Add(Me.lblCard2Value)
         Me.pnlCard2.Controls.Add(Me.lblCard2Title)
-        Me.pnlCard2.Location = New System.Drawing.Point(194, 220)
+        Me.pnlCard2.Location = New System.Drawing.Point(194, 316)
         Me.pnlCard2.Name = "pnlCard2"
         Me.pnlCard2.Size = New System.Drawing.Size(160, 122)
         Me.pnlCard2.TabIndex = 5
@@ -367,7 +367,7 @@ Partial Class Form1
         Me.pnlCard3.Controls.Add(Me.lblCard3Note)
         Me.pnlCard3.Controls.Add(Me.lblCard3Value)
         Me.pnlCard3.Controls.Add(Me.lblCard3Title)
-        Me.pnlCard3.Location = New System.Drawing.Point(364, 220)
+        Me.pnlCard3.Location = New System.Drawing.Point(364, 316)
         Me.pnlCard3.Name = "pnlCard3"
         Me.pnlCard3.Size = New System.Drawing.Size(172, 122)
         Me.pnlCard3.TabIndex = 6
@@ -409,7 +409,7 @@ Partial Class Form1
         Me.pnlInfo.BackColor = System.Drawing.Color.FromArgb(255, 224, 232)
         Me.pnlInfo.Controls.Add(Me.lblInfoText)
         Me.pnlInfo.Controls.Add(Me.lblInfoTitle)
-        Me.pnlInfo.Location = New System.Drawing.Point(24, 356)
+        Me.pnlInfo.Location = New System.Drawing.Point(24, 198)
         Me.pnlInfo.Name = "pnlInfo"
         Me.pnlInfo.Size = New System.Drawing.Size(512, 82)
         Me.pnlInfo.TabIndex = 7

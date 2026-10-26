@@ -33,7 +33,7 @@ Partial Class frmMain
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SchedulesToolStripMenuItem, Me.AboutToolStripMenuItem, Me.QuotesToolStripMenuItem, Me.BibleVerseToolStripMenuItem, Me.ExitToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem, Me.BibleVerseToolStripMenuItem, Me.QuotesToolStripMenuItem, Me.AboutToolStripMenuItem, Me.SchedulesToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1024, 24)
@@ -54,7 +54,7 @@ Partial Class frmMain
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(40, 20)
         Me.ExitToolStripMenuItem.Text = "Exit"
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolstripUserInfo, Me.toolstripCurrentDate, Me.toolstripCurrentTime, Me.lblStatusBar})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblStatusBar, Me.toolstripCurrentTime, Me.toolstripCurrentDate, Me.toolstripUserInfo})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 546)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(1024, 22)

@@ -138,7 +138,7 @@ Partial Class Form1
         Me.lblApp.AutoSize = True
         Me.lblApp.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Bold)
         Me.lblApp.ForeColor = System.Drawing.Color.White
-        Me.lblApp.Location = New System.Drawing.Point(18, 10)
+        Me.lblApp.Location = New System.Drawing.Point(749, 10)
         Me.lblApp.Name = "lblApp"
         Me.lblApp.Size = New System.Drawing.Size(214, 28)
         Me.lblApp.TabIndex = 0
@@ -149,7 +149,7 @@ Partial Class Form1
         Me.lblHeaderSub.AutoSize = True
         Me.lblHeaderSub.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         Me.lblHeaderSub.ForeColor = System.Drawing.Color.FromArgb(148, 196, 188)
-        Me.lblHeaderSub.Location = New System.Drawing.Point(21, 36)
+        Me.lblHeaderSub.Location = New System.Drawing.Point(752, 36)
         Me.lblHeaderSub.Name = "lblHeaderSub"
         Me.lblHeaderSub.Size = New System.Drawing.Size(430, 13)
         Me.lblHeaderSub.TabIndex = 1
@@ -160,12 +160,12 @@ Partial Class Form1
         Me.lblAuthor.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblAuthor.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
         Me.lblAuthor.ForeColor = System.Drawing.Color.White
-        Me.lblAuthor.Location = New System.Drawing.Point(860, 16)
+        Me.lblAuthor.Location = New System.Drawing.Point(18, 16)
         Me.lblAuthor.Name = "lblAuthor"
         Me.lblAuthor.Size = New System.Drawing.Size(322, 20)
         Me.lblAuthor.TabIndex = 2
         Me.lblAuthor.Text = "Sonajo, Christian Paolo  |  BSIT 3B"
-        Me.lblAuthor.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblAuthor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'btnBack
         '

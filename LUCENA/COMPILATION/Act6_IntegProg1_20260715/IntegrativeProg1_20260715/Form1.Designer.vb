@@ -408,7 +408,7 @@ Partial Class Form1
         Me.btnEvaluate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEvaluate.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnEvaluate.ForeColor = System.Drawing.Color.White
-        Me.btnEvaluate.Location = New System.Drawing.Point(24, 12)
+        Me.btnEvaluate.Location = New System.Drawing.Point(486, 12)
         Me.btnEvaluate.Name = "btnEvaluate"
         Me.btnEvaluate.Size = New System.Drawing.Size(170, 38)
         Me.btnEvaluate.TabIndex = 0
@@ -422,7 +422,7 @@ Partial Class Form1
         Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClear.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnClear.ForeColor = System.Drawing.Color.FromArgb(44, 30, 59)
-        Me.btnClear.Location = New System.Drawing.Point(204, 12)
+        Me.btnClear.Location = New System.Drawing.Point(666, 12)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(110, 38)
         Me.btnClear.TabIndex = 1
@@ -436,7 +436,7 @@ Partial Class Form1
         Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnExit.ForeColor = System.Drawing.Color.White
-        Me.btnExit.Location = New System.Drawing.Point(324, 12)
+        Me.btnExit.Location = New System.Drawing.Point(786, 12)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(110, 38)
         Me.btnExit.TabIndex = 2
@@ -449,12 +449,12 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblStatus.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.lblStatus.ForeColor = System.Drawing.Color.FromArgb(87, 71, 105)
-        Me.lblStatus.Location = New System.Drawing.Point(456, 20)
+        Me.lblStatus.Location = New System.Drawing.Point(24, 20)
         Me.lblStatus.Name = "lblStatus"
         Me.lblStatus.Size = New System.Drawing.Size(440, 22)
         Me.lblStatus.TabIndex = 3
         Me.lblStatus.Text = "Ready. Enter the three grades."
-        Me.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Form1
         '

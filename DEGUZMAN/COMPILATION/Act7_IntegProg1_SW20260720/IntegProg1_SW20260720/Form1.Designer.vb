@@ -75,7 +75,7 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.tabClassAverage)
         Me.TabControl1.Controls.Add(Me.tabDecimalEquivalent)
         Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Location = New System.Drawing.Point(6, 6)
+        Me.TabControl1.Location = New System.Drawing.Point(6, 30)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(572, 384)
@@ -103,7 +103,7 @@ Partial Class Form1
         'principalLabel
         '
         Me.principalLabel.AutoSize = True
-        Me.principalLabel.Location = New System.Drawing.Point(12, 17)
+        Me.principalLabel.Location = New System.Drawing.Point(12, 69)
         Me.principalLabel.Name = "principalLabel"
         Me.principalLabel.Size = New System.Drawing.Size(50, 13)
         Me.principalLabel.TabIndex = 0
@@ -111,7 +111,7 @@ Partial Class Form1
         '
         'principalTextBox
         '
-        Me.principalTextBox.Location = New System.Drawing.Point(90, 15)
+        Me.principalTextBox.Location = New System.Drawing.Point(90, 67)
         Me.principalTextBox.Name = "principalTextBox"
         Me.principalTextBox.Size = New System.Drawing.Size(150, 20)
         Me.principalTextBox.TabIndex = 1
@@ -137,7 +137,7 @@ Partial Class Form1
         'yearsLabel
         '
         Me.yearsLabel.AutoSize = True
-        Me.yearsLabel.Location = New System.Drawing.Point(12, 69)
+        Me.yearsLabel.Location = New System.Drawing.Point(12, 17)
         Me.yearsLabel.Name = "yearsLabel"
         Me.yearsLabel.Size = New System.Drawing.Size(37, 13)
         Me.yearsLabel.TabIndex = 4
@@ -145,7 +145,7 @@ Partial Class Form1
         '
         'yearsNumericUpDown
         '
-        Me.yearsNumericUpDown.Location = New System.Drawing.Point(90, 67)
+        Me.yearsNumericUpDown.Location = New System.Drawing.Point(90, 15)
         Me.yearsNumericUpDown.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.yearsNumericUpDown.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.yearsNumericUpDown.Name = "yearsNumericUpDown"
@@ -412,7 +412,7 @@ Partial Class Form1
         '
         Me.lblAuthor.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAuthor.ForeColor = System.Drawing.Color.FromArgb(139, 100, 110)
-        Me.lblAuthor.Location = New System.Drawing.Point(6, 394)
+        Me.lblAuthor.Location = New System.Drawing.Point(6, 6)
         Me.lblAuthor.Name = "lblAuthor"
         Me.lblAuthor.Size = New System.Drawing.Size(572, 20)
         Me.lblAuthor.TabIndex = 1

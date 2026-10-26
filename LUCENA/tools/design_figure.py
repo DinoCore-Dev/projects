@@ -340,6 +340,14 @@ def parse_designer(path):
             if m.group(2) not in strip.children:
                 strip.children.append(m.group(2))
 
+    # WinForms docks a MenuStrip / ToolStrip to the top and a StatusStrip to the bottom by default
+    for c in controls.values():
+        if not c.dock:
+            if c.kind in ("MenuStrip", "ToolStrip"):
+                c.dock = "Top"
+            elif c.kind == "StatusStrip":
+                c.dock = "Bottom"
+
     return form, controls
 
 

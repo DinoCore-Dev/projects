@@ -102,7 +102,7 @@ Partial Class Form1
         Me.pnlRail.Controls.Add(Me.pnlRailRule)
         Me.pnlRail.Controls.Add(Me.lblRailTitle)
         Me.pnlRail.Controls.Add(Me.lblRailBadge)
-        Me.pnlRail.Dock = System.Windows.Forms.DockStyle.Left
+        Me.pnlRail.Dock = System.Windows.Forms.DockStyle.Right
         Me.pnlRail.Location = New System.Drawing.Point(0, 0)
         Me.pnlRail.Name = "pnlRail"
         Me.pnlRail.Size = New System.Drawing.Size(260, 560)

@@ -22,7 +22,7 @@ document (DOCX + PDF), tapos bigyan mo ako ng isang zip na pang-download.
 - Instructor (Submitted to)    : [BLANK / pangalan ng instructor]
 - School Year                  : [School Year 2026 - 2027]
 - Date Submitted               : [October 26, 2026]
-- Paboritong quote (About)     : ["Talk is cheap. Show me the code." - Linus Torvalds]
+- Paboritong quote (About)     : ["A ship in harbor is safe, but that is not what ships are built for." - John A. Shedd]
                                  (kung blangko: hanapin online ayon sa 3 c2)
 - Litrato (About)              : [photo/LUCENA, LYKA JOY.jpg]
                                  (JPG ng estudyante; ilagay sa folder na `photo/` ng identity)
@@ -55,7 +55,8 @@ c) Iba pang lugar: About form (pangalan + course), `frmMain` toolstrip user info
    `app.config` (UserInfo), MDI main form title, answers/notes tab.
 c2) Paboritong quote sa About form (`lblQuote` ng `frmAbout`, Act 13): MAGKAIBA sa bawat
    identity. Kung walang ibinigay na quote sa seksyon 1, MAG-SEARCH ONLINE ng totoong quote
-   (programming / pag-aaral / tiyaga), at gumamit ng quote na may malinaw na pinagmulan.
+   (INSPIRATIONAL: tiyaga, pangarap, pag-aaral, tapang), at gumamit ng quote na may malinaw na
+   pinagmulan (i-verify sa web search; iwasan ang mga kilalang maling-attribute na quote)
    - Format: `"quote" - Awtor`, isang linya lang ang teksto (kasya sa 300 x 80 na label,
      humigit-kumulang 100 character)
    - Sa VB designer, ang panipi ay `""` (`Me.lblQuote.Text = """quote"" - Awtor"`); iwasan
@@ -76,6 +77,20 @@ c3) Litrato sa About form (`PictureBox1` ng `frmAbout`, Act 13): ang JPG ng estu
    - Huwag gamitin ang litrato ng ibang identity
 d) Compilation document: cover page, header, footer, Appendix B at LAHAT ng Sample Output.
 e) Final check: `grep -ri "<dating pangalan>"` — walang dapat mahanap sa buong repo.
+
+c4) LAYOUT NG MGA FORM (Act 4 - 13): MAGKAIBA ang layout ng bawat identity sa lahat ng iba
+   pang identity sa repo - hindi sapat ang kulay lang.
+   - Gamitin ang `tools/layout_variants.py <LAYOUT CODE 0-7>` (isang beses lang bawat identity;
+     may marker na `tools/layout_code.txt`). Bawat form ay may 3 operations (op0, op1, op2):
+     palitan ng puwesto ang kaliwa/kanang bloke, ilipat ang action bar sa itaas/ibaba, baligtarin
+     ang hanay ng buttons, rail sa kanan, header na baliktad, at ang pagkakasunod ng menu items.
+     Bit 0/1/2 ng code = op0/op1/op2. Ang walong code ay walang pareho, kaya walong magkaibang layout.
+   - Walang laman ng repo ang pwedeng may parehong code. Mga code ngayon: MANGALILI 0, SONAJO 1,
+     LUCENA 2, DEGUZMAN 3, PASTOR 4, MARCOS 5, MARCELO 6, ANICIETE 7. Ang bagong identity ay
+     gumagamit ng susunod na hindi pa nagagamit (lampas 7: dagdagan ang op ng bawat form).
+   - Pangalan ng controls ang ginagamit ng code, kaya Location / Size / Dock lang ang nagbabago;
+     huwag baguhin ang logic. I-rebuild ang `docs/figures` pagkatapos para tumugma ang Form Design
+     at Sample Output pictures sa bagong layout.
 
 ===========================================================
 4) BAGONG DESIGN + BAGONG CODE (HUWAG KOPYAHIN ANG SAMPLE)
@@ -291,6 +306,9 @@ totoong database, parehong gaya ng original, at PAREHO sa lahat ng identity:
 2b. Act 13: `grep -rn "OleDb\|ADOX" COMPILATION/IntegProgProject2026` -> walang output; nasa
    `Forms/frm*.vb` ang `projectDB.sdf` + `INSERT/UPDATE/DELETE`; may `<system.data>` sa `app.config`;
    `lblDatabase` sa Sample Output ay `projectDB.sdf`
+2d. Layout: `python3 tools/layout_variants.py` ay nagamit na (may `tools/layout_code.txt`) at
+   magkaiba ang code at ang Location/Size/Dock ng mga form sa bawat identity folder; ang quote
+   ay inspirational at hindi pareho sa iba.
 2c. About: may `Images/photo.jpg` sa Act 13 project, may `photo/<pangalan>.jpg` sa identity folder, at litrato
    ng estudyante (hindi ng iba) ang nasa `output_act13_5.png`
 3. Pictures: buksan ang `docs/figures/` at tingnan ang 3 random na PNG

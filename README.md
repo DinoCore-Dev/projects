@@ -1,9 +1,9 @@
-# Activity Compilation - four students, four separate packages
+# Activity Compilation - eight students, eight separate packages
 
 Repository for the **Integrative Programming** activity compilation (13 activities each),
 built for **Visual Studio 2010 / .NET Framework 4.0**.
 
-The repository holds **four separate, complete compilations** - one folder and one zip each:
+The repository holds **eight separate, complete compilations** - one folder and one zip each:
 
 | Student | Folder (source) | Download zip |
 |---------|-----------------|--------------|
@@ -11,8 +11,12 @@ The repository holds **four separate, complete compilations** - one folder and o
 | **Mangalili, Fhetz** - BSIT 3B | `MANGALILI/` | `Mangalili_Fhetz_Compilation.zip` |
 | **Lucena, Lyka Joy** - BSIT 3B | `LUCENA/` | `Lucena_LykaJoy_Compilation.zip` |
 | **Deguzman, Liza Gaile** - BSIT 3B | `DEGUZMAN/` | `Deguzman_LizaGaile_Compilation.zip` |
+| **Pastor, James Lorenz** - BSIT 3B | `PASTOR/` | `Pastor_JamesLorenz_Compilation.zip` |
+| **Marcos, Angela** - BSIT 3B | `MARCOS/` | `Marcos_Angela_Compilation.zip` |
+| **Aniciete, Shane Antoinette** - BSIT 3B | `ANICIETE/` | `Aniciete_ShaneAntoinette_Compilation.zip` |
+| **Marcelo, John Carlo** - BSIT 3B | `MARCELO/` | `Marcelo_JohnCarlo_Compilation.zip` |
 
-All four zips have the same clean layout: the PDF, the DOCX, the master prompt, the form
+All eight zips have the same clean layout: the PDF, the DOCX, the master prompt, the form
 design figures and one numbered folder per activity (`01_ ... 13_ ...`), with a
 `START_HERE.txt` guide at the top. Nothing else, and no nested second zip.
 
@@ -56,23 +60,40 @@ and no page header or footer. Only a plain cover page at the front.
 
 > **Note on branches:** this Arena session is bound to one branch
 > (`arena/bf05a101-projects`) and cannot create or push a second branch, so the
-> compilations are separated **inside this branch** by folder (`SONAJO/`, `MANGALILI/`, `LUCENA/`, `DEGUZMAN/`)
+> compilations are separated **inside this branch** by folder (`SONAJO/`, `MANGALILI/`, `LUCENA/`, `DEGUZMAN/`, `PASTOR/`, `MARCOS/`, `ANICIETE/`, `MARCELO/`)
 > and by zip name. Every file of each student lives only in their own folder - nothing is
 > shared or overwritten.
 
 ---
 
-## The versions are visually different
+## The versions are different (colour, layout, quote, photo)
 
-| | Sonajo, Christian Paolo | Mangalili, Fhetz | Lucena, Lyka Joy | Deguzman, Liza Gaile |
+| Student | Folder | Colour theme | Layout code | About quote (verified) |
 |---|---|---|---|---|
-| Colour theme | dark teal / emerald (`#0C4A45`, `#059669`) | navy / blue (`#1E293B`, `#2563EB`) | deep violet / purple | wine / rose |
-| File explorer app name | **Sonajo Explorer** | **Mangalili Explorer** | **Lucena Explorer** | **Deguzman Explorer** |
-| About quote | Dennis Ritchie | Chris Pine | Linus Torvalds | Harold Abelson |
-| Console headers, banners, author labels, About form, MDI status strip | own name / BSIT 3B | own name / BSIT 3B | own name / BSIT 3B | own name / BSIT 3B |
+| Mangalili, Fhetz | `MANGALILI/` | navy / blue | 0 (original arrangement) | "The only way to do great work is to love what you do." - Steve Jobs (Stanford commencement, 2005) |
+| Sonajo, Christian Paolo | `SONAJO/` | dark teal / emerald | 1 | "The best way to predict the future is to invent it." - Alan Kay (1971) |
+| Lucena, Lyka Joy | `LUCENA/` | deep violet | 2 | "A ship in harbor is safe, but that is not what ships are built for." - John A. Shedd (*Salt from My Attic*, 1928) |
+| Deguzman, Liza Gaile | `DEGUZMAN/` | wine / rose | 3 | "Imagination is more important than knowledge." - Albert Einstein (Saturday Evening Post, 1929) |
+| Pastor, James Lorenz | `PASTOR/` | orange / brown | 4 | "Genius is one percent inspiration, ninety-nine percent perspiration." - Thomas Edison |
+| Marcos, Angela | `MARCOS/` | green | 5 | "You must do the thing you think you cannot do." - Eleanor Roosevelt (*You Learn by Living*, 1960) |
+| Marcelo, John Carlo | `MARCELO/` | olive / lime | 6 | "The only limit to our realization of tomorrow will be our doubts of today." - Franklin D. Roosevelt (1945) |
+| Aniciete, Shane Antoinette | `ANICIETE/` | magenta / plum | 7 | "I can accept failure, everyone fails at something. But I can't accept not trying." - Michael Jordan (1994) |
 
-Same lesson content and same feature set, different presentation and different colour
-identity, so the submissions do not look like copies of each other.
+Each identity also has its own app name (**<Surname> Explorer**), its own name / BSIT 3B on every
+console header, banner, author label, About form and MDI status strip, and its own photo.
+
+### Layout codes
+
+Every form activity (Acts 4 - 13, all Act 13 forms included) is arranged differently in each
+identity. `tools/layout_variants.py <code 0-7>` gives every form three independent layout
+operations (bit 0, 1, 2 of the code): left and right blocks swapped, the action bar moved to the
+other side of the form, button rows reversed, the rail moved to the right, header title and
+author swapped, grid and details swapped on the CRUD forms, photo and text swapped on the About
+form, menu items re-ordered, and so on. Only `Location`, `Size`, `Dock`, `TextAlign` and the
+order of menu items change; the control names, and therefore the code-behind, stay the same.
+Because the eight codes are all different, no two identities share a layout, and the Form
+Design and Sample Output pictures in each document show that identity's own arrangement.
+The script runs once per folder (marker `tools/layout_code.txt`).
 
 ## Activities (same 13 for every student)
 
@@ -112,14 +133,13 @@ back to its own XML file so the program still runs (`lblDatabase` shows which on
 * Submitted to: blank line, ready to be filled in
 * School year: 2026 - 2027
 
-**Mangalili, Fhetz - BSIT 3B** (`MANGALILI/`), **Lucena, Lyka Joy - BSIT 3B** (`LUCENA/`) and
-**Deguzman, Liza Gaile - BSIT 3B** (`DEGUZMAN/`)
-* Same details with the author / course identity of each student.
+The other seven identities (Mangalili, Lucena, Deguzman, Pastor, Marcos, Aniciete, Marcelo) carry
+the same details with their own author / course identity. The addresses of Pastor, Marcos,
+Aniciete and Marcelo are still the placeholder `Barucboc, Quezon, Isabela` until they are supplied.
 
-Each identity has its own colour theme (Sonajo teal, Mangalili navy, Lucena violet, Deguzman
-wine/rose), its own favourite quote on the About form (Dennis Ritchie, Chris Pine, Linus Torvalds,
-Harold Abelson) and its own photo: the original JPG is in `<FOLDER>/photo/`, a resized copy is
-`Images/photo.jpg` in the Act 13 project (copied to `bin\Debug`, shown in `frmAbout`, and drawn
+Each identity has its own colour theme, layout code and favourite quote (see the table above) and
+its own photo: the original JPG is in `<FOLDER>/photo/`, a resized copy is
+`Images/photo.jpg` in the Act 13 project (copied to `bin\\Debug`, shown in `frmAbout`, and drawn
 in the Sample Output picture of the About form).
 
 In every version the name appears in the console header and closing line (Act 1-3), the
@@ -148,7 +168,7 @@ python3 SONAJO/tools/build_documents.py
 python3 SONAJO/tools/build_package.py
 ```
 
-The same two commands work inside `MANGALILI/tools/`, `LUCENA/tools/` and `DEGUZMAN/tools/`.
+The same two commands work inside the `tools/` folder of every identity.
 Requirements: `python-docx`, `reportlab`, `pillow`.
 
 The sample values printed inside the Sample Output pictures live in

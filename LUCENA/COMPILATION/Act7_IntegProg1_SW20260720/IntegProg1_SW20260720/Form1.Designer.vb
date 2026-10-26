@@ -103,7 +103,7 @@ Partial Class Form1
         'principalLabel
         '
         Me.principalLabel.AutoSize = True
-        Me.principalLabel.Location = New System.Drawing.Point(12, 17)
+        Me.principalLabel.Location = New System.Drawing.Point(12, 69)
         Me.principalLabel.Name = "principalLabel"
         Me.principalLabel.Size = New System.Drawing.Size(50, 13)
         Me.principalLabel.TabIndex = 0
@@ -111,7 +111,7 @@ Partial Class Form1
         '
         'principalTextBox
         '
-        Me.principalTextBox.Location = New System.Drawing.Point(90, 15)
+        Me.principalTextBox.Location = New System.Drawing.Point(90, 67)
         Me.principalTextBox.Name = "principalTextBox"
         Me.principalTextBox.Size = New System.Drawing.Size(150, 20)
         Me.principalTextBox.TabIndex = 1
@@ -137,7 +137,7 @@ Partial Class Form1
         'yearsLabel
         '
         Me.yearsLabel.AutoSize = True
-        Me.yearsLabel.Location = New System.Drawing.Point(12, 69)
+        Me.yearsLabel.Location = New System.Drawing.Point(12, 17)
         Me.yearsLabel.Name = "yearsLabel"
         Me.yearsLabel.Size = New System.Drawing.Size(37, 13)
         Me.yearsLabel.TabIndex = 4
@@ -145,7 +145,7 @@ Partial Class Form1
         '
         'yearsNumericUpDown
         '
-        Me.yearsNumericUpDown.Location = New System.Drawing.Point(90, 67)
+        Me.yearsNumericUpDown.Location = New System.Drawing.Point(90, 15)
         Me.yearsNumericUpDown.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.yearsNumericUpDown.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.yearsNumericUpDown.Name = "yearsNumericUpDown"

@@ -170,7 +170,7 @@ Partial Class Form1
         Me.pnlInput.Controls.Add(Me.lblSecond)
         Me.pnlInput.Controls.Add(Me.lblFirst)
         Me.pnlInput.Controls.Add(Me.lblInputTitle)
-        Me.pnlInput.Location = New System.Drawing.Point(28, 116)
+        Me.pnlInput.Location = New System.Drawing.Point(472, 116)
         Me.pnlInput.Name = "pnlInput"
         Me.pnlInput.Size = New System.Drawing.Size(400, 224)
         Me.pnlInput.TabIndex = 1
@@ -275,7 +275,7 @@ Partial Class Form1
         Me.pnlOutput.Controls.Add(Me.lblSumValue)
         Me.pnlOutput.Controls.Add(Me.lblSumCaption)
         Me.pnlOutput.Controls.Add(Me.lblOutputTitle)
-        Me.pnlOutput.Location = New System.Drawing.Point(452, 116)
+        Me.pnlOutput.Location = New System.Drawing.Point(28, 116)
         Me.pnlOutput.Name = "pnlOutput"
         Me.pnlOutput.Size = New System.Drawing.Size(420, 224)
         Me.pnlOutput.TabIndex = 2
@@ -430,7 +430,7 @@ Partial Class Form1
         Me.btnSum.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSum.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnSum.ForeColor = System.Drawing.Color.White
-        Me.btnSum.Location = New System.Drawing.Point(16, 24)
+        Me.btnSum.Location = New System.Drawing.Point(720, 24)
         Me.btnSum.Name = "btnSum"
         Me.btnSum.Size = New System.Drawing.Size(108, 38)
         Me.btnSum.TabIndex = 0
@@ -444,7 +444,7 @@ Partial Class Form1
         Me.btnDifference.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDifference.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnDifference.ForeColor = System.Drawing.Color.White
-        Me.btnDifference.Location = New System.Drawing.Point(132, 24)
+        Me.btnDifference.Location = New System.Drawing.Point(604, 24)
         Me.btnDifference.Name = "btnDifference"
         Me.btnDifference.Size = New System.Drawing.Size(108, 38)
         Me.btnDifference.TabIndex = 1
@@ -458,7 +458,7 @@ Partial Class Form1
         Me.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnProduct.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnProduct.ForeColor = System.Drawing.Color.White
-        Me.btnProduct.Location = New System.Drawing.Point(248, 24)
+        Me.btnProduct.Location = New System.Drawing.Point(488, 24)
         Me.btnProduct.Name = "btnProduct"
         Me.btnProduct.Size = New System.Drawing.Size(108, 38)
         Me.btnProduct.TabIndex = 2
@@ -472,7 +472,7 @@ Partial Class Form1
         Me.btnQuotient.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnQuotient.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnQuotient.ForeColor = System.Drawing.Color.White
-        Me.btnQuotient.Location = New System.Drawing.Point(364, 24)
+        Me.btnQuotient.Location = New System.Drawing.Point(372, 24)
         Me.btnQuotient.Name = "btnQuotient"
         Me.btnQuotient.Size = New System.Drawing.Size(108, 38)
         Me.btnQuotient.TabIndex = 3
@@ -486,7 +486,7 @@ Partial Class Form1
         Me.btnAverage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAverage.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnAverage.ForeColor = System.Drawing.Color.White
-        Me.btnAverage.Location = New System.Drawing.Point(480, 24)
+        Me.btnAverage.Location = New System.Drawing.Point(256, 24)
         Me.btnAverage.Name = "btnAverage"
         Me.btnAverage.Size = New System.Drawing.Size(108, 38)
         Me.btnAverage.TabIndex = 4
@@ -500,7 +500,7 @@ Partial Class Form1
         Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClear.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnClear.ForeColor = System.Drawing.Color.FromArgb(59, 30, 37)
-        Me.btnClear.Location = New System.Drawing.Point(612, 24)
+        Me.btnClear.Location = New System.Drawing.Point(132, 24)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(100, 38)
         Me.btnClear.TabIndex = 5
@@ -514,7 +514,7 @@ Partial Class Form1
         Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnExit.ForeColor = System.Drawing.Color.White
-        Me.btnExit.Location = New System.Drawing.Point(728, 24)
+        Me.btnExit.Location = New System.Drawing.Point(16, 24)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(100, 38)
         Me.btnExit.TabIndex = 6

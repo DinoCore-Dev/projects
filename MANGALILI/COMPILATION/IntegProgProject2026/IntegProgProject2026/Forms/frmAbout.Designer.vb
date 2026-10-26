@@ -63,7 +63,7 @@ Partial Class frmAbout
         Me.lblQuote.Size = New System.Drawing.Size(300, 80)
         Me.lblQuote.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblQuote.TabIndex = 5
-        Me.lblQuote.Text = """Programming isn't about what you know; it's about what you can figure out."" - Chris Pine"
+        Me.lblQuote.Text = """The only way to do great work is to love what you do."" - Steve Jobs"
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(560, 248)
