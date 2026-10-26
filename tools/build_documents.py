@@ -292,7 +292,7 @@ def build_docx(figures, out_path):
     doc.add_page_break()
     paragraph("How to open and run the projects", 16, True, colour=(0x0F, 0x17, 0x2A), space_after=8)
     for text in [
-        "Every project inside the COMPILATION folder was made with Visual Studio 2010. "
+        "Every project in the submitted archive was made with Visual Studio 2010. "
         "The solution files use Format Version 11.00 and # Visual Studio 2010, the project files "
         "use MSBuild ToolsVersion 4.0, and the target framework is .NET Framework 4.0 "
         "(Client Profile).",
@@ -362,7 +362,7 @@ def build_docx(figures, out_path):
     # ---------------------------- appendix A --------------------------------
     doc.add_page_break()
     paragraph("Appendix A - Project file list", 16, True, colour=(0x0F, 0x17, 0x2A), space_after=8)
-    paragraph("Every folder below is inside the COMPILATION folder of the submitted archive. "
+    paragraph("Every folder below is part of the submitted archive (one folder per activity). "
               "The bin, obj and .suo files of the original projects are not included.",
               9.5, italic=True, colour=(0x47, 0x55, 0x69), space_after=8)
     for project, files in project_files():
@@ -553,7 +553,7 @@ def build_pdf(figures, out_path):
     story.append(Paragraph("How to open and run the projects", h_act))
     story.append(Spacer(1, 4))
     for text in [
-        "Every project inside the COMPILATION folder was made with Visual Studio 2010. The "
+        "Every project in the submitted archive was made with Visual Studio 2010. The "
         "solution files use Format Version 11.00 and # Visual Studio 2010, the project files use "
         "MSBuild ToolsVersion 4.0, and the target framework is .NET Framework 4.0 (Client Profile).",
         "To run an activity: open its .sln file in Visual Studio 2010 (or a newer Visual Studio "
@@ -638,8 +638,8 @@ def build_pdf(figures, out_path):
 
     # ---------------------------- appendix A --------------------------------
     story.append(Paragraph("Appendix A - Project file list", h_act))
-    story.append(Paragraph("Every folder below is inside the COMPILATION folder of the submitted "
-                           "archive. The bin, obj and .suo files of the original projects are not "
+    story.append(Paragraph("Every folder below is part of the submitted archive (one folder per "
+                           "activity). The bin, obj and .suo files of the original projects are not "
                            "included.", small))
     story.append(Spacer(1, 8))
     for project, files in project_files():
