@@ -29,6 +29,7 @@ FONT_TABLE = {
     "Times New Roman": ("Tinos_400Regular.ttf", "Tinos_700Bold.ttf", 1.0),
     "Consolas": ("Inconsolata_400Regular.ttf", "Inconsolata_700Bold.ttf", 1.1),
     "Tahoma": ("DejaVuSans.ttf", "DejaVuSans-Bold.ttf", 0.92),
+    "Trebuchet MS": ("Lato_400Regular.ttf", "Lato_700Bold.ttf", 1.03),
     "Microsoft Sans Serif": ("Arimo_400Regular.ttf", "Arimo_700Bold.ttf", 0.97),
     "Lucida Console": ("DejaVuSansMono.ttf", "DejaVuSansMono-Bold.ttf", 0.9),
 }
