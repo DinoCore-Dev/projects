@@ -201,6 +201,32 @@ Source Code lang, walang picture.
   designer path. Idagdag lang doon kapag may bagong form.
 
 ===========================================================
+6D) DATABASE NG ACT 13 (kritikal) - projectDB.sdf
+===========================================================
+May basic CRUD ang Act 13 (`frmSchedules`, `frmQuotes`, `frmBibleVerses`), kaya DAPAT may
+totoong database, parehong gaya ng original, at PAREHO sa lahat ng identity:
+- Ang database ay SQL Server Compact 3.5 at ang file ay `projectDB.sdf` sa `bin\Debug`
+  (`Application.StartupPath`). ISANG file, tatlong table: `Schedules`, `Quotes`, `BibleVerses`.
+- Awtomatiko ito: pagbukas ng form, kung walang `projectDB.sdf` ay ginagawa ito ng program
+  (`SqlCeEngine.CreateDatabase`), ginagawa ang table (`CREATE TABLE ... IDENTITY(1,1)`) at nilalagyan
+  ng sample records kung walang laman. Walang `.sdf` sa zip dahil hindi ito mabubuo nang
+  walang SQL CE - ginagawa ito sa unang takbo.
+- Totoong SQL ang CRUD: `INSERT` (+ `SELECT @@IDENTITY` para sa bagong ID), `UPDATE ... WHERE`,
+  `DELETE ... WHERE`, `SELECT ... ORDER BY`. Gumamit ng parameters (`@p1`, `@id`), hindi
+  string concatenation.
+- Walang compile-time reference sa `System.Data.SqlServerCe`. Gamitin ang
+  `DbProviderFactories.GetFactory("System.Data.SqlServerCe.3.5")` at reflection para sa
+  `SqlCeEngine`, para mag-compile pa rin sa VS2010 kahit walang SQL CE. Nasa `app.config` ang
+  `<system.data><DbProviderFactories>` entry at
+  `<startup useLegacyV2RuntimeActivationPolicy="true">`.
+- Fallback: kung walang SQL CE ang computer, XML file kada form (`projectDB_Schedules.xml`,
+  `projectDB_Quotes.xml`, `projectDB_BibleVerses.xml`) ang gagamitin para hindi mag-crash.
+- Ipinapakita ng `lblDatabase` ang totoong path (`Storage: ...\bin\Debug\projectDB.sdf | N record(s)`) -
+  ganito rin ang nasa Sample Output sa `tools/samples.py`.
+- Huwag ibalik ang OleDb / ADOX at huwag gawing mirror lang ang `.sdf`.
+- Kapag nagpalit ng identity, huwag galawin ang database code. Pangalan lang ang pinapalitan.
+
+===========================================================
 7) TOOLS SA REPO (gamitin, huwag magsimula sa zero kung meron na)
 ===========================================================
 - `tools/design_figure.py`     : gumagawa ng Form Design figure mula sa totoong coordinates
@@ -250,6 +276,9 @@ Source Code lang, walang picture.
    - walang "Designer.vb" / "Friend WithEvents" sa teksto ng PDF
    - walang header/footer/page number, walang Table of Contents
    - lahat ng Sample Output ng form activity ay PICTURE, hindi text
+2b. Act 13: `grep -rn "OleDb\|ADOX" COMPILATION/IntegProgProject2026` -> walang output; nasa
+   `Forms/frm*.vb` ang `projectDB.sdf` + `INSERT/UPDATE/DELETE`; may `<system.data>` sa `app.config`;
+   `lblDatabase` sa Sample Output ay `projectDB.sdf`
 3. Pictures: buksan ang `docs/figures/` at tingnan ang 3 random na PNG
    (isang design, isang running, isang may ListView) - walang grey bar
 4. Zip: flat ang loob (START_HERE.txt, PDF, DOCX, Master_Prompt.md,

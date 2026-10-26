@@ -1,5 +1,3 @@
-Imports System.Data.OleDb
-
 Public Class frmSchedules
 
     Private selectedId As Integer = 0
@@ -15,6 +13,11 @@ Public Class frmSchedules
         End Try
     End Sub
 
+    Private useSdf As Boolean = False
+
+    Private Const SqlCeProvider As String = "System.Data.SqlServerCe.3.5"
+    Private Const SqlCeEngineType As String = "System.Data.SqlServerCe.SqlCeEngine, System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+
     Private Function XmlPath() As String
         Return IO.Path.Combine(Application.StartupPath, "projectDB_Schedules.xml")
     End Function
@@ -23,18 +26,24 @@ Public Class frmSchedules
         Return IO.Path.Combine(Application.StartupPath, "projectDB.sdf")
     End Function
 
-    Private Function HasSqlCe() As Boolean
-        Try
-            Using key As Microsoft.Win32.RegistryKey = Microsoft.Win32.Registry.LocalMachine.OpenSubKey("SOFTWARE\Classes\Microsoft.SQLSERVER.CE.OLEDB.3.5")
-                If key IsNot Nothing Then Return True
-            End Using
-            Using key As Microsoft.Win32.RegistryKey = Microsoft.Win32.Registry.LocalMachine.OpenSubKey("SOFTWARE\Wow6432Node\Classes\Microsoft.SQLSERVER.CE.OLEDB.3.5")
-                If key IsNot Nothing Then Return True
-            End Using
-        Catch
-        End Try
-        Return False
+    Private Function StoragePath() As String
+        If useSdf Then Return SdfPath()
+        Return XmlPath()
     End Function
+
+    Private Function NewConnection() As System.Data.Common.DbConnection
+        Dim factory As System.Data.Common.DbProviderFactory = System.Data.Common.DbProviderFactories.GetFactory(SqlCeProvider)
+        Dim conn As System.Data.Common.DbConnection = factory.CreateConnection()
+        conn.ConnectionString = "Data Source=" & SdfPath() & ";Persist Security Info=False;"
+        Return conn
+    End Function
+
+    Private Sub AddParam(ByVal cmd As System.Data.Common.DbCommand, ByVal name As String, ByVal value As Object)
+        Dim p As System.Data.Common.DbParameter = cmd.CreateParameter()
+        p.ParameterName = name
+        p.Value = value
+        cmd.Parameters.Add(p)
+    End Sub
 
     Private Sub frmSchedules_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         LogStep("Load")
@@ -58,6 +67,119 @@ Public Class frmSchedules
         store.Columns.Add("Day", GetType(String))
         store.Columns.Add("Time", GetType(String))
         store.Columns.Add("Room", GetType(String))
+        useSdf = False
+        Try
+            OpenSdf()
+            useSdf = True
+        Catch ex As Exception
+            LogStep("projectDB.sdf is not available (" & ex.Message & "), using the XML file instead")
+        End Try
+        If useSdf Then
+            LoadFromSdf()
+        Else
+            LoadFromXml()
+        End If
+        lblDatabase.Text = "Storage: " & StoragePath() & "   |   " & store.Rows.Count.ToString() & " record(s)"
+    End Sub
+
+    ' ---------- SQL Server Compact database (bin\Debug\projectDB.sdf) ----------
+
+    Private Sub OpenSdf()
+        If Not IO.File.Exists(SdfPath()) Then
+            Dim engineType As Type = Type.GetType(SqlCeEngineType)
+            If engineType Is Nothing Then Throw New InvalidOperationException("SQL Server Compact 3.5 is not installed.")
+            Dim engine As Object = Activator.CreateInstance(engineType, New Object() {"Data Source=" & SdfPath() & ";"})
+            engine.CreateDatabase()
+            engine.Dispose()
+            LogStep("created " & SdfPath())
+        End If
+        Using conn As System.Data.Common.DbConnection = NewConnection()
+            conn.Open()
+            Dim hasTable As Boolean = False
+            Using cmd As System.Data.Common.DbCommand = conn.CreateCommand()
+                cmd.CommandText = "SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Schedules'"
+                hasTable = (Convert.ToInt32(cmd.ExecuteScalar()) > 0)
+            End Using
+            If Not hasTable Then
+                Using cmd As System.Data.Common.DbCommand = conn.CreateCommand()
+                    cmd.CommandText = "CREATE TABLE [Schedules] ([ScheduleID] INT IDENTITY(1,1) PRIMARY KEY, [CourseID] NVARCHAR(255), [TeacherID] NVARCHAR(255), [Day] NVARCHAR(255), [Time] NVARCHAR(255), [Room] NVARCHAR(255))"
+                    cmd.ExecuteNonQuery()
+                End Using
+                LogStep("created table Schedules")
+            End If
+            Dim total As Integer = 0
+            Using cmd As System.Data.Common.DbCommand = conn.CreateCommand()
+                cmd.CommandText = "SELECT COUNT(*) FROM [Schedules]"
+                total = Convert.ToInt32(cmd.ExecuteScalar())
+            End Using
+            If total = 0 Then
+                SeedSampleData()
+                For Each row As DataRow In store.Rows
+                    InsertRow(conn, row)
+                Next
+                store.Clear()
+                nextId = 1
+                LogStep("seeded sample data into projectDB.sdf")
+            End If
+        End Using
+    End Sub
+
+    Private Sub LoadFromSdf()
+        store.Clear()
+        Using conn As System.Data.Common.DbConnection = NewConnection()
+            conn.Open()
+            Using cmd As System.Data.Common.DbCommand = conn.CreateCommand()
+                cmd.CommandText = "SELECT [ScheduleID], [CourseID], [TeacherID], [Day], [Time], [Room] FROM [Schedules] ORDER BY [ScheduleID]"
+                Using reader As System.Data.Common.DbDataReader = cmd.ExecuteReader()
+                    While reader.Read()
+                        Dim row As DataRow = store.NewRow()
+                        For i As Integer = 0 To store.Columns.Count - 1
+                            row.Item(i) = reader.GetValue(i)
+                        Next
+                        store.Rows.Add(row)
+                    End While
+                End Using
+            End Using
+        End Using
+        store.AcceptChanges()
+        LogStep("loaded rows from projectDB.sdf: " & store.Rows.Count.ToString())
+    End Sub
+
+    Private Function InsertRow(ByVal conn As System.Data.Common.DbConnection, ByVal row As DataRow) As Integer
+        Dim newId As Integer = 0
+        Using cmd As System.Data.Common.DbCommand = conn.CreateCommand()
+            cmd.CommandText = "INSERT INTO [Schedules] ([CourseID], [TeacherID], [Day], [Time], [Room]) VALUES (@p1, @p2, @p3, @p4, @p5)"
+            AddParam(cmd, "@p1", Convert.ToString(row.Item("CourseID")))
+            AddParam(cmd, "@p2", Convert.ToString(row.Item("TeacherID")))
+            AddParam(cmd, "@p3", Convert.ToString(row.Item("Day")))
+            AddParam(cmd, "@p4", Convert.ToString(row.Item("Time")))
+            AddParam(cmd, "@p5", Convert.ToString(row.Item("Room")))
+            cmd.ExecuteNonQuery()
+        End Using
+        Using cmd As System.Data.Common.DbCommand = conn.CreateCommand()
+            cmd.CommandText = "SELECT @@IDENTITY"
+            newId = Convert.ToInt32(cmd.ExecuteScalar())
+        End Using
+        Return newId
+    End Function
+
+    Private Sub UpdateRow(ByVal conn As System.Data.Common.DbConnection, ByVal row As DataRow)
+        Using cmd As System.Data.Common.DbCommand = conn.CreateCommand()
+            cmd.CommandText = "UPDATE [Schedules] SET [CourseID] = @p1, [TeacherID] = @p2, [Day] = @p3, [Time] = @p4, [Room] = @p5 WHERE [ScheduleID] = @id"
+            AddParam(cmd, "@p1", Convert.ToString(row.Item("CourseID")))
+            AddParam(cmd, "@p2", Convert.ToString(row.Item("TeacherID")))
+            AddParam(cmd, "@p3", Convert.ToString(row.Item("Day")))
+            AddParam(cmd, "@p4", Convert.ToString(row.Item("Time")))
+            AddParam(cmd, "@p5", Convert.ToString(row.Item("Room")))
+            AddParam(cmd, "@id", Convert.ToInt32(row.Item("ScheduleID")))
+            cmd.ExecuteNonQuery()
+        End Using
+    End Sub
+
+    ' ---------- XML file (only used when SQL Server Compact is not installed) ----------
+
+    Private Sub LoadFromXml()
+        store.Clear()
         If IO.File.Exists(XmlPath()) Then
             Try
                 store.ReadXml(XmlPath())
@@ -69,7 +191,7 @@ Public Class frmSchedules
         End If
         If store.Rows.Count = 0 Then
             SeedSampleData()
-            SaveStore()
+            SaveXml()
             LogStep("seeded sample data")
         End If
         nextId = 1
@@ -77,49 +199,66 @@ Public Class frmSchedules
             Dim id As Integer = Convert.ToInt32(row.Item("ScheduleID"))
             If id >= nextId Then nextId = id + 1
         Next
-        lblDatabase.Text = "Storage: " & XmlPath() & "   |   " & store.Rows.Count.ToString() & " record(s)"
     End Sub
 
-    Private Sub SaveStore()
+    Private Sub SaveXml()
         Try
             store.AcceptChanges()
             store.WriteXml(XmlPath())
         Catch ex As Exception
             LogStep("WriteXml failed: " & ex.Message)
         End Try
-        SyncToSdf()
     End Sub
 
-    Private Sub SyncToSdf()
-        If Not HasSqlCe() Then Return
-        Try
-            If Not IO.File.Exists(SdfPath()) Then
-                Dim catalog As Object = CreateObject("ADOX.Catalog")
-                catalog.Create("Provider=Microsoft.SQLSERVER.CE.OLEDB.3.5;Data Source=" & SdfPath())
-                catalog = Nothing
-            End If
-            Using conn As New OleDbConnection("Provider=Microsoft.SQLSERVER.CE.OLEDB.3.5;Data Source=" & SdfPath() & ";Persist Security Info=False;")
+    ' ---------- Create / Update / Delete ----------
+
+    Private Function SaveNewRecord(ByVal row As DataRow) As Integer
+        Dim newId As Integer = 0
+        If useSdf Then
+            Using conn As System.Data.Common.DbConnection = NewConnection()
                 conn.Open()
-                Using cmd As New OleDbCommand("SELECT COUNT(*) FROM [Schedules]", conn)
-                    cmd.ExecuteScalar()
-                End Using
-                Using cmd As New OleDbCommand("DELETE FROM [Schedules]", conn)
+                newId = InsertRow(conn, row)
+            End Using
+        Else
+            newId = nextId
+            nextId += 1
+        End If
+        row.Item("ScheduleID") = newId
+        store.Rows.Add(row)
+        store.AcceptChanges()
+        If Not useSdf Then SaveXml()
+        Return newId
+    End Function
+
+    Private Sub SaveChangedRecord(ByVal row As DataRow)
+        If useSdf Then
+            Using conn As System.Data.Common.DbConnection = NewConnection()
+                conn.Open()
+                UpdateRow(conn, row)
+            End Using
+        End If
+        store.AcceptChanges()
+        If Not useSdf Then SaveXml()
+    End Sub
+
+    Private Sub DeleteRecord(ByVal id As Integer)
+        If useSdf Then
+            Using conn As System.Data.Common.DbConnection = NewConnection()
+                conn.Open()
+                Using cmd As System.Data.Common.DbCommand = conn.CreateCommand()
+                    cmd.CommandText = "DELETE FROM [Schedules] WHERE [ScheduleID] = @id"
+                    AddParam(cmd, "@id", id)
                     cmd.ExecuteNonQuery()
                 End Using
-                For Each row As DataRow In store.Rows
-                    Using cmd As New OleDbCommand("INSERT INTO [Schedules] ([CourseID], [TeacherID], [Day], [Time], [Room]) VALUES (?, ?, ?, ?, ?)", conn)
-                        cmd.Parameters.AddWithValue("?", Convert.ToString(row.Item("CourseID")))
-                        cmd.Parameters.AddWithValue("?", Convert.ToString(row.Item("TeacherID")))
-                        cmd.Parameters.AddWithValue("?", Convert.ToString(row.Item("Day")))
-                        cmd.Parameters.AddWithValue("?", Convert.ToString(row.Item("Time")))
-                        cmd.Parameters.AddWithValue("?", Convert.ToString(row.Item("Room")))
-                        cmd.ExecuteNonQuery()
-                    End Using
-                Next
             End Using
-        Catch ex As Exception
-            LogStep("sdf mirror skipped: " & ex.Message)
-        End Try
+        End If
+        For i As Integer = store.Rows.Count - 1 To 0 Step -1
+            If Convert.ToInt32(store.Rows(i).Item("ScheduleID")) = id Then
+                store.Rows.RemoveAt(i)
+            End If
+        Next
+        store.AcceptChanges()
+        If Not useSdf Then SaveXml()
     End Sub
 
     Private Sub SeedSampleData()
@@ -155,7 +294,7 @@ Public Class frmSchedules
             view = store.Copy()
             dataGridView1.DataSource = view
             FormatGrid()
-            lblDatabase.Text = "Storage: " & XmlPath() & "   |   " & store.Rows.Count.ToString() & " record(s)"
+            lblDatabase.Text = "Storage: " & StoragePath() & "   |   " & store.Rows.Count.ToString() & " record(s)"
         Catch ex As Exception
             LogStep("RefreshGrid failed: " & ex.Message)
         End Try
@@ -183,10 +322,8 @@ Public Class frmSchedules
             row.Item("Day") = cboDay.Text.Trim()
             row.Item("Time") = dtpTime.Value.ToString("HH:mm")
             row.Item("Room") = txtRoom.Text.Trim()
-            store.Rows.Add(row)
-            nextId += 1
-            SaveStore()
-            MessageBox.Show("The record was saved." & vbCrLf & vbCrLf & "New ID: " & (nextId - 1).ToString(), _
+            Dim newId As Integer = SaveNewRecord(row)
+            MessageBox.Show("The record was saved." & vbCrLf & vbCrLf & "New ID: " & newId.ToString(), _
                 "Record Added", MessageBoxButtons.OK, MessageBoxIcon.Information)
             ClearFields()
             RefreshGrid()
@@ -223,7 +360,7 @@ Public Class frmSchedules
             found.Item("Day") = cboDay.Text.Trim()
             found.Item("Time") = dtpTime.Value.ToString("HH:mm")
             found.Item("Room") = txtRoom.Text.Trim()
-            SaveStore()
+            SaveChangedRecord(found)
             MessageBox.Show("The record was updated.", "Record Updated", MessageBoxButtons.OK, MessageBoxIcon.Information)
             ClearFields()
             RefreshGrid()
@@ -245,12 +382,7 @@ Public Class frmSchedules
                     "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) <> DialogResult.Yes Then
                 Return
             End If
-            For i As Integer = store.Rows.Count - 1 To 0 Step -1
-                If Convert.ToInt32(store.Rows(i).Item("ScheduleID")) = selectedId Then
-                    store.Rows.RemoveAt(i)
-                End If
-            Next
-            SaveStore()
+            DeleteRecord(selectedId)
             MessageBox.Show("The record was deleted.", "Record Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information)
             ClearFields()
             RefreshGrid()

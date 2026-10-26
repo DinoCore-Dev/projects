@@ -88,11 +88,18 @@ identity, so the two submissions do not look like copies of each other.
 | 10 | `10_Act10_Panel_and_SplitContainer` | `PanelSplitPanelDemo.sln` | Panel Playground and Split Container Lab |
 | 11 | `11_Act11_Controls_Collection` | `SW202610021600.sln` | Menu form that opens the TreeView, OpenFileDialog and combined explorer forms |
 | 12 | `12_Act12_File_Explorer_Clone` | `PanelSplitDemo.sln` | File explorer clone (Back/Forward history, filter, preview) |
-| 13 | `13_Act13_Integrative_Project_MDI` | `IntegProgProject2026.sln` | MDI integrative project (Schedules, Quotes, Bible Verses, About) |
+| 13 | `13_Act13_Integrative_Project_MDI` | `IntegProgProject2026.sln` | MDI integrative project (Schedules, Quotes, Bible Verses, About) with a SQL Server Compact database (`bin\Debug\projectDB.sdf`) |
 
 Activities 4, 5, 6, 8, 10 and 12 carry **new form designs and new code** (not the layout of
 the original sample): card layouts, validation helpers, status lines, author labels, and in
 Act 12 the Back/Forward history, live filter, column sorting and safe image preview.
+
+### Act 13 database
+The three CRUD forms store their data in `projectDB.sdf` (SQL Server Compact 3.5) inside `bin\Debug`,
+as in the original project. The file is created automatically on the first run (database, tables
+and sample records), so it is not inside the zip. Add, Update and Delete run real parameterised
+`INSERT` / `UPDATE` / `DELETE` statements. If SQL Server Compact 3.5 is not installed, each form falls
+back to its own XML file so the program still runs (`lblDatabase` shows which one is in use).
 
 ## Identity used
 

@@ -254,7 +254,7 @@ SAMPLES = {
                         ["7", "CS203", "T-005", "Saturday", "09:00", "Lab 5"],
                     ],
                 },
-                "lblDatabase": "Storage: ...\\bin\\Debug\\projectDB_Schedules.xml   |   7 record(s)",
+                "lblDatabase": "Storage: ...\\bin\\Debug\\projectDB.sdf   |   7 record(s)",
             },
         },
         {
@@ -277,7 +277,7 @@ SAMPLES = {
                         ["6", "The best error message is the one that never shows up.", "Thomas Fuchs", "Conference talk", "7/19/2011"],
                     ],
                 },
-                "lblDatabase": "Storage: ...\\bin\\Debug\\projectDB_Quotes.xml   |   6 record(s)",
+                "lblDatabase": "Storage: ...\\bin\\Debug\\projectDB.sdf   |   6 record(s)",
             },
         },
         {
@@ -303,7 +303,7 @@ SAMPLES = {
                         ["6", "James", "1", "22", "Do not merely listen to the word, and so deceive yourselves. Do what it says.", "NIV", "Action", "Epistle"],
                     ],
                 },
-                "lblDatabase": "Storage: ...\\bin\\Debug\\projectDB_BibleVerses.xml   |   6 record(s)",
+                "lblDatabase": "Storage: ...\\bin\\Debug\\projectDB.sdf   |   6 record(s)",
             },
         },
         {
