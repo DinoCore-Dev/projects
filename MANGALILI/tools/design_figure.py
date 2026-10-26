@@ -561,7 +561,7 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
             items = [k for k in c.children if controls.get(k) is not None]
             for item_key in items:
                 item = controls[item_key]
-                label = item.text or ""
+                label = (item.text or "").replace("&", "")
                 if not label:
                     continue
                 text_w = draw.textlength(label, font=f)
@@ -575,12 +575,15 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
                         cursor += text_w + 18 * SCALE
                     continue
                 pad = 10 * SCALE
-                if item_name_is_button(item):
+                if kind == "ToolStrip" and item_name_is_button(item):
                     draw.rectangle([cursor, box[1] + 3 * SCALE, cursor + text_w + 2 * pad,
                                     box[3] - 3 * SCALE], outline=(200, 206, 213), width=SCALE)
+                if kind == "MenuStrip" and item_key != items[0]:
+                    pad = 10 * SCALE
                 draw.text((cursor + pad, box[1] + (h * SCALE - 11 * SCALE) / 2), label,
                           font=f, fill=(45, 55, 65))
                 cursor += text_w + 2 * pad + 6 * SCALE
+            return  # the items are already drawn, skip the generic recursion
         elif kind in ("Panel", "GroupBox", "Form", "PictureBox", "SplitContainer"):
             fill = back if back else None
             if fill:
