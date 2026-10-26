@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<PropertyGroup><Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform><ProductVersion>8.0.30703</ProductVersion><SchemaVersion>2.0</SchemaVersion><ProjectGuid>{11111111-2222-3333-4444-555555555555}</ProjectGuid><ProjectTypeGuids>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids><OutputType>WinExe</OutputType><StartupObject>SW202609301600.My.MyApplication</StartupObject><RootNamespace>SW202609301600</RootNamespace><AssemblyName>SW202609301600</AssemblyName><FileAlignment>512</FileAlignment><TargetFrameworkVersion>v4.0</TargetFrameworkVersion><MyType>WindowsForms</MyType></PropertyGroup>
+<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU'"><PlatformTarget>AnyCPU</PlatformTarget><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><DefineConstants>DEBUG,TRACE</DefineConstants><OutputPath>bin\Debug\</OutputPath></PropertyGroup>
+<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU'"><PlatformTarget>AnyCPU</PlatformTarget><Optimize>true</Optimize><DefineConstants>TRACE</DefineConstants><OutputPath>bin\Release\</OutputPath></PropertyGroup>
+<ItemGroup><Reference Include="System"/><Reference Include="System.Drawing"/><Reference Include="System.Windows.Forms"/><Reference Include="Microsoft.VisualBasic"/></ItemGroup>
+<ItemGroup><Compile Include="ListViewSample.vb"><SubType>Form</SubType></Compile><Compile Include="ListViewSample.Designer.vb"><DependentUpon>ListViewSample.vb</DependentUpon><SubType>Code</SubType></Compile><Compile Include="My Project\AssemblyInfo.vb"/><Compile Include="My Project\Application.Designer.vb"><AutoGen>True</AutoGen><DesignTime>True</DesignTime></Compile></ItemGroup>
+<ItemGroup><None Include="My Project\Application.myapp"><Generator>MyApplicationCodeGenerator</Generator><LastGenOutput>Application.Designer.vb</LastGenOutput></None></ItemGroup>
+<Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets"/>
+</Project>

@@ -1,0 +1,532 @@
+"""Render a layout figure (PNG) from a VB.NET Windows Forms designer file.
+
+The figure is a documentation drawing built from the coordinates, sizes,
+colors and texts that are declared inside Form*.Designer.vb, so it always
+matches the design that is really saved in the project.
+"""
+import re
+from PIL import Image, ImageDraw, ImageFont
+
+SCALE = 2
+FONT_REG = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+FONT_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+FONT_MONO = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
+
+NAMED_COLORS = {
+    "White": (255, 255, 255), "Black": (0, 0, 0), "Red": (255, 0, 0),
+    "Green": (0, 128, 0), "Blue": (0, 0, 255), "Gray": (128, 128, 128),
+    "LightGray": (211, 211, 211), "Control": (240, 240, 240),
+    "Transparent": None,
+}
+
+CTRL_TYPES = [
+    "Panel", "Label", "Button", "TextBox", "MenuStrip", "SplitContainer", "ListBox",
+    "ListView", "TreeView", "PictureBox", "RadioButton", "CheckBox", "GroupBox",
+    "ComboBox", "NumericUpDown", "ToolStrip", "StatusStrip", "TabControl", "TabPage",
+    "DataGridView", "LinkLabel", "TrackBar", "Timer", "ColumnHeader",
+    "ToolStripButton", "ToolStripDropDownButton", "ToolStripMenuItem", "ToolStripSeparator",
+    "ToolStripLabel", "ToolStripComboBox", "ToolStripTextBox", "CheckBox",
+]
+
+
+def _color(text):
+    if text is None:
+        return None
+    m = re.match(r"System\.Drawing\.Color\.FromArgb\((\d+),\s*(\d+),\s*(\d+)\)", text)
+    if m:
+        return (int(m.group(1)), int(m.group(2)), int(m.group(3)))
+    m = re.match(r"System\.Drawing\.Color\.(\w+)$", text)
+    if m:
+        return NAMED_COLORS.get(m.group(1))
+    return None
+
+
+class Control:
+    def __init__(self, name, kind):
+        self.name = name
+        self.kind = kind
+        self.loc = (0, 0)
+        self.size = (0, 0)
+        self.text = ""
+        self.back = None
+        self.fore = None
+        self.font_size = 8.25
+        self.bold = False
+        self.mono = False
+        self.dock = None
+        self.visible = True
+        self.border = None
+        self.align = None
+        self.multiline = False
+        self.children = []          # direct children added with Controls.Add
+        self.panel1 = []            # SplitContainer panel 1
+        self.panel2 = []
+        self.distance = 0
+        self.splitter_width = 6
+        self.orientation = "Vertical"
+        self.columns = []
+        self.items_added = False
+        self.selected_index = 0
+
+
+NEWLINE_MARK = "\x00"
+
+
+def normalize(src):
+    """Join VB string continuations so multi line captions can be read."""
+    src = re.sub(r'"\s*&\s*_\s*\n\s*"', '', src)
+    src = re.sub(r'"\s*&\s*_\s*\n\s*',
+                 '" & ', src)
+    src = src.replace("Microsoft.VisualBasic.ChrW(13) & Microsoft.VisualBasic.ChrW(10)",
+                      NEWLINE_MARK)
+    src = src.replace("vbCrLf", NEWLINE_MARK)
+    return src
+
+
+def literal_value(rhs):
+    pieces = rhs.split(NEWLINE_MARK)
+    out = []
+    for piece in pieces:
+        quoted = re.findall(r'"([^"]*)"', piece)
+        if quoted:
+            out.append("".join(quoted))
+        elif out:
+            out.append("")
+    return "\n".join(out).strip()
+
+
+def parse_designer(path):
+    src = normalize(open(path, encoding="utf-8-sig", errors="ignore").read())
+    form = Control("Form", "Form")
+
+    # a dictionary of every control object
+    controls = {}
+    for m in re.finditer(r"^\s*Me\.(\w+) = New System\.Windows\.Forms\.(\w+)\(\)\s*$", src, re.M):
+        name, kind = m.group(1), m.group(2)
+        if name in ("components",):
+            continue
+        controls[name] = Control(name, kind)
+    form = Control("Form", "Form")
+    controls["Form"] = form
+
+    def each(pattern, handler, flags=re.M):
+        for mm in re.finditer(pattern, src, flags):
+            handler(mm)
+
+    def loc(m):
+        c = controls.get(m.group(1))
+        if c:
+            c.loc = (int(m.group(2)), int(m.group(3)))
+
+    def size(m):
+        c = controls.get(m.group(1))
+        if c:
+            c.size = (int(m.group(2)), int(m.group(3)))
+
+    def text(m):
+        c = controls.get(m.group(1))
+        if c:
+            value = literal_value(m.group(2))
+            if value:
+                c.text = value
+
+    def back(m):
+        c = controls.get(m.group(1))
+        if c:
+            c.back = _color(m.group(2))
+
+    def fore(m):
+        c = controls.get(m.group(1))
+        if c:
+            c.fore = _color(m.group(2))
+
+    def font(m):
+        c = controls.get(m.group(1))
+        if c:
+            c.font_size = float(m.group(3))
+            if "Mono" in m.group(2):
+                c.mono = True
+            style = m.group(4) if m.lastindex and m.lastindex >= 4 else ""
+            c.bold = bool(style and "Bold" in style)
+
+    def dock(m):
+        c = controls.get(m.group(1))
+        if c:
+            c.dock = m.group(2)
+
+    def visible(m):
+        c = controls.get(m.group(1))
+        if c:
+            c.visible = m.group(2) != "False"
+
+    def border(m):
+        c = controls.get(m.group(1))
+        if c:
+            c.border = m.group(2)
+
+    def align(m):
+        c = controls.get(m.group(1))
+        if c:
+            c.align = m.group(2)
+
+    def multiline(m):
+        c = controls.get(m.group(1))
+        if c:
+            c.multiline = m.group(2) == "True"
+
+    def splitter_distance(m):
+        c = controls.get(m.group(1))
+        if c:
+            c.distance = int(m.group(2))
+
+    def splitter_width(m):
+        c = controls.get(m.group(1))
+        if c:
+            c.splitter_width = int(m.group(2))
+
+    def orientation(m):
+        c = controls.get(m.group(1))
+        if c:
+            c.orientation = m.group(2)
+
+    def selected_index(m):
+        c = controls.get(m.group(1))
+        if c:
+            c.selected_index = int(m.group(2))
+
+    def client_size(m):
+        form.size = (int(m.group(1)), int(m.group(2)))
+
+    def column(m):
+        pass
+
+    each(r"^\s*Me\.(\w+)\.Location = New System\.Drawing\.Point\((-?\d+), (-?\d+)\)", loc)
+    each(r"^\s*Me\.(\w+)\.Size = New System\.Drawing\.Size\((\d+), (\d+)\)", size)
+    each(r'^\s*Me\.(\w+)\.Text = (".*?)\s*$', text)
+    each(r"^\s*Me\.(\w+)\.BackColor = (System\.Drawing\.Color\.(?:FromArgb\(\d+, \d+, \d+\)|\w+))\s*$", back)
+    each(r"^\s*Me\.(\w+)\.ForeColor = (System\.Drawing\.Color\.(?:FromArgb\(\d+, \d+, \d+\)|\w+))\s*$", fore)
+    each(r'^\s*Me\.(\w+)\.Font = New System\.Drawing\.Font\("([^"]+)", ([\d.]+)!(?:, System\.Drawing\.FontStyle\.(\w+))?\)', font)
+    each(r"^\s*Me\.(\w+)\.Dock = System\.Windows\.Forms\.DockStyle\.(\w+)\s*$", dock)
+    each(r"^\s*Me\.(\w+)\.Visible = (True|False)\s*$", visible)
+    each(r"^\s*Me\.(\w+)\.BorderStyle = System\.Windows\.Forms\.BorderStyle\.(\w+)\s*$", border)
+    each(r"^\s*Me\.(\w+)\.TextAlign = System\.Drawing\.ContentAlignment\.(\w+)\s*$", align)
+    each(r"^\s*Me\.(\w+)\.Multiline = (True|False)\s*$", multiline)
+    each(r"^\s*Me\.(\w+)\.SplitterDistance = (\d+)\s*$", splitter_distance)
+    each(r"^\s*Me\.(\w+)\.SplitterWidth = (\d+)\s*$", splitter_width)
+    each(r"^\s*Me\.(\w+)\.Orientation = System\.Windows\.Forms\.Orientation\.(\w+)\s*$", orientation)
+    each(r"^\s*Me\.ClientSize = New System\.Drawing\.Size\((\d+), (\d+)\)", client_size)
+    each(r"^\s*Me\.(\w+)\.SelectedIndex = (\d+)\s*$", selected_index)
+    each(r'^\s*Me\.Text = "([^"]*)"\s*$', lambda m: setattr(form, "text", m.group(1)) if False else None)
+
+    m = re.search(r'^\s*Me\.Text = (".*?)\s*$', src, re.M)
+    if m:
+        form.text = literal_value(m.group(1))
+    if form.size == (0, 0):
+        form.size = (900, 600)
+
+    # parents
+    for m in re.finditer(r"^\s*Me\.(\w+)\.Panel([12])\.Controls\.Add\(Me\.(\w+)\)\s*$", src, re.M):
+        parent, panel, child = m.group(1), m.group(2), m.group(3)
+        if parent in controls and child in controls:
+            (controls[parent].panel1 if panel == "1" else controls[parent].panel2).append(child)
+
+    for m in re.finditer(r"^\s*Me\.Controls\.Add\(Me\.(\w+)\)\s*$", src, re.M):
+        child = m.group(1)
+        if child in controls:
+            form.children.append(child)
+
+    for m in re.finditer(r"^\s*Me\.(\w+)\.Controls\.Add\(Me\.(\w+)\)\s*$", src, re.M):
+        parent, child = m.group(1), m.group(2)
+        if parent == "Form":
+            form.children.append(child)
+        elif parent in controls and child in controls:
+            controls[parent].children.append(child)
+
+    return form, controls
+
+
+def layout(form, controls, padding_top=0):
+    rects = {}
+
+    def walk(owner_key, rect):
+        owner = controls[owner_key]
+        kids = owner.children
+        x, y, w, h = rect
+        cursor = {"top": y, "bottom": y + h, "left": x, "right": x + w}
+        for key in reversed(kids):
+            c = controls.get(key)
+            if c is None or not c.visible:
+                continue
+            dock = c.dock
+            if dock == "Top":
+                child = (cursor["left"], cursor["top"], cursor["right"] - cursor["left"], c.size[1] or 24)
+                cursor["top"] += child[3]
+            elif dock == "Bottom":
+                child = (cursor["left"], cursor["bottom"] - (c.size[1] or 24), cursor["right"] - cursor["left"], c.size[1] or 24)
+                cursor["bottom"] -= child[3]
+            elif dock == "Left":
+                child = (cursor["left"], cursor["top"], c.size[0] or 100, cursor["bottom"] - cursor["top"])
+                cursor["left"] += child[2]
+            elif dock == "Right":
+                child = (cursor["right"] - (c.size[0] or 100), cursor["top"], c.size[0] or 100, cursor["bottom"] - cursor["top"])
+                cursor["right"] -= child[2]
+            elif dock == "Fill":
+                child = (cursor["left"], cursor["top"], cursor["right"] - cursor["left"], cursor["bottom"] - cursor["top"])
+            else:
+                child = (cursor["left"] - x + x + c.loc[0] - (cursor["left"] - x), cursor["top"] - y + c.loc[1] + y - (cursor["top"] - y), c.size[0], c.size[1])
+                child = (x + c.loc[0], y + c.loc[1], c.size[0], c.size[1])
+            rects[key] = child
+            if c.kind == "TabControl":
+                page_rect = (child[0] + 2, child[1] + 22, child[2] - 4, child[3] - 24)
+                for page_key in c.children:
+                    rects[page_key] = page_rect
+                    walk(page_key, page_rect)
+            elif c.kind == "SplitContainer":
+                sx, sy, sw, sh = child
+                dist = c.distance
+                swidth = c.splitter_width or 6
+                if c.orientation == "Vertical":
+                    p1 = (sx, sy, dist, sh)
+                    p2 = (sx + dist + swidth, sy, sw - dist - swidth, sh)
+                else:
+                    p1 = (sx, sy, sw, dist)
+                    p2 = (sx, sy + dist + swidth, sw, sh - dist - swidth)
+                for panel_key, panel_rect in (("Panel1", p1), ("Panel2", p2)):
+                    fake = Control(owner_key + "." + panel_key, "Panel")
+                    fake.children = c.panel1 if panel_key == "Panel1" else c.panel2
+                    controls[fake.name] = fake
+                    rects[fake.name] = panel_rect
+                    walk(fake.name, panel_rect)
+            else:
+                walk(key, child)
+
+    rects["Form"] = (0, 0, form.size[0], form.size[1])
+    walk("Form", rects["Form"])
+    return rects
+
+
+TITLE_BAR = 30
+
+
+def render(designer_path, out_path, caption=None, max_width=1500):
+    form, controls = parse_designer(designer_path)
+    rects = layout(form, controls)
+
+    width, height = form.size
+    total_w = width
+    total_h = height + TITLE_BAR
+    img = Image.new("RGB", (total_w * SCALE, (total_h + 34) * SCALE), (255, 255, 255))
+    draw = ImageDraw.Draw(img)
+
+    def font(size_pt, bold=False, mono=False):
+        px = max(7, int(size_pt * 1.34 * SCALE * 0.90))
+        path = FONT_MONO if mono else (FONT_BOLD if bold else FONT_REG)
+        try:
+            return ImageFont.truetype(path, px)
+        except Exception:
+            return ImageFont.load_default()
+
+    # window frame
+    draw.rectangle([0, 0, (total_w - 1) * SCALE, (total_h + 33) * SCALE], fill=(255, 255, 255),
+                   outline=(120, 128, 140), width=SCALE)
+    draw.rectangle([0, 0, (total_w - 1) * SCALE, TITLE_BAR * SCALE], fill=(243, 243, 243))
+    draw.line([0, TITLE_BAR * SCALE, (total_w - 1) * SCALE, TITLE_BAR * SCALE], fill=(200, 200, 200), width=SCALE)
+    draw.text((10 * SCALE, 7 * SCALE), (form.text or "Form")[:90], font=font(8.5), fill=(40, 40, 40))
+    draw.text(((total_w - 92) * SCALE, 6 * SCALE), "\u2014   \u25a1   \u2715", font=font(9), fill=(70, 70, 70))
+
+    # client background
+    client_bg = form.back or (240, 240, 240)
+    draw.rectangle([SCALE, (TITLE_BAR + 1) * SCALE, (total_w - 2) * SCALE, (TITLE_BAR + height) * SCALE],
+                   fill=client_bg)
+
+    def screen(rect):
+        x, y, w, h = rect
+        return [(x) * SCALE, (y + TITLE_BAR) * SCALE, (x + w - 1) * SCALE, (y + h - 1 + TITLE_BAR) * SCALE]
+
+    def draw_control(key):
+        c = controls.get(key)
+        if c is None or not c.visible:
+            return
+        rect = rects.get(key)
+        if rect is None:
+            return
+        x, y, w, h = rect
+        if w <= 0 or h <= 0:
+            return
+        box = screen(rect)
+        kind = c.kind
+        back = c.back
+        line = (150, 160, 172)
+
+        if kind == "TabControl":
+            draw.rectangle(box, fill=(246, 247, 249), outline=(190, 197, 206), width=SCALE)
+            tabs = [key for key in c.children if controls.get(key) is not None]
+            strip_y = box[1] + 2 * SCALE
+            cursor_x = box[0] + 4 * SCALE
+            if tabs:
+                tab_h = 20 * SCALE
+                selected = min(max(c.selected_index, 0), len(tabs) - 1)
+                for index, page_key in enumerate(tabs):
+                    page = controls[page_key]
+                    label = page.text or page.name
+                    text_font = font(8.0)
+                    text_w = draw.textlength(label, font=text_font) + 20 * SCALE
+                    selected_now = (index == selected)
+                    tab_box = [cursor_x, strip_y,
+                               cursor_x + text_w, strip_y + tab_h]
+                    draw.rectangle(tab_box,
+                                   fill=(255, 255, 255) if selected_now else (234, 238, 244),
+                                   outline=(190, 197, 206), width=SCALE)
+                    draw.text((cursor_x + 10 * SCALE,
+                               strip_y + (tab_h - 8 * 1.34 * SCALE) / 2),
+                              label, font=text_font,
+                              fill=(30, 41, 59) if selected_now else (90, 100, 112))
+                    cursor_x += text_w + 2 * SCALE
+                page = controls[tabs[selected]]
+                page_rect = rects.get(page.name)
+                if page_rect is None:
+                    page_rect = (x + 2, y + 22, w - 4, h - 24)
+                page_box = screen(page_rect)
+                draw.rectangle(page_box, fill=(255, 255, 255))
+                for child in page.children:
+                    draw_control(child)
+            return
+        elif kind == "TabPage":
+            return
+        elif kind in ("Panel", "GroupBox", "Form", "PictureBox", "ToolStrip", "StatusStrip",
+                    "MenuStrip", "SplitContainer"):
+            fill = back if back else None
+            if fill:
+                draw.rectangle(box, fill=fill)
+            if c.border in ("FixedSingle",) or kind in ("GroupBox",):
+                draw.rectangle(box, outline=line, width=SCALE)
+            elif c.border == "Fixed3D":
+                draw.rectangle(box, outline=(190, 195, 202), width=SCALE)
+                draw.rectangle([box[0] + SCALE, box[1] + SCALE, box[2] - SCALE, box[3] - SCALE],
+                               outline=(245, 246, 248), width=SCALE)
+            if kind in ("MenuStrip", "ToolStrip", "StatusStrip") and c.back:
+                draw.rectangle(box, fill=c.back)
+        elif kind == "Label":
+            if back:
+                draw.rectangle(box, fill=back)
+            if c.border == "FixedSingle":
+                draw.rectangle(box, outline=(200, 205, 212), width=SCALE)
+            txt = c.text
+            if txt:
+                f = font(c.font_size, c.bold)
+                wrapped = []
+                for raw_line in txt.split("\n"):
+                    if draw.textlength(raw_line, font=f) > (w - 4) * SCALE and h > c.font_size * 2.6:
+                        words = raw_line.split(" ")
+                        current = ""
+                        for word in words:
+                            trial = (current + " " + word).strip()
+                            if draw.textlength(trial, font=f) > (w - 4) * SCALE and current:
+                                wrapped.append(current)
+                                current = word
+                            else:
+                                current = trial
+                        wrapped.append(current)
+                    else:
+                        wrapped.append(raw_line)
+                lines = wrapped
+                line_h = c.font_size * 1.5 * SCALE
+                total_lines = min(len(lines), max(1, int((h - 1) * SCALE // line_h)) or 1)
+                used = total_lines * line_h
+                start_y = box[1] + 2 * SCALE
+                if total_lines == 1 and h >= c.font_size * 2.6:
+                    start_y = box[1] + max(0, (h * SCALE - used) / 2)
+                for index in range(total_lines):
+                    line_text = lines[index]
+                    tw = draw.textlength(line_text, font=f)
+                    tx = box[0] + 3 * SCALE
+                    if c.align and "Right" in c.align:
+                        tx = box[2] - tw - 3 * SCALE
+                    elif c.align and "Center" in c.align:
+                        tx = box[0] + (box[2] - box[0] - tw) / 2
+                    draw.text((tx, start_y + index * line_h), line_text, font=f,
+                              fill=c.fore or (30, 30, 30))
+        elif kind == "Button":
+            fill = back or (240, 240, 240)
+            draw.rectangle(box, fill=fill, outline=(190, 196, 204), width=SCALE)
+            f = font(c.font_size, True)
+            txt = c.text
+            if txt:
+                tw = draw.textlength(txt, font=f)
+                if tw > (w - 8) * SCALE:
+                    while txt and draw.textlength(txt + "\u2026", font=f) > (w - 8) * SCALE:
+                        txt = txt[:-1]
+                    txt += "\u2026"
+                    tw = draw.textlength(txt, font=f)
+                draw.text((box[0] + (w * SCALE - tw) / 2, box[1] + (h * SCALE - c.font_size * 1.6 * SCALE) / 2),
+                          txt, font=f, fill=c.fore or (30, 30, 30))
+        elif kind == "TextBox":
+            draw.rectangle(box, fill=back or (255, 255, 255), outline=(158, 168, 180), width=SCALE)
+            if h > 60 * 1:
+                f = font(8)
+                for i in range(0, int(h // 14)):
+                    draw.line([box[0] + 4 * SCALE, box[1] + (8 + i * 14) * SCALE,
+                               box[0] + (min(w - 20, 60 + (i * 37) % 120)) * SCALE, box[1] + (8 + i * 14) * SCALE],
+                              fill=(205, 210, 218), width=SCALE)
+        elif kind in ("ListView", "TreeView", "ListBox"):
+            draw.rectangle(box, fill=back or (255, 255, 255), outline=(158, 168, 180), width=SCALE)
+            f = font(8)
+            row_h = 18 * SCALE
+            rows = int((h - 4) // 18)
+            if kind == "ListView":
+                header_h = 22 * SCALE
+                draw.rectangle([box[0], box[1], box[2], box[1] + header_h], fill=(246, 247, 249),
+                               outline=(220, 224, 230), width=SCALE)
+                labels = ["Name", "Type", "Size", "Modified"]
+                col_w = (w - 4) / max(len(labels), 1)
+                for i, lab in enumerate(labels):
+                    draw.text((box[0] + (i * col_w + 6) * SCALE, box[1] + 4 * SCALE), lab, font=f,
+                              fill=(90, 100, 112))
+                start = 1
+            else:
+                start = 0
+            for r in range(start, max(start, rows)):
+                yy = box[1] + (22 + (r - start) * 18) * SCALE
+                if yy > box[3] - 4 * SCALE:
+                    break
+                width_text = 40 + (r * 53) % max(40, int(w * 0.55))
+                draw.rectangle([box[0] + 6 * SCALE, yy + 5 * SCALE,
+                                box[0] + width_text * SCALE, yy + 9 * SCALE], fill=(214, 219, 226))
+        elif kind in ("RadioButton", "CheckBox"):
+            draw.rectangle(box, fill=back or None) if back else None
+            f = font(c.font_size)
+            r = 6 * SCALE
+            cy = box[1] + (h * SCALE) / 2
+            draw.ellipse([box[0] + 2 * SCALE, cy - r, box[0] + 2 * SCALE + 2 * r, cy + r],
+                         outline=(120, 130, 142), width=SCALE, fill=(255, 255, 255))
+            if c.text:
+                draw.text((box[0] + (16) * SCALE, cy - c.font_size * 0.7 * SCALE), c.text, font=f,
+                          fill=c.fore or (30, 30, 30))
+        else:
+            draw.rectangle(box, fill=back or (246, 247, 249), outline=(170, 178, 188), width=SCALE)
+            if c.text:
+                draw.text((box[0] + 4 * SCALE, box[1] + 3 * SCALE), c.text[:40], font=font(8),
+                          fill=(90, 100, 112))
+
+        for child in c.children:
+            draw_control(child)
+        if kind == "SplitContainer":
+            for child in c.panel1 + c.panel2:
+                draw_control(child)
+
+    for key in form.children:
+        draw_control(key)
+
+    # trim the extra strip used while the caption was part of the image
+    img = img.crop((0, 0, total_w * SCALE, total_h * SCALE + 2 * SCALE))
+
+    if total_w > max_width:
+        ratio = max_width / total_w
+        img = img.resize((int(img.width * ratio), int(img.height * ratio)), Image.LANCZOS)
+    img.save(out_path, "PNG")
+    return out_path, form.text, form.size
+
+
+if __name__ == "__main__":
+    import sys
+    print(render(sys.argv[1], sys.argv[2], sys.argv[3] if len(sys.argv) > 3 else ""))
