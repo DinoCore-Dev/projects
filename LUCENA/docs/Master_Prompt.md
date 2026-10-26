@@ -19,7 +19,7 @@ document (DOCX + PDF), tapos bigyan mo ako ng isang zip na pang-download.
 - Pangalan (author)            : [Lucena, Lyka Joy]
 - Course, Year and Section     : [BSIT 3B]
 - Subject                      : [Integrative Programming]
-- Instructor (Submitted to)    : [BLANK / pangalan ng instructor]
+- Instructor (Submitted to)    : [Drymlad Rebaja]
 - School Year                  : [School Year 2026 - 2027]
 - Date Submitted               : [October 26, 2026]
 - Paboritong quote (About)     : ["A ship in harbor is safe, but that is not what ships are built for." - John A. Shedd]
@@ -82,14 +82,15 @@ e) Final check: `grep -ri "<dating pangalan>"` — walang dapat mahanap sa buong
 
 c4) LAYOUT NG MGA FORM (Act 4 - 13): MAGKAIBA ang layout ng bawat identity sa lahat ng iba
    pang identity sa repo - hindi sapat ang kulay lang.
-   - Gamitin ang `tools/layout_variants.py <LAYOUT CODE 0-7>` (isang beses lang bawat identity;
-     may marker na `tools/layout_code.txt`). Bawat form ay may 3 operations (op0, op1, op2):
+   - Gamitin ang `tools/layout_variants.py <LAYOUT CODE 0-15>` (isang beses lang bawat identity;
+     may marker na `tools/layout_code.txt`). Bawat form ay may 4 operations (op0, op1, op2, op3):
      palitan ng puwesto ang kaliwa/kanang bloke, ilipat ang action bar sa itaas/ibaba, baligtarin
      ang hanay ng buttons, rail sa kanan, header na baliktad, at ang pagkakasunod ng menu items.
-     Bit 0/1/2 ng code = op0/op1/op2. Ang walong code ay walang pareho, kaya walong magkaibang layout.
+     Bit 0/1/2/3 ng code = op0/op1/op2/op3 (ang op3 ay unang inaapply). Walang pareho ang mga code, kaya magkakaiba ang layout ng lahat.
    - Walang laman ng repo ang pwedeng may parehong code. Mga code ngayon: MANGALILI 0, SONAJO 1,
-     LUCENA 2, DEGUZMAN 3, PASTOR 4, MARCOS 5, MARCELO 6, ANICIETE 7. Ang bagong identity ay
-     gumagamit ng susunod na hindi pa nagagamit (lampas 7: dagdagan ang op ng bawat form).
+     LUCENA 2, DEGUZMAN 3, PASTOR 4, MARCOS 5, MARCELO 6, ANICIETE 7, ATIENZA 8, ALAP 9. Ang bagong
+     identity ay gumagamit ng susunod na hindi pa nagagamit (10 hanggang 15 ay may op3 na; lampas 15:
+     dagdagan ang op ng bawat form).
    - Pangalan ng controls ang ginagamit ng code, kaya Location / Size / Dock lang ang nagbabago;
      huwag baguhin ang logic. I-rebuild ang `docs/figures` pagkatapos para tumugma ang Form Design
      at Sample Output pictures sa bagong layout.

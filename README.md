@@ -1,9 +1,9 @@
-# Activity Compilation - eight students, eight separate packages
+# Activity Compilation - ten students, ten separate packages
 
 Repository for the **Integrative Programming** activity compilation (13 activities each),
 built for **Visual Studio 2010 / .NET Framework 4.0**.
 
-The repository holds **eight separate, complete compilations** - one folder and one zip each:
+The repository holds **ten separate, complete compilations** - one folder and one zip each:
 
 | Student | Folder (source) | Download zip |
 |---------|-----------------|--------------|
@@ -15,8 +15,10 @@ The repository holds **eight separate, complete compilations** - one folder and 
 | **Marcos, Angela** - BSIT 3B | `MARCOS/` | `Marcos_Angela_Compilation.zip` |
 | **Aniciete, Shane Antoinette** - BSIT 3B | `ANICIETE/` | `Aniciete_ShaneAntoinette_Compilation.zip` |
 | **Marcelo, John Carlo** - BSIT 3B | `MARCELO/` | `Marcelo_JohnCarlo_Compilation.zip` |
+| **Atienza, Argielyn** - BSIT 3B | `ATIENZA/` | `Atienza_Argielyn_Compilation.zip` |
+| **Alap, Adrian** - BSIT 3B | `ALAP/` | `Alap_Adrian_Compilation.zip` |
 
-All eight zips have the same clean layout: the DOCX and one numbered
+All ten zips have the same clean layout: the DOCX and one numbered
 folder per activity (`01_ ... 13_ ...`). There is no PDF, no `START_HERE.txt` and no `.md` file and no `Form_Designs/` folder in
 the zip, and no nested second zip. (The PDF and `Master_Prompt.md` stay in each identity's `docs/`
 folder in the repo.)
@@ -64,7 +66,7 @@ blank lines / author / `BSIT 3B` / `Subject  :  Integrative Programming` /
 
 > **Note on branches:** this Arena session is bound to one branch
 > (`arena/bf05a101-projects`) and cannot create or push a second branch, so the
-> compilations are separated **inside this branch** by folder (`SONAJO/`, `MANGALILI/`, `LUCENA/`, `DEGUZMAN/`, `PASTOR/`, `MARCOS/`, `ANICIETE/`, `MARCELO/`)
+> compilations are separated **inside this branch** by folder (`SONAJO/`, `MANGALILI/`, `LUCENA/`, `DEGUZMAN/`, `PASTOR/`, `MARCOS/`, `ANICIETE/`, `MARCELO/`, `ATIENZA/`, `ALAP/`)
 > and by zip name. Every file of each student lives only in their own folder - nothing is
 > shared or overwritten.
 
@@ -82,6 +84,8 @@ blank lines / author / `BSIT 3B` / `Subject  :  Integrative Programming` /
 | Marcos, Angela | `MARCOS/` | green | 5 | "You must do the thing you think you cannot do." - Eleanor Roosevelt (*You Learn by Living*, 1960) |
 | Marcelo, John Carlo | `MARCELO/` | olive / lime | 6 | "The only limit to our realization of tomorrow will be our doubts of today." - Franklin D. Roosevelt (1945) |
 | Aniciete, Shane Antoinette | `ANICIETE/` | magenta / plum | 7 | "I can accept failure, everyone fails at something. But I can't accept not trying." - Michael Jordan (1994) |
+| Atienza, Argielyn | `ATIENZA/` | dark azure / sky blue | 8 | "Alone we can do so little; together we can do so much." - Helen Keller (speech, early 1920s) |
+| Alap, Adrian | `ALAP/` | maroon / red | 9 | "A journey of a thousand miles begins with a single step." - Lao Tzu (*Tao Te Ching*) |
 
 Each identity also has its own app name (**<Surname> Explorer**), its own name / BSIT 3B on every
 console header, banner, author label, About form and MDI status strip, and its own photo.
@@ -89,13 +93,13 @@ console header, banner, author label, About form and MDI status strip, and its o
 ### Layout codes
 
 Every form activity (Acts 4 - 13, all Act 13 forms included) is arranged differently in each
-identity. `tools/layout_variants.py <code 0-7>` gives every form three independent layout
-operations (bit 0, 1, 2 of the code): left and right blocks swapped, the action bar moved to the
+identity. `tools/layout_variants.py <code 0-15>` gives every form four independent layout
+operations (bit 0, 1, 2, 3 of the code; codes 8 and up also use bit 3): left and right blocks swapped, the action bar moved to the
 other side of the form, button rows reversed, the rail moved to the right, header title and
 author swapped, grid and details swapped on the CRUD forms, photo and text swapped on the About
 form, menu items re-ordered, and so on. Only `Location`, `Size`, `Dock`, `TextAlign` and the
 order of menu items change; the control names, and therefore the code-behind, stay the same.
-Because the eight codes are all different, no two identities share a layout, and the Form
+Because the ten codes are all different, no two identities share a layout, and the Form
 Design and Sample Output pictures in each document show that identity's own arrangement.
 The script runs once per folder (marker `tools/layout_code.txt`).
 
@@ -134,10 +138,10 @@ back to its own XML file so the program still runs (`lblDatabase` shows which on
 * Author: Sonajo, Christian Paolo
 * Course, year and section: BSIT 3B
 * Subject: Integrative Programming
-* Submitted to: blank line, ready to be filled in
+* Submitted to: Drymlad Rebaja
 * School year: 2026 - 2027
 
-The other seven identities (Mangalili, Lucena, Deguzman, Pastor, Marcos, Aniciete, Marcelo) carry
+The other nine identities (Mangalili, Lucena, Deguzman, Pastor, Marcos, Aniciete, Marcelo, Atienza, Alap) carry
 the same details with their own author / course identity. Addresses on the About form:
 
 | Student | Address |
@@ -148,6 +152,8 @@ the same details with their own author / course identity. Addresses on the About
 | Aniciete, Shane Antoinette | Centro 1, Mallig, Isabela |
 | Pastor, Lorenz James | Centro 2, Mallig, Isabela |
 | Marcelo, John Carlo | Villanueva, San Manuel, Isabela |
+| Atienza, Argielyn | Marcos, Roxas, Isabela |
+| Alap, Adrian | Casili, Mallig, Isabela |
 | Lucena, Lyka Joy | Villa Concepcion, Roxas, Isabela |
 | Deguzman, Liza Gaile | Purok Pag-asa, San Pedro, Mallig, Isabela |
 

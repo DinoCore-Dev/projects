@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 """Layout variants for the form activities (Acts 4-13).
 
-Every identity gets its own LAYOUT CODE (0..7).  Each form has three independent layout
-operations (op0, op1, op2); bit n of the code switches operation n on.  Because the eight
-codes are all different, the eight identities end up with eight different layouts on every
-form that has three effective operations (and every identity differs from the others on
-the form activities as a whole).
+Every identity gets its own LAYOUT CODE (0..15).  Each form has four independent layout
+operations (op0 .. op3); bit n of the code switches operation n on.  Because the codes are
+all different, the identities end up with different layouts on every form (and every
+identity differs from the others on the form activities as a whole).  Codes 0..7 only use
+op0..op2; codes 8..15 also use op3 (applied first).
 
 The operations only rewrite Location / Size / Dock lines (and the order of menu / status
 items) inside the *.Designer.vb files.  Controls keep their names, so the code-behind of
 each activity is untouched.  Run once per identity folder:
 
-    python3 tools/layout_variants.py <LAYOUT_CODE 0-7>
+    python3 tools/layout_variants.py <LAYOUT_CODE 0-15>
 
 A marker file (tools/layout_code.txt) stops the operations from being applied twice.
 """
@@ -153,6 +153,19 @@ class Designer(object):
             h = self.size(n)[1]
             y += h + (list(reversed(gaps))[i] if i < len(gaps) else 0)
 
+    def center_x(self, names, width):
+        s = self.span(names)
+        self.shift(names, dx=(width - (s[2] - s[0])) // 2 - s[0])
+
+    def set_size(self, name, w, h):
+        _, b = self._bounds(name)
+        if b:
+            self.text = (self.text[:b.start()] + "%s%s,%s,%d,%d%s" % (b.group(1), b.group(2), b.group(3), w, h, b.group(6))
+                         + self.text[b.end():])
+            return
+        rx, m = self._find(name, "Size", "Size")
+        self.text = self.text[:m.start()] + "%s%d, %d%s" % (m.group(1), w, h, m.group(4)) + self.text[m.end():]
+
     def right_align(self, names, width, margin):
         s = self.span(names)
         self.shift(names, dx=(width - margin) - s[2])
@@ -187,6 +200,14 @@ def last_first(items):
     return [items[-1]] + items[:-1]
 
 
+def first_last(items):
+    return list(items[1:]) + list(items[:1])
+
+
+def keep_first_reverse_rest(lines):
+    return list(lines[:1]) + list(reversed(lines[1:]))
+
+
 def swap_ends(items):
     items = list(items)
     items[0], items[-1] = items[-1], items[0]
@@ -207,7 +228,13 @@ def crud(ed):
 
     def op2():
         ed.swap_y(CRUD_BUTTONS, ["grpDetails"])
-    return [op0, op1, op2]
+    def op3():
+        # value first, caption after it (labels on the right of the fields)
+        t = ed.text
+        labels = [n for n in re.findall(r"Me\.(lbl\w+)\.Location", t) if n != "lblDatabase"]
+        fields = re.findall(r"Me\.((?:txt|cbo|dtp)\w+)\.Location", t)
+        ed.swap_x(labels, fields)
+    return [op0, op1, op2, op3]
 
 
 def form_ops(rel, ed):
@@ -215,56 +242,73 @@ def form_ops(rel, ed):
         acts = ["btnSum", "btnDifference", "btnProduct", "btnQuotient", "btnAverage", "btnClear", "btnExit"]
         return [lambda: ed.swap_x(["pnlInput"], ["pnlOutput"]),
                 lambda: ed.reverse_row(acts),
-                lambda: ed.swap_y(["pnlActions"], ["pnlInput", "pnlOutput"])]
+                lambda: ed.swap_y(["pnlActions"], ["pnlInput", "pnlOutput"]),
+                lambda: ed.swap_x(["lblTitle", "lblSubtitle"], ["lblAuthorName", "lblAuthorCourse"], rpad=24)]
     if rel.startswith("Act5/"):
         return [lambda: ed.set_dock("pnlRail", "Left", "Right"),
                 lambda: ed.swap_y(["pnlInfo"], ["lblCardsHeading", "pnlCard1", "pnlCard2", "pnlCard3"]),
-                lambda: ed.right_align(["btnClear", "btnExit"], 560, 24)]
+                lambda: ed.right_align(["btnClear", "btnExit"], 560, 24),
+                lambda: (ed.swap_y(["lblRailBadge", "lblRailTitle", "pnlRailRule", "lblRailText"],
+                                   ["lblRailAuthor", "lblRailCourse"]),
+                         ed.reverse_row(["btnClear", "btnExit"]))]
     if rel.startswith("Act6_"):
         return [lambda: ed.swap_x(["pnlLeft"], ["pnlRight"]),
                 lambda: ed.swap_x(["btnEvaluate", "btnClear", "btnExit"], ["lblStatus"]),
-                lambda: ed.swap_x(["lblHeaderTitle", "lblHeaderSub"], ["lblAuthor", "lblCourse"], rpad=24)]
+                lambda: ed.swap_x(["lblHeaderTitle", "lblHeaderSub"], ["lblAuthor", "lblCourse"], rpad=24),
+                lambda: ed.reverse_row(["btnEvaluate", "btnClear", "btnExit"])]
     if rel.startswith("Act7_"):
         return [lambda: ed.swap_y(["TabControl1"], ["lblAuthor"]),
                 lambda: ed.swap_y(["principalLabel", "principalTextBox"], ["yearsLabel", "yearsNumericUpDown"]),
                 lambda: ed.swap_y(["principalLabel", "principalTextBox", "interestRateLabel",
                                    "interestRateTextBox", "yearsLabel", "yearsNumericUpDown", "calculateButton"],
-                                  ["balancesLabel", "resultsListBox"])]
+                                  ["balancesLabel", "resultsListBox"]),
+                lambda: ed.permute_controls("TabControl1", keep_first_reverse_rest)]
     if rel.startswith("Act8_"):
         return [lambda: ed.swap_x(["pnlCompose"], ["pnlIcons", "pnlButtons", "pnlDefault"]),
                 lambda: ed.swap_x(["btnDisplay", "btnClear", "btnExit"], ["lblStatus"]),
-                lambda: ed.swap_x(["lblHeaderTitle", "lblHeaderSub"], ["lblAuthor"], rpad=24)]
+                lambda: ed.swap_x(["lblHeaderTitle", "lblHeaderSub"], ["lblAuthor"], rpad=24),
+                lambda: (ed.swap_y(["pnlIcons"], ["pnlButtons"]),
+                         ed.reverse_row(["btnDisplay", "btnClear", "btnExit"]))]
     if rel.startswith("SW202609301600/"):      # Act 9 ListViewSample
         return [lambda: ed.swap_x(["txtPath"], ["browse", "btnRefresh", "details", "list"]),
                 lambda: ed.swap_y(["lv"], ["lbl", "lblAuthor"]),
-                lambda: ed.swap_x(["lbl"], ["lblAuthor"])]
+                lambda: ed.swap_x(["lbl"], ["lblAuthor"]),
+                lambda: ed.reverse_row(["browse", "btnRefresh", "details", "list"])]
     if rel.startswith("SW20261002/PanelSplitPanelDemo/Form1"):
         return [lambda: ed.set_dock("pnlRail", "Left", "Right"),
                 lambda: ed.swap_y(["pnlInspector"], ["pnlLog"]),
-                lambda: ed.swap_y(["pnlWorkspace"], ["pnlInspector", "pnlLog"])]
+                lambda: ed.swap_y(["pnlWorkspace"], ["pnlInspector", "pnlLog"]),
+                lambda: ed.swap_x(["pnlGroup"], ["pnlNested"], flip=False)]
     if rel.startswith("SW20261002/PanelSplitPanelDemo/Form2"):
         return [lambda: ed.swap_x(["btnCollapseLeft", "btnCollapseTop", "btnSwapOrientation", "btnLock",
                                    "btnReset", "btnExit"], ["lblSplitInfo"]),
                 lambda: ed.reverse_row(["btnCollapseLeft", "btnCollapseTop", "btnSwapOrientation", "btnLock",
                                         "btnReset", "btnExit"]),
-                lambda: ed.swap_y(["lblTitle"], ["lblSub"])]
+                lambda: ed.swap_y(["lblTitle"], ["lblSub"]),
+                lambda: ed.swap_x(["lblTitle", "lblSub"], ["lblAuthor"], rpad=24)]
     if rel.startswith("SW202610021600/TreeViewSample"):
         return [lambda: ed.swap_x(["tree"], ["selectedPath", "btnRefresh"]),
                 lambda: ed.swap_y(["btnRefresh"], ["selectedPath"]),
-                lambda: ed.right_align(["btnRefresh"], 900, 30)]
+                lambda: ed.right_align(["btnRefresh"], 900, 30),
+                lambda: (ed.set_size("tree", 330, 520), ed.shift(["selectedPath", "btnRefresh"], dx=-70),
+                         ed.set_size("selectedPath", 510, 25))]
     if rel.startswith("SW202610021600/OpenFileDialogSample"):
         return [lambda: ed.reverse_row(["one", "many", "clear"]),
                 lambda: ed.swap_y(["one", "many", "clear"], ["selected"]),
-                lambda: ed.right_align(["one", "many", "clear"], 900, 20)]
+                lambda: ed.right_align(["one", "many", "clear"], 900, 20),
+                lambda: ed.center_x(["one", "many", "clear"], 900)]
     if rel.startswith("SW202610021600/CombinedSample"):
         return [lambda: ed.swap_x(["tree"], ["lv"]),
                 lambda: ed.reverse_row(["open", "save", "btnRefresh"]),
-                lambda: ed.swap_y(["open", "save", "btnRefresh"], ["tree", "lv"])]
+                lambda: ed.swap_y(["open", "save", "btnRefresh"], ["tree", "lv"]),
+                lambda: (ed.set_size("tree", 380, 480), ed.shift(["lv"], dx=80), ed.set_size("lv", 480, 480))]
     if rel.startswith("FileExplorerClone/"):
         return [lambda: ed.swap_x(["lblApp", "lblHeaderSub"], ["lblAuthor"]),
                 lambda: ed.swap_x(["btnTreeToggle", "btnPreviewToggle", "btnSwapLayout", "btnLockSplitters"],
                                   ["lblSplitInfo"]),
-                lambda: ed.swap_x(["btnGo"], ["txtPath"])]
+                lambda: ed.swap_x(["btnGo"], ["txtPath"]),
+                lambda: (ed.swap_x(["lblFilterCaption"], ["txtFilter"]),
+                         ed.reverse_row(["btnBack", "btnForward", "btnUp", "btnHome", "btnRefresh"]))]
     if rel.endswith("frmSchedules.Designer.vb") or rel.endswith("frmQuotes.Designer.vb") \
             or rel.endswith("frmBibleVerses.Designer.vb"):
         return crud(ed)
@@ -272,11 +316,13 @@ def form_ops(rel, ed):
         texts = ["lblName", "lblCourse", "lblAddress", "lblSkills"]
         return [lambda: ed.swap_x(["PictureBox1"], texts + ["lblQuote"], flip=False),
                 lambda: ed.reverse_col(texts),
-                lambda: ed.swap_y(texts, ["lblQuote"])]
+                lambda: ed.swap_y(texts, ["lblQuote"]),
+                lambda: ed.swap_y(["lblAddress"], ["lblSkills"])]
     if rel.endswith("frmMain.Designer.vb"):
         return [lambda: ed.permute_items("MenuStrip1", rev),
                 lambda: ed.permute_items("StatusStrip1", rev),
-                lambda: ed.permute_items("MenuStrip1", swap_ends)]
+                lambda: ed.permute_items("MenuStrip1", swap_ends),
+                lambda: ed.permute_items("MenuStrip1", last_first)]
     return []
 
 
@@ -305,21 +351,21 @@ def apply_code(code, comp=COMP):
     for rel in FORMS:
         ed = Designer(os.path.join(comp, rel))
         ops = form_ops(rel, ed)
-        assert len(ops) == 3, rel
+        assert len(ops) == 4, rel
         # y-direction / dock operations first, then x-direction ones (they never overlap)
-        for bit in (2, 1, 0):
+        for bit in (3, 2, 1, 0):
             if code & (1 << bit):
                 ops[bit]()
         ed.save()
     # Act 11 MenuForm: built in code + its picture source
-    menu_ops = [rev, last_first, swap_ends]
+    menu_ops = [rev, last_first, swap_ends, first_last]
     for p in (os.path.join(comp, "SW202610021600", "MenuForm.vb"),
               os.path.join(HERE, "figure_sources", "MenuForm.Designer.vb")):
         s = open(p, "rb").read().decode("utf-8")
         rx = re.compile(r"(Items\.AddRange\(New (?:System\.Windows\.Forms\.)?ToolStripItem\(\) \{)([^}]*)(\}\))")
         m = rx.search(s)
         items = [i.strip() for i in m.group(2).split(",")]
-        for bit in (2, 1, 0):
+        for bit in (3, 2, 1, 0):
             if code & (1 << bit):
                 items = menu_ops[bit](items)
         s = s[:m.start()] + m.group(1) + ", ".join(items) + m.group(3) + s[m.end():]
@@ -328,7 +374,7 @@ def apply_code(code, comp=COMP):
 
 if __name__ == "__main__":
     code = int(sys.argv[1])
-    assert 0 <= code <= 7
+    assert 0 <= code <= 15
     if os.path.exists(MARKER):
         raise SystemExit("layout already applied: " + open(MARKER).read().strip())
     apply_code(code)
