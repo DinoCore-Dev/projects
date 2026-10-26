@@ -5,18 +5,20 @@ built for **Visual Studio 2010 / .NET Framework 4.0**.
 
 The repository holds **ten separate, complete compilations** - one folder and one zip each:
 
-| Student | Folder (source) | Download zip |
+| Student | Folder (source) | Download zip (one click) |
 |---------|-----------------|--------------|
-| **Sonajo, Christian Paolo** - BSIT 3B | `SONAJO/` | `Sonajo_ChristianPaolo_Compilation.zip` |
-| **Mangalili, Fhetz Jherald** - BSIT 3B | `MANGALILI/` | `Mangalili_FhetzJherald_Compilation.zip` |
-| **Lucena, Lyka Joy** - BSIT 3B | `LUCENA/` | `Lucena_LykaJoy_Compilation.zip` |
-| **Deguzman, Liza Gaile** - BSIT 3B | `DEGUZMAN/` | `Deguzman_LizaGaile_Compilation.zip` |
-| **Pastor, Lorenz James** - BSIT 3B | `PASTOR/` | `Pastor_LorenzJames_Compilation.zip` |
-| **Marcos, Angela** - BSIT 3B | `MARCOS/` | `Marcos_Angela_Compilation.zip` |
-| **Aniciete, Shane Antoinette** - BSIT 3B | `ANICIETE/` | `Aniciete_ShaneAntoinette_Compilation.zip` |
-| **Marcelo, John Carlo** - BSIT 3B | `MARCELO/` | `Marcelo_JohnCarlo_Compilation.zip` |
-| **Atienza, Argielyn** - BSIT 3B | `ATIENZA/` | `Atienza_Argielyn_Compilation.zip` |
-| **Alap, Adrian** - BSIT 3B | `ALAP/` | `Alap_Adrian_Compilation.zip` |
+| **Sonajo, Christian Paolo** - BSIT 3B | `SONAJO/` | [**Download**](Sonajo_ChristianPaolo_Compilation.zip?raw=true) `Sonajo_ChristianPaolo_Compilation.zip` |
+| **Mangalili, Fhetz Jherald** - BSIT 3B | `MANGALILI/` | [**Download**](Mangalili_FhetzJherald_Compilation.zip?raw=true) `Mangalili_FhetzJherald_Compilation.zip` |
+| **Lucena, Lyka Joy** - BSIT 3B | `LUCENA/` | [**Download**](Lucena_LykaJoy_Compilation.zip?raw=true) `Lucena_LykaJoy_Compilation.zip` |
+| **Deguzman, Liza Gaile** - BSIT 3B | `DEGUZMAN/` | [**Download**](Deguzman_LizaGaile_Compilation.zip?raw=true) `Deguzman_LizaGaile_Compilation.zip` |
+| **Pastor, Lorenz James** - BSIT 3B | `PASTOR/` | [**Download**](Pastor_LorenzJames_Compilation.zip?raw=true) `Pastor_LorenzJames_Compilation.zip` |
+| **Marcos, Angela** - BSIT 3B | `MARCOS/` | [**Download**](Marcos_Angela_Compilation.zip?raw=true) `Marcos_Angela_Compilation.zip` |
+| **Aniciete, Shane Antoinette** - BSIT 3B | `ANICIETE/` | [**Download**](Aniciete_ShaneAntoinette_Compilation.zip?raw=true) `Aniciete_ShaneAntoinette_Compilation.zip` |
+| **Marcelo, John Carlo** - BSIT 3B | `MARCELO/` | [**Download**](Marcelo_JohnCarlo_Compilation.zip?raw=true) `Marcelo_JohnCarlo_Compilation.zip` |
+| **Atienza, Argielyn** - BSIT 3B | `ATIENZA/` | [**Download**](Atienza_Argielyn_Compilation.zip?raw=true) `Atienza_Argielyn_Compilation.zip` |
+| **Alap, Adrian** - BSIT 3B | `ALAP/` | [**Download**](Alap_Adrian_Compilation.zip?raw=true) `Alap_Adrian_Compilation.zip` |
+
+All ten in one file: [**Download All_Compilations.zip**](All_Compilations.zip?raw=true) (25 MB, the ten student zips).
 
 All ten zips have the same clean layout: the DOCX and one numbered
 folder per activity (`01_ ... 13_ ...`). There is no PDF, no `START_HERE.txt` and no `.md` file and no `Form_Designs/` folder in
