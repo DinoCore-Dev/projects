@@ -17,7 +17,7 @@ design figures and one numbered folder per activity (`01_ ... 13_ ...`), with a
 ```
 <Name>_Compilation.zip
 ├── START_HERE.txt
-├── <Name>_Activity_Compilation.pdf        (60 pages, ito ang ipapasa)
+├── <Name>_Activity_Compilation.pdf        (72 pages, ito ang ipapasa)
 ├── <Name>_Activity_Compilation.docx
 ├── Master_Prompt.md
 ├── Form_Designs/                          (22 PNG: 11 form designs + 11 sample outputs)
