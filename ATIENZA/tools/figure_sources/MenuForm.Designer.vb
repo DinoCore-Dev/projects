@@ -14,6 +14,7 @@ Partial Class MenuForm
         Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.openMenu, Me.combinedMenu, Me.exitMenu, Me.treeMenu})
         Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip1.Name = "menuStrip1"
+        Me.menuStrip1.Font = New System.Drawing.Font("Consolas", 7.5!)
         Me.menuStrip1.Size = New System.Drawing.Size(720, 24)
         '
         'treeMenu

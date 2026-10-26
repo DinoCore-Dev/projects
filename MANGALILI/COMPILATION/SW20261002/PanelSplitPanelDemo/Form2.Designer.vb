@@ -106,6 +106,7 @@ Partial Class Form2
         Me.menuMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuLab})
         Me.menuMain.Location = New System.Drawing.Point(0, 0)
         Me.menuMain.Name = "menuMain"
+        Me.menuMain.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         Me.menuMain.Size = New System.Drawing.Size(1000, 24)
         Me.menuMain.TabIndex = 0
         '

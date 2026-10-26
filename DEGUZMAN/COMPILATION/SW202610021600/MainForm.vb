@@ -54,7 +54,7 @@ Public Class MainForm
         Dim text As New RichTextBox()
         text.Dock = DockStyle.Fill
         text.ReadOnly = True
-        text.Font = New Font("Segoe UI", 11.0F)
+        text.Font = New Font("Verdana", 10.0F)
         text.Text = "Activity 11 - SW202610021600" & Environment.NewLine & _
                     "Author : Deguzman, Liza Gaile   |   Course, Year and Section : BSIT 3B" & _
                     Environment.NewLine & Environment.NewLine & _

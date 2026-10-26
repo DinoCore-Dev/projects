@@ -36,6 +36,7 @@ Partial Class frmMain
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem, Me.SchedulesToolStripMenuItem, Me.AboutToolStripMenuItem, Me.QuotesToolStripMenuItem, Me.BibleVerseToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Font = New System.Drawing.Font("Consolas", 7.5!)
         Me.MenuStrip1.Size = New System.Drawing.Size(1024, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
@@ -57,6 +58,7 @@ Partial Class frmMain
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolstripUserInfo, Me.toolstripCurrentDate, Me.toolstripCurrentTime, Me.lblStatusBar})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 546)
         Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Font = New System.Drawing.Font("Consolas", 7.5!)
         Me.StatusStrip1.Size = New System.Drawing.Size(1024, 22)
         Me.StatusStrip1.TabIndex = 1
         Me.StatusStrip1.Text = "StatusStrip1"

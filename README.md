@@ -72,7 +72,7 @@ blank lines / author / `BSIT 3B` / `Subject  :  Integrative Programming` /
 
 ---
 
-## The versions are different (colour, layout, quote, photo)
+## The versions are different (colour, layout, fonts, buttons, quote, photo)
 
 | Student | Folder | Colour theme | Layout code | About quote (verified) |
 |---|---|---|---|---|
@@ -102,6 +102,32 @@ order of menu items change; the control names, and therefore the code-behind, st
 Because the ten codes are all different, no two identities share a layout, and the Form
 Design and Sample Output pictures in each document show that identity's own arrangement.
 The script runs once per folder (marker `tools/layout_code.txt`).
+
+### Font and button style codes
+
+Every identity also has its own font family and button look, using only fonts that ship with
+Windows / Visual Studio 2010. `tools/style_variants.py <code>` (same number as the layout code,
+marker `tools/style_code.txt`) retypes the font of every `*.Designer.vb`, restyles each
+`Button` (`FlatStyle`, border, accent colour), and then shrinks or moves any label, button or tab
+header that the wider font would push out of its box.
+
+| Code | Student | Font family | Button style |
+|---|---|---|---|
+| 0 | Mangalili | Segoe UI | solid accent |
+| 1 | Sonajo | Courier New | bordered, 2 px |
+| 2 | Lucena | Georgia | ghost (outline, 2 px) |
+| 3 | Deguzman | Verdana | bevel |
+| 4 | Pastor | Calibri | pop-up (3D) |
+| 5 | Marcos | Cambria | thin outline |
+| 6 | Marcelo | Times New Roman | native grey |
+| 7 | Aniciete | Arial | ghost (outline, 3 px) |
+| 8 | Atienza | Consolas | tonal (light fill) |
+| 9 | Alap | Tahoma | heavy border |
+
+The Form Design / Sample Output pictures are drawn with metric-compatible free fonts (Cousine,
+Gelasio, Carlito, Caladea, Arimo, Tinos, Inconsolata, Open Sans) kept in each `tools/fonts/`;
+the real VB projects reference the Windows fonts only. Also in the repo root:
+`All_Compilations.zip` contains the ten student zips.
 
 ## Activities (same 13 for every student)
 

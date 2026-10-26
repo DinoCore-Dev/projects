@@ -77,6 +77,7 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Location = New System.Drawing.Point(6, 30)
         Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.Font = New System.Drawing.Font("Courier New", 6.5!)
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(572, 384)
         Me.TabControl1.TabIndex = 0
@@ -94,6 +95,7 @@ Partial Class Form1
         Me.tabInterest.Controls.Add(Me.calculateButton)
         Me.tabInterest.Location = New System.Drawing.Point(4, 22)
         Me.tabInterest.Name = "tabInterest"
+        Me.tabInterest.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.tabInterest.Padding = New System.Windows.Forms.Padding(3)
         Me.tabInterest.Size = New System.Drawing.Size(564, 386)
         Me.tabInterest.TabIndex = 0
@@ -105,6 +107,7 @@ Partial Class Form1
         Me.principalLabel.AutoSize = True
         Me.principalLabel.Location = New System.Drawing.Point(12, 17)
         Me.principalLabel.Name = "principalLabel"
+        Me.principalLabel.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.principalLabel.Size = New System.Drawing.Size(50, 13)
         Me.principalLabel.TabIndex = 0
         Me.principalLabel.Text = "Principal:"
@@ -113,6 +116,7 @@ Partial Class Form1
         '
         Me.principalTextBox.Location = New System.Drawing.Point(90, 15)
         Me.principalTextBox.Name = "principalTextBox"
+        Me.principalTextBox.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.principalTextBox.Size = New System.Drawing.Size(150, 20)
         Me.principalTextBox.TabIndex = 1
         Me.principalTextBox.Text = "1000"
@@ -122,6 +126,7 @@ Partial Class Form1
         Me.interestRateLabel.AutoSize = True
         Me.interestRateLabel.Location = New System.Drawing.Point(12, 43)
         Me.interestRateLabel.Name = "interestRateLabel"
+        Me.interestRateLabel.Font = New System.Drawing.Font("Courier New", 6.5!)
         Me.interestRateLabel.Size = New System.Drawing.Size(66, 13)
         Me.interestRateLabel.TabIndex = 2
         Me.interestRateLabel.Text = "Interest rate:"
@@ -130,6 +135,7 @@ Partial Class Form1
         '
         Me.interestRateTextBox.Location = New System.Drawing.Point(90, 41)
         Me.interestRateTextBox.Name = "interestRateTextBox"
+        Me.interestRateTextBox.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.interestRateTextBox.Size = New System.Drawing.Size(150, 20)
         Me.interestRateTextBox.TabIndex = 3
         Me.interestRateTextBox.Text = "5"
@@ -139,6 +145,7 @@ Partial Class Form1
         Me.yearsLabel.AutoSize = True
         Me.yearsLabel.Location = New System.Drawing.Point(12, 69)
         Me.yearsLabel.Name = "yearsLabel"
+        Me.yearsLabel.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.yearsLabel.Size = New System.Drawing.Size(37, 13)
         Me.yearsLabel.TabIndex = 4
         Me.yearsLabel.Text = "Years:"
@@ -149,6 +156,7 @@ Partial Class Form1
         Me.yearsNumericUpDown.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.yearsNumericUpDown.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.yearsNumericUpDown.Name = "yearsNumericUpDown"
+        Me.yearsNumericUpDown.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.yearsNumericUpDown.Size = New System.Drawing.Size(150, 20)
         Me.yearsNumericUpDown.TabIndex = 5
         Me.yearsNumericUpDown.Value = New Decimal(New Integer() {10, 0, 0, 0})
@@ -158,6 +166,7 @@ Partial Class Form1
         Me.balancesLabel.AutoSize = True
         Me.balancesLabel.Location = New System.Drawing.Point(12, 106)
         Me.balancesLabel.Name = "balancesLabel"
+        Me.balancesLabel.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.balancesLabel.Size = New System.Drawing.Size(54, 13)
         Me.balancesLabel.TabIndex = 6
         Me.balancesLabel.Text = "Balances:"
@@ -167,6 +176,7 @@ Partial Class Form1
         Me.resultsListBox.FormattingEnabled = True
         Me.resultsListBox.Location = New System.Drawing.Point(90, 103)
         Me.resultsListBox.Name = "resultsListBox"
+        Me.resultsListBox.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.resultsListBox.Size = New System.Drawing.Size(440, 212)
         Me.resultsListBox.TabIndex = 7
         '
@@ -174,6 +184,10 @@ Partial Class Form1
         '
         Me.calculateButton.Location = New System.Drawing.Point(255, 13)
         Me.calculateButton.Name = "calculateButton"
+        Me.calculateButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(3, 90, 63)
+        Me.calculateButton.FlatAppearance.BorderSize = 2
+        Me.calculateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.calculateButton.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.calculateButton.Size = New System.Drawing.Size(90, 23)
         Me.calculateButton.TabIndex = 8
         Me.calculateButton.Text = "Calculate"
@@ -189,6 +203,7 @@ Partial Class Form1
         Me.tabSquare.Controls.Add(Me.outputTextBox)
         Me.tabSquare.Location = New System.Drawing.Point(4, 22)
         Me.tabSquare.Name = "tabSquare"
+        Me.tabSquare.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.tabSquare.Padding = New System.Windows.Forms.Padding(3)
         Me.tabSquare.Size = New System.Drawing.Size(564, 386)
         Me.tabSquare.TabIndex = 1
@@ -200,6 +215,7 @@ Partial Class Form1
         Me.fillCharacterLabel.AutoSize = True
         Me.fillCharacterLabel.Location = New System.Drawing.Point(14, 20)
         Me.fillCharacterLabel.Name = "fillCharacterLabel"
+        Me.fillCharacterLabel.Font = New System.Drawing.Font("Courier New", 6.5!)
         Me.fillCharacterLabel.Size = New System.Drawing.Size(95, 13)
         Me.fillCharacterLabel.TabIndex = 0
         Me.fillCharacterLabel.Text = "Enter fill character:"
@@ -208,6 +224,7 @@ Partial Class Form1
         '
         Me.fillCharacterTextBox.Location = New System.Drawing.Point(119, 17)
         Me.fillCharacterTextBox.Name = "fillCharacterTextBox"
+        Me.fillCharacterTextBox.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.fillCharacterTextBox.Size = New System.Drawing.Size(50, 20)
         Me.fillCharacterTextBox.TabIndex = 1
         Me.fillCharacterTextBox.Text = "#"
@@ -217,6 +234,7 @@ Partial Class Form1
         Me.sideLengthLabel.AutoSize = True
         Me.sideLengthLabel.Location = New System.Drawing.Point(14, 46)
         Me.sideLengthLabel.Name = "sideLengthLabel"
+        Me.sideLengthLabel.Font = New System.Drawing.Font("Courier New", 7.0!)
         Me.sideLengthLabel.Size = New System.Drawing.Size(89, 13)
         Me.sideLengthLabel.TabIndex = 2
         Me.sideLengthLabel.Text = "Enter side length:"
@@ -227,6 +245,7 @@ Partial Class Form1
         Me.sideLengthNumericUpDown.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.sideLengthNumericUpDown.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.sideLengthNumericUpDown.Name = "sideLengthNumericUpDown"
+        Me.sideLengthNumericUpDown.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.sideLengthNumericUpDown.Size = New System.Drawing.Size(50, 20)
         Me.sideLengthNumericUpDown.TabIndex = 3
         Me.sideLengthNumericUpDown.Value = New Decimal(New Integer() {15, 0, 0, 0})
@@ -235,6 +254,10 @@ Partial Class Form1
         '
         Me.displaySquareButton.Location = New System.Drawing.Point(230, 15)
         Me.displaySquareButton.Name = "displaySquareButton"
+        Me.displaySquareButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(3, 90, 63)
+        Me.displaySquareButton.FlatAppearance.BorderSize = 2
+        Me.displaySquareButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.displaySquareButton.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.displaySquareButton.Size = New System.Drawing.Size(100, 23)
         Me.displaySquareButton.TabIndex = 4
         Me.displaySquareButton.Text = "Display Square"
@@ -261,6 +284,7 @@ Partial Class Form1
         Me.tabClassAverage.Controls.Add(Me.classAverageLabel)
         Me.tabClassAverage.Location = New System.Drawing.Point(4, 22)
         Me.tabClassAverage.Name = "tabClassAverage"
+        Me.tabClassAverage.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.tabClassAverage.Padding = New System.Windows.Forms.Padding(3)
         Me.tabClassAverage.Size = New System.Drawing.Size(564, 386)
         Me.tabClassAverage.TabIndex = 2
@@ -272,6 +296,7 @@ Partial Class Form1
         Me.gradeLabel.AutoSize = True
         Me.gradeLabel.Location = New System.Drawing.Point(18, 20)
         Me.gradeLabel.Name = "gradeLabel"
+        Me.gradeLabel.Font = New System.Drawing.Font("Courier New", 7.0!)
         Me.gradeLabel.Size = New System.Drawing.Size(65, 13)
         Me.gradeLabel.TabIndex = 0
         Me.gradeLabel.Text = "Enter grade:"
@@ -280,6 +305,7 @@ Partial Class Form1
         '
         Me.gradeTextBox.Location = New System.Drawing.Point(87, 17)
         Me.gradeTextBox.Name = "gradeTextBox"
+        Me.gradeTextBox.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.gradeTextBox.Size = New System.Drawing.Size(70, 20)
         Me.gradeTextBox.TabIndex = 1
         '
@@ -287,6 +313,10 @@ Partial Class Form1
         '
         Me.submitGradeButton.Location = New System.Drawing.Point(172, 15)
         Me.submitGradeButton.Name = "submitGradeButton"
+        Me.submitGradeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(3, 90, 63)
+        Me.submitGradeButton.FlatAppearance.BorderSize = 2
+        Me.submitGradeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.submitGradeButton.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.submitGradeButton.Size = New System.Drawing.Size(95, 23)
         Me.submitGradeButton.TabIndex = 2
         Me.submitGradeButton.Text = "Submit Grade"
@@ -297,6 +327,7 @@ Partial Class Form1
         Me.gradesLabel.AutoSize = True
         Me.gradesLabel.Location = New System.Drawing.Point(18, 50)
         Me.gradesLabel.Name = "gradesLabel"
+        Me.gradesLabel.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.gradesLabel.Size = New System.Drawing.Size(44, 13)
         Me.gradesLabel.TabIndex = 3
         Me.gradesLabel.Text = "Grades:"
@@ -306,6 +337,7 @@ Partial Class Form1
         Me.gradesListBox.FormattingEnabled = True
         Me.gradesListBox.Location = New System.Drawing.Point(18, 70)
         Me.gradesListBox.Name = "gradesListBox"
+        Me.gradesListBox.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.gradesListBox.Size = New System.Drawing.Size(150, 186)
         Me.gradesListBox.TabIndex = 4
         '
@@ -313,6 +345,10 @@ Partial Class Form1
         '
         Me.calculateAverageButton.Location = New System.Drawing.Point(18, 263)
         Me.calculateAverageButton.Name = "calculateAverageButton"
+        Me.calculateAverageButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(3, 90, 63)
+        Me.calculateAverageButton.FlatAppearance.BorderSize = 2
+        Me.calculateAverageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.calculateAverageButton.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.calculateAverageButton.Size = New System.Drawing.Size(150, 24)
         Me.calculateAverageButton.TabIndex = 5
         Me.calculateAverageButton.Text = "Calculate Average"
@@ -322,6 +358,10 @@ Partial Class Form1
         '
         Me.clearGradesButton.Location = New System.Drawing.Point(18, 293)
         Me.clearGradesButton.Name = "clearGradesButton"
+        Me.clearGradesButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(3, 90, 63)
+        Me.clearGradesButton.FlatAppearance.BorderSize = 2
+        Me.clearGradesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.clearGradesButton.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.clearGradesButton.Size = New System.Drawing.Size(150, 24)
         Me.clearGradesButton.TabIndex = 6
         Me.clearGradesButton.Text = "Clear Grades"
@@ -332,6 +372,7 @@ Partial Class Form1
         Me.classAverageLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.classAverageLabel.Location = New System.Drawing.Point(184, 70)
         Me.classAverageLabel.Name = "classAverageLabel"
+        Me.classAverageLabel.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.classAverageLabel.Size = New System.Drawing.Size(365, 247)
         Me.classAverageLabel.TabIndex = 7
         '
@@ -340,6 +381,7 @@ Partial Class Form1
         Me.tabDecimalEquivalent.Controls.Add(Me.decimalOutputTextBox)
         Me.tabDecimalEquivalent.Location = New System.Drawing.Point(4, 22)
         Me.tabDecimalEquivalent.Name = "tabDecimalEquivalent"
+        Me.tabDecimalEquivalent.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.tabDecimalEquivalent.Size = New System.Drawing.Size(564, 386)
         Me.tabDecimalEquivalent.TabIndex = 3
         Me.tabDecimalEquivalent.Text = "Decimal Equivalent"
@@ -361,6 +403,7 @@ Partial Class Form1
         Me.TabPage1.Controls.Add(Me.TabControl2)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(564, 386)
         Me.TabPage1.TabIndex = 4
@@ -374,6 +417,7 @@ Partial Class Form1
         Me.TabControl2.Controls.Add(Me.TabPage4)
         Me.TabControl2.Location = New System.Drawing.Point(6, 6)
         Me.TabControl2.Name = "TabControl2"
+        Me.TabControl2.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.TabControl2.SelectedIndex = 0
         Me.TabControl2.Size = New System.Drawing.Size(552, 377)
         Me.TabControl2.TabIndex = 0
@@ -382,6 +426,7 @@ Partial Class Form1
         '
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(544, 351)
         Me.TabPage2.TabIndex = 0
@@ -392,6 +437,7 @@ Partial Class Form1
         '
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage3.Size = New System.Drawing.Size(544, 351)
         Me.TabPage3.TabIndex = 1
@@ -402,6 +448,7 @@ Partial Class Form1
         '
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage4.Size = New System.Drawing.Size(544, 351)
         Me.TabPage4.TabIndex = 2
@@ -410,7 +457,7 @@ Partial Class Form1
         '
         'lblAuthor
         '
-        Me.lblAuthor.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAuthor.Font = New System.Drawing.Font("Courier New", 7.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAuthor.ForeColor = System.Drawing.Color.FromArgb(91, 124, 120)
         Me.lblAuthor.Location = New System.Drawing.Point(6, 6)
         Me.lblAuthor.Name = "lblAuthor"

@@ -111,7 +111,7 @@ Partial Class Form1
         'lblRailBadge
         '
         Me.lblRailBadge.AutoSize = True
-        Me.lblRailBadge.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.lblRailBadge.Font = New System.Drawing.Font("Cambria", 8.5!, System.Drawing.FontStyle.Bold)
         Me.lblRailBadge.ForeColor = System.Drawing.Color.FromArgb(56, 248, 120)
         Me.lblRailBadge.Location = New System.Drawing.Point(24, 30)
         Me.lblRailBadge.Name = "lblRailBadge"
@@ -121,7 +121,7 @@ Partial Class Form1
         '
         'lblRailTitle
         '
-        Me.lblRailTitle.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold)
+        Me.lblRailTitle.Font = New System.Drawing.Font("Cambria", 20.75!, System.Drawing.FontStyle.Bold)
         Me.lblRailTitle.ForeColor = System.Drawing.Color.White
         Me.lblRailTitle.Location = New System.Drawing.Point(20, 52)
         Me.lblRailTitle.Name = "lblRailTitle"
@@ -139,7 +139,7 @@ Partial Class Form1
         '
         'lblRailText
         '
-        Me.lblRailText.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.lblRailText.Font = New System.Drawing.Font("Cambria", 9.25!)
         Me.lblRailText.ForeColor = System.Drawing.Color.FromArgb(148, 184, 160)
         Me.lblRailText.Location = New System.Drawing.Point(24, 162)
         Me.lblRailText.Name = "lblRailText"
@@ -152,7 +152,7 @@ Partial Class Form1
         'lblRailAuthor
         '
         Me.lblRailAuthor.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.lblRailAuthor.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold)
+        Me.lblRailAuthor.Font = New System.Drawing.Font("Cambria", 11.5!, System.Drawing.FontStyle.Bold)
         Me.lblRailAuthor.ForeColor = System.Drawing.Color.White
         Me.lblRailAuthor.Location = New System.Drawing.Point(24, 476)
         Me.lblRailAuthor.Name = "lblRailAuthor"
@@ -163,7 +163,7 @@ Partial Class Form1
         'lblRailCourse
         '
         Me.lblRailCourse.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.lblRailCourse.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.lblRailCourse.Font = New System.Drawing.Font("Cambria", 9.25!)
         Me.lblRailCourse.ForeColor = System.Drawing.Color.FromArgb(148, 184, 160)
         Me.lblRailCourse.Location = New System.Drawing.Point(24, 500)
         Me.lblRailCourse.Name = "lblRailCourse"
@@ -194,7 +194,7 @@ Partial Class Form1
         'lblHeading
         '
         Me.lblHeading.AutoSize = True
-        Me.lblHeading.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Bold)
+        Me.lblHeading.Font = New System.Drawing.Font("Cambria", 16.75!, System.Drawing.FontStyle.Bold)
         Me.lblHeading.ForeColor = System.Drawing.Color.FromArgb(15, 42, 24)
         Me.lblHeading.Location = New System.Drawing.Point(24, 24)
         Me.lblHeading.Name = "lblHeading"
@@ -205,7 +205,7 @@ Partial Class Form1
         'lblHint
         '
         Me.lblHint.AutoSize = True
-        Me.lblHint.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.lblHint.Font = New System.Drawing.Font("Cambria", 9.25!)
         Me.lblHint.ForeColor = System.Drawing.Color.FromArgb(100, 139, 113)
         Me.lblHint.Location = New System.Drawing.Point(27, 56)
         Me.lblHint.Name = "lblHint"
@@ -228,7 +228,7 @@ Partial Class Form1
         'lblAverageCaption
         '
         Me.lblAverageCaption.AutoSize = True
-        Me.lblAverageCaption.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblAverageCaption.Font = New System.Drawing.Font("Cambria", 9.25!, System.Drawing.FontStyle.Bold)
         Me.lblAverageCaption.ForeColor = System.Drawing.Color.FromArgb(100, 139, 113)
         Me.lblAverageCaption.Location = New System.Drawing.Point(18, 16)
         Me.lblAverageCaption.Name = "lblAverageCaption"
@@ -239,7 +239,7 @@ Partial Class Form1
         'txtAverage
         '
         Me.txtAverage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtAverage.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.txtAverage.Font = New System.Drawing.Font("Cambria", 14.5!, System.Drawing.FontStyle.Bold)
         Me.txtAverage.ForeColor = System.Drawing.Color.FromArgb(15, 42, 24)
         Me.txtAverage.Location = New System.Drawing.Point(18, 42)
         Me.txtAverage.Name = "txtAverage"
@@ -250,9 +250,10 @@ Partial Class Form1
         'btnEvaluate
         '
         Me.btnEvaluate.BackColor = System.Drawing.Color.FromArgb(15, 42, 24)
-        Me.btnEvaluate.FlatAppearance.BorderSize = 0
+        Me.btnEvaluate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(9, 27, 15)
+        Me.btnEvaluate.FlatAppearance.BorderSize = 1
         Me.btnEvaluate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEvaluate.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.btnEvaluate.Font = New System.Drawing.Font("Cambria", 9.25!)
         Me.btnEvaluate.ForeColor = System.Drawing.Color.White
         Me.btnEvaluate.Location = New System.Drawing.Point(266, 40)
         Me.btnEvaluate.Name = "btnEvaluate"
@@ -264,7 +265,7 @@ Partial Class Form1
         'lblCardsHeading
         '
         Me.lblCardsHeading.AutoSize = True
-        Me.lblCardsHeading.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblCardsHeading.Font = New System.Drawing.Font("Cambria", 9.25!, System.Drawing.FontStyle.Bold)
         Me.lblCardsHeading.ForeColor = System.Drawing.Color.FromArgb(100, 139, 113)
         Me.lblCardsHeading.Location = New System.Drawing.Point(24, 198)
         Me.lblCardsHeading.Name = "lblCardsHeading"
@@ -286,7 +287,7 @@ Partial Class Form1
         '
         'lblCard1Title
         '
-        Me.lblCard1Title.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.lblCard1Title.Font = New System.Drawing.Font("Cambria", 8.5!, System.Drawing.FontStyle.Bold)
         Me.lblCard1Title.ForeColor = System.Drawing.Color.FromArgb(148, 184, 160)
         Me.lblCard1Title.Location = New System.Drawing.Point(12, 10)
         Me.lblCard1Title.Name = "lblCard1Title"
@@ -296,7 +297,7 @@ Partial Class Form1
         '
         'lblCard1Value
         '
-        Me.lblCard1Value.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold)
+        Me.lblCard1Value.Font = New System.Drawing.Font("Cambria", 13.5!, System.Drawing.FontStyle.Bold)
         Me.lblCard1Value.ForeColor = System.Drawing.Color.FromArgb(22, 163, 74)
         Me.lblCard1Value.Location = New System.Drawing.Point(10, 34)
         Me.lblCard1Value.Name = "lblCard1Value"
@@ -307,7 +308,7 @@ Partial Class Form1
         '
         'lblCard1Note
         '
-        Me.lblCard1Note.Font = New System.Drawing.Font("Segoe UI", 7.5!)
+        Me.lblCard1Note.Font = New System.Drawing.Font("Cambria", 7.75!)
         Me.lblCard1Note.ForeColor = System.Drawing.Color.FromArgb(148, 184, 160)
         Me.lblCard1Note.Location = New System.Drawing.Point(12, 94)
         Me.lblCard1Note.Name = "lblCard1Note"
@@ -330,7 +331,7 @@ Partial Class Form1
         '
         'lblCard2Title
         '
-        Me.lblCard2Title.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.lblCard2Title.Font = New System.Drawing.Font("Cambria", 8.5!, System.Drawing.FontStyle.Bold)
         Me.lblCard2Title.ForeColor = System.Drawing.Color.FromArgb(148, 184, 160)
         Me.lblCard2Title.Location = New System.Drawing.Point(12, 10)
         Me.lblCard2Title.Name = "lblCard2Title"
@@ -340,7 +341,7 @@ Partial Class Form1
         '
         'lblCard2Value
         '
-        Me.lblCard2Value.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold)
+        Me.lblCard2Value.Font = New System.Drawing.Font("Cambria", 13.5!, System.Drawing.FontStyle.Bold)
         Me.lblCard2Value.ForeColor = System.Drawing.Color.FromArgb(37, 235, 103)
         Me.lblCard2Value.Location = New System.Drawing.Point(10, 34)
         Me.lblCard2Value.Name = "lblCard2Value"
@@ -351,7 +352,7 @@ Partial Class Form1
         '
         'lblCard2Note
         '
-        Me.lblCard2Note.Font = New System.Drawing.Font("Segoe UI", 7.5!)
+        Me.lblCard2Note.Font = New System.Drawing.Font("Cambria", 7.75!)
         Me.lblCard2Note.ForeColor = System.Drawing.Color.FromArgb(148, 184, 160)
         Me.lblCard2Note.Location = New System.Drawing.Point(12, 94)
         Me.lblCard2Note.Name = "lblCard2Note"
@@ -374,7 +375,7 @@ Partial Class Form1
         '
         'lblCard3Title
         '
-        Me.lblCard3Title.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.lblCard3Title.Font = New System.Drawing.Font("Cambria", 8.5!, System.Drawing.FontStyle.Bold)
         Me.lblCard3Title.ForeColor = System.Drawing.Color.FromArgb(148, 184, 160)
         Me.lblCard3Title.Location = New System.Drawing.Point(12, 10)
         Me.lblCard3Title.Name = "lblCard3Title"
@@ -384,7 +385,7 @@ Partial Class Form1
         '
         'lblCard3Value
         '
-        Me.lblCard3Value.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Bold)
+        Me.lblCard3Value.Font = New System.Drawing.Font("Cambria", 13.5!, System.Drawing.FontStyle.Bold)
         Me.lblCard3Value.ForeColor = System.Drawing.Color.FromArgb(147, 51, 234)
         Me.lblCard3Value.Location = New System.Drawing.Point(10, 34)
         Me.lblCard3Value.Name = "lblCard3Value"
@@ -395,7 +396,7 @@ Partial Class Form1
         '
         'lblCard3Note
         '
-        Me.lblCard3Note.Font = New System.Drawing.Font("Segoe UI", 7.5!)
+        Me.lblCard3Note.Font = New System.Drawing.Font("Cambria", 7.75!)
         Me.lblCard3Note.ForeColor = System.Drawing.Color.FromArgb(148, 184, 160)
         Me.lblCard3Note.Location = New System.Drawing.Point(12, 94)
         Me.lblCard3Note.Name = "lblCard3Note"
@@ -417,7 +418,7 @@ Partial Class Form1
         'lblInfoTitle
         '
         Me.lblInfoTitle.AutoSize = True
-        Me.lblInfoTitle.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblInfoTitle.Font = New System.Drawing.Font("Cambria", 9.25!, System.Drawing.FontStyle.Bold)
         Me.lblInfoTitle.ForeColor = System.Drawing.Color.FromArgb(46, 129, 74)
         Me.lblInfoTitle.Location = New System.Drawing.Point(16, 12)
         Me.lblInfoTitle.Name = "lblInfoTitle"
@@ -427,7 +428,7 @@ Partial Class Form1
         '
         'lblInfoText
         '
-        Me.lblInfoText.Font = New System.Drawing.Font("Segoe UI", 8.5!)
+        Me.lblInfoText.Font = New System.Drawing.Font("Cambria", 8.75!)
         Me.lblInfoText.ForeColor = System.Drawing.Color.FromArgb(46, 129, 74)
         Me.lblInfoText.Location = New System.Drawing.Point(16, 32)
         Me.lblInfoText.Name = "lblInfoText"
@@ -439,9 +440,10 @@ Partial Class Form1
         'btnClear
         '
         Me.btnClear.BackColor = System.Drawing.Color.FromArgb(226, 232, 240)
-        Me.btnClear.FlatAppearance.BorderSize = 0
+        Me.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(146, 150, 156)
+        Me.btnClear.FlatAppearance.BorderSize = 1
         Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClear.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.btnClear.Font = New System.Drawing.Font("Cambria", 9.25!)
         Me.btnClear.ForeColor = System.Drawing.Color.FromArgb(30, 59, 40)
         Me.btnClear.Location = New System.Drawing.Point(274, 456)
         Me.btnClear.Name = "btnClear"
@@ -453,9 +455,10 @@ Partial Class Form1
         'btnExit
         '
         Me.btnExit.BackColor = System.Drawing.Color.FromArgb(220, 38, 38)
-        Me.btnExit.FlatAppearance.BorderSize = 0
+        Me.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(143, 24, 24)
+        Me.btnExit.FlatAppearance.BorderSize = 1
         Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnExit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.btnExit.Font = New System.Drawing.Font("Cambria", 9.25!)
         Me.btnExit.ForeColor = System.Drawing.Color.White
         Me.btnExit.Location = New System.Drawing.Point(410, 456)
         Me.btnExit.Name = "btnExit"
@@ -466,7 +469,7 @@ Partial Class Form1
         '
         'lblStatus
         '
-        Me.lblStatus.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.lblStatus.Font = New System.Drawing.Font("Cambria", 9.25!)
         Me.lblStatus.ForeColor = System.Drawing.Color.FromArgb(71, 105, 82)
         Me.lblStatus.Location = New System.Drawing.Point(24, 508)
         Me.lblStatus.Name = "lblStatus"

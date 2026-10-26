@@ -111,7 +111,7 @@ Partial Class Form1
         'lblHeaderTitle
         '
         Me.lblHeaderTitle.AutoSize = True
-        Me.lblHeaderTitle.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Bold)
+        Me.lblHeaderTitle.Font = New System.Drawing.Font("Tahoma", 15.25!, System.Drawing.FontStyle.Bold)
         Me.lblHeaderTitle.ForeColor = System.Drawing.Color.White
         Me.lblHeaderTitle.Location = New System.Drawing.Point(24, 14)
         Me.lblHeaderTitle.Name = "lblHeaderTitle"
@@ -122,7 +122,7 @@ Partial Class Form1
         'lblHeaderSub
         '
         Me.lblHeaderSub.AutoSize = True
-        Me.lblHeaderSub.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.lblHeaderSub.Font = New System.Drawing.Font("Tahoma", 8.5!)
         Me.lblHeaderSub.ForeColor = System.Drawing.Color.FromArgb(184, 148, 148)
         Me.lblHeaderSub.Location = New System.Drawing.Point(26, 50)
         Me.lblHeaderSub.Name = "lblHeaderSub"
@@ -133,7 +133,7 @@ Partial Class Form1
         'lblAuthor
         '
         Me.lblAuthor.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblAuthor.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.lblAuthor.Font = New System.Drawing.Font("Tahoma", 9.5!, System.Drawing.FontStyle.Bold)
         Me.lblAuthor.ForeColor = System.Drawing.Color.White
         Me.lblAuthor.Location = New System.Drawing.Point(680, 22)
         Me.lblAuthor.Name = "lblAuthor"
@@ -160,7 +160,7 @@ Partial Class Form1
         'lblComposeTitle
         '
         Me.lblComposeTitle.AutoSize = True
-        Me.lblComposeTitle.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblComposeTitle.Font = New System.Drawing.Font("Tahoma", 8.5!, System.Drawing.FontStyle.Bold)
         Me.lblComposeTitle.ForeColor = System.Drawing.Color.FromArgb(139, 100, 100)
         Me.lblComposeTitle.Location = New System.Drawing.Point(18, 16)
         Me.lblComposeTitle.Name = "lblComposeTitle"
@@ -171,7 +171,7 @@ Partial Class Form1
         'lblTitleCaption
         '
         Me.lblTitleCaption.AutoSize = True
-        Me.lblTitleCaption.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.lblTitleCaption.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.lblTitleCaption.ForeColor = System.Drawing.Color.FromArgb(85, 51, 51)
         Me.lblTitleCaption.Location = New System.Drawing.Point(18, 52)
         Me.lblTitleCaption.Name = "lblTitleCaption"
@@ -182,7 +182,7 @@ Partial Class Form1
         'txtTitle
         '
         Me.txtTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtTitle.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.txtTitle.Font = New System.Drawing.Font("Tahoma", 10.5!)
         Me.txtTitle.Location = New System.Drawing.Point(18, 74)
         Me.txtTitle.Name = "txtTitle"
         Me.txtTitle.Size = New System.Drawing.Size(400, 27)
@@ -191,7 +191,7 @@ Partial Class Form1
         'lblMessageCaption
         '
         Me.lblMessageCaption.AutoSize = True
-        Me.lblMessageCaption.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.lblMessageCaption.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.lblMessageCaption.ForeColor = System.Drawing.Color.FromArgb(85, 51, 51)
         Me.lblMessageCaption.Location = New System.Drawing.Point(18, 120)
         Me.lblMessageCaption.Name = "lblMessageCaption"
@@ -202,7 +202,7 @@ Partial Class Form1
         'txtMessage
         '
         Me.txtMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtMessage.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.txtMessage.Font = New System.Drawing.Font("Tahoma", 9.5!)
         Me.txtMessage.Location = New System.Drawing.Point(18, 142)
         Me.txtMessage.Multiline = True
         Me.txtMessage.Name = "txtMessage"
@@ -212,7 +212,7 @@ Partial Class Form1
         '
         'lblComposeNote
         '
-        Me.lblComposeNote.Font = New System.Drawing.Font("Segoe UI", 8.5!)
+        Me.lblComposeNote.Font = New System.Drawing.Font("Tahoma", 8.0!)
         Me.lblComposeNote.ForeColor = System.Drawing.Color.FromArgb(184, 148, 148)
         Me.lblComposeNote.Location = New System.Drawing.Point(18, 326)
         Me.lblComposeNote.Name = "lblComposeNote"
@@ -239,7 +239,7 @@ Partial Class Form1
         'lblIconsTitle
         '
         Me.lblIconsTitle.AutoSize = True
-        Me.lblIconsTitle.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblIconsTitle.Font = New System.Drawing.Font("Tahoma", 8.5!, System.Drawing.FontStyle.Bold)
         Me.lblIconsTitle.ForeColor = System.Drawing.Color.FromArgb(139, 100, 100)
         Me.lblIconsTitle.Location = New System.Drawing.Point(18, 14)
         Me.lblIconsTitle.Name = "lblIconsTitle"
@@ -250,7 +250,7 @@ Partial Class Form1
         'rbInfo
         '
         Me.rbInfo.AutoSize = True
-        Me.rbInfo.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.rbInfo.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.rbInfo.ForeColor = System.Drawing.Color.FromArgb(59, 30, 30)
         Me.rbInfo.Location = New System.Drawing.Point(20, 44)
         Me.rbInfo.Name = "rbInfo"
@@ -262,7 +262,7 @@ Partial Class Form1
         'rbWarning
         '
         Me.rbWarning.AutoSize = True
-        Me.rbWarning.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.rbWarning.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.rbWarning.ForeColor = System.Drawing.Color.FromArgb(59, 30, 30)
         Me.rbWarning.Location = New System.Drawing.Point(20, 82)
         Me.rbWarning.Name = "rbWarning"
@@ -274,7 +274,7 @@ Partial Class Form1
         'rbQuestion
         '
         Me.rbQuestion.AutoSize = True
-        Me.rbQuestion.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.rbQuestion.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.rbQuestion.ForeColor = System.Drawing.Color.FromArgb(59, 30, 30)
         Me.rbQuestion.Location = New System.Drawing.Point(228, 44)
         Me.rbQuestion.Name = "rbQuestion"
@@ -286,7 +286,7 @@ Partial Class Form1
         'rbCritical
         '
         Me.rbCritical.AutoSize = True
-        Me.rbCritical.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.rbCritical.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.rbCritical.ForeColor = System.Drawing.Color.FromArgb(59, 30, 30)
         Me.rbCritical.Location = New System.Drawing.Point(228, 82)
         Me.rbCritical.Name = "rbCritical"
@@ -314,7 +314,7 @@ Partial Class Form1
         'lblButtonsTitle
         '
         Me.lblButtonsTitle.AutoSize = True
-        Me.lblButtonsTitle.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblButtonsTitle.Font = New System.Drawing.Font("Tahoma", 8.5!, System.Drawing.FontStyle.Bold)
         Me.lblButtonsTitle.ForeColor = System.Drawing.Color.FromArgb(139, 100, 100)
         Me.lblButtonsTitle.Location = New System.Drawing.Point(18, 14)
         Me.lblButtonsTitle.Name = "lblButtonsTitle"
@@ -325,7 +325,7 @@ Partial Class Form1
         'rbOk
         '
         Me.rbOk.AutoSize = True
-        Me.rbOk.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.rbOk.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.rbOk.ForeColor = System.Drawing.Color.FromArgb(59, 30, 30)
         Me.rbOk.Location = New System.Drawing.Point(20, 44)
         Me.rbOk.Name = "rbOk"
@@ -337,7 +337,7 @@ Partial Class Form1
         'rbOkCancel
         '
         Me.rbOkCancel.AutoSize = True
-        Me.rbOkCancel.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.rbOkCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.rbOkCancel.ForeColor = System.Drawing.Color.FromArgb(59, 30, 30)
         Me.rbOkCancel.Location = New System.Drawing.Point(20, 80)
         Me.rbOkCancel.Name = "rbOkCancel"
@@ -349,7 +349,7 @@ Partial Class Form1
         'rbYesNo
         '
         Me.rbYesNo.AutoSize = True
-        Me.rbYesNo.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.rbYesNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.rbYesNo.ForeColor = System.Drawing.Color.FromArgb(59, 30, 30)
         Me.rbYesNo.Location = New System.Drawing.Point(20, 116)
         Me.rbYesNo.Name = "rbYesNo"
@@ -361,7 +361,7 @@ Partial Class Form1
         'rbYesNoCancel
         '
         Me.rbYesNoCancel.AutoSize = True
-        Me.rbYesNoCancel.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.rbYesNoCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.rbYesNoCancel.ForeColor = System.Drawing.Color.FromArgb(59, 30, 30)
         Me.rbYesNoCancel.Location = New System.Drawing.Point(228, 44)
         Me.rbYesNoCancel.Name = "rbYesNoCancel"
@@ -373,7 +373,7 @@ Partial Class Form1
         'rbRetryCancel
         '
         Me.rbRetryCancel.AutoSize = True
-        Me.rbRetryCancel.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.rbRetryCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.rbRetryCancel.ForeColor = System.Drawing.Color.FromArgb(59, 30, 30)
         Me.rbRetryCancel.Location = New System.Drawing.Point(228, 80)
         Me.rbRetryCancel.Name = "rbRetryCancel"
@@ -385,7 +385,7 @@ Partial Class Form1
         'rbAbortRetryIgnore
         '
         Me.rbAbortRetryIgnore.AutoSize = True
-        Me.rbAbortRetryIgnore.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.rbAbortRetryIgnore.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.rbAbortRetryIgnore.ForeColor = System.Drawing.Color.FromArgb(59, 30, 30)
         Me.rbAbortRetryIgnore.Location = New System.Drawing.Point(228, 116)
         Me.rbAbortRetryIgnore.Name = "rbAbortRetryIgnore"
@@ -410,7 +410,7 @@ Partial Class Form1
         'lblDefaultTitle
         '
         Me.lblDefaultTitle.AutoSize = True
-        Me.lblDefaultTitle.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblDefaultTitle.Font = New System.Drawing.Font("Tahoma", 8.5!, System.Drawing.FontStyle.Bold)
         Me.lblDefaultTitle.ForeColor = System.Drawing.Color.FromArgb(139, 100, 100)
         Me.lblDefaultTitle.Location = New System.Drawing.Point(18, 14)
         Me.lblDefaultTitle.Name = "lblDefaultTitle"
@@ -421,7 +421,7 @@ Partial Class Form1
         'rbDefault1
         '
         Me.rbDefault1.AutoSize = True
-        Me.rbDefault1.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.rbDefault1.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.rbDefault1.ForeColor = System.Drawing.Color.FromArgb(59, 30, 30)
         Me.rbDefault1.Location = New System.Drawing.Point(20, 52)
         Me.rbDefault1.Name = "rbDefault1"
@@ -433,7 +433,7 @@ Partial Class Form1
         'rbDefault2
         '
         Me.rbDefault2.AutoSize = True
-        Me.rbDefault2.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.rbDefault2.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.rbDefault2.ForeColor = System.Drawing.Color.FromArgb(59, 30, 30)
         Me.rbDefault2.Location = New System.Drawing.Point(160, 52)
         Me.rbDefault2.Name = "rbDefault2"
@@ -445,7 +445,7 @@ Partial Class Form1
         'rbDefault3
         '
         Me.rbDefault3.AutoSize = True
-        Me.rbDefault3.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.rbDefault3.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.rbDefault3.ForeColor = System.Drawing.Color.FromArgb(59, 30, 30)
         Me.rbDefault3.Location = New System.Drawing.Point(300, 52)
         Me.rbDefault3.Name = "rbDefault3"
@@ -471,9 +471,10 @@ Partial Class Form1
         'btnDisplay
         '
         Me.btnDisplay.BackColor = System.Drawing.Color.FromArgb(42, 15, 15)
-        Me.btnDisplay.FlatAppearance.BorderSize = 0
+        Me.btnDisplay.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(18, 6, 6)
+        Me.btnDisplay.FlatAppearance.BorderSize = 3
         Me.btnDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDisplay.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.btnDisplay.Font = New System.Drawing.Font("Tahoma", 8.5!, System.Drawing.FontStyle.Bold)
         Me.btnDisplay.ForeColor = System.Drawing.Color.White
         Me.btnDisplay.Location = New System.Drawing.Point(264, 13)
         Me.btnDisplay.Name = "btnDisplay"
@@ -485,9 +486,10 @@ Partial Class Form1
         'btnClear
         '
         Me.btnClear.BackColor = System.Drawing.Color.FromArgb(226, 232, 240)
-        Me.btnClear.FlatAppearance.BorderSize = 0
+        Me.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(101, 104, 108)
+        Me.btnClear.FlatAppearance.BorderSize = 3
         Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClear.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.btnClear.Font = New System.Drawing.Font("Tahoma", 8.5!, System.Drawing.FontStyle.Bold)
         Me.btnClear.ForeColor = System.Drawing.Color.FromArgb(59, 30, 30)
         Me.btnClear.Location = New System.Drawing.Point(144, 13)
         Me.btnClear.Name = "btnClear"
@@ -499,9 +501,10 @@ Partial Class Form1
         'btnExit
         '
         Me.btnExit.BackColor = System.Drawing.Color.FromArgb(220, 38, 38)
-        Me.btnExit.FlatAppearance.BorderSize = 0
+        Me.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(99, 17, 17)
+        Me.btnExit.FlatAppearance.BorderSize = 3
         Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnExit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.btnExit.Font = New System.Drawing.Font("Tahoma", 8.5!, System.Drawing.FontStyle.Bold)
         Me.btnExit.ForeColor = System.Drawing.Color.White
         Me.btnExit.Location = New System.Drawing.Point(24, 13)
         Me.btnExit.Name = "btnExit"
@@ -514,7 +517,7 @@ Partial Class Form1
         '
         Me.lblStatus.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblStatus.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.lblStatus.Font = New System.Drawing.Font("Tahoma", 8.5!)
         Me.lblStatus.ForeColor = System.Drawing.Color.FromArgb(105, 71, 71)
         Me.lblStatus.Location = New System.Drawing.Point(470, 21)
         Me.lblStatus.Name = "lblStatus"

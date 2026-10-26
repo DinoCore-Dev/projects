@@ -94,6 +94,23 @@ c4) LAYOUT NG MGA FORM (Act 4 - 13): MAGKAIBA ang layout ng bawat identity sa la
    - Pangalan ng controls ang ginagamit ng code, kaya Location / Size / Dock lang ang nagbabago;
      huwag baguhin ang logic. I-rebuild ang `docs/figures` pagkatapos para tumugma ang Form Design
      at Sample Output pictures sa bagong layout.
+c5) FONT AT BUTTON STYLE (Act 4 - 13): MAGKAIBA rin ang font family at itsura ng buttons ng bawat
+   identity. Fonts na available lang sa MS Visual Studio 2010 / Windows ang gamit (walang kailangang i-install).
+   - Gamitin ang `tools/style_variants.py <STYLE CODE>` (isang beses lang bawat identity; marker na
+     `tools/style_code.txt`; pareho ng numero ng LAYOUT CODE). Pinapalitan nito ang font family ng lahat
+     ng `*.Designer.vb` at ng `New Font(...)` sa code, nilalagyan ng font ang mga controls na wala pa,
+     at inaayos ang itsura ng Button (FlatStyle, border, kulay mula sa accent ng identity).
+   - Pagkatapos, automatic na `fit_fonts`: kapag mas malapad ang bagong font sa label / button / tab,
+     liliit ang font (hanggang 6.5 pt) o lilipat pakaliwa ang label para walang sumobra o magpatong.
+     Kung may kailangan lang ulitin: `python3 tools/style_variants.py --fit-only`.
+   - Talahanayan (code - family - button style): 0 Segoe UI solid; 1 Courier New border2; 2 Georgia ghost2;
+     3 Verdana bevel; 4 Calibri popup; 5 Cambria thin; 6 Times New Roman native; 7 Arial ghost3;
+     8 Consolas tonal; 9 Tahoma heavy. Bagong identity: kunin ang susunod na code at idagdag ang
+     family sa `STYLES` at `FONT_TABLE` (kasama ang TTF na pamalit sa `tools/fonts/` para sa figure).
+   - Ang figure ay gumagamit ng metric-compatible na pamalit (Cousine, Gelasio, Carlito, Caladea, Arimo, Tinos,
+     Inconsolata, Open Sans); ang Windows na ang gagamit ng totoong font sa VS2010. Bago mag-rebuild ng docs,
+     tapusin muna ang layout_variants at style_variants.
+
 
 ===========================================================
 4) BAGONG DESIGN + BAGONG CODE (HUWAG KOPYAHIN ANG SAMPLE)
@@ -270,6 +287,7 @@ totoong database, parehong gaya ng original, at PAREHO sa lahat ng identity:
 ===========================================================
 7) TOOLS SA REPO (gamitin, huwag magsimula sa zero kung meron na)
 ===========================================================
+- `tools/style_variants.py`    : font family + button style + fit (c5)
 - `tools/design_figure.py`     : gumagawa ng Form Design figure mula sa totoong coordinates
                                  ng `*.Designer.vb`. May dalawang mode: `mode="design"`
                                  (dotted grid + asul na selection handles, hitsura ng VS2010
@@ -323,6 +341,8 @@ totoong database, parehong gaya ng original, at PAREHO sa lahat ng identity:
 2b. Act 13: `grep -rn "OleDb\|ADOX" COMPILATION/IntegProgProject2026` -> walang output; nasa
    `Forms/frm*.vb` ang `projectDB.sdf` + `INSERT/UPDATE/DELETE`; may `<system.data>` sa `app.config`;
    `lblDatabase` sa Sample Output ay `projectDB.sdf`
+2e. Style: `python3 tools/style_variants.py` ay nagamit na (may `tools/style_code.txt`); iba ang font family at
+   button style ng identity sa lahat ng iba, at walang label / button na lumalampas sa laki.
 2d. Layout: `python3 tools/layout_variants.py` ay nagamit na (may `tools/layout_code.txt`) at
    magkaiba ang code at ang Location/Size/Dock ng mga form sa bawat identity folder; ang quote
    ay inspirational at hindi pareho sa iba.

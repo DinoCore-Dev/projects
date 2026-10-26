@@ -13,6 +13,26 @@ FONT_REG = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 FONT_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 FONT_MONO = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
 
+# Windows fonts that Visual Studio 2010 offers -> metric-compatible fonts shipped in tools/fonts
+# (Courier New = Cousine, Arial = Arimo, Times New Roman = Tinos, Calibri = Carlito,
+#  Cambria = Caladea, Georgia = Gelasio, Consolas = Inconsolata, Segoe UI = Open Sans,
+#  Verdana / Tahoma = DejaVu Sans).  Only the picture uses them; the program uses the real font.
+FONT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fonts")
+FONT_TABLE = {
+    "Segoe UI": ("OpenSans_400Regular.ttf", "OpenSans_700Bold.ttf", 0.93),
+    "Courier New": ("Cousine_400Regular.ttf", "Cousine_700Bold.ttf", 1.0),
+    "Georgia": ("Gelasio_400Regular.ttf", "Gelasio_700Bold.ttf", 1.0),
+    "Verdana": ("DejaVuSans.ttf", "DejaVuSans-Bold.ttf", 1.0),
+    "Calibri": ("Carlito_400Regular.ttf", "Carlito_700Bold.ttf", 1.0),
+    "Cambria": ("Caladea_400Regular.ttf", "Caladea_700Bold.ttf", 1.0),
+    "Arial": ("Arimo_400Regular.ttf", "Arimo_700Bold.ttf", 1.0),
+    "Times New Roman": ("Tinos_400Regular.ttf", "Tinos_700Bold.ttf", 1.0),
+    "Consolas": ("Inconsolata_400Regular.ttf", "Inconsolata_700Bold.ttf", 1.1),
+    "Tahoma": ("DejaVuSans.ttf", "DejaVuSans-Bold.ttf", 0.92),
+    "Microsoft Sans Serif": ("Arimo_400Regular.ttf", "Arimo_700Bold.ttf", 0.97),
+    "Lucida Console": ("DejaVuSansMono.ttf", "DejaVuSansMono-Bold.ttf", 0.9),
+}
+
 NAMED_COLORS = {
     "White": (255, 255, 255), "Black": (0, 0, 0), "Red": (255, 0, 0),
     "Green": (0, 128, 0), "Blue": (0, 0, 255), "Gray": (128, 128, 128),
@@ -54,7 +74,12 @@ class Control:
         self.back = None
         self.fore = None
         self.font_size = 8.25
+        self.family = None
         self.bold = False
+        self.flat = "Standard"      # Button.FlatStyle
+        self.fborder = 1            # FlatAppearance.BorderSize
+        self.fcolor = None          # FlatAppearance.BorderColor
+        self.usevsbg = False        # UseVisualStyleBackColor
         self.mono = False
         self.dock = None
         self.visible = True
@@ -152,10 +177,31 @@ def parse_designer(path):
         c = controls.get(m.group(1))
         if c:
             c.font_size = float(m.group(3))
+            c.family = m.group(2)
             if "Mono" in m.group(2):
                 c.mono = True
             style = m.group(4) if m.lastindex and m.lastindex >= 4 else ""
             c.bold = bool(style and "Bold" in style)
+
+    def flatstyle(m):
+        c = controls.get(m.group(1))
+        if c:
+            c.flat = m.group(2)
+
+    def fborder(m):
+        c = controls.get(m.group(1))
+        if c:
+            c.fborder = int(m.group(2))
+
+    def fcolor(m):
+        c = controls.get(m.group(1))
+        if c:
+            c.fcolor = _color(m.group(2))
+
+    def usevs(m):
+        c = controls.get(m.group(1))
+        if c:
+            c.usevsbg = (m.group(2) == "True")
 
     def dock(m):
         c = controls.get(m.group(1))
@@ -214,6 +260,10 @@ def parse_designer(path):
     each(r"^\s*Me\.(\w+)\.BackColor = (System\.Drawing\.Color\.(?:FromArgb\(\d+, \d+, \d+\)|\w+))\s*$", back)
     each(r"^\s*Me\.(\w+)\.ForeColor = (System\.Drawing\.Color\.(?:FromArgb\(\d+, \d+, \d+\)|\w+))\s*$", fore)
     each(r'^\s*Me\.(\w+)\.Font = New System\.Drawing\.Font\("([^"]+)", ([\d.]+)!(?:, System\.Drawing\.FontStyle\.(\w+))?\)', font)
+    each(r"^\s*Me\.(\w+)\.FlatStyle = System\.Windows\.Forms\.FlatStyle\.(\w+)\s*$", flatstyle)
+    each(r"^\s*Me\.(\w+)\.FlatAppearance\.BorderSize = (\d+)\s*$", fborder)
+    each(r"^\s*Me\.(\w+)\.FlatAppearance\.BorderColor = (System\.Drawing\.Color\.(?:FromArgb\(\d+, \d+, \d+\)|\w+))\s*$", fcolor)
+    each(r"^\s*Me\.(\w+)\.UseVisualStyleBackColor = (True|False)\s*$", usevs)
     each(r"^\s*Me\.(\w+)\.Dock = System\.Windows\.Forms\.DockStyle\.(\w+)\s*$", dock)
     each(r"^\s*Me\.(\w+)\.Visible = (True|False)\s*$", visible)
     each(r"^\s*Me\.(\w+)\.BorderStyle = System\.Windows\.Forms\.BorderStyle\.(\w+)\s*$", border)
@@ -477,9 +527,29 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
     img = Image.new("RGB", (total_w * SCALE, (total_h + 34) * SCALE), (255, 255, 255))
     draw = ImageDraw.Draw(img)
 
+    # family used by the picture: the family that most controls of this form declare
+    counts = {}
+    for _c in controls.values():
+        if _c.family and _c.family not in ("Consolas", "Lucida Console"):
+            counts[_c.family] = counts.get(_c.family, 0) + 1
+    form_family = max(counts, key=counts.get) if counts else None
+    cur = {"fam": form_family}
+
     def font(size_pt, bold=False, mono=False):
-        px = max(7, int(size_pt * 1.34 * SCALE * 0.90))
-        path = FONT_MONO if mono else (FONT_BOLD if bold else FONT_REG)
+        fam = cur["fam"]
+        if mono and fam not in FONT_TABLE:
+            fam = "Lucida Console"
+        entry = FONT_TABLE.get(fam)
+        if entry is not None:
+            mult = entry[2]
+            path = os.path.join(FONT_DIR, entry[1] if bold else entry[0])
+            if not os.path.exists(path):
+                path = FONT_BOLD if bold else FONT_REG
+                mult = 0.90
+            px = max(7, int(size_pt * 1.3333 * SCALE * mult))
+        else:
+            px = max(7, int(size_pt * 1.34 * SCALE * 0.90))
+            path = FONT_MONO if mono else (FONT_BOLD if bold else FONT_REG)
         try:
             return ImageFont.truetype(path, px)
         except Exception:
@@ -491,10 +561,13 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
     draw.rectangle([0, 0, (total_w - 1) * SCALE, TITLE_BAR * SCALE], fill=(243, 243, 243))
     draw.line([0, TITLE_BAR * SCALE, (total_w - 1) * SCALE, TITLE_BAR * SCALE],
               fill=(200, 200, 200), width=SCALE)
+    cur["fam"] = "Segoe UI"       # the window caption is always drawn by Windows itself
     draw.text((10 * SCALE, 7 * SCALE), (form.text or "Form")[:90], font=font(8.5),
               fill=(40, 40, 40))
+    cur["fam"] = None             # DejaVu has the window-button symbols
     draw.text(((total_w - 92) * SCALE, 6 * SCALE), "\u2014   \u25a1   \u2715",
               font=font(9), fill=(70, 70, 70))
+    cur["fam"] = form_family
 
     client_bg = form.back or (240, 240, 240)
     draw.rectangle([SCALE, (TITLE_BAR + 1) * SCALE, (total_w - 2) * SCALE,
@@ -532,6 +605,7 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
         kind = c.kind
         back = c.back
         line = (150, 160, 172)
+        cur["fam"] = c.family if c.family else form_family
 
         if kind == "TabControl":
             draw.rectangle(box, fill=(246, 247, 249), outline=(190, 197, 206), width=SCALE)
@@ -544,7 +618,7 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
                 for index, page_key in enumerate(tabs):
                     page = controls[page_key]
                     label = page.text or page.name
-                    text_font = font(8.0)
+                    text_font = font(c.font_size if c.family else 8.0)
                     text_w = draw.textlength(label, font=text_font) + 20 * SCALE
                     selected_now = (index == selected)
                     tab_box = [cursor_x, strip_y,
@@ -678,17 +752,37 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
                     draw.text((tx, start_y + index * line_h), line_text, font=f,
                               fill=c.fore or (30, 30, 30))
         elif kind == "Button":
-            if back:
-                fill = back
-                draw.rectangle(box, fill=fill, outline=(190, 196, 204), width=SCALE)
-            else:
-                # classic WinForms button: soft gradient and a 1px border
+            def darker(col, k):
+                return tuple(int(v * k) for v in col)
+            border = None
+            if c.flat == "System" or (back is None and c.flat in ("Standard", "System")):
+                # native Windows button: soft gradient and a 1px border
                 for row in range(int(box[3] - box[1])):
                     shade = 244 - int(row * 8 / max(1, (box[3] - box[1])))
                     draw.line([box[0], box[1] + row, box[2], box[1] + row],
                               fill=(shade, shade, shade + 1))
                 draw.rectangle(box, outline=(173, 179, 188), width=SCALE)
-            f = font(c.font_size, True)
+                text_color = (20, 20, 20) if c.flat == "System" else (c.fore or (30, 30, 30))
+            else:
+                fill = back or (240, 240, 240)
+                draw.rectangle(box, fill=fill)
+                if c.flat == "Flat":
+                    if c.fborder > 0:
+                        draw.rectangle(box, outline=c.fcolor or darker(fill, 0.7), width=c.fborder * SCALE)
+                elif c.flat == "Popup":
+                    draw.rectangle(box, outline=(160, 166, 175), width=SCALE)
+                    draw.line([box[0] + SCALE, box[1] + SCALE, box[2] - SCALE, box[1] + SCALE],
+                              fill=tuple(min(255, v + 45) for v in fill), width=SCALE)
+                else:   # Standard with a BackColor: classic raised 3D button
+                    light = tuple(min(255, v + 70) for v in fill)
+                    dark = darker(fill, 0.55)
+                    draw.rectangle(box, outline=(30, 30, 30), width=SCALE)
+                    draw.line([box[0] + SCALE, box[1] + SCALE, box[2] - 2 * SCALE, box[1] + SCALE], fill=light, width=SCALE)
+                    draw.line([box[0] + SCALE, box[1] + SCALE, box[0] + SCALE, box[3] - 2 * SCALE], fill=light, width=SCALE)
+                    draw.line([box[0] + SCALE, box[3] - 2 * SCALE, box[2] - 2 * SCALE, box[3] - 2 * SCALE], fill=dark, width=SCALE)
+                    draw.line([box[2] - 2 * SCALE, box[1] + SCALE, box[2] - 2 * SCALE, box[3] - 2 * SCALE], fill=dark, width=SCALE)
+                text_color = c.fore or (30, 30, 30)
+            f = font(c.font_size, c.bold)
             txt = c.text
             if txt:
                 tw = draw.textlength(txt, font=f)
@@ -698,7 +792,7 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
                     txt += "\u2026"
                     tw = draw.textlength(txt, font=f)
                 draw.text((box[0] + (w * SCALE - tw) / 2, box[1] + (h * SCALE - c.font_size * 1.6 * SCALE) / 2),
-                          txt, font=f, fill=c.fore or (30, 30, 30))
+                          txt, font=f, fill=text_color)
         elif kind == "TextBox":
             draw.rectangle(box, fill=back or (255, 255, 255), outline=(158, 168, 180), width=SCALE)
             if c.text and not c.multiline:

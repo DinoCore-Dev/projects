@@ -136,7 +136,7 @@ Partial Class Form1
         'lblApp
         '
         Me.lblApp.AutoSize = True
-        Me.lblApp.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Bold)
+        Me.lblApp.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Bold)
         Me.lblApp.ForeColor = System.Drawing.Color.White
         Me.lblApp.Location = New System.Drawing.Point(749, 10)
         Me.lblApp.Name = "lblApp"
@@ -147,7 +147,7 @@ Partial Class Form1
         'lblHeaderSub
         '
         Me.lblHeaderSub.AutoSize = True
-        Me.lblHeaderSub.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.lblHeaderSub.Font = New System.Drawing.Font("Tahoma", 7.75!)
         Me.lblHeaderSub.ForeColor = System.Drawing.Color.FromArgb(184, 148, 148)
         Me.lblHeaderSub.Location = New System.Drawing.Point(752, 36)
         Me.lblHeaderSub.Name = "lblHeaderSub"
@@ -158,7 +158,7 @@ Partial Class Form1
         'lblAuthor
         '
         Me.lblAuthor.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblAuthor.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.lblAuthor.Font = New System.Drawing.Font("Tahoma", 9.5!, System.Drawing.FontStyle.Bold)
         Me.lblAuthor.ForeColor = System.Drawing.Color.White
         Me.lblAuthor.Location = New System.Drawing.Point(18, 16)
         Me.lblAuthor.Name = "lblAuthor"
@@ -170,9 +170,10 @@ Partial Class Form1
         'btnBack
         '
         Me.btnBack.BackColor = System.Drawing.Color.FromArgb(59, 30, 30)
-        Me.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(85, 51, 51)
+        Me.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(26, 13, 13)
+        Me.btnBack.FlatAppearance.BorderSize = 3
         Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBack.Font = New System.Drawing.Font("Segoe UI", 8.5!)
+        Me.btnBack.Font = New System.Drawing.Font("Tahoma", 8.0!)
         Me.btnBack.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240)
         Me.btnBack.Location = New System.Drawing.Point(292, 58)
         Me.btnBack.Name = "btnBack"
@@ -184,9 +185,10 @@ Partial Class Form1
         'btnForward
         '
         Me.btnForward.BackColor = System.Drawing.Color.FromArgb(59, 30, 30)
-        Me.btnForward.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(85, 51, 51)
+        Me.btnForward.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(26, 13, 13)
+        Me.btnForward.FlatAppearance.BorderSize = 3
         Me.btnForward.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnForward.Font = New System.Drawing.Font("Segoe UI", 8.5!)
+        Me.btnForward.Font = New System.Drawing.Font("Tahoma", 8.0!)
         Me.btnForward.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240)
         Me.btnForward.Location = New System.Drawing.Point(216, 58)
         Me.btnForward.Name = "btnForward"
@@ -198,9 +200,10 @@ Partial Class Form1
         'btnUp
         '
         Me.btnUp.BackColor = System.Drawing.Color.FromArgb(59, 30, 30)
-        Me.btnUp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(85, 51, 51)
+        Me.btnUp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(26, 13, 13)
+        Me.btnUp.FlatAppearance.BorderSize = 3
         Me.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUp.Font = New System.Drawing.Font("Segoe UI", 8.5!)
+        Me.btnUp.Font = New System.Drawing.Font("Tahoma", 8.0!)
         Me.btnUp.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240)
         Me.btnUp.Location = New System.Drawing.Point(160, 58)
         Me.btnUp.Name = "btnUp"
@@ -212,9 +215,10 @@ Partial Class Form1
         'btnHome
         '
         Me.btnHome.BackColor = System.Drawing.Color.FromArgb(59, 30, 30)
-        Me.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(85, 51, 51)
+        Me.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(26, 13, 13)
+        Me.btnHome.FlatAppearance.BorderSize = 3
         Me.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnHome.Font = New System.Drawing.Font("Segoe UI", 8.5!)
+        Me.btnHome.Font = New System.Drawing.Font("Tahoma", 8.0!)
         Me.btnHome.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240)
         Me.btnHome.Location = New System.Drawing.Point(92, 58)
         Me.btnHome.Name = "btnHome"
@@ -226,9 +230,10 @@ Partial Class Form1
         'btnRefresh
         '
         Me.btnRefresh.BackColor = System.Drawing.Color.FromArgb(235, 37, 37)
-        Me.btnRefresh.FlatAppearance.BorderSize = 0
+        Me.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(105, 16, 16)
+        Me.btnRefresh.FlatAppearance.BorderSize = 3
         Me.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRefresh.Font = New System.Drawing.Font("Segoe UI", 8.5!, System.Drawing.FontStyle.Bold)
+        Me.btnRefresh.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Bold)
         Me.btnRefresh.ForeColor = System.Drawing.Color.White
         Me.btnRefresh.Location = New System.Drawing.Point(16, 58)
         Me.btnRefresh.Name = "btnRefresh"
@@ -252,9 +257,10 @@ Partial Class Form1
         '
         Me.btnGo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnGo.BackColor = System.Drawing.Color.FromArgb(13, 148, 136)
-        Me.btnGo.FlatAppearance.BorderSize = 0
+        Me.btnGo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(5, 66, 61)
+        Me.btnGo.FlatAppearance.BorderSize = 3
         Me.btnGo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGo.Font = New System.Drawing.Font("Segoe UI", 8.5!, System.Drawing.FontStyle.Bold)
+        Me.btnGo.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Bold)
         Me.btnGo.ForeColor = System.Drawing.Color.White
         Me.btnGo.Location = New System.Drawing.Point(1074, 58)
         Me.btnGo.Name = "btnGo"
@@ -280,9 +286,10 @@ Partial Class Form1
         'btnTreeToggle
         '
         Me.btnTreeToggle.BackColor = System.Drawing.Color.White
-        Me.btnTreeToggle.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(184, 148, 148)
+        Me.btnTreeToggle.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(114, 114, 114)
+        Me.btnTreeToggle.FlatAppearance.BorderSize = 3
         Me.btnTreeToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTreeToggle.Font = New System.Drawing.Font("Segoe UI", 8.5!)
+        Me.btnTreeToggle.Font = New System.Drawing.Font("Tahoma", 8.0!)
         Me.btnTreeToggle.ForeColor = System.Drawing.Color.FromArgb(59, 30, 30)
         Me.btnTreeToggle.Location = New System.Drawing.Point(16, 7)
         Me.btnTreeToggle.Name = "btnTreeToggle"
@@ -294,9 +301,10 @@ Partial Class Form1
         'btnPreviewToggle
         '
         Me.btnPreviewToggle.BackColor = System.Drawing.Color.White
-        Me.btnPreviewToggle.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(184, 148, 148)
+        Me.btnPreviewToggle.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(114, 114, 114)
+        Me.btnPreviewToggle.FlatAppearance.BorderSize = 3
         Me.btnPreviewToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPreviewToggle.Font = New System.Drawing.Font("Segoe UI", 8.5!)
+        Me.btnPreviewToggle.Font = New System.Drawing.Font("Tahoma", 8.0!)
         Me.btnPreviewToggle.ForeColor = System.Drawing.Color.FromArgb(59, 30, 30)
         Me.btnPreviewToggle.Location = New System.Drawing.Point(154, 7)
         Me.btnPreviewToggle.Name = "btnPreviewToggle"
@@ -308,9 +316,10 @@ Partial Class Form1
         'btnSwapLayout
         '
         Me.btnSwapLayout.BackColor = System.Drawing.Color.White
-        Me.btnSwapLayout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(184, 148, 148)
+        Me.btnSwapLayout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(114, 114, 114)
+        Me.btnSwapLayout.FlatAppearance.BorderSize = 3
         Me.btnSwapLayout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSwapLayout.Font = New System.Drawing.Font("Segoe UI", 8.5!)
+        Me.btnSwapLayout.Font = New System.Drawing.Font("Tahoma", 8.0!)
         Me.btnSwapLayout.ForeColor = System.Drawing.Color.FromArgb(59, 30, 30)
         Me.btnSwapLayout.Location = New System.Drawing.Point(300, 7)
         Me.btnSwapLayout.Name = "btnSwapLayout"
@@ -322,9 +331,10 @@ Partial Class Form1
         'btnLockSplitters
         '
         Me.btnLockSplitters.BackColor = System.Drawing.Color.White
-        Me.btnLockSplitters.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(184, 148, 148)
+        Me.btnLockSplitters.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(114, 114, 114)
+        Me.btnLockSplitters.FlatAppearance.BorderSize = 3
         Me.btnLockSplitters.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLockSplitters.Font = New System.Drawing.Font("Segoe UI", 8.5!)
+        Me.btnLockSplitters.Font = New System.Drawing.Font("Tahoma", 8.0!)
         Me.btnLockSplitters.ForeColor = System.Drawing.Color.FromArgb(59, 30, 30)
         Me.btnLockSplitters.Location = New System.Drawing.Point(446, 7)
         Me.btnLockSplitters.Name = "btnLockSplitters"
@@ -381,7 +391,7 @@ Partial Class Form1
         'lblTreeTitle
         '
         Me.lblTreeTitle.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblTreeTitle.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.lblTreeTitle.Font = New System.Drawing.Font("Tahoma", 7.75!, System.Drawing.FontStyle.Bold)
         Me.lblTreeTitle.ForeColor = System.Drawing.Color.FromArgb(139, 100, 100)
         Me.lblTreeTitle.Location = New System.Drawing.Point(10, 10)
         Me.lblTreeTitle.Name = "lblTreeTitle"
@@ -393,7 +403,7 @@ Partial Class Form1
         '
         Me.tvFolders.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.tvFolders.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tvFolders.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.tvFolders.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.tvFolders.FullRowSelect = True
         Me.tvFolders.HideSelection = False
         Me.tvFolders.ItemHeight = 22
@@ -440,7 +450,7 @@ Partial Class Form1
         'lblListTitle
         '
         Me.lblListTitle.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblListTitle.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblListTitle.Font = New System.Drawing.Font("Tahoma", 8.5!, System.Drawing.FontStyle.Bold)
         Me.lblListTitle.ForeColor = System.Drawing.Color.FromArgb(59, 30, 30)
         Me.lblListTitle.Location = New System.Drawing.Point(10, 10)
         Me.lblListTitle.Name = "lblListTitle"
@@ -461,7 +471,7 @@ Partial Class Form1
         'lblFilterCaption
         '
         Me.lblFilterCaption.AutoSize = True
-        Me.lblFilterCaption.Font = New System.Drawing.Font("Segoe UI", 8.5!)
+        Me.lblFilterCaption.Font = New System.Drawing.Font("Tahoma", 8.0!)
         Me.lblFilterCaption.ForeColor = System.Drawing.Color.FromArgb(139, 100, 100)
         Me.lblFilterCaption.Location = New System.Drawing.Point(774, 7)
         Me.lblFilterCaption.Name = "lblFilterCaption"
@@ -473,7 +483,7 @@ Partial Class Form1
         '
         Me.txtFilter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtFilter.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtFilter.Font = New System.Drawing.Font("Tahoma", 8.5!)
         Me.txtFilter.Location = New System.Drawing.Point(0, 3)
         Me.txtFilter.Name = "txtFilter"
         Me.txtFilter.Size = New System.Drawing.Size(230, 23)
@@ -484,7 +494,7 @@ Partial Class Form1
         Me.lvFiles.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lvFiles.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colName, Me.colType, Me.colSize, Me.colModified})
         Me.lvFiles.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lvFiles.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.lvFiles.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.lvFiles.FullRowSelect = True
         Me.lvFiles.GridLines = False
         Me.lvFiles.HideSelection = False
@@ -533,7 +543,7 @@ Partial Class Form1
         'lblPreviewTitle
         '
         Me.lblPreviewTitle.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblPreviewTitle.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblPreviewTitle.Font = New System.Drawing.Font("Tahoma", 8.5!, System.Drawing.FontStyle.Bold)
         Me.lblPreviewTitle.ForeColor = System.Drawing.Color.FromArgb(59, 30, 30)
         Me.lblPreviewTitle.Location = New System.Drawing.Point(10, 10)
         Me.lblPreviewTitle.Name = "lblPreviewTitle"
@@ -583,7 +593,7 @@ Partial Class Form1
         'lblStatus
         '
         Me.lblStatus.AutoSize = True
-        Me.lblStatus.Font = New System.Drawing.Font("Segoe UI", 8.5!)
+        Me.lblStatus.Font = New System.Drawing.Font("Tahoma", 8.0!)
         Me.lblStatus.ForeColor = System.Drawing.Color.FromArgb(85, 51, 51)
         Me.lblStatus.Location = New System.Drawing.Point(14, 7)
         Me.lblStatus.Name = "lblStatus"
@@ -594,7 +604,7 @@ Partial Class Form1
         'lblCount
         '
         Me.lblCount.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblCount.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.lblCount.Font = New System.Drawing.Font("Tahoma", 7.75!)
         Me.lblCount.ForeColor = System.Drawing.Color.FromArgb(139, 100, 100)
         Me.lblCount.Location = New System.Drawing.Point(800, 7)
         Me.lblCount.Name = "lblCount"

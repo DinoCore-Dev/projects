@@ -133,7 +133,7 @@ Partial Class Form1
         'lblAuthor
         '
         Me.lblAuthor.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblAuthor.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.lblAuthor.Font = New System.Drawing.Font("Segoe UI", 9.5!, System.Drawing.FontStyle.Bold)
         Me.lblAuthor.ForeColor = System.Drawing.Color.White
         Me.lblAuthor.Location = New System.Drawing.Point(680, 22)
         Me.lblAuthor.Name = "lblAuthor"

@@ -130,6 +130,7 @@ Partial Class Form1
         Me.menuMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuDemo})
         Me.menuMain.Location = New System.Drawing.Point(0, 0)
         Me.menuMain.Name = "menuMain"
+        Me.menuMain.Font = New System.Drawing.Font("Times New Roman", 8.5!)
         Me.menuMain.Size = New System.Drawing.Size(940, 24)
         Me.menuMain.TabIndex = 0
         '
@@ -172,7 +173,7 @@ Partial Class Form1
         'lblRailBadge
         '
         Me.lblRailBadge.AutoSize = True
-        Me.lblRailBadge.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.lblRailBadge.Font = New System.Drawing.Font("Times New Roman", 8.5!, System.Drawing.FontStyle.Bold)
         Me.lblRailBadge.ForeColor = System.Drawing.Color.FromArgb(168, 248, 56)
         Me.lblRailBadge.Location = New System.Drawing.Point(20, 26)
         Me.lblRailBadge.Name = "lblRailBadge"
@@ -182,7 +183,7 @@ Partial Class Form1
         '
         'lblRailTitle
         '
-        Me.lblRailTitle.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Bold)
+        Me.lblRailTitle.Font = New System.Drawing.Font("Times New Roman", 16.75!, System.Drawing.FontStyle.Bold)
         Me.lblRailTitle.ForeColor = System.Drawing.Color.White
         Me.lblRailTitle.Location = New System.Drawing.Point(16, 44)
         Me.lblRailTitle.Name = "lblRailTitle"
@@ -200,35 +201,29 @@ Partial Class Form1
         '
         'btnNavPanel
         '
-        Me.btnNavPanel.BackColor = System.Drawing.Color.FromArgb(153, 235, 37)
-        Me.btnNavPanel.FlatAppearance.BorderSize = 0
-        Me.btnNavPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNavPanel.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.btnNavPanel.ForeColor = System.Drawing.Color.White
+        Me.btnNavPanel.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnNavPanel.Font = New System.Drawing.Font("Times New Roman", 9.25!, System.Drawing.FontStyle.Bold)
         Me.btnNavPanel.Location = New System.Drawing.Point(20, 140)
         Me.btnNavPanel.Name = "btnNavPanel"
         Me.btnNavPanel.Size = New System.Drawing.Size(180, 38)
         Me.btnNavPanel.TabIndex = 3
         Me.btnNavPanel.Text = "Panel Demo"
-        Me.btnNavPanel.UseVisualStyleBackColor = False
+        Me.btnNavPanel.UseVisualStyleBackColor = True
         '
         'btnNavSplit
         '
-        Me.btnNavSplit.BackColor = System.Drawing.Color.FromArgb(47, 59, 30)
-        Me.btnNavSplit.FlatAppearance.BorderSize = 1
-        Me.btnNavSplit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNavSplit.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnNavSplit.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240)
+        Me.btnNavSplit.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnNavSplit.Font = New System.Drawing.Font("Times New Roman", 9.25!)
         Me.btnNavSplit.Location = New System.Drawing.Point(20, 186)
         Me.btnNavSplit.Name = "btnNavSplit"
         Me.btnNavSplit.Size = New System.Drawing.Size(180, 38)
         Me.btnNavSplit.TabIndex = 4
         Me.btnNavSplit.Text = "Split Panel Lab"
-        Me.btnNavSplit.UseVisualStyleBackColor = False
+        Me.btnNavSplit.UseVisualStyleBackColor = True
         '
         'lblRailHint
         '
-        Me.lblRailHint.Font = New System.Drawing.Font("Segoe UI", 8.5!)
+        Me.lblRailHint.Font = New System.Drawing.Font("Times New Roman", 8.75!)
         Me.lblRailHint.ForeColor = System.Drawing.Color.FromArgb(169, 184, 148)
         Me.lblRailHint.Location = New System.Drawing.Point(20, 244)
         Me.lblRailHint.Name = "lblRailHint"
@@ -240,7 +235,7 @@ Partial Class Form1
         'lblRailAuthor
         '
         Me.lblRailAuthor.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.lblRailAuthor.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.lblRailAuthor.Font = New System.Drawing.Font("Times New Roman", 10.5!, System.Drawing.FontStyle.Bold)
         Me.lblRailAuthor.ForeColor = System.Drawing.Color.White
         Me.lblRailAuthor.Location = New System.Drawing.Point(20, 560)
         Me.lblRailAuthor.Name = "lblRailAuthor"
@@ -251,7 +246,7 @@ Partial Class Form1
         'lblRailCourse
         '
         Me.lblRailCourse.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.lblRailCourse.Font = New System.Drawing.Font("Segoe UI", 8.5!)
+        Me.lblRailCourse.Font = New System.Drawing.Font("Times New Roman", 8.75!)
         Me.lblRailCourse.ForeColor = System.Drawing.Color.FromArgb(169, 184, 148)
         Me.lblRailCourse.Location = New System.Drawing.Point(20, 582)
         Me.lblRailCourse.Name = "lblRailCourse"
@@ -276,7 +271,7 @@ Partial Class Form1
         'lblHeading
         '
         Me.lblHeading.AutoSize = True
-        Me.lblHeading.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Bold)
+        Me.lblHeading.Font = New System.Drawing.Font("Times New Roman", 16.75!, System.Drawing.FontStyle.Bold)
         Me.lblHeading.ForeColor = System.Drawing.Color.FromArgb(31, 42, 15)
         Me.lblHeading.Location = New System.Drawing.Point(24, 18)
         Me.lblHeading.Name = "lblHeading"
@@ -287,7 +282,7 @@ Partial Class Form1
         'lblSub
         '
         Me.lblSub.AutoSize = True
-        Me.lblSub.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.lblSub.Font = New System.Drawing.Font("Times New Roman", 9.25!)
         Me.lblSub.ForeColor = System.Drawing.Color.FromArgb(123, 139, 100)
         Me.lblSub.Location = New System.Drawing.Point(27, 50)
         Me.lblSub.Name = "lblSub"
@@ -309,7 +304,7 @@ Partial Class Form1
         '
         'lblWorkspaceTitle
         '
-        Me.lblWorkspaceTitle.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.lblWorkspaceTitle.Font = New System.Drawing.Font("Times New Roman", 8.5!, System.Drawing.FontStyle.Bold)
         Me.lblWorkspaceTitle.ForeColor = System.Drawing.Color.FromArgb(169, 184, 148)
         Me.lblWorkspaceTitle.Location = New System.Drawing.Point(14, 8)
         Me.lblWorkspaceTitle.Name = "lblWorkspaceTitle"
@@ -335,7 +330,7 @@ Partial Class Form1
         '
         'lblGroupTitle
         '
-        Me.lblGroupTitle.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.lblGroupTitle.Font = New System.Drawing.Font("Times New Roman", 8.5!, System.Drawing.FontStyle.Bold)
         Me.lblGroupTitle.ForeColor = System.Drawing.Color.FromArgb(123, 139, 100)
         Me.lblGroupTitle.Location = New System.Drawing.Point(12, 8)
         Me.lblGroupTitle.Name = "lblGroupTitle"
@@ -346,7 +341,7 @@ Partial Class Form1
         'lblNameCaption
         '
         Me.lblNameCaption.AutoSize = True
-        Me.lblNameCaption.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.lblNameCaption.Font = New System.Drawing.Font("Times New Roman", 9.25!)
         Me.lblNameCaption.ForeColor = System.Drawing.Color.FromArgb(71, 85, 51)
         Me.lblNameCaption.Location = New System.Drawing.Point(12, 34)
         Me.lblNameCaption.Name = "lblNameCaption"
@@ -357,7 +352,7 @@ Partial Class Form1
         'txtName
         '
         Me.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtName.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.txtName.Font = New System.Drawing.Font("Times New Roman", 10.5!)
         Me.txtName.Location = New System.Drawing.Point(12, 52)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(288, 25)
@@ -366,7 +361,7 @@ Partial Class Form1
         'lblCourseCaption
         '
         Me.lblCourseCaption.AutoSize = True
-        Me.lblCourseCaption.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.lblCourseCaption.Font = New System.Drawing.Font("Times New Roman", 9.25!)
         Me.lblCourseCaption.ForeColor = System.Drawing.Color.FromArgb(71, 85, 51)
         Me.lblCourseCaption.Location = New System.Drawing.Point(12, 86)
         Me.lblCourseCaption.Name = "lblCourseCaption"
@@ -377,7 +372,7 @@ Partial Class Form1
         'txtCourse
         '
         Me.txtCourse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCourse.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.txtCourse.Font = New System.Drawing.Font("Times New Roman", 10.5!)
         Me.txtCourse.Location = New System.Drawing.Point(12, 104)
         Me.txtCourse.Name = "txtCourse"
         Me.txtCourse.Size = New System.Drawing.Size(288, 25)
@@ -385,21 +380,18 @@ Partial Class Form1
         '
         'btnSave
         '
-        Me.btnSave.BackColor = System.Drawing.Color.FromArgb(153, 235, 37)
-        Me.btnSave.FlatAppearance.BorderSize = 0
-        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSave.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.btnSave.ForeColor = System.Drawing.Color.White
+        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnSave.Font = New System.Drawing.Font("Times New Roman", 9.25!, System.Drawing.FontStyle.Bold)
         Me.btnSave.Location = New System.Drawing.Point(12, 142)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(288, 34)
         Me.btnSave.TabIndex = 5
         Me.btnSave.Text = "Save grouped details"
-        Me.btnSave.UseVisualStyleBackColor = False
+        Me.btnSave.UseVisualStyleBackColor = True
         '
         'lblGroupHint
         '
-        Me.lblGroupHint.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.lblGroupHint.Font = New System.Drawing.Font("Times New Roman", 8.5!)
         Me.lblGroupHint.ForeColor = System.Drawing.Color.FromArgb(169, 184, 148)
         Me.lblGroupHint.Location = New System.Drawing.Point(12, 182)
         Me.lblGroupHint.Name = "lblGroupHint"
@@ -423,7 +415,7 @@ Partial Class Form1
         '
         'lblNestedTitle
         '
-        Me.lblNestedTitle.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.lblNestedTitle.Font = New System.Drawing.Font("Times New Roman", 8.5!, System.Drawing.FontStyle.Bold)
         Me.lblNestedTitle.ForeColor = System.Drawing.Color.FromArgb(120, 53, 15)
         Me.lblNestedTitle.Location = New System.Drawing.Point(12, 8)
         Me.lblNestedTitle.Name = "lblNestedTitle"
@@ -433,7 +425,7 @@ Partial Class Form1
         '
         'lblNestedNote
         '
-        Me.lblNestedNote.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.lblNestedNote.Font = New System.Drawing.Font("Times New Roman", 9.25!)
         Me.lblNestedNote.ForeColor = System.Drawing.Color.FromArgb(120, 53, 15)
         Me.lblNestedNote.Location = New System.Drawing.Point(12, 32)
         Me.lblNestedNote.Name = "lblNestedNote"
@@ -446,7 +438,7 @@ Partial Class Form1
         '
         Me.lblNestedBadge.BackColor = System.Drawing.Color.FromArgb(253, 230, 138)
         Me.lblNestedBadge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblNestedBadge.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.lblNestedBadge.Font = New System.Drawing.Font("Times New Roman", 10.5!, System.Drawing.FontStyle.Bold)
         Me.lblNestedBadge.ForeColor = System.Drawing.Color.FromArgb(120, 53, 15)
         Me.lblNestedBadge.Location = New System.Drawing.Point(12, 142)
         Me.lblNestedBadge.Name = "lblNestedBadge"
@@ -457,7 +449,7 @@ Partial Class Form1
         '
         'lblNestedHint
         '
-        Me.lblNestedHint.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.lblNestedHint.Font = New System.Drawing.Font("Times New Roman", 8.5!)
         Me.lblNestedHint.ForeColor = System.Drawing.Color.FromArgb(180, 83, 9)
         Me.lblNestedHint.Location = New System.Drawing.Point(12, 184)
         Me.lblNestedHint.Name = "lblNestedHint"
@@ -486,7 +478,7 @@ Partial Class Form1
         '
         'lblInspectorTitle
         '
-        Me.lblInspectorTitle.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.lblInspectorTitle.Font = New System.Drawing.Font("Times New Roman", 8.5!, System.Drawing.FontStyle.Bold)
         Me.lblInspectorTitle.ForeColor = System.Drawing.Color.FromArgb(123, 139, 100)
         Me.lblInspectorTitle.Location = New System.Drawing.Point(14, 8)
         Me.lblInspectorTitle.Name = "lblInspectorTitle"
@@ -496,129 +488,102 @@ Partial Class Form1
         '
         'btnToggleGroup
         '
-        Me.btnToggleGroup.BackColor = System.Drawing.Color.FromArgb(241, 245, 249)
-        Me.btnToggleGroup.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225)
-        Me.btnToggleGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnToggleGroup.Font = New System.Drawing.Font("Segoe UI", 8.5!)
-        Me.btnToggleGroup.ForeColor = System.Drawing.Color.FromArgb(47, 59, 30)
+        Me.btnToggleGroup.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnToggleGroup.Font = New System.Drawing.Font("Times New Roman", 8.75!)
         Me.btnToggleGroup.Location = New System.Drawing.Point(16, 32)
         Me.btnToggleGroup.Name = "btnToggleGroup"
         Me.btnToggleGroup.Size = New System.Drawing.Size(200, 30)
         Me.btnToggleGroup.TabIndex = 1
         Me.btnToggleGroup.Text = "Show / hide pnlGroup"
-        Me.btnToggleGroup.UseVisualStyleBackColor = False
+        Me.btnToggleGroup.UseVisualStyleBackColor = True
         '
         'btnSwapColor
         '
-        Me.btnSwapColor.BackColor = System.Drawing.Color.FromArgb(241, 245, 249)
-        Me.btnSwapColor.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225)
-        Me.btnSwapColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSwapColor.Font = New System.Drawing.Font("Segoe UI", 8.5!)
-        Me.btnSwapColor.ForeColor = System.Drawing.Color.FromArgb(47, 59, 30)
+        Me.btnSwapColor.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnSwapColor.Font = New System.Drawing.Font("Times New Roman", 8.75!)
         Me.btnSwapColor.Location = New System.Drawing.Point(232, 32)
         Me.btnSwapColor.Name = "btnSwapColor"
         Me.btnSwapColor.Size = New System.Drawing.Size(200, 30)
         Me.btnSwapColor.TabIndex = 2
         Me.btnSwapColor.Text = "Change pnlNested back color"
-        Me.btnSwapColor.UseVisualStyleBackColor = False
+        Me.btnSwapColor.UseVisualStyleBackColor = True
         '
         'btnCycleBorder
         '
-        Me.btnCycleBorder.BackColor = System.Drawing.Color.FromArgb(241, 245, 249)
-        Me.btnCycleBorder.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225)
-        Me.btnCycleBorder.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCycleBorder.Font = New System.Drawing.Font("Segoe UI", 8.5!)
-        Me.btnCycleBorder.ForeColor = System.Drawing.Color.FromArgb(47, 59, 30)
+        Me.btnCycleBorder.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnCycleBorder.Font = New System.Drawing.Font("Times New Roman", 8.75!)
         Me.btnCycleBorder.Location = New System.Drawing.Point(448, 32)
         Me.btnCycleBorder.Name = "btnCycleBorder"
         Me.btnCycleBorder.Size = New System.Drawing.Size(200, 30)
         Me.btnCycleBorder.TabIndex = 3
         Me.btnCycleBorder.Text = "Cycle pnlWorkspace border"
-        Me.btnCycleBorder.UseVisualStyleBackColor = False
+        Me.btnCycleBorder.UseVisualStyleBackColor = True
         '
         'btnBringFront
         '
-        Me.btnBringFront.BackColor = System.Drawing.Color.FromArgb(241, 245, 249)
-        Me.btnBringFront.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225)
-        Me.btnBringFront.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBringFront.Font = New System.Drawing.Font("Segoe UI", 8.5!)
-        Me.btnBringFront.ForeColor = System.Drawing.Color.FromArgb(47, 59, 30)
+        Me.btnBringFront.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnBringFront.Font = New System.Drawing.Font("Times New Roman", 8.75!)
         Me.btnBringFront.Location = New System.Drawing.Point(16, 68)
         Me.btnBringFront.Name = "btnBringFront"
         Me.btnBringFront.Size = New System.Drawing.Size(200, 30)
         Me.btnBringFront.TabIndex = 4
         Me.btnBringFront.Text = "BringToFront pnlNested"
-        Me.btnBringFront.UseVisualStyleBackColor = False
+        Me.btnBringFront.UseVisualStyleBackColor = True
         '
         'btnSendBack
         '
-        Me.btnSendBack.BackColor = System.Drawing.Color.FromArgb(241, 245, 249)
-        Me.btnSendBack.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225)
-        Me.btnSendBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSendBack.Font = New System.Drawing.Font("Segoe UI", 8.5!)
-        Me.btnSendBack.ForeColor = System.Drawing.Color.FromArgb(47, 59, 30)
+        Me.btnSendBack.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnSendBack.Font = New System.Drawing.Font("Times New Roman", 8.75!)
         Me.btnSendBack.Location = New System.Drawing.Point(232, 68)
         Me.btnSendBack.Name = "btnSendBack"
         Me.btnSendBack.Size = New System.Drawing.Size(200, 30)
         Me.btnSendBack.TabIndex = 5
         Me.btnSendBack.Text = "SendToBack pnlNested"
-        Me.btnSendBack.UseVisualStyleBackColor = False
+        Me.btnSendBack.UseVisualStyleBackColor = True
         '
         'btnContains
         '
-        Me.btnContains.BackColor = System.Drawing.Color.FromArgb(241, 245, 249)
-        Me.btnContains.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225)
-        Me.btnContains.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnContains.Font = New System.Drawing.Font("Segoe UI", 8.5!)
-        Me.btnContains.ForeColor = System.Drawing.Color.FromArgb(47, 59, 30)
+        Me.btnContains.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnContains.Font = New System.Drawing.Font("Times New Roman", 8.75!)
         Me.btnContains.Location = New System.Drawing.Point(448, 68)
         Me.btnContains.Name = "btnContains"
         Me.btnContains.Size = New System.Drawing.Size(200, 30)
         Me.btnContains.TabIndex = 6
         Me.btnContains.Text = "Contains(pnlGroup) ?"
-        Me.btnContains.UseVisualStyleBackColor = False
+        Me.btnContains.UseVisualStyleBackColor = True
         '
         'btnDisposeDemo
         '
-        Me.btnDisposeDemo.BackColor = System.Drawing.Color.FromArgb(241, 245, 249)
-        Me.btnDisposeDemo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225)
-        Me.btnDisposeDemo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDisposeDemo.Font = New System.Drawing.Font("Segoe UI", 8.5!)
-        Me.btnDisposeDemo.ForeColor = System.Drawing.Color.FromArgb(47, 59, 30)
+        Me.btnDisposeDemo.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnDisposeDemo.Font = New System.Drawing.Font("Times New Roman", 8.75!)
         Me.btnDisposeDemo.Location = New System.Drawing.Point(16, 104)
         Me.btnDisposeDemo.Name = "btnDisposeDemo"
         Me.btnDisposeDemo.Size = New System.Drawing.Size(200, 30)
         Me.btnDisposeDemo.TabIndex = 7
         Me.btnDisposeDemo.Text = "Dispose a temporary panel"
-        Me.btnDisposeDemo.UseVisualStyleBackColor = False
+        Me.btnDisposeDemo.UseVisualStyleBackColor = True
         '
         'btnFocusPanel
         '
-        Me.btnFocusPanel.BackColor = System.Drawing.Color.FromArgb(241, 245, 249)
-        Me.btnFocusPanel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225)
-        Me.btnFocusPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnFocusPanel.Font = New System.Drawing.Font("Segoe UI", 8.5!)
-        Me.btnFocusPanel.ForeColor = System.Drawing.Color.FromArgb(47, 59, 30)
+        Me.btnFocusPanel.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnFocusPanel.Font = New System.Drawing.Font("Times New Roman", 8.75!)
         Me.btnFocusPanel.Location = New System.Drawing.Point(232, 104)
         Me.btnFocusPanel.Name = "btnFocusPanel"
         Me.btnFocusPanel.Size = New System.Drawing.Size(200, 30)
         Me.btnFocusPanel.TabIndex = 8
         Me.btnFocusPanel.Text = "Focus pnlNested"
-        Me.btnFocusPanel.UseVisualStyleBackColor = False
+        Me.btnFocusPanel.UseVisualStyleBackColor = True
         '
         'btnRedraw
         '
-        Me.btnRedraw.BackColor = System.Drawing.Color.FromArgb(241, 245, 249)
-        Me.btnRedraw.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(203, 213, 225)
-        Me.btnRedraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRedraw.Font = New System.Drawing.Font("Segoe UI", 8.5!)
-        Me.btnRedraw.ForeColor = System.Drawing.Color.FromArgb(47, 59, 30)
+        Me.btnRedraw.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnRedraw.Font = New System.Drawing.Font("Times New Roman", 8.75!)
         Me.btnRedraw.Location = New System.Drawing.Point(448, 104)
         Me.btnRedraw.Name = "btnRedraw"
         Me.btnRedraw.Size = New System.Drawing.Size(200, 30)
         Me.btnRedraw.TabIndex = 9
         Me.btnRedraw.Text = "Refresh + Invalidate"
-        Me.btnRedraw.UseVisualStyleBackColor = False
+        Me.btnRedraw.UseVisualStyleBackColor = True
         '
         'pnlLog
         '
@@ -633,7 +598,7 @@ Partial Class Form1
         '
         'lblLogTitle
         '
-        Me.lblLogTitle.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.lblLogTitle.Font = New System.Drawing.Font("Times New Roman", 8.5!, System.Drawing.FontStyle.Bold)
         Me.lblLogTitle.ForeColor = System.Drawing.Color.FromArgb(123, 139, 100)
         Me.lblLogTitle.Location = New System.Drawing.Point(14, 8)
         Me.lblLogTitle.Name = "lblLogTitle"
@@ -668,7 +633,7 @@ Partial Class Form1
         'lblStatus
         '
         Me.lblStatus.AutoSize = True
-        Me.lblStatus.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.lblStatus.Font = New System.Drawing.Font("Times New Roman", 9.25!)
         Me.lblStatus.ForeColor = System.Drawing.Color.FromArgb(71, 85, 51)
         Me.lblStatus.Location = New System.Drawing.Point(16, 8)
         Me.lblStatus.Name = "lblStatus"
@@ -679,7 +644,7 @@ Partial Class Form1
         'lblCounter
         '
         Me.lblCounter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblCounter.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.lblCounter.Font = New System.Drawing.Font("Times New Roman", 8.5!)
         Me.lblCounter.ForeColor = System.Drawing.Color.FromArgb(123, 139, 100)
         Me.lblCounter.Location = New System.Drawing.Point(640, 8)
         Me.lblCounter.Name = "lblCounter"

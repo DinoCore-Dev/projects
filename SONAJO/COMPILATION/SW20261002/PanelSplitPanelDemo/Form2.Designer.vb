@@ -106,6 +106,7 @@ Partial Class Form2
         Me.menuMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuLab})
         Me.menuMain.Location = New System.Drawing.Point(0, 0)
         Me.menuMain.Name = "menuMain"
+        Me.menuMain.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.menuMain.Size = New System.Drawing.Size(1000, 24)
         Me.menuMain.TabIndex = 0
         '
@@ -143,7 +144,7 @@ Partial Class Form2
         'lblTitle
         '
         Me.lblTitle.AutoSize = True
-        Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold)
+        Me.lblTitle.Font = New System.Drawing.Font("Courier New", 15.75!, System.Drawing.FontStyle.Bold)
         Me.lblTitle.ForeColor = System.Drawing.Color.White
         Me.lblTitle.Location = New System.Drawing.Point(24, 14)
         Me.lblTitle.Name = "lblTitle"
@@ -154,7 +155,7 @@ Partial Class Form2
         'lblSub
         '
         Me.lblSub.AutoSize = True
-        Me.lblSub.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.lblSub.Font = New System.Drawing.Font("Courier New", 8.0!)
         Me.lblSub.ForeColor = System.Drawing.Color.FromArgb(153, 246, 228)
         Me.lblSub.Location = New System.Drawing.Point(27, 52)
         Me.lblSub.Name = "lblSub"
@@ -165,7 +166,7 @@ Partial Class Form2
         'lblAuthor
         '
         Me.lblAuthor.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblAuthor.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.lblAuthor.Font = New System.Drawing.Font("Courier New", 8.75!, System.Drawing.FontStyle.Bold)
         Me.lblAuthor.ForeColor = System.Drawing.Color.White
         Me.lblAuthor.Location = New System.Drawing.Point(700, 30)
         Me.lblAuthor.Name = "lblAuthor"
@@ -193,9 +194,10 @@ Partial Class Form2
         'btnCollapseLeft
         '
         Me.btnCollapseLeft.BackColor = System.Drawing.Color.White
-        Me.btnCollapseLeft.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(148, 196, 188)
+        Me.btnCollapseLeft.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(153, 153, 153)
+        Me.btnCollapseLeft.FlatAppearance.BorderSize = 2
         Me.btnCollapseLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCollapseLeft.Font = New System.Drawing.Font("Segoe UI", 8.5!)
+        Me.btnCollapseLeft.Font = New System.Drawing.Font("Courier New", 7.5!)
         Me.btnCollapseLeft.ForeColor = System.Drawing.Color.FromArgb(12, 74, 69)
         Me.btnCollapseLeft.Location = New System.Drawing.Point(224, 12)
         Me.btnCollapseLeft.Name = "btnCollapseLeft"
@@ -207,9 +209,10 @@ Partial Class Form2
         'btnCollapseTop
         '
         Me.btnCollapseTop.BackColor = System.Drawing.Color.White
-        Me.btnCollapseTop.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(148, 196, 188)
+        Me.btnCollapseTop.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(153, 153, 153)
+        Me.btnCollapseTop.FlatAppearance.BorderSize = 2
         Me.btnCollapseTop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCollapseTop.Font = New System.Drawing.Font("Segoe UI", 8.5!)
+        Me.btnCollapseTop.Font = New System.Drawing.Font("Courier New", 7.5!)
         Me.btnCollapseTop.ForeColor = System.Drawing.Color.FromArgb(12, 74, 69)
         Me.btnCollapseTop.Location = New System.Drawing.Point(364, 12)
         Me.btnCollapseTop.Name = "btnCollapseTop"
@@ -221,9 +224,10 @@ Partial Class Form2
         'btnSwapOrientation
         '
         Me.btnSwapOrientation.BackColor = System.Drawing.Color.White
-        Me.btnSwapOrientation.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(148, 196, 188)
+        Me.btnSwapOrientation.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(153, 153, 153)
+        Me.btnSwapOrientation.FlatAppearance.BorderSize = 2
         Me.btnSwapOrientation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSwapOrientation.Font = New System.Drawing.Font("Segoe UI", 8.5!)
+        Me.btnSwapOrientation.Font = New System.Drawing.Font("Courier New", 7.5!)
         Me.btnSwapOrientation.ForeColor = System.Drawing.Color.FromArgb(12, 74, 69)
         Me.btnSwapOrientation.Location = New System.Drawing.Point(504, 12)
         Me.btnSwapOrientation.Name = "btnSwapOrientation"
@@ -235,9 +239,10 @@ Partial Class Form2
         'btnLock
         '
         Me.btnLock.BackColor = System.Drawing.Color.White
-        Me.btnLock.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(148, 196, 188)
+        Me.btnLock.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(153, 153, 153)
+        Me.btnLock.FlatAppearance.BorderSize = 2
         Me.btnLock.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLock.Font = New System.Drawing.Font("Segoe UI", 8.5!)
+        Me.btnLock.Font = New System.Drawing.Font("Courier New", 7.5!)
         Me.btnLock.ForeColor = System.Drawing.Color.FromArgb(12, 74, 69)
         Me.btnLock.Location = New System.Drawing.Point(644, 12)
         Me.btnLock.Name = "btnLock"
@@ -249,9 +254,10 @@ Partial Class Form2
         'btnReset
         '
         Me.btnReset.BackColor = System.Drawing.Color.FromArgb(13, 148, 136)
-        Me.btnReset.FlatAppearance.BorderSize = 0
+        Me.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(7, 88, 81)
+        Me.btnReset.FlatAppearance.BorderSize = 2
         Me.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReset.Font = New System.Drawing.Font("Segoe UI", 8.5!, System.Drawing.FontStyle.Bold)
+        Me.btnReset.Font = New System.Drawing.Font("Courier New", 7.5!, System.Drawing.FontStyle.Bold)
         Me.btnReset.ForeColor = System.Drawing.Color.White
         Me.btnReset.Location = New System.Drawing.Point(770, 12)
         Me.btnReset.Name = "btnReset"
@@ -263,9 +269,10 @@ Partial Class Form2
         'btnExit
         '
         Me.btnExit.BackColor = System.Drawing.Color.FromArgb(190, 18, 60)
-        Me.btnExit.FlatAppearance.BorderSize = 0
+        Me.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(114, 10, 36)
+        Me.btnExit.FlatAppearance.BorderSize = 2
         Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnExit.Font = New System.Drawing.Font("Segoe UI", 8.5!, System.Drawing.FontStyle.Bold)
+        Me.btnExit.Font = New System.Drawing.Font("Courier New", 7.5!, System.Drawing.FontStyle.Bold)
         Me.btnExit.ForeColor = System.Drawing.Color.White
         Me.btnExit.Location = New System.Drawing.Point(896, 12)
         Me.btnExit.Name = "btnExit"
@@ -321,7 +328,7 @@ Partial Class Form2
         'lblLeftTitle
         '
         Me.lblLeftTitle.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblLeftTitle.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.lblLeftTitle.Font = New System.Drawing.Font("Courier New", 7.25!, System.Drawing.FontStyle.Bold)
         Me.lblLeftTitle.ForeColor = System.Drawing.Color.FromArgb(91, 124, 120)
         Me.lblLeftTitle.Location = New System.Drawing.Point(12, 12)
         Me.lblLeftTitle.Name = "lblLeftTitle"
@@ -333,7 +340,7 @@ Partial Class Form2
         '
         Me.lstCategories.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lstCategories.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lstCategories.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.lstCategories.Font = New System.Drawing.Font("Courier New", 8.75!)
         Me.lstCategories.FormattingEnabled = True
         Me.lstCategories.IntegralHeight = False
         Me.lstCategories.ItemHeight = 17
@@ -378,7 +385,7 @@ Partial Class Form2
         'lblRecordsTitle
         '
         Me.lblRecordsTitle.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblRecordsTitle.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.lblRecordsTitle.Font = New System.Drawing.Font("Courier New", 7.25!, System.Drawing.FontStyle.Bold)
         Me.lblRecordsTitle.ForeColor = System.Drawing.Color.FromArgb(91, 124, 120)
         Me.lblRecordsTitle.Location = New System.Drawing.Point(12, 12)
         Me.lblRecordsTitle.Name = "lblRecordsTitle"
@@ -391,7 +398,7 @@ Partial Class Form2
         Me.lvRecords.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lvRecords.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colName, Me.colCategory, Me.colStatus})
         Me.lvRecords.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lvRecords.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.lvRecords.Font = New System.Drawing.Font("Courier New", 8.25!)
         Me.lvRecords.FullRowSelect = True
         Me.lvRecords.GridLines = False
         Me.lvRecords.HideSelection = False
@@ -433,7 +440,7 @@ Partial Class Form2
         'lblDetailTitle
         '
         Me.lblDetailTitle.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblDetailTitle.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.lblDetailTitle.Font = New System.Drawing.Font("Courier New", 7.25!, System.Drawing.FontStyle.Bold)
         Me.lblDetailTitle.ForeColor = System.Drawing.Color.FromArgb(91, 124, 120)
         Me.lblDetailTitle.Location = New System.Drawing.Point(12, 12)
         Me.lblDetailTitle.Name = "lblDetailTitle"
@@ -446,7 +453,7 @@ Partial Class Form2
         Me.txtDetails.BackColor = System.Drawing.Color.FromArgb(250, 255, 254)
         Me.txtDetails.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtDetails.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtDetails.Font = New System.Drawing.Font("Segoe UI", 9.5!)
+        Me.txtDetails.Font = New System.Drawing.Font("Courier New", 8.25!)
         Me.txtDetails.ForeColor = System.Drawing.Color.FromArgb(12, 74, 69)
         Me.txtDetails.Location = New System.Drawing.Point(12, 38)
         Me.txtDetails.Multiline = True
@@ -471,7 +478,7 @@ Partial Class Form2
         'lblStatus
         '
         Me.lblStatus.AutoSize = True
-        Me.lblStatus.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.lblStatus.Font = New System.Drawing.Font("Courier New", 8.0!)
         Me.lblStatus.ForeColor = System.Drawing.Color.FromArgb(20, 83, 77)
         Me.lblStatus.Location = New System.Drawing.Point(14, 7)
         Me.lblStatus.Name = "lblStatus"
@@ -482,7 +489,7 @@ Partial Class Form2
         'lblCount
         '
         Me.lblCount.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblCount.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.lblCount.Font = New System.Drawing.Font("Courier New", 7.25!)
         Me.lblCount.ForeColor = System.Drawing.Color.FromArgb(91, 124, 120)
         Me.lblCount.Location = New System.Drawing.Point(700, 7)
         Me.lblCount.Name = "lblCount"
