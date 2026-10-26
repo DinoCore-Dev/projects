@@ -96,7 +96,10 @@ Gawa ng bagong document (huwag i-edit ang PDF ng iba). SIMPLE lang ito - apat na
 lang kada activity:
   1. Title  (Activity number + title + isang maliit na linya: project name | author | course)
   2. Form Design  - picture ng designer layout, para sa form activities lang
-  3. Source Code  - ang totoong source files (may label bawat file)
+  3. Source Code  - ang PLAIN `.vb` files lang, may label bawat file. Bawal isama ang
+     `*.Designer.vb` (design code), ang `My Project/` files, ang `.vbproj`, ang `.sln` at
+     ang `app.config` - dahil picture na ang design at sample output, dagdag na haba lang
+     ang mga iyon.
   4. Sample Output - PICTURE ng tumatakbong form para sa form activities (may sample na
      nakasulat sa textbox, resulta sa label, listahan sa ListView/TreeView, naka-pindot
      na radio button), at TEXT na console output para sa console activities

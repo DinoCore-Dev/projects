@@ -67,7 +67,21 @@ def read_source(relative_path):
 
 
 def code_blocks(entry):
-    return [(label, read_source(path)) for path, label in entry["files"]]
+    """Only the plain .vb source files.
+
+    The designer code (`*.Designer.vb`), the `My Project` files, the project
+    file and the solution file are NOT printed: the design is already shown as
+    a picture (Form Design) and the sample output as another picture.
+    """
+    blocks = []
+    for path, label in entry["files"]:
+        low = path.replace("\\", "/").lower()
+        if not low.endswith(".vb"):
+            continue
+        if low.endswith(".designer.vb") or "my project/" in low:
+            continue
+        blocks.append((label, read_source(path)))
+    return blocks
 
 
 # ---------------------------------------------------------------------------

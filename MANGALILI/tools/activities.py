@@ -351,7 +351,6 @@ ACTIVITIES = [
         ],
         "files": [
             ("SW202609301600/ListViewSample.vb", "ListViewSample.vb"),
-            ("SW202609301600/ListViewSample.Designer.vb", "ListViewSample.Designer.vb"),
         ],
         "figures": [("SW202609301600/ListViewSample.Designer.vb",
                      "Form design of Activity 9 - the author label shares the status line")],
