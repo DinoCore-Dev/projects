@@ -23,7 +23,8 @@ import textwrap
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from activities import (ACTIVITIES, AUTHOR, COURSE, SUBJECT, SCHOOL_YEAR, DATE_LINE)
+from activities import (ACTIVITIES, AUTHOR, COURSE, SUBJECT, SCHOOL_YEAR, DATE_LINE,
+                        INSTRUCTOR_LINE)
 from design_figure import render as render_figure
 from samples import SAMPLES
 
@@ -37,6 +38,7 @@ SURNAME = AUTHOR.split(",")[0].strip()
 GIVEN = AUTHOR.split(",")[1].strip().replace(" ", "")
 DOC_BASENAME = "%s_%s_Activity_Compilation" % (SURNAME, GIVEN)
 
+INSTRUCTOR = INSTRUCTOR_LINE
 INK = (0x06, 0x2C, 0x2A)
 ACCENT = (0x0C, 0x4A, 0x45)
 MUTED = (0x5B, 0x7C, 0x78)
@@ -186,7 +188,7 @@ def wrap_code(lines, width=104):
 
 
 def activity_heading(entry):
-    return "Activity %d - %s" % (entry["number"], entry["title"])
+    return "Activity %d" % entry["number"]
 
 
 def activity_meta(entry):
@@ -215,18 +217,33 @@ def build_docx(sections, out_path):
 
     styles = doc.styles
     normal = styles["Normal"]
-    normal.font.name = "Calibri"
+    FONT = "Courier New"
+
+    def set_font(font, name=FONT):
+        """Courier New for every script; no colour is ever set, so Word uses 'automatic'
+        (black on a light page, white on a dark one)."""
+        font.name = name
+        rpr = font._element.get_or_add_rPr()
+        if rpr is not None:
+            fonts = rpr.find(qn("w:rFonts"))
+            if fonts is None:
+                fonts = OxmlElement("w:rFonts")
+                rpr.append(fonts)
+            for attribute in ("w:ascii", "w:hAnsi", "w:eastAsia", "w:cs"):
+                fonts.set(qn(attribute), name)
+
     normal.font.size = Pt(10.5)
     normal.paragraph_format.space_after = Pt(4)
+    set_font(normal.font)
 
-    for name, size, colour in (("Heading 1", 19, INK),
-                               ("Heading 2", 12.5, ACCENT),
-                               ("Heading 3", 11, MUTED)):
+    for name, size in (("Heading 1", 19), ("Heading 2", 12.5), ("Heading 3", 11)):
         style = styles[name]
-        style.font.name = "Calibri"
         style.font.size = Pt(size)
-        style.font.color.rgb = RGBColor(*colour)
         style.font.bold = True
+        set_font(style.font)
+        colour_element = style.element.get_or_add_rPr().find(qn("w:color"))
+        if colour_element is not None:
+            style.element.rPr.remove(colour_element)
 
     def shade(paragraph, fill):
         properties = paragraph._p.get_or_add_pPr()
@@ -247,9 +264,7 @@ def build_docx(sections, out_path):
         run.font.size = Pt(size)
         run.bold = bold
         run.italic = italic
-        run.font.name = "Calibri"
-        if colour:
-            run.font.color.rgb = RGBColor(*colour)
+        set_font(run.font)
         return par
 
     def code_block(lines, label=None):
@@ -259,9 +274,8 @@ def build_docx(sections, out_path):
             par.paragraph_format.space_after = Pt(2)
             run = par.add_run(label)
             run.bold = True
-            run.font.name = "Consolas"
+            set_font(run.font)
             run.font.size = Pt(9)
-            run.font.color.rgb = RGBColor(*ACCENT)
         for line in lines:
             par = doc.add_paragraph()
             par.paragraph_format.space_after = Pt(0)
@@ -270,9 +284,8 @@ def build_docx(sections, out_path):
             par.paragraph_format.left_indent = Cm(0.2)
             shade(par, CODE_BG)
             run = par.add_run(line if line else " ")
-            run.font.name = "Consolas"
-            run.font.size = Pt(7.5)
-            run._element.rPr.rFonts.set(qn("w:eastAsia"), "Consolas")
+            set_font(run.font)
+            run.font.size = Pt(7.2)
         doc.add_paragraph().paragraph_format.space_after = Pt(2)
 
     def picture(path, width_cm=16.6):
@@ -285,16 +298,16 @@ def build_docx(sections, out_path):
     # ------------------------------ title page ------------------------------
     for _ in range(4):
         doc.add_paragraph()
-    paragraph(SUBJECT.upper(), 12, True, colour=MUTED, align="center", space_after=10)
-    paragraph("ACTIVITY COMPILATION", 30, True, colour=INK, align="center", space_after=6)
-    paragraph("Activities 1 to %d" % len(ACTIVITIES), 13, colour=MUTED,
-              align="center", space_after=40)
-    paragraph(AUTHOR, 20, True, colour=ACCENT, align="center", space_after=4)
-    paragraph(COURSE, 13, colour=MUTED, align="center", space_after=40)
+    paragraph(SUBJECT.upper(), 14, True, align="center", space_after=10)
+    paragraph("ACTIVITY COMPILATION", 26, True, align="center", space_after=6)
+    for _ in range(4):
+        doc.add_paragraph()
+    paragraph(AUTHOR, 18, True, align="center", space_after=4)
+    paragraph(COURSE, 13, align="center", space_after=40)
     paragraph("Subject  :  %s" % SUBJECT, 11, align="center", space_after=4)
     paragraph("School Year  :  %s" % SCHOOL_YEAR, 11, align="center", space_after=4)
     paragraph("Date Submitted  :  %s" % DATE_LINE, 11, align="center", space_after=4)
-    paragraph("Submitted to  :  ____________________", 11, align="center", space_after=4)
+    paragraph("Submitted to  : %s" % INSTRUCTOR, 11, align="center", space_after=4)
     doc.add_paragraph().add_run().add_break(WD_BREAK.PAGE)
 
     # ------------------------------- activities -----------------------------
@@ -345,45 +358,29 @@ def build_pdf(sections, out_path):
     from reportlab.lib.pagesizes import A4
     from reportlab.lib.styles import ParagraphStyle
     from reportlab.lib.units import cm
-    from reportlab.pdfbase import pdfmetrics
-    from reportlab.pdfbase.ttfonts import TTFont
     from reportlab.platypus import (Image, KeepTogether, PageBreak, Paragraph,
                                     Preformatted, SimpleDocTemplate, Spacer)
     from PIL import Image as PILImage
 
-    def register(name, path):
-        try:
-            pdfmetrics.registerFont(TTFont(name, path))
-            return name
-        except Exception:
-            return "Helvetica"
+    # Courier (the PDF standard font, same metrics as Courier New) and black text only
+    body_font, bold_font, mono_font = "Courier", "Courier-Bold", "Courier"
+    black = colors.black
 
-    body_font = register("DejaVu", "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf")
-    try:
-        pdfmetrics.registerFontFamily(body_font, normal=body_font, bold=body_font,
-                                      italic=body_font, boldItalic=body_font)
-    except Exception:
-        pass
-    mono_font = register("DejaVuMono", "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf")
-
-    title_style = ParagraphStyle("title", fontName=body_font, fontSize=27, leading=33,
-                                 textColor=colors.Color(INK[0] / 255.0, INK[1] / 255.0, INK[2] / 255.0),
-                                 alignment=TA_CENTER, spaceAfter=12)
+    title_style = ParagraphStyle("title", fontName=bold_font, fontSize=26, leading=32,
+                                 textColor=black, alignment=TA_CENTER, spaceAfter=12)
     big_style = ParagraphStyle("big", parent=title_style, fontSize=17, leading=22)
     meta_style = ParagraphStyle("meta", fontName=body_font, fontSize=9.5, leading=14,
-                                textColor=colors.Color(MUTED[0] / 255.0, MUTED[1] / 255.0, MUTED[2] / 255.0),
-                                spaceAfter=8)
-    h1 = ParagraphStyle("h1", fontName=body_font, fontSize=17, leading=21,
-                        textColor=colors.Color(INK[0] / 255.0, INK[1] / 255.0, INK[2] / 255.0),
-                        spaceBefore=2, spaceAfter=4)
-    h2 = ParagraphStyle("h2", fontName=body_font, fontSize=11.5, leading=15,
-                        textColor=colors.Color(ACCENT[0] / 255.0, ACCENT[1] / 255.0, ACCENT[2] / 255.0),
-                        spaceBefore=12, spaceAfter=5)
+                                textColor=black, spaceAfter=8)
+    cover_style = ParagraphStyle("cover", parent=meta_style, fontSize=11, alignment=TA_CENTER,
+                                 spaceAfter=4)
+    h1 = ParagraphStyle("h1", fontName=bold_font, fontSize=17, leading=21,
+                        textColor=black, spaceBefore=2, spaceAfter=4)
+    h2 = ParagraphStyle("h2", fontName=bold_font, fontSize=11.5, leading=15,
+                        textColor=black, spaceBefore=12, spaceAfter=5)
     caption_style = ParagraphStyle("cap", fontName=body_font, fontSize=8.5, leading=11,
-                                   textColor=colors.Color(MUTED[0] / 255.0, MUTED[1] / 255.0, MUTED[2] / 255.0),
-                                   alignment=TA_CENTER, spaceAfter=10)
+                                   textColor=black, alignment=TA_CENTER, spaceAfter=10)
     code_style = ParagraphStyle("code", fontName=mono_font, fontSize=6.4, leading=7.7,
-                                backColor=colors.HexColor("#" + CODE_BG),
+                                textColor=black, backColor=colors.HexColor("#" + CODE_BG),
                                 borderPadding=(2, 3, 2, 3), leftIndent=6, spaceAfter=0)
 
     max_width = 16.6 * cm
@@ -396,22 +393,18 @@ def build_pdf(sections, out_path):
 
     story = []
     story.append(Spacer(1, 6.5 * cm))
-    story.append(Paragraph(SUBJECT.upper(), meta_style))
+    story.append(Paragraph(SUBJECT.upper(), ParagraphStyle("cover_subject", parent=title_style,
+                                                          fontSize=14, leading=18)))
     story.append(Paragraph("ACTIVITY COMPILATION", title_style))
-    story.append(Spacer(1, 6))
-    story.append(Paragraph("Activities 1 to %d" % len(ACTIVITIES), big_style))
-    story.append(Spacer(1, 2.6 * cm))
-    story.append(Paragraph(AUTHOR, ParagraphStyle("author", parent=big_style, fontSize=19,
-                                                  textColor=colors.Color(ACCENT[0] / 255.0,
-                                                                         ACCENT[1] / 255.0,
-                                                                         ACCENT[2] / 255.0))))
-    story.append(Paragraph(COURSE, ParagraphStyle("course", parent=meta_style, fontSize=12)))
-    story.append(Spacer(1, 2.4 * cm))
+    story.append(Spacer(1, 3.4 * cm))
+    story.append(Paragraph(AUTHOR, ParagraphStyle("author", parent=big_style, fontSize=18)))
+    story.append(Paragraph(COURSE, ParagraphStyle("course", parent=cover_style, fontSize=13)))
+    story.append(Spacer(1, 1.8 * cm))
     for line in ("Subject  :  %s" % SUBJECT,
                  "School Year  :  %s" % SCHOOL_YEAR,
                  "Date Submitted  :  %s" % DATE_LINE,
-                 "Submitted to  :  ____________________"):
-        story.append(Paragraph(line, meta_style))
+                 "Submitted to  : %s" % INSTRUCTOR):
+        story.append(Paragraph(line.replace("  ", "&nbsp;&nbsp;"), cover_style))
     story.append(PageBreak())
 
     for index, entry in enumerate(ACTIVITIES):
@@ -422,9 +415,8 @@ def build_pdf(sections, out_path):
         for part in sections[number]:
             if part["name"]:
                 story.append(Paragraph(part["name"], ParagraphStyle(
-                    "grp", fontName=body_font, fontSize=13.5, leading=17, spaceBefore=14,
-                    spaceAfter=2, textColor=colors.Color(INK[0] / 255.0, INK[1] / 255.0,
-                                                         INK[2] / 255.0))))
+                    "grp", fontName=bold_font, fontSize=13.5, leading=17, spaceBefore=14,
+                    spaceAfter=2, textColor=black)))
             if part["designs"]:
                 first = True
                 for path, caption in part["designs"]:
@@ -440,6 +432,7 @@ def build_pdf(sections, out_path):
             story.append(Paragraph("Source Code", h2))
             for label, lines in part["code"]:
                 story.append(Paragraph(label, ParagraphStyle("lbl", parent=meta_style,
+                                                             fontName=bold_font,
                                                              fontSize=8.5, spaceBefore=4,
                                                              spaceAfter=2)))
                 story.append(Preformatted("\n".join(wrap_code(lines, 112)), code_style))

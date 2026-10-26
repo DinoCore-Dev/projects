@@ -37,7 +37,7 @@ source), without `bin`, `obj` or `.suo`.
 
 Only four things per activity - nothing else:
 
-1. **Title** - activity number, title, and one small line with the project, author and course
+1. **Title** - just `Activity N` (no activity name), then one small line with the project, author and course
 2. **Form Design** - picture of the **Visual Studio 2010 designer**: dotted alignment grid,
    blue selection border and eight resize handles (form activities only)
 3. **Source Code** - only the plain `.vb` files, one labelled block each. The designer code
@@ -57,6 +57,13 @@ rows, so the picture always looks like the real program.
 
 There is **no** table of contents, no description, no objectives, no notes, no appendices,
 and no page header or footer. Only a plain cover page at the front.
+
+**Document format (DOCX and PDF):** everything is in **Courier New** (the PDF uses the standard
+Courier, which has the same metrics). No text colour is set: the DOCX uses *automatic* colour and
+the PDF is black. The cover page is, centred: `INTEGRATIVE PROGRAMMING` / `ACTIVITY COMPILATION` /
+blank lines / author / `BSIT 3B` / `Subject  :  Integrative Programming` /
+`School Year  :  School Year 2026 - 2027` / `Date Submitted  :  October 26, 2026` /
+`Submitted to  : Drymlad Rebaja` (`INSTRUCTOR_LINE` in `tools/activities.py`).
 
 > **Note on branches:** this Arena session is bound to one branch
 > (`arena/bf05a101-projects`) and cannot create or push a second branch, so the

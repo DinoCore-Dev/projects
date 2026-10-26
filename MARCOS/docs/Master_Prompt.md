@@ -256,6 +256,17 @@ totoong database, parehong gaya ng original, at PAREHO sa lahat ng identity:
 - Kapag nagpalit ng identity, huwag galawin ang database code. Pangalan lang ang pinapalitan.
 
 ===========================================================
+6E) FORMAT NG DOCS (DOCX at PDF)
+===========================================================
+- Heading ng bawat activity: `Activity N` lang (walang pamagat).
+- Font: Courier New sa buong DOCX at PDF. Awtomatikong kulay ng text (walang explicit na kulay
+  sa DOCX; itim sa PDF).
+- Page 1 (naka-center): INTEGRATIVE PROGRAMMING / ACTIVITY COMPILATION / apat na blankong linya /
+  <Author> / BSIT 3B / `Subject  :  Integrative Programming` /
+  `School Year  :  School Year 2026 - 2027` / `Date Submitted  :  October 26, 2026` /
+  `Submitted to  : Drymlad Rebaja`. Ang instructor ay nasa `INSTRUCTOR_LINE` ng `tools/activities.py`.
+
+===========================================================
 7) TOOLS SA REPO (gamitin, huwag magsimula sa zero kung meron na)
 ===========================================================
 - `tools/design_figure.py`     : gumagawa ng Form Design figure mula sa totoong coordinates

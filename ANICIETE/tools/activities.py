@@ -3,7 +3,7 @@
 AUTHOR = "Aniciete, Shane Antoinette"
 COURSE = "BSIT 3B"
 SUBJECT = "Integrative Programming"
-INSTRUCTOR_LINE = "________________________"
+INSTRUCTOR_LINE = "Drymlad Rebaja"
 SCHOOL_YEAR = "School Year 2026 - 2027"
 DATE_LINE = "October 26, 2026"
 
