@@ -201,6 +201,16 @@ SAMPLES = {
                 "txtTeacherID": "T-014",
                 "txtRoom": "Room 204",
                 "cboDay": "Monday",
+                "dtpTime": "07:30 AM",
+                "dataGridView1": {
+                    "header": ["Schedule ID", "Course", "Teacher", "Day", "Time", "Room"],
+                    "rows": [
+                        ["SCH-2026-001", "BSIT-3B", "T-014", "Monday", "07:30 AM", "Room 204"],
+                        ["SCH-2026-002", "BSIT-3B", "T-009", "Tuesday", "09:00 AM", "Room 118"],
+                        ["SCH-2026-003", "BSIT-3A", "T-021", "Wednesday", "10:30 AM", "Lab 3"],
+                        ["SCH-2026-004", "BSIT-3A", "T-014", "Thursday", "01:00 PM", "Room 204"],
+                    ],
+                },
                 "lblDatabase": "Database : schoolrecords.accdb  (connected)",
             },
         },

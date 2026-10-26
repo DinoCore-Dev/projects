@@ -22,6 +22,7 @@ NAMED_COLORS = {
 CTRL_TYPES = [
     "Panel", "Label", "Button", "TextBox", "MenuStrip", "SplitContainer", "ListBox",
     "ListView", "TreeView", "PictureBox", "RadioButton", "CheckBox", "GroupBox",
+    "DataGridView", "DateTimePicker",
     "ComboBox", "NumericUpDown", "ToolStrip", "StatusStrip", "TabControl", "TabPage",
     "DataGridView", "LinkLabel", "TrackBar", "Timer", "ColumnHeader",
     "ToolStripButton", "ToolStripDropDownButton", "ToolStripMenuItem", "ToolStripSeparator",
@@ -591,14 +592,14 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
                     draw.line([box[0] + 4 * SCALE, box[1] + (8 + i * 14) * SCALE,
                                box[0] + (min(w - 20, 60 + (i * 37) % 120)) * SCALE, box[1] + (8 + i * 14) * SCALE],
                               fill=(205, 210, 218), width=SCALE)
-        elif kind in ("ListView", "TreeView", "ListBox"):
+        elif kind in ("ListView", "TreeView", "ListBox", "DataGridView"):
             draw.rectangle(box, fill=back or (255, 255, 255), outline=(158, 168, 180), width=SCALE)
             f = font(8)
             row_h = 18 * SCALE
             rows = int((h - 4) // 18)
             header_labels = c.header or ["Name", "Type", "Size", "Modified"]
             start_row = 0
-            if kind == "ListView":
+            if kind in ("ListView", "DataGridView"):
                 header_h = 22 * SCALE
                 draw.rectangle([box[0], box[1], box[2], box[1] + header_h], fill=(246, 247, 249),
                                outline=(220, 224, 230), width=SCALE)
@@ -654,9 +655,13 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
                 draw.text((box[0] + (16) * SCALE, cy - c.font_size * 0.7 * SCALE), c.text, font=f,
                           fill=c.fore or (30, 30, 30))
         else:
-            draw.rectangle(box, fill=back or (246, 247, 249), outline=(170, 178, 188), width=SCALE)
+            draw.rectangle(box, fill=back or (255, 255, 255), outline=(158, 168, 180), width=SCALE)
             if c.text:
-                draw.text((box[0] + 4 * SCALE, box[1] + 3 * SCALE), c.text[:40], font=font(8),
+                f = font(c.font_size if c.font_size > 7 else 8.25)
+                draw.text((box[0] + 6 * SCALE, box[1] + (h * SCALE - c.font_size * 1.5 * SCALE) / 2),
+                          c.text[:46], font=f, fill=c.fore or (25, 35, 45))
+            elif kind == "ComboBox":
+                draw.text((box[2] - 16 * SCALE, box[1] + 3 * SCALE), "\u25be", font=font(8),
                           fill=(90, 100, 112))
 
         for child in c.children:
