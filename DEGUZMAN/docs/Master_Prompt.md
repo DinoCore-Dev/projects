@@ -136,7 +136,7 @@ at feature set) para sa mga activity na ito:
 ===========================================================
 Gawa ng bagong document (huwag i-edit ang PDF ng iba). SIMPLE lang ito - apat na bagay
 lang kada activity:
-  1. Title  (Activity number + title + isang maliit na linya: project name | author | course)
+  1. Title  (`Activity N` lang - WALANG pamagat ng activity - + isang maliit na linya: project name | author | course)
   2. Form Design  - picture ng designer layout, para sa form activities lang
   3. Source Code  - ang PLAIN `.vb` files lang, may label bawat file. Bawal isama ang
      `*.Designer.vb` (design code), ang `My Project/` files, ang `.vbproj`, ang `.sln` at
@@ -286,7 +286,9 @@ totoong database, parehong gaya ng original, at PAREHO sa lahat ng identity:
                                  activity (textbox text, label results, ListView rows,
                                  TreeView nodes, checked radio button). May {USER} /
                                  {AUTHOR} / {COURSE} token para automatic na napapalitan.
-- `tools/build_documents.py`   : binubuo ang `docs/figures/*.png`, ang DOCX at ang PDF
+- `tools/build_documents.py`   : binubuo ang `docs/figures/*.png`, ang DOCX at ang PDF (Courier New,
+                                 auto na kulay, cover ayon sa 6E)
+- `tools/build_package.py`     : binubuo ang zip (DOCX + Form_Designs + activity folders lang)
   Command: `python3 tools/build_documents.py`  (kailangan: python-docx, reportlab, pillow)
 
 ===========================================================
@@ -298,8 +300,9 @@ totoong database, parehong gaya ng original, at PAREHO sa lahat ng identity:
 - `tools/`                  : generator scripts
 - Updated `README.md`
 - ISANG zip na pang-download, flat ang loob (walang nakapaloob na pangalawang zip):
-  `START_HERE.txt`, ang PDF, ang DOCX, `Master_Prompt.md`, `Form_Designs/`, at
-  `01_ ... 13_ ...` (isang folder kada activity, buong VS2010 solution)
+  ang DOCX, `Form_Designs/`, at `01_ ... 13_ ...` (isang folder kada activity, buong VS2010
+  solution). BAWAL sa loob ng zip: ang PDF, `START_HERE.txt` at kahit anong `.md` (kasama ang
+  `Master_Prompt.md`). Nasa `docs/` lang ng repo ang PDF at ang master prompt.
 - I-commit at i-push sa branch ko, tapos i-report sa dulo:
   * ano ang binago per activity
   * saan hahanapin ang files
@@ -326,8 +329,10 @@ totoong database, parehong gaya ng original, at PAREHO sa lahat ng identity:
    ng estudyante (hindi ng iba) ang nasa `output_act13_5.png`
 3. Pictures: buksan ang `docs/figures/` at tingnan ang 3 random na PNG
    (isang design, isang running, isang may ListView) - walang grey bar
-4. Zip: flat ang loob (START_HERE.txt, PDF, DOCX, Master_Prompt.md,
-   Form_Designs/, 01_ ... 13_), walang bin/obj/suo, isang zip lang
+4. Zip: flat ang loob (DOCX, Form_Designs/, 01_ ... 13_), WALANG PDF / START_HERE.txt / .md,
+   walang bin/obj/suo, isang zip lang (`unzip -l <zip> | grep -iE "\.(pdf|md|txt)$"` -> walang output)
+4b. Docs: heading ay `Activity N` lang, Courier New, walang explicit na kulay, at ang page 1 ay
+   ayon sa seksyon 6E (kasama ang `Submitted to  : Drymlad Rebaja`)
 5. I-report: ano ang binago, saan ang files, download link, at ano ang
    HINDI na-verify (hal. actual build sa Visual Studio)
 ```
