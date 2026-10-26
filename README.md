@@ -32,11 +32,18 @@ source), without `bin`, `obj` or `.suo`.
 Only four things per activity - nothing else:
 
 1. **Title** - activity number, title, and one small line with the project, author and course
-2. **Form Design** - picture of the designer layout (form activities only)
-3. **Source Code** - the real source files, one labelled block each
-4. **Sample Output** - **picture of the running form** for form activities (textboxes filled
-   in, results on the labels, rows in the ListView / TreeView, radio button selected), and
-   the console text for Activities 1, 2 and 3
+2. **Form Design** - picture of the **Visual Studio 2010 designer**: dotted alignment grid,
+   blue selection border and eight resize handles (form activities only)
+3. **Source Code** - only the plain `.vb` files, one labelled block each. The designer code
+   (`*.Designer.vb`), `My Project/`, `.vbproj` and `.sln` are never printed - the design is
+   already a picture and the code list would only add pages
+4. **Sample Output** - picture of the **running program** for form activities: title bar,
+   menu strip and status strip, typed values in the textboxes, results on the labels, real
+   rows in the ListView / TreeView / DataGridView, a selected radio button - and the console
+   text for Activities 1, 2 and 3
+
+No grey placeholder bars are ever drawn: an empty list stays white instead of showing fake
+rows, so the picture always looks like the real program.
 
 There is **no** table of contents, no description, no objectives, no notes, no appendices,
 and no page header or footer. Only a plain cover page at the front.

@@ -36,7 +36,6 @@ ACTIVITIES = [
             "Print output with Console.WriteLine and pause the console with Console.ReadKey.",
         ],
         "files": [("Act1_Activity202606241600/Activity202606241600/Module1.vb", "Module1.vb")],
-        "figures": [],
         "output": [
             "Activity202606241600",
             "Author: Sonajo, Christian Paolo",
@@ -72,7 +71,6 @@ ACTIVITIES = [
             "Apply arithmetic formulas and display the computed results.",
         ],
         "files": [("Act2 Celcius-Fahrenheit Converter/Act2/Module1.vb", "Module1.vb")],
-        "figures": [],
         "output": [
             "Act2 Celcius-Fahrenheit Converter",
             "Author: Sonajo, Christian Paolo",
@@ -112,7 +110,6 @@ ACTIVITIES = [
             "Handle invalid input with Try - Catch and a GoTo label so the program repeats.",
         ],
         "files": [("Activity3_20260629/Activity3_20260629/Module1.vb", "Module1.vb")],
-        "figures": [],
         "output": [
             "Activity3_20260629",
             "Author: Sonajo, Christian Paolo",

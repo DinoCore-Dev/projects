@@ -120,6 +120,46 @@ I-verify: walang blankong page, walang putol na code block, walang lumang pangal
 at LAHAT ng form activity ay may Sample Output picture.
 
 ===========================================================
+6B) PICTURE QUALITY (KRITIKAL — ito ang madalas mali)
+===========================================================
+Dalawang picture kada form activity, at IBA ang hitsura nila:
+
+A) Form Design  = hitsura ng DESIGNER sa Visual Studio 2010
+   - dotted alignment grid sa buong client area (8 px ang pagitan)
+   - asul na selection border sa gilid ng form at 8 maliliit na puting
+     selection handle (4 sulok + 4 gitna ng gilid)
+   - WALANG menu strip / status strip na tumatakbo, walang data sa loob ng
+     textbox - blangko lahat dahil design pa lang
+   - title bar lang ang may teksto, at doon nakalagay ang pangalan
+
+B) Sample Output = hitsura ng TUMATAKBONG app
+   - buong window frame: title bar, MenuStrip/ToolStrip/StatusStrip na may
+     totoong label (hal. Forms | TreeView File Explorer | ... | Exit)
+   - totoong nilalaman: naka-type na halaga sa textbox, resulta sa label,
+     totoong rows sa ListView / TreeView / DataGridView (pangalan, type,
+     size, petsa), may napindot na radio button, may sample na preview text
+   - BAWAL ang grey placeholder bar / pekeng guhit na linya sa loob ng
+     ListView, TreeView, ComboBox, o multiline TextBox. Kung wala kang
+     sample na data, iwanan itong PUTI at blangko - huwag mag-imbento ng
+     guhit.
+   - BAWAL ang doble: bawat menu item at status item isang beses lang
+     iginuguhit, at walang `&` mnemonic (dapat `Forms`, hindi `&Forms`)
+   - Panatilihin ang totoong proporsyon at posisyon mula sa `*.Designer.vb`
+
+Pareho sa dalawang picture:
+   - Makikita ang pangalan ng author (title bar, banner, author label, o
+     status strip) at ang course
+   - Tugma ang sample na data sa code: ang format ng resulta (hal. N4, 0.00),
+     ang range (grade 0-100), at ang bilang ng item ("5 item(s)" kung 5 rows)
+   - Ang sample values ay nasa `tools/samples.py`, hindi hard coded sa
+     renderer, at may `{USER}` / `{AUTHOR}` / `{COURSE}` token
+   - Console activities (Act 1-3): text lang, walang picture
+
+Pagkatapos mag-render, buksan ang PNG at tingnan: walang grey bar, walang
+putol na teksto, walang kulang na menu, at tama ang pangalan.
+
+
+===========================================================
 7) TOOLS SA REPO (gamitin, huwag magsimula sa zero kung meron na)
 ===========================================================
 - `tools/design_figure.py`     : gumagawa ng Form Design figure mula sa totoong coordinates
@@ -157,6 +197,22 @@ at LAHAT ng form activity ay may Sample Output picture.
   * saan hahanapin ang files
   * ang download link ng zip
   * ano ang HINDI na-verify (hal. actual build sa Visual Studio, kasi walang VS sa sandbox)
+
+===========================================================
+9) FINAL CHECK (patakbuhin bago mag-report)
+===========================================================
+1. Walang lumang pangalan:  grep -ri "<dating pangalan>" .   -> walang output
+2. Document:
+   - pages, at bilang ng pictures (dapat 2 pictures kada form activity)
+   - walang "Designer.vb" / "Friend WithEvents" sa teksto ng PDF
+   - walang header/footer/page number, walang Table of Contents
+   - lahat ng Sample Output ng form activity ay PICTURE, hindi text
+3. Pictures: buksan ang `docs/figures/` at tingnan ang 3 random na PNG
+   (isang design, isang running, isang may ListView) - walang grey bar
+4. Zip: flat ang loob (START_HERE.txt, PDF, DOCX, Master_Prompt.md,
+   Form_Designs/, 01_ ... 13_), walang bin/obj/suo, isang zip lang
+5. I-report: ano ang binago, saan ang files, download link, at ano ang
+   HINDI na-verify (hal. actual build sa Visual Studio)
 ```
 
 ---
