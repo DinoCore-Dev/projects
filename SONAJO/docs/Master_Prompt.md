@@ -160,6 +160,35 @@ putol na teksto, walang kulang na menu, at tama ang pangalan.
 
 
 ===========================================================
+6C) ACTIVITY NA MARAMING FORMS (kritikal)
+===========================================================
+Kapag ang activity ay may higit sa isang form (hal. Panel + SplitContainer,
+Controls Collection, MDI project na may frmMain / frmSchedules / frmQuotes /
+frmBibleVerses / frmAbout), HINDI sapat ang isang picture lang. Para sa BAWAT form:
+   1. pangalan ng form (maliit na linya lang)
+   2. Form Design  - picture ng form na iyon
+   3. Source Code  - ang `.vb` ng form na iyon
+   4. Sample Output - picture ng form na iyon na tumatakbo
+Ayos: form 1 buong set, tapos form 2 buong set, at iba pa, ayon sa pagkakasunod ng
+orihinal na proyekto. Ang file na walang form (hal. `Application.vb` / Module) ay
+Source Code lang, walang picture.
+- Isama LAHAT ng forms - kahit ang MDI parent (frmMain, grey na workspace + menu +
+  status strip) at ang About form. Huwag piliin ang isa lang bilang kinatawan.
+- Ang About form: ilagay ang picture box na may neutral na portrait; ang estudyante
+  na ang magpapalit ng litrato sa dokumento (docs/figures/output_actNN_K.png).
+- Kapag ang form ay buong gawa sa code (walang Designer.vb), gumawa ng picture-only
+  layout sa `tools/figure_sources/<Form>.Designer.vb` na kopya ng code - HINDI ito
+  isinasama sa COMPILATION at hindi ipinapakita sa Source Code.
+- Ilagay ang pangalan ng author sa title bar ng BAWAT form (hal.
+  `Schedules - <Pangalan>  |  <Course>`), hindi lang sa main form.
+- Tugma ang sample data sa code: ang seed rows na nasa `SeedSampleData`, ang header
+  text ng grid, ang `lbl.Text` ng code (hal. `5 item(s)`, `Storage: ... N record(s)`),
+  ang ListView na `Folder` / `.ext` / `N bytes`. Huwag mag-imbento ng ibang format.
+- Sa `tools/activities.py`, nakalista ito sa `GROUPS = {numero: [(pangalan,
+  [(path, label)], designer o None), ...]}`; sa `tools/samples.py`, may sample ang bawat
+  designer path. Idagdag lang doon kapag may bagong form.
+
+===========================================================
 7) TOOLS SA REPO (gamitin, huwag magsimula sa zero kung meron na)
 ===========================================================
 - `tools/design_figure.py`     : gumagawa ng Form Design figure mula sa totoong coordinates
@@ -174,6 +203,7 @@ putol na teksto, walang kulang na menu, at tama ang pangalan.
 - `tools/activities.py`        : metadata per activity (title, project, files, figures,
                                  output) + AUTHOR / COURSE / SUBJECT / INSTRUCTOR_LINE /
                                  SCHOOL_YEAR / DATE_LINE
+- `tools/figure_sources/`      : picture-only layout ng mga form na gawa sa code
 - `tools/samples.py`           : sample values para sa Sample Output picture ng bawat form
                                  activity (textbox text, label results, ListView rows,
                                  TreeView nodes, checked radio button). May {USER} /
@@ -203,6 +233,7 @@ putol na teksto, walang kulang na menu, at tama ang pangalan.
 ===========================================================
 1. Walang lumang pangalan:  grep -ri "<dating pangalan>" .   -> walang output
 2. Document:
+   - bawat form ng multi-form activity ay may sarili nitong Form Design + Source Code + Sample Output
    - pages, at bilang ng pictures (dapat 2 pictures kada form activity)
    - walang "Designer.vb" / "Friend WithEvents" sa teksto ng PDF
    - walang header/footer/page number, walang Table of Contents

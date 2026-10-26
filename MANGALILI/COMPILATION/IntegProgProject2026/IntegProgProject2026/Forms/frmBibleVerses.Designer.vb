@@ -225,7 +225,7 @@ Private Sub InitializeComponent()
         Me.Controls.Add(Me.lblDatabase)
         Me.Name = "frmBibleVerses"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmBibleVerses"
+        Me.Text = "Bible Verses - Mangalili, Fhetz  |  BSIT 3B"
         Me.grpDetails.ResumeLayout(False)
         Me.grpDetails.PerformLayout()
         Me.grpRecords.ResumeLayout(False)

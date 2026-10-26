@@ -549,3 +549,43 @@ ACTIVITIES = [
         ],
     },
 ]
+
+
+# ---------------------------------------------------------------------------
+# Activities with several forms: every form gets its own Form Design picture,
+# its own source file(s) and its own Sample Output picture, in this order.
+#   (name shown above the form, [(source path, label)], designer path or None)
+# A designer path starting with "tools:" is a picture-only layout kept in
+# tools/figure_sources (for forms that build their controls in code).
+# ---------------------------------------------------------------------------
+_P10 = "SW20261002/PanelSplitPanelDemo/"
+_P11 = "SW202610021600/"
+_P13 = "IntegProgProject2026/IntegProgProject2026/Forms/"
+
+GROUPS = {
+    10: [
+        ("Form1  -  Panel Playground", [(_P10 + "Form1.vb", "Form1.vb")], _P10 + "Form1.Designer.vb"),
+        ("Form2  -  Split Container Lab", [(_P10 + "Form2.vb", "Form2.vb")], _P10 + "Form2.Designer.vb"),
+    ],
+    11: [
+        ("Application", [(_P11 + "Application.vb", "Application.vb")], None),
+        ("MainForm", [(_P11 + "MainForm.vb", "MainForm.vb")], "tools:figure_sources/MainForm.Designer.vb"),
+        ("MenuForm", [(_P11 + "MenuForm.vb", "MenuForm.vb")], "tools:figure_sources/MenuForm.Designer.vb"),
+        ("ListViewSample", [(_P11 + "ListViewSample.vb", "ListViewSample.vb")], _P11 + "ListViewSample.Designer.vb"),
+        ("TreeViewSample", [(_P11 + "TreeViewSample.vb", "TreeViewSample.vb")], _P11 + "TreeViewSample.Designer.vb"),
+        ("OpenFileDialogSample", [(_P11 + "OpenFileDialogSample.vb", "OpenFileDialogSample.vb")], _P11 + "OpenFileDialogSample.Designer.vb"),
+        ("CombinedSample", [(_P11 + "CombinedSample.vb", "CombinedSample.vb")], _P11 + "CombinedSample.Designer.vb"),
+    ],
+    13: [
+        ("frmMain", [(_P13 + "frmMain.vb", "frmMain.vb")], _P13 + "frmMain.Designer.vb"),
+        ("frmSchedules", [(_P13 + "frmSchedules.vb", "frmSchedules.vb")], _P13 + "frmSchedules.Designer.vb"),
+        ("frmQuotes", [(_P13 + "frmQuotes.vb", "frmQuotes.vb")], _P13 + "frmQuotes.Designer.vb"),
+        ("frmBibleVerses", [(_P13 + "frmBibleVerses.vb", "frmBibleVerses.vb")], _P13 + "frmBibleVerses.Designer.vb"),
+        ("frmAbout", [(_P13 + "frmAbout.vb", "frmAbout.vb")], _P13 + "frmAbout.Designer.vb"),
+    ],
+}
+
+for _entry in ACTIVITIES:
+    if _entry["number"] in GROUPS:
+        _entry["groups"] = GROUPS[_entry["number"]]
+        _entry["figures"] = []

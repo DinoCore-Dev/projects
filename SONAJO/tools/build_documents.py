@@ -73,8 +73,12 @@ def code_blocks(entry):
     file and the solution file are NOT printed: the design is already shown as
     a picture (Form Design) and the sample output as another picture.
     """
+    return code_blocks_from(entry["files"])
+
+
+def code_blocks_from(files):
     blocks = []
-    for path, label in entry["files"]:
+    for path, label in files:
         low = path.replace("\\", "/").lower()
         if not low.endswith(".vb"):
             continue
@@ -98,36 +102,72 @@ def fill(value):
     return value
 
 
+TOOLS_DIR = os.path.dirname(os.path.abspath(__file__))
+
+
+def resolve_designer(path):
+    """`tools:` paths are picture-only layouts kept next to the scripts."""
+    if path.startswith("tools:"):
+        return os.path.join(TOOLS_DIR, path[len("tools:"):])
+    return os.path.join(COMPILATION, path)
+
+
 def build_figures():
+    """Render every picture and return {activity number: [section, ...]}.
+
+    A section is one form: its Form Design picture, its source file(s) and its
+    Sample Output picture.  Single-form activities have exactly one section
+    without a name; activities with several forms (10, 11, 13) have one
+    section per form, in the order of `GROUPS` in activities.py.
+    """
     os.makedirs(FIGURES, exist_ok=True)
     for name in os.listdir(FIGURES):
         if name.lower().endswith(".png"):
             os.remove(os.path.join(FIGURES, name))
 
-    designs = {}
-    outputs = {}
+    sections = {}
     for entry in ACTIVITIES:
         number = entry["number"]
+        samples = SAMPLES.get(number, [])
+        result = []
 
-        design_list = []
-        for designer_path, caption in entry.get("figures", []):
-            out_name = "design_act%02d_%d.png" % (number, len(design_list) + 1)
-            out_path = os.path.join(FIGURES, out_name)
-            render_figure(os.path.join(COMPILATION, designer_path), out_path,
-                          mode="design")
-            design_list.append((out_path, caption))
-        designs[number] = design_list
+        groups = entry.get("groups")
+        if groups:
+            for index, (name, files, designer) in enumerate(groups, 1):
+                section = {"name": name, "designs": [], "outputs": [],
+                           "code": code_blocks_from(files), "text": None}
+                if designer:
+                    out_path = os.path.join(FIGURES, "design_act%02d_%d.png" % (number, index))
+                    render_figure(resolve_designer(designer), out_path, mode="design")
+                    section["designs"].append((out_path, "Form design - %s" % name.split("  -  ")[0]))
+                    for sample in samples:
+                        if sample["designer"] == designer:
+                            out_path = os.path.join(FIGURES, "output_act%02d_%d.png" % (number, index))
+                            render_figure(resolve_designer(designer), out_path,
+                                          overrides=fill(sample.get("values")))
+                            section["outputs"].append((out_path, sample["caption"]))
+                            break
+                result.append(section)
+        else:
+            section = {"name": None, "designs": [], "outputs": [],
+                       "code": code_blocks(entry), "text": None}
+            for designer_path, caption in entry.get("figures", []):
+                out_path = os.path.join(FIGURES, "design_act%02d_%d.png"
+                                        % (number, len(section["designs"]) + 1))
+                render_figure(resolve_designer(designer_path), out_path, mode="design")
+                section["designs"].append((out_path, caption))
+            for sample in samples:
+                out_path = os.path.join(FIGURES, "output_act%02d_%d.png"
+                                        % (number, len(section["outputs"]) + 1))
+                render_figure(resolve_designer(sample["designer"]), out_path,
+                              overrides=fill(sample.get("values")))
+                section["outputs"].append((out_path, sample["caption"]))
+            if not section["outputs"]:
+                section["text"] = entry.get("output", [])
+            result.append(section)
+        sections[number] = result
 
-        output_list = []
-        for sample in SAMPLES.get(number, []):
-            out_name = "output_act%02d_%d.png" % (number, len(output_list) + 1)
-            out_path = os.path.join(FIGURES, out_name)
-            render_figure(os.path.join(COMPILATION, sample["designer"]), out_path,
-                          overrides=fill(sample.get("values")))
-            output_list.append((out_path, sample["caption"]))
-        outputs[number] = output_list
-
-    return designs, outputs
+    return sections
 
 
 # ---------------------------------------------------------------------------
@@ -155,7 +195,7 @@ def activity_meta(entry):
 # ---------------------------------------------------------------------------
 # DOCX
 # ---------------------------------------------------------------------------
-def build_docx(designs, outputs, out_path):
+def build_docx(sections, out_path):
     from docx import Document
     from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_BREAK
     from docx.oxml import OxmlElement
@@ -263,27 +303,30 @@ def build_docx(designs, outputs, out_path):
         paragraph(activity_heading(entry), 19, True, colour=INK, space_after=2)
         paragraph(activity_meta(entry), 9.5, colour=MUTED, space_after=10)
 
-        if designs.get(number):
-            paragraph("Form Design", 12.5, True, colour=ACCENT, space_before=4, space_after=4)
-            for path, caption in designs[number]:
-                picture(path)
-                if caption:
-                    paragraph(caption, 9, italic=True, colour=MUTED,
-                              align="center", space_after=10)
+        for part in sections[number]:
+            if part["name"]:
+                paragraph(part["name"], 14, True, colour=INK, space_before=12, space_after=2)
+            if part["designs"]:
+                paragraph("Form Design", 12.5, True, colour=ACCENT, space_before=4, space_after=4)
+                for path, caption in part["designs"]:
+                    picture(path)
+                    if caption:
+                        paragraph(caption, 9, italic=True, colour=MUTED,
+                                  align="center", space_after=10)
 
-        paragraph("Source Code", 12.5, True, colour=ACCENT, space_before=6, space_after=4)
-        for label, lines in code_blocks(entry):
-            code_block(wrap_code(lines), label)
+            paragraph("Source Code", 12.5, True, colour=ACCENT, space_before=6, space_after=4)
+            for label, lines in part["code"]:
+                code_block(wrap_code(lines), label)
 
-        paragraph("Sample Output", 12.5, True, colour=ACCENT, space_before=8, space_after=4)
-        if outputs.get(number):
-            for path, caption in outputs[number]:
-                picture(path)
-                if caption:
-                    paragraph(caption, 9, italic=True, colour=MUTED,
-                              align="center", space_after=10)
-        else:
-            code_block(wrap_code(entry.get("output", [])))
+            if part["outputs"] or part["text"] is not None:
+                paragraph("Sample Output", 12.5, True, colour=ACCENT, space_before=8, space_after=4)
+                for path, caption in part["outputs"]:
+                    picture(path)
+                    if caption:
+                        paragraph(caption, 9, italic=True, colour=MUTED,
+                                  align="center", space_after=10)
+                if part["text"] is not None:
+                    code_block(wrap_code(part["text"]))
 
         if index != len(ACTIVITIES) - 1:
             doc.add_paragraph().add_run().add_break(WD_BREAK.PAGE)
@@ -295,7 +338,7 @@ def build_docx(designs, outputs, out_path):
 # ---------------------------------------------------------------------------
 # PDF
 # ---------------------------------------------------------------------------
-def build_pdf(designs, outputs, out_path):
+def build_pdf(sections, out_path):
     from reportlab.lib import colors
     from reportlab.lib.enums import TA_CENTER
     from reportlab.lib.pagesizes import A4
@@ -375,30 +418,46 @@ def build_pdf(designs, outputs, out_path):
         story.append(Paragraph(activity_heading(entry), h1))
         story.append(Paragraph(activity_meta(entry), meta_style))
 
-        if designs.get(number):
-            story.append(Paragraph("Form Design", h2))
-            for path, caption in designs[number]:
-                story.append(picture(path))
-                if caption:
-                    story.append(Paragraph(caption, caption_style))
+        for part in sections[number]:
+            if part["name"]:
+                story.append(Paragraph(part["name"], ParagraphStyle(
+                    "grp", fontName=body_font, fontSize=13.5, leading=17, spaceBefore=14,
+                    spaceAfter=2, textColor=colors.Color(INK[0] / 255.0, INK[1] / 255.0,
+                                                         INK[2] / 255.0))))
+            if part["designs"]:
+                first = True
+                for path, caption in part["designs"]:
+                    block = []
+                    if first:
+                        block.append(Paragraph("Form Design", h2))
+                        first = False
+                    block.append(picture(path))
+                    if caption:
+                        block.append(Paragraph(caption, caption_style))
+                    story.append(KeepTogether(block))
 
-        story.append(Paragraph("Source Code", h2))
-        for label, lines in code_blocks(entry):
-            story.append(Paragraph(label, ParagraphStyle("lbl", parent=meta_style,
-                                                         fontSize=8.5, spaceBefore=4,
-                                                         spaceAfter=2)))
-            story.append(Preformatted("\n".join(wrap_code(lines, 112)), code_style))
-            story.append(Spacer(1, 6))
+            story.append(Paragraph("Source Code", h2))
+            for label, lines in part["code"]:
+                story.append(Paragraph(label, ParagraphStyle("lbl", parent=meta_style,
+                                                             fontSize=8.5, spaceBefore=4,
+                                                             spaceAfter=2)))
+                story.append(Preformatted("\n".join(wrap_code(lines, 112)), code_style))
+                story.append(Spacer(1, 6))
 
-        story.append(Paragraph("Sample Output", h2))
-        if outputs.get(number):
-            for path, caption in outputs[number]:
-                story.append(picture(path))
-                if caption:
-                    story.append(Paragraph(caption, caption_style))
-        else:
-            story.append(Preformatted("\n".join(wrap_code(entry.get("output", []), 112)),
-                                      code_style))
+            if part["outputs"]:
+                first = True
+                for path, caption in part["outputs"]:
+                    block = []
+                    if first:
+                        block.append(Paragraph("Sample Output", h2))
+                        first = False
+                    block.append(picture(path))
+                    if caption:
+                        block.append(Paragraph(caption, caption_style))
+                    story.append(KeepTogether(block))
+            elif part["text"] is not None:
+                story.append(Paragraph("Sample Output", h2))
+                story.append(Preformatted("\n".join(wrap_code(part["text"], 112)), code_style))
 
         if index != len(ACTIVITIES) - 1:
             story.append(PageBreak())
@@ -415,12 +474,12 @@ def build_pdf(designs, outputs, out_path):
 # ---------------------------------------------------------------------------
 def main():
     os.makedirs(DOCS, exist_ok=True)
-    designs, outputs = build_figures()
+    sections = build_figures()
     docx_path = os.path.join(DOCS, DOC_BASENAME + ".docx")
     pdf_path = os.path.join(DOCS, DOC_BASENAME + ".pdf")
-    build_docx(designs, outputs, docx_path)
+    build_docx(sections, docx_path)
     print("wrote", docx_path)
-    build_pdf(designs, outputs, pdf_path)
+    build_pdf(sections, pdf_path)
     print("wrote", pdf_path)
 
 

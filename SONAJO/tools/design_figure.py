@@ -429,6 +429,8 @@ def apply_overrides(controls, overrides):
             control.rows = value.get("rows", control.rows)
             if value.get("text"):
                 control.text = value["text"]
+            if value.get("back"):
+                control.back = tuple(value["back"])
         elif isinstance(value, (list, tuple)):
             if value and isinstance(value[0], (list, tuple)):
                 control.rows = value
@@ -596,6 +598,23 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
                                outline=(245, 246, 248), width=SCALE)
             if kind in ("MenuStrip", "ToolStrip", "StatusStrip") and c.back:
                 draw.rectangle(box, fill=c.back)
+            if kind == "PictureBox":
+                draw.rectangle(box, fill=back or (255, 255, 255), outline=(158, 168, 180),
+                               width=SCALE)
+                if not design_mode:
+                    # neutral portrait: the programmer's photo is put in by the student
+                    bw, bh = int(box[2] - box[0]), int(box[3] - box[1])
+                    tile = Image.new("RGB", (bw, bh), back or (255, 255, 255))
+                    td = ImageDraw.Draw(tile)
+                    tone = (190, 198, 208)
+                    head_r = int(min(bw, bh) * 0.17)
+                    hy = int(bh * 0.36)
+                    td.ellipse([bw // 2 - head_r, hy - head_r, bw // 2 + head_r, hy + head_r],
+                               fill=tone)
+                    td.ellipse([int(bw * 0.17), int(bh * 0.60), int(bw * 0.83), int(bh * 1.25)],
+                               fill=tone)
+                    img.paste(tile, (int(box[0]), int(box[1])))
+                    draw.rectangle(box, outline=(158, 168, 180), width=SCALE)
         elif kind == "Label":
             if back:
                 draw.rectangle(box, fill=back)
@@ -712,6 +731,10 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
                         break
                     depth = (len(node) - len(node.lstrip(" "))) // 2
                     indent = depth * 14
+                    if kind == "ListBox":
+                        draw.text((box[0] + 4 * SCALE, yy), node.strip(), font=f,
+                                  fill=c.fore or (35, 45, 55))
+                        continue
                     draw.text((box[0] + (6 + indent) * SCALE, yy), "\u25b8", font=f,
                               fill=(120, 130, 142))
                     draw.text((box[0] + (18 + indent) * SCALE, yy), node.strip(), font=f,

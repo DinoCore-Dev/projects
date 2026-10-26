@@ -42,6 +42,10 @@ Only four things per activity - nothing else:
    rows in the ListView / TreeView / DataGridView, a selected radio button - and the console
    text for Activities 1, 2 and 3
 
+Activities with several forms (10, 11 and 13) repeat the same three parts **once per form**:
+Form Design picture, the form's own `.vb`, and its Sample Output picture - for example Activity 13 has
+`frmMain`, `frmSchedules`, `frmQuotes`, `frmBibleVerses` and `frmAbout`, each with its own set.
+
 No grey placeholder bars are ever drawn: an empty list stays white instead of showing fake
 rows, so the picture always looks like the real program.
 
