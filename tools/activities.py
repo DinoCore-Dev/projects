@@ -25,6 +25,10 @@ ACTIVITIES = [
             "declares one variable of every basic data type (String, Integer, Double, "
             "Boolean and Char). The program ends with Console.ReadKey() so the console "
             "window stays open until a key is pressed.",
+            "The output starts with the activity name, the author (Mangalili, Fhetz) and the "
+            "course and section (BSIT 3B), and it ends with a closing line that repeats the "
+            "name of the author, so the printed screen already carries the complete identity "
+            "of the student.",
         ],
         "objectives": [
             "Create a Visual Basic .NET console application and identify the Module and Sub Main entry point.",
@@ -36,9 +40,17 @@ ACTIVITIES = [
         "output": [
             "Activity202606241600",
             "Author: Mangalili, Fhetz",
-            "Hello Mangalili, Fhetz",
+            "Course Year Section: BSIT 3B",
             "",
-            "Press any key to continue . . .",
+            "Hello Mangalili, Fhetz",
+            "n1        = 0",
+            "n2        = 0",
+            "isValid   = True",
+            "character = A",
+            "number1   = 12",
+            "number2   = 12.12",
+            "",
+            "Prepared by: Mangalili, Fhetz  |  BSIT 3B",
         ],
         "notes": [],
     },
@@ -62,6 +74,10 @@ ACTIVITIES = [
         "files": [("Act2 Celcius-Fahrenheit Converter/Act2/Module1.vb", "Module1.vb")],
         "figures": [],
         "output": [
+            "Act2 Celcius-Fahrenheit Converter",
+            "Author: Mangalili, Fhetz",
+            "Course Year Section: BSIT 3B",
+            "",
             "Hello world",
             "Enter Lastname: Mangalili",
             "Enter Firstname: Fhetz",
@@ -73,6 +89,8 @@ ACTIVITIES = [
             "--- Fahrenheit to Celsius Converter ---",
             "Enter Fahrenheit: 98.6",
             "Result in Celsius: 37.0",
+            "",
+            "Activity 2 completed by: Mangalili, Fhetz  |  BSIT 3B",
         ],
         "notes": [],
     },
@@ -215,7 +233,8 @@ ACTIVITIES = [
             "Use Convert.ToString(number, base) for number system conversion.",
         ],
         "files": [("Act7_IntegProg1_SW20260720/IntegProg1_SW20260720/Form1.vb", "Form1.vb")],
-        "figures": [],
+        "figures": [("Act7_IntegProg1_SW20260720/IntegProg1_SW20260720/Form1.Designer.vb",
+                     "Form design of Activity 7 - the author label is at the bottom right")],
         "notes": [],
     },
     {
@@ -265,8 +284,12 @@ ACTIVITIES = [
             ("SW202609301600/ListViewSample.vb", "ListViewSample.vb"),
             ("SW202609301600/ListViewSample.Designer.vb", "ListViewSample.Designer.vb"),
         ],
-        "figures": [],
-        "notes": [],
+        "figures": [("SW202609301600/ListViewSample.Designer.vb",
+                     "Form design of Activity 9 - the author label shares the status line")],
+        "notes": [
+            "The form title now reads Activity 9 - ListView File Explorer | Mangalili, Fhetz and "
+            "the author label at the bottom right of the form shows Mangalili, Fhetz | BSIT 3B.",
+        ],
     },
     {
         "number": 10,
@@ -330,7 +353,10 @@ ACTIVITIES = [
             ("SW202610021600/CombinedSample.vb", "CombinedSample.vb"),
         ],
         "figures": [],
-        "notes": [],
+        "notes": [
+            "The main form has a status line at the bottom that prints Author: Mangalili, Fhetz | "
+            "BSIT 3B, and the same identity is printed at the top of the Assignment answers tab.",
+        ],
     },
     {
         "number": 12,
@@ -393,6 +419,8 @@ ACTIVITIES = [
         ],
         "figures": [],
         "notes": [
+            "The title of the main form now reads Integrative Project 2026 - Mangalili, Fhetz | "
+            "BSIT 3B and the About form is titled About - Mangalili, Fhetz.",
             "The long Base64 picture data inside frmAbout.vb is left out of this document so "
             "that the source listing stays readable. The complete file is inside the "
             "IntegProgProject2026 folder of the compilation.",

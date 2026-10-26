@@ -13,6 +13,7 @@ This repository holds the Visual Basic .NET activity compilation of
 | `docs/figures/` | The form design figures used inside the document. |
 | `COMPILATION_Mangalili_Fhetz.zip` | A clean zip of `COMPILATION/` for uploading or submitting. |
 | `tools/` | The Python scripts that generated the figures and the documents. |
+| `docs/Master_Prompt.md` | Reusable master prompt to rebuild this whole compilation. |
 | `COMPILATION.zip` | The original archive that was uploaded (left untouched for reference). |
 
 ## Activities
@@ -43,6 +44,15 @@ Every form title, banner, About form and console header now carries the new name
 The old `Alvarez, Rex` entries were replaced everywhere (console programs, form banners, the
 About form, `frmMain` user info and `app.config`).
 
+The name also appears in the activities that had no author label before:
+
+* Activities 1 and 2 - printed at the start of the console output and again on the last line.
+* Activity 3 - printed in the header of the console program together with BSIT 3B.
+* Activity 7 - new `lblAuthor` label at the bottom right of the form.
+* Activity 9 - new `lblAuthor` label beside the item count in the status line.
+* Activity 11 - author in the status line of the main form and in the answers tab.
+* Activity 13 - author in the main form title, the About form and the MDI status strip.
+
 ## Rebuilding the documents
 
 ```bash
@@ -55,6 +65,25 @@ and the PDF inside `docs/`. Requirements: `python-docx`, `reportlab` and `pillow
 
 ## Opening the projects
 
-Every project is a classic Visual Basic .NET Windows Forms project (`ToolsVersion 4.0`,
-.NET Framework 4.0 Client Profile). Open the `.sln` file of an activity in Visual Studio
-(2010 or newer, with the .NET Framework 4.0 developer pack installed) and press F5.
+Every project is a classic Visual Basic .NET project (`ToolsVersion 4.0`, .NET Framework 4.0
+Client Profile, solution format 11.00 / `# Visual Studio 2010`). Open the `.sln` file of an
+activity in **Visual Studio 2010** (or a newer Visual Studio that still supports .NET
+Framework 4.0) and press F5.
+
+The code stays inside the Visual Basic 2010 language level: no string interpolation, no
+`Async` / `Await`, no iterator method and no multiline lambda, therefore every project
+builds in Visual Studio 2010 without any change. No NuGet package is needed.
+
+Activities 1, 2 and 3 are console applications; the rest are Windows Forms applications.
+
+## Rebuilding everything
+
+```bash
+python3 tools/build_documents.py     # regenerates docs/figures, the DOCX and the PDF
+
+# rebuild the clean zip after changing any project
+cd COMPILATION && zip -qr ../COMPILATION_Mangalili_Fhetz.zip . \
+  -x "*/bin/*" "*/obj/*" "*.suo" && cd ..
+```
+
+The reusable prompt that reproduces this whole task is in `docs/Master_Prompt.md`.

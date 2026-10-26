@@ -66,6 +66,7 @@ class Control:
         self.orientation = "Vertical"
         self.columns = []
         self.items_added = False
+        self.selected_index = 0
 
 
 NEWLINE_MARK = "\x00"
@@ -188,6 +189,11 @@ def parse_designer(path):
         if c:
             c.orientation = m.group(2)
 
+    def selected_index(m):
+        c = controls.get(m.group(1))
+        if c:
+            c.selected_index = int(m.group(2))
+
     def client_size(m):
         form.size = (int(m.group(1)), int(m.group(2)))
 
@@ -209,6 +215,7 @@ def parse_designer(path):
     each(r"^\s*Me\.(\w+)\.SplitterWidth = (\d+)\s*$", splitter_width)
     each(r"^\s*Me\.(\w+)\.Orientation = System\.Windows\.Forms\.Orientation\.(\w+)\s*$", orientation)
     each(r"^\s*Me\.ClientSize = New System\.Drawing\.Size\((\d+), (\d+)\)", client_size)
+    each(r"^\s*Me\.(\w+)\.SelectedIndex = (\d+)\s*$", selected_index)
     each(r'^\s*Me\.Text = "([^"]*)"\s*$', lambda m: setattr(form, "text", m.group(1)) if False else None)
 
     m = re.search(r'^\s*Me\.Text = (".*?)\s*$', src, re.M)
@@ -269,7 +276,12 @@ def layout(form, controls, padding_top=0):
                 child = (cursor["left"] - x + x + c.loc[0] - (cursor["left"] - x), cursor["top"] - y + c.loc[1] + y - (cursor["top"] - y), c.size[0], c.size[1])
                 child = (x + c.loc[0], y + c.loc[1], c.size[0], c.size[1])
             rects[key] = child
-            if c.kind == "SplitContainer":
+            if c.kind == "TabControl":
+                page_rect = (child[0] + 2, child[1] + 22, child[2] - 4, child[3] - 24)
+                for page_key in c.children:
+                    rects[page_key] = page_rect
+                    walk(page_key, page_rect)
+            elif c.kind == "SplitContainer":
                 sx, sy, sw, sh = child
                 dist = c.distance
                 swidth = c.splitter_width or 6
@@ -346,7 +358,42 @@ def render(designer_path, out_path, caption=None, max_width=1500):
         back = c.back
         line = (150, 160, 172)
 
-        if kind in ("Panel", "GroupBox", "TabPage", "Form", "PictureBox", "ToolStrip", "StatusStrip",
+        if kind == "TabControl":
+            draw.rectangle(box, fill=(246, 247, 249), outline=(190, 197, 206), width=SCALE)
+            tabs = [key for key in c.children if controls.get(key) is not None]
+            strip_y = box[1] + 2 * SCALE
+            cursor_x = box[0] + 4 * SCALE
+            if tabs:
+                tab_h = 20 * SCALE
+                selected = min(max(c.selected_index, 0), len(tabs) - 1)
+                for index, page_key in enumerate(tabs):
+                    page = controls[page_key]
+                    label = page.text or page.name
+                    text_font = font(8.0)
+                    text_w = draw.textlength(label, font=text_font) + 20 * SCALE
+                    selected_now = (index == selected)
+                    tab_box = [cursor_x, strip_y,
+                               cursor_x + text_w, strip_y + tab_h]
+                    draw.rectangle(tab_box,
+                                   fill=(255, 255, 255) if selected_now else (234, 238, 244),
+                                   outline=(190, 197, 206), width=SCALE)
+                    draw.text((cursor_x + 10 * SCALE,
+                               strip_y + (tab_h - 8 * 1.34 * SCALE) / 2),
+                              label, font=text_font,
+                              fill=(30, 41, 59) if selected_now else (90, 100, 112))
+                    cursor_x += text_w + 2 * SCALE
+                page = controls[tabs[selected]]
+                page_rect = rects.get(page.name)
+                if page_rect is None:
+                    page_rect = (x + 2, y + 22, w - 4, h - 24)
+                page_box = screen(page_rect)
+                draw.rectangle(page_box, fill=(255, 255, 255))
+                for child in page.children:
+                    draw_control(child)
+            return
+        elif kind == "TabPage":
+            return
+        elif kind in ("Panel", "GroupBox", "Form", "PictureBox", "ToolStrip", "StatusStrip",
                     "MenuStrip", "SplitContainer"):
             fill = back if back else None
             if fill:

@@ -71,13 +71,14 @@ def project_files():
 # ---------------------------------------------------------------------------
 def build_figures():
     os.makedirs(FIGURES, exist_ok=True)
+    for old_file in os.listdir(FIGURES):
+        if old_file.lower().endswith(".png"):
+            os.remove(os.path.join(FIGURES, old_file))
     figures = {}
-    index = 0
     for entry in ACTIVITIES:
         rendered = []
         for designer_path, caption in entry["figures"]:
-            index += 1
-            out_name = "fig_act%02d_%d.png" % (entry["number"], index)
+            out_name = "fig_act%02d_%d.png" % (entry["number"], len(rendered) + 1)
             out_path = os.path.join(FIGURES, out_name)
             full_caption = "Figure %d.%d - %s" % (entry["number"], len(rendered) + 1, caption)
             render_figure(os.path.join(COMPILATION, designer_path), out_path, full_caption)
@@ -287,6 +288,26 @@ def build_docx(figures, out_path):
     paragraph("Appendix A - Project file list", 11, True, colour=(0x1E, 0x3A, 0x8A), space_before=8)
     paragraph("Appendix B - What changed in this compilation", 11, True, colour=(0x1E, 0x3A, 0x8A), space_after=2)
 
+    # ---------------------- how to open the projects ------------------------
+    doc.add_page_break()
+    paragraph("How to open and run the projects", 16, True, colour=(0x0F, 0x17, 0x2A), space_after=8)
+    for text in [
+        "Every project inside the COMPILATION folder was made with Visual Studio 2010. "
+        "The solution files use Format Version 11.00 and # Visual Studio 2010, the project files "
+        "use MSBuild ToolsVersion 4.0, and the target framework is .NET Framework 4.0 "
+        "(Client Profile).",
+        "To run an activity: open its .sln file in Visual Studio 2010 (or a newer Visual Studio "
+        "that still supports .NET Framework 4.0), wait for the designer to load, then press F5. "
+        "Activities 1, 2 and 3 open a console window; the other activities open a Windows Form.",
+        "No NuGet package and no third party library is used. The code stays inside the Visual "
+        "Basic 2010 language level: there is no string interpolation, no async or Await, no "
+        "iterator method and no multiline lambda, so the projects compile in Visual Studio 2010 "
+        "without any change.",
+        "The bin, obj and .suo files of the original uploads are not included. Visual Studio "
+        "creates them again the first time a project is built.",
+    ]:
+        paragraph(text, space_after=6)
+
     # ---------------------------- activities --------------------------------
     for entry in ACTIVITIES:
         doc.add_page_break()
@@ -354,10 +375,10 @@ def build_docx(figures, out_path):
     paragraph("Appendix B - What changed in this compilation", 16, True,
               colour=(0x0F, 0x17, 0x2A), space_after=8)
     changes = [
-        ("Author and course", "The name Alvarez, Rex was replaced by Mangalili, Fhetz and the "
-                              "course line now reads BSIT 3B in every project, every form title, "
-                              "the About form, the application configuration file and the console "
-                              "programs."),
+        ("Author and course", "The author name and the course line were replaced in every "
+                              "project, every form title, the About form, the application "
+                              "configuration file and the console programs, so the name now reads "
+                              "Mangalili, Fhetz and the course reads BSIT 3B."),
         ("Activity 4", "New two panel design with a dark banner, a shared ReadInputs() function, "
                        "four decimal result formatting and a division by zero guard."),
         ("Activity 5", "New side rail layout with three result cards, the Enter key runs the "
@@ -372,6 +393,19 @@ def build_docx(figures, out_path):
         ("Activity 12", "The explorer was rewritten as Mangalili Explorer with history stacks, an "
                         "address bar, a live filter, numeric column sorting, safe image preview and "
                         "layout buttons for the nested splitters."),
+        ("Author shown in every activity", "Activities 1 and 2 print the activity name, the author "
+                                           "and BSIT 3B at the start of the console output and the "
+                                           "author again on the last line. Activities 4, 5, 6, 8, 10 "
+                                           "and 12 show the author in the banner or the rail of the "
+                                           "form, Activity 7 and Activity 9 have an author label at "
+                                           "the bottom of the form, Activity 11 prints the author in "
+                                           "the status line and in the answers tab, and Activity 13 "
+                                           "prints it in the main form title, the About form and the "
+                                           "status strip of the MDI parent."),
+        ("Visual Studio 2010", "No language feature newer than Visual Basic 2010 is used - no string "
+                               "interpolation, no multiline lambdas, no async or iterator methods - so "
+                               "every project still opens and builds in Visual Studio 2010 with the "
+                               ".NET Framework 4.0."),
     ]
     for label, text in changes:
         par = doc.add_paragraph()
@@ -515,6 +549,26 @@ def build_pdf(figures, out_path):
     story.append(Paragraph("Appendix B - What changed in this compilation", h_small))
     story.append(PageBreak())
 
+    # ---------------------- how to open the projects ------------------------
+    story.append(Paragraph("How to open and run the projects", h_act))
+    story.append(Spacer(1, 4))
+    for text in [
+        "Every project inside the COMPILATION folder was made with Visual Studio 2010. The "
+        "solution files use Format Version 11.00 and # Visual Studio 2010, the project files use "
+        "MSBuild ToolsVersion 4.0, and the target framework is .NET Framework 4.0 (Client Profile).",
+        "To run an activity: open its .sln file in Visual Studio 2010 (or a newer Visual Studio "
+        "that still supports .NET Framework 4.0), wait for the designer to load, then press F5. "
+        "Activities 1, 2 and 3 open a console window; the other activities open a Windows Form.",
+        "No NuGet package and no third party library is used. The code stays inside the Visual "
+        "Basic 2010 language level: there is no string interpolation, no async or Await, no "
+        "iterator method and no multiline lambda, so the projects compile in Visual Studio 2010 "
+        "without any change.",
+        "The bin, obj and .suo files of the original uploads are not included. Visual Studio "
+        "creates them again the first time a project is built.",
+    ]:
+        story.append(Paragraph(text, body))
+    story.append(PageBreak())
+
     # ---------------------------- activities --------------------------------
     for entry in ACTIVITIES:
         story.append(Paragraph("Activity %d" % entry["number"], h_act))
@@ -548,8 +602,9 @@ def build_pdf(figures, out_path):
             story.append(Image(figure_path, width=target_width, height=target_height))
             story.append(Paragraph(caption, capt))
 
-        story.append(Paragraph("Source Code", h_sec))
-        for label, lines in code_blocks(entry):
+        for block_index, (label, lines) in enumerate(code_blocks(entry)):
+            if block_index == 0:
+                story.append(Paragraph("Source Code", h_sec))
             wrapped = []
             for line in lines:
                 if len(line) > 108:
@@ -558,13 +613,21 @@ def build_pdf(figures, out_path):
                                                  drop_whitespace=False) or [""])
                 else:
                     wrapped.append(line if line else " ")
-            story.append(Paragraph(label, code_label))
-            story.append(Preformatted("\n".join(wrapped), code_style))
+            block = [Paragraph(label, code_label),
+                     Preformatted("\n".join(wrapped), code_style)]
+            if len(wrapped) <= 34:
+                story.append(KeepTogether(block))
+            else:
+                story.extend(block)
 
         if entry.get("output"):
-            story.append(Paragraph("Sample Output", h_sec))
-            story.append(Preformatted("\n".join(line if line else " " for line in entry["output"]),
-                                      code_style))
+            output_block = Preformatted("\n".join(line if line else " "
+                                                  for line in entry["output"]), code_style)
+            if len(entry["output"]) <= 30:
+                story.append(KeepTogether([Paragraph("Sample Output", h_sec), output_block]))
+            else:
+                story.append(Paragraph("Sample Output", h_sec))
+                story.append(output_block)
 
         if entry.get("notes"):
             story.append(Paragraph("Notes", h_sec))
@@ -592,9 +655,9 @@ def build_pdf(figures, out_path):
     story.append(Spacer(1, 6))
     changes = [
         ("Author and course",
-         "The name Alvarez, Rex was replaced by Mangalili, Fhetz and the course line now reads "
-         "BSIT 3B in every project, every form title, the About form, the application "
-         "configuration file and the console programs."),
+         "The author name and the course line were replaced in every project, every form title, "
+         "the About form, the application configuration file and the console programs, so the "
+         "name now reads Mangalili, Fhetz and the course reads BSIT 3B."),
         ("Activity 4",
          "New two panel design with a dark banner, a shared ReadInputs() function, four decimal "
          "result formatting and a division by zero guard."),
@@ -615,6 +678,17 @@ def build_pdf(figures, out_path):
          "The explorer was rewritten as Mangalili Explorer with history stacks, an address bar, "
          "a live filter, numeric column sorting, safe image preview and layout buttons for the "
          "nested splitters."),
+        ("Author shown in every activity",
+         "Activities 1 and 2 print the activity name, the author and BSIT 3B at the start of the "
+         "console output and the author again on the last line. Activities 4, 5, 6, 8, 10 and 12 "
+         "show the author in the banner or the rail of the form, Activity 7 and Activity 9 have an "
+         "author label at the bottom of the form, Activity 11 prints the author in the status line "
+         "and in the answers tab, and Activity 13 prints it in the main form title, the About form "
+         "and the status strip of the MDI parent."),
+        ("Visual Studio 2010",
+         "No language feature newer than Visual Basic 2010 is used - no string interpolation, no "
+         "multiline lambdas, no async or iterator methods - so every project still opens and "
+         "builds in Visual Studio 2010 with the .NET Framework 4.0."),
     ]
     for label, text in changes:
         story.append(Paragraph("<b>%s</b>  -  %s" % (label, text),

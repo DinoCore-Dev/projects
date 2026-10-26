@@ -1,4 +1,4 @@
-<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
@@ -56,6 +56,7 @@ Partial Class Form1
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.lblAuthor = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.tabInterest.SuspendLayout()
         CType(Me.yearsNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,7 +78,7 @@ Partial Class Form1
         Me.TabControl1.Location = New System.Drawing.Point(6, 6)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(572, 412)
+        Me.TabControl1.Size = New System.Drawing.Size(572, 384)
         Me.TabControl1.TabIndex = 0
         '
         'tabInterest
@@ -407,15 +408,27 @@ Partial Class Form1
         Me.TabPage4.Text = "TabPage4"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
+        'lblAuthor
+        '
+        Me.lblAuthor.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAuthor.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139)
+        Me.lblAuthor.Location = New System.Drawing.Point(6, 394)
+        Me.lblAuthor.Name = "lblAuthor"
+        Me.lblAuthor.Size = New System.Drawing.Size(572, 20)
+        Me.lblAuthor.TabIndex = 1
+        Me.lblAuthor.Text = "Author: Mangalili, Fhetz   |   BSIT 3B   |   Activity 7"
+        Me.lblAuthor.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(584, 424)
+        Me.Controls.Add(Me.lblAuthor)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "IntegProg1_SW20260720"
+        Me.Text = "Activity 7 - IntegProg1_SW20260720  |  Mangalili, Fhetz"
         Me.TabControl1.ResumeLayout(False)
         Me.tabInterest.ResumeLayout(False)
         Me.tabInterest.PerformLayout()
@@ -433,6 +446,7 @@ Partial Class Form1
 
     End Sub
 
+    Friend WithEvents lblAuthor As System.Windows.Forms.Label
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents tabInterest As System.Windows.Forms.TabPage
     Friend WithEvents tabSquare As System.Windows.Forms.TabPage

@@ -5,6 +5,7 @@ Imports System.Windows.Forms
 Public Class MainForm
     Inherits Form
 
+    Private statusBar As Label
     Private tabs As TabControl
     Private explorerTab As TabPage
     Private listTab As TabPage
@@ -12,10 +13,18 @@ Public Class MainForm
     Private answersTab As TabPage
 
     Public Sub New()
-        Me.Text = "SW202610021600 - Windows Forms Controls"
+        Me.Text = "Activity 11 - SW202610021600 - Windows Forms Controls  |  Mangalili, Fhetz"
         Me.StartPosition = FormStartPosition.CenterScreen
         Me.WindowState = FormWindowState.Maximized
         Me.MinimumSize = New Size(900, 600)
+        statusBar = New Label()
+        statusBar.Dock = DockStyle.Bottom
+        statusBar.Height = 24
+        statusBar.TextAlign = ContentAlignment.MiddleRight
+        statusBar.ForeColor = Color.FromArgb(100, 116, 139)
+        statusBar.Text = "Author: Mangalili, Fhetz   |   BSIT 3B   |   Activity 11 - SW202610021600"
+        Me.Controls.Add(statusBar)
+
         tabs = New TabControl()
         tabs.Dock = DockStyle.Fill
         explorerTab = New TabPage("File explorer + dialogs")
@@ -46,7 +55,9 @@ Public Class MainForm
         text.Dock = DockStyle.Fill
         text.ReadOnly = True
         text.Font = New Font("Segoe UI", 11.0F)
-        text.Text = "SW202610021600" & Environment.NewLine & Environment.NewLine & _
+        text.Text = "Activity 11 - SW202610021600" & Environment.NewLine & _
+                    "Author : Mangalili, Fhetz   |   Course, Year and Section : BSIT 3B" & _
+                    Environment.NewLine & Environment.NewLine & _
                     "Question 6 - ListView" & Environment.NewLine & _
                     "The ListView examples tab imitates File Explorer with folder browsing, Details/List views, columns, sorting, double-click opening, and a status bar." & Environment.NewLine & Environment.NewLine & _
                     "Question 7 - TreeView" & Environment.NewLine & _
