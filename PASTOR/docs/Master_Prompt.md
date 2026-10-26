@@ -110,6 +110,12 @@ c5) FONT AT BUTTON STYLE (Act 4 - 13): MAGKAIBA rin ang font family at itsura ng
    - Ang figure ay gumagamit ng metric-compatible na pamalit (Cousine, Gelasio, Carlito, Caladea, Arimo, Tinos,
      Inconsolata, Open Sans); ang Windows na ang gagamit ng totoong font sa VS2010. Bago mag-rebuild ng docs,
      tapusin muna ang layout_variants at style_variants.
+   - Pagkatapos ng `fit_fonts`: tingnan ang lahat ng figure ng Act 4 - 13 (lalo na ang malalapad na font: Courier New,
+     Verdana, Tahoma). Walang text na putol sa gilid ng form, walang label na tumatama sa textbox, at walang tab na
+     nakatago. Ang `design_figure.py` ay pinuputol (".." ) ang header ng ListView / DataGridView kapag hindi kasya,
+     gaya ng totoong grid. Dapat PAREHO ang `design_figure.py`, `style_variants.py` at `samples.py` sa lahat ng identity folder.
+   - Ang Sample Output ay dapat tumugma sa tunay na code: halimbawa ang Act 10 Form2 (`Record / Category / Status`,
+     6 na categories, 10 records, "Selected : Student Masterlist"). Kapag may binago sa code, baguhin din ang `tools/samples.py`.
 
 
 ===========================================================
@@ -343,6 +349,12 @@ totoong database, parehong gaya ng original, at PAREHO sa lahat ng identity:
    `lblDatabase` sa Sample Output ay `projectDB.sdf`
 2e. Style: `python3 tools/style_variants.py` ay nagamit na (may `tools/style_code.txt`); iba ang font family at
    button style ng identity sa lahat ng iba, at walang label / button na lumalampas sa laki.
+2f. Verification (static, walang compiler): lahat ng `New System.Drawing.Font("<family>", <size>!...)` ay nasa fonts ng
+   VS2010 (Segoe UI, Courier New, Georgia, Verdana, Calibri, Cambria, Times New Roman, Arial, Consolas, Tahoma, Lucida Console);
+   walang font na mas maliit sa 6.5 pt; `FlatStyle` ay Flat / Standard / Popup / System lang; walang control na
+   na-reference sa `Me.<name>.` pero hindi naka-declare; walang duplicate na property; ang zip ay tugma sa repo byte per byte
+   (172 entries), walang pangalan ng ibang estudyante sa zip at DOCX, 72 pages ang PDF, at 36 na larawan sa DOCX.
+   Pagkatapos: `All_Compilations.zip` = 10 student zips lang, `testzip` OK.
 2d. Layout: `python3 tools/layout_variants.py` ay nagamit na (may `tools/layout_code.txt`) at
    magkaiba ang code at ang Location/Size/Dock ng mga form sa bawat identity folder; ang quote
    ay inspirational at hindi pareho sa iba.

@@ -126,7 +126,7 @@ header that the wider font would push out of its box.
 
 The Form Design / Sample Output pictures are drawn with metric-compatible free fonts (Cousine,
 Gelasio, Carlito, Caladea, Arimo, Tinos, Inconsolata, Open Sans) kept in each `tools/fonts/`;
-the real VB projects reference the Windows fonts only. Also in the repo root:
+the real VB projects reference the Windows fonts only. Header text of list / grid columns is clipped with ".." when it does not fit, like the real control. Also in the repo root:
 `All_Compilations.zip` contains the ten student zips.
 
 ## Activities (same 13 for every student)
