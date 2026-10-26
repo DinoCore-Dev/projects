@@ -1,6 +1,6 @@
-"""Activity metadata for the compilation documents of Mangalili, Fhetz."""
+"""Activity metadata for the compilation documents of Sonajo, Christian Paolo."""
 
-AUTHOR = "Mangalili, Fhetz"
+AUTHOR = "Sonajo, Christian Paolo"
 COURSE = "BSIT 3B"
 SUBJECT = "Integrative Programming"
 INSTRUCTOR_LINE = "________________________"
@@ -25,7 +25,7 @@ ACTIVITIES = [
             "declares one variable of every basic data type (String, Integer, Double, "
             "Boolean and Char). The program ends with Console.ReadKey() so the console "
             "window stays open until a key is pressed.",
-            "The output starts with the activity name, the author (Mangalili, Fhetz) and the "
+            "The output starts with the activity name, the author (Sonajo, Christian Paolo) and the "
             "course and section (BSIT 3B), and it ends with a closing line that repeats the "
             "name of the author, so the printed screen already carries the complete identity "
             "of the student.",
@@ -39,10 +39,10 @@ ACTIVITIES = [
         "figures": [],
         "output": [
             "Activity202606241600",
-            "Author: Mangalili, Fhetz",
+            "Author: Sonajo, Christian Paolo",
             "Course Year Section: BSIT 3B",
             "",
-            "Hello Mangalili, Fhetz",
+            "Hello Sonajo, Christian Paolo",
             "n1        = 0",
             "n2        = 0",
             "isValid   = True",
@@ -50,7 +50,7 @@ ACTIVITIES = [
             "number1   = 12",
             "number2   = 12.12",
             "",
-            "Prepared by: Mangalili, Fhetz  |  BSIT 3B",
+            "Prepared by: Sonajo, Christian Paolo  |  BSIT 3B",
         ],
         "notes": [],
     },
@@ -75,14 +75,14 @@ ACTIVITIES = [
         "figures": [],
         "output": [
             "Act2 Celcius-Fahrenheit Converter",
-            "Author: Mangalili, Fhetz",
+            "Author: Sonajo, Christian Paolo",
             "Course Year Section: BSIT 3B",
             "",
             "Hello world",
-            "Enter Lastname: Mangalili",
-            "Enter Firstname: Fhetz",
-            "Your Lastname is Mangalili",
-            "Your Firstname is Fhetz",
+            "Enter Lastname: Sonajo",
+            "Enter Firstname: Christian Paolo",
+            "Your Lastname is Sonajo",
+            "Your Firstname is Christian Paolo",
             "--- Celsius to Fahrenheit Converter ---",
             "Enter Celsius: 37",
             "Result in Fahrenheit: 98.6",
@@ -90,7 +90,7 @@ ACTIVITIES = [
             "Enter Fahrenheit: 98.6",
             "Result in Celsius: 37.0",
             "",
-            "Activity 2 completed by: Mangalili, Fhetz  |  BSIT 3B",
+            "Activity 2 completed by: Sonajo, Christian Paolo  |  BSIT 3B",
         ],
         "notes": [],
     },
@@ -115,7 +115,7 @@ ACTIVITIES = [
         "figures": [],
         "output": [
             "Activity3_20260629",
-            "Author: Mangalili, Fhetz",
+            "Author: Sonajo, Christian Paolo",
             "Course Year Section: BSIT 3B",
             "Enter number 1: 10",
             "Enter number 2: 5",
@@ -156,7 +156,7 @@ ACTIVITIES = [
                      "Form design of Activity 4 - Arithmetic Machine")],
         "output": [
             "Banner      : Arithmetic Machine",
-            "Author      : Mangalili, Fhetz   |   BSIT 3B   |   Integrative Programming",
+            "Author      : Sonajo, Christian Paolo   |   BSIT 3B   |   Integrative Programming",
             "",
             "First number  : 10",
             "Second number : 5",
@@ -169,7 +169,7 @@ ACTIVITIES = [
             "Average    = 5.6667",
             "",
             "Status bar : Average = 5.6667",
-            "Footer     : Mangalili, Fhetz  |  BSIT 3B",
+            "Footer     : Sonajo, Christian Paolo  |  BSIT 3B",
         ],
         "notes": [
             "Average is highlighted in blue because it is the summary value of the three "
@@ -203,7 +203,7 @@ ACTIVITIES = [
                      "Form design of Activity 5 - Ternary Remarks")],
         "output": [
             "Activity 5  -  Ternary",
-            "Author : Mangalili, Fhetz   |   BSIT 3B   |   Integrative Programming",
+            "Author : Sonajo, Christian Paolo   |   BSIT 3B   |   Integrative Programming",
             "",
             "Average grade : 88",
             "Remarks 1     : Passed        (shown in green)",
@@ -246,7 +246,7 @@ ACTIVITIES = [
                      "Form design of Activity 6 - Select Case Grade Evaluation")],
         "output": [
             "Banner   : Select Case Grade Evaluation",
-            "Author   : Mangalili, Fhetz   |   BSIT 3B",
+            "Author   : Sonajo, Christian Paolo   |   BSIT 3B",
             "",
             "Grade 1 : 88",
             "Grade 2 : 92",
@@ -281,8 +281,8 @@ ACTIVITIES = [
         "figures": [("Act7_IntegProg1_SW20260720/IntegProg1_SW20260720/Form1.Designer.vb",
                      "Form design of Activity 7 - the author label is at the bottom right")],
         "output": [
-            "Title  : Activity 7 - IntegProg1_SW20260720  |  Mangalili, Fhetz",
-            "Label  : Author: Mangalili, Fhetz   |   BSIT 3B   |   Activity 7",
+            "Title  : Activity 7 - IntegProg1_SW20260720  |  Sonajo, Christian Paolo",
+            "Label  : Author: Sonajo, Christian Paolo   |   BSIT 3B   |   Activity 7",
             "",
             "Tab App: Interest Calculator",
             "  Principal : 1000     Interest rate : 5     Years : 3",
@@ -322,7 +322,7 @@ ACTIVITIES = [
                      "Form design of Activity 8 - The Message")],
         "output": [
             "Header : The Message",
-            "Author : Mangalili, Fhetz   |   BSIT 3B",
+            "Author : Sonajo, Christian Paolo   |   BSIT 3B",
             "",
             "Title   : Saving the record",
             "Message : Do you want to save this record?",
@@ -359,17 +359,17 @@ ACTIVITIES = [
         "figures": [("SW202609301600/ListViewSample.Designer.vb",
                      "Form design of Activity 9 - the author label shares the status line")],
         "output": [
-            "Title      : Activity 9 - ListView File Explorer  |  Mangalili, Fhetz",
-            "Path       : C:\\Users\\Mangalili\\Documents",
+            "Title      : Activity 9 - ListView File Explorer  |  Sonajo, Christian Paolo",
+            "Path       : C:\\Users\\Sonajo\\Documents",
             "Name                    Type            Modified/Size",
             "Documents               Folder          ...",
             "notes.txt               .txt            1.2 KB",
             "Activity1.docx          .docx           24.6 KB",
-            "Status     : 3 item(s)          Author: Mangalili, Fhetz  |  BSIT 3B",
+            "Status     : 3 item(s)          Author: Sonajo, Christian Paolo  |  BSIT 3B",
         ],
         "notes": [
-            "The form title now reads Activity 9 - ListView File Explorer | Mangalili, Fhetz and "
-            "the author label at the bottom right of the form shows Mangalili, Fhetz | BSIT 3B.",
+            "The form title now reads Activity 9 - ListView File Explorer | Sonajo, Christian Paolo and "
+            "the author label at the bottom right of the form shows Sonajo, Christian Paolo | BSIT 3B.",
         ],
     },
     {
@@ -406,14 +406,14 @@ ACTIVITIES = [
              "Form design of Activity 10 - Split Container Lab"),
         ],
         "output": [
-            "Panel Playground      -  Author : Mangalili, Fhetz   |   BSIT 3B",
+            "Panel Playground      -  Author : Sonajo, Christian Paolo   |   BSIT 3B",
             "01  pnlGroup.Visible = False",
             "02  pnlNested.BackColor changed to blue.",
             "03  Contains -> pnlGroup : True, pnlNested : True, from pnlMain : False",
             "04  pnlNested.Focus() returned True.",
             "    Status bar : 4 action(s) performed",
             "",
-            "Split Container Lab   -  Author : Mangalili, Fhetz   |   BSIT 3B",
+            "Split Container Lab   -  Author : Sonajo, Christian Paolo   |   BSIT 3B",
             "outer : 220 px      inner : 260 px",
             "splOuter.Panel1Collapsed = True",
             "Orientation = Vertical, the inner panels are now left and right.",
@@ -448,17 +448,17 @@ ACTIVITIES = [
         ],
         "figures": [],
         "output": [
-            "Title      : Activity 11 - SW202610021600 - Windows Forms Controls  |  Mangalili, Fhetz",
-            "Status bar : Author: Mangalili, Fhetz   |   BSIT 3B   |   Activity 11 - SW202610021600",
+            "Title      : Activity 11 - SW202610021600 - Windows Forms Controls  |  Sonajo, Christian Paolo",
+            "Status bar : Author: Sonajo, Christian Paolo   |   BSIT 3B   |   Activity 11 - SW202610021600",
             "",
             "Tab 1  File explorer + dialogs   -> OpenFileDialog / SaveFileDialog demo",
             "Tab 2  ListView examples         -> folder browsing with Details / List view",
             "Tab 3  TreeView examples         -> drives and directories, loaded on expand",
             "Tab 4  Assignment answers        -> Activity 11 - SW202610021600",
-            "                                    Author : Mangalili, Fhetz | BSIT 3B",
+            "                                    Author : Sonajo, Christian Paolo | BSIT 3B",
         ],
         "notes": [
-            "The main form has a status line at the bottom that prints Author: Mangalili, Fhetz | "
+            "The main form has a status line at the bottom that prints Author: Sonajo, Christian Paolo | "
             "BSIT 3B, and the same identity is printed at the top of the Assignment answers tab.",
         ],
     },
@@ -475,7 +475,7 @@ ACTIVITIES = [
             "SplitContainer controls: one between the tree and the workspace, and one between "
             "the file list and the preview.",
             "The whole activity was rewritten for this compilation so that the design and the "
-            "code are different from the sample. The new name of the program is Mangalili "
+            "code are different from the sample. The new name of the program is Sonajo "
             "Explorer. The additions are: a Back and Forward history stack, a Home button, an "
             "editable address bar with a Go button, a live filter box, column sorting that "
             "compares sizes as numbers, hidden files excluded from the list, an image preview "
@@ -490,15 +490,15 @@ ACTIVITIES = [
         ],
         "files": [("FileExplorerClone/PanelSplitDemo/Form1.vb", "Form1.vb")],
         "figures": [("FileExplorerClone/PanelSplitDemo/Form1.Designer.vb",
-                     "Form design of Activity 12 - Mangalili Explorer")],
+                     "Form design of Activity 12 - Sonajo Explorer")],
         "output": [
-            "MANGALILI EXPLORER        Author : Mangalili, Fhetz   |   BSIT 3B",
+            "SONAJO EXPLORER        Author : Sonajo, Christian Paolo   |   BSIT 3B",
             "",
-            "Address bar : C:\\Users\\Mangalili\\Documents",
-            "Contents    : 5 item(s)   |   C:\\Users\\Mangalili\\Documents",
+            "Address bar : C:\\Users\\Sonajo\\Documents",
+            "Contents    : 5 item(s)   |   C:\\Users\\Sonajo\\Documents",
             "Preview     : Name : notes.txt    Size : 1.2 KB",
             "              Modified : Oct 26, 2026  9:24 AM",
-            "Status bar  : Now browsing : C:\\Users\\Mangalili\\Documents",
+            "Status bar  : Now browsing : C:\\Users\\Sonajo\\Documents",
         ],
         "notes": [
             "The preview pane keeps the memory safe: every new picture disposes the previous "
@@ -532,19 +532,19 @@ ACTIVITIES = [
         ],
         "figures": [],
         "output": [
-            "Main form  : Integrative Project 2026 - Mangalili, Fhetz  |  BSIT 3B",
-            "Status strip: UserInfo: Mangalili, Fhetz  |  BSIT 3B",
+            "Main form  : Integrative Project 2026 - Sonajo, Christian Paolo  |  BSIT 3B",
+            "Status strip: UserInfo: Sonajo, Christian Paolo  |  BSIT 3B",
             "              CurrentDate: Monday, 26 October 2026",
             "              Current Time: 9:24:41 AM",
             "",
             "Menu -> Schedules     : opened inside the main form",
             "Menu -> Quotes        : opened inside the main form",
             "Menu -> Bible Verse   : opened inside the main form",
-            "Menu -> About         : About - Mangalili, Fhetz",
+            "Menu -> About         : About - Sonajo, Christian Paolo",
         ],
         "notes": [
-            "The title of the main form now reads Integrative Project 2026 - Mangalili, Fhetz | "
-            "BSIT 3B and the About form is titled About - Mangalili, Fhetz.",
+            "The title of the main form now reads Integrative Project 2026 - Sonajo, Christian Paolo | "
+            "BSIT 3B and the About form is titled About - Sonajo, Christian Paolo.",
             "The long Base64 picture data inside frmAbout.vb is left out of this document so "
             "that the source listing stays readable. The complete file is inside the "
             "IntegProgProject2026 folder of the compilation.",

@@ -7,8 +7,8 @@ else and no second zip.
 Layout inside the zip
 ---------------------
     START_HERE.txt
-    Mangalili_Fhetz_Activity_Compilation.pdf
-    Mangalili_Fhetz_Activity_Compilation.docx
+    Sonajo_ChristianPaolo_Activity_Compilation.pdf
+    Sonajo_ChristianPaolo_Activity_Compilation.docx
     Master_Prompt.md
     Form_Designs/                     (one PNG per form design)
     01_Act1_Console_Basics/           (full Visual Studio 2010 solution)
@@ -28,10 +28,10 @@ import zipfile
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 COMPILATION = os.path.join(ROOT, "COMPILATION")
 DOCS = os.path.join(ROOT, "docs")
-OUT_ZIP = os.path.join(ROOT, "Mangalili_Fhetz_Compilation.zip")
+OUT_ZIP = os.path.join(ROOT, "Sonajo_ChristianPaolo_Compilation.zip")
 
-PDF = "Mangalili_Fhetz_Activity_Compilation.pdf"
-DOCX = "Mangalili_Fhetz_Activity_Compilation.docx"
+PDF = "Sonajo_ChristianPaolo_Activity_Compilation.pdf"
+DOCX = "Sonajo_ChristianPaolo_Activity_Compilation.docx"
 
 # (name inside the zip, folder inside COMPILATION)
 FOLDERS = [
@@ -56,7 +56,7 @@ SKIP_EXT = {".suo", ".user", ".cache", ".ds_store"}
 START_HERE = """====================================================================
  ACTIVITY COMPILATION - INTEGRATIVE PROGRAMMING
 ====================================================================
- Author          : Mangalili, Fhetz
+ Author          : Sonajo, Christian Paolo
  Course/Year/Sec : BSIT 3B
  Subject         : Integrative Programming
  IDE             : Visual Studio 2010 (.NET Framework 4.0)
@@ -65,8 +65,8 @@ START_HERE = """================================================================
 
 WHAT IS INSIDE THIS ZIP
 ----------------------
-  Mangalili_Fhetz_Activity_Compilation.pdf   <- ito ang ipasa (69 pages)
-  Mangalili_Fhetz_Activity_Compilation.docx  <- kung kailangan i-edit
+  Sonajo_ChristianPaolo_Activity_Compilation.pdf   <- ito ang ipasa (69 pages)
+  Sonajo_ChristianPaolo_Activity_Compilation.docx  <- kung kailangan i-edit
   Master_Prompt.md                           <- template kung magbabago ng pangalan
   Form_Designs\\                              <- 9 PNG na drawing ng mga form
   01_ ... 13_ ...                            <- isang folder bawat activity

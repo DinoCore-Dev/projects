@@ -1,12 +1,12 @@
-"""Build the compilation documents (DOCX + PDF) of Mangalili, Fhetz.
+"""Build the compilation documents (DOCX + PDF) of Sonajo, Christian Paolo.
 
 Run from the repository root:
     python3 tools/build_documents.py
 
 Reads the source code inside COMPILATION/, renders one figure per form design
 and writes:
-    docs/Mangalili_Fhetz_Activity_Compilation.docx
-    docs/Mangalili_Fhetz_Activity_Compilation.pdf
+    docs/Sonajo_ChristianPaolo_Activity_Compilation.docx
+    docs/Sonajo_ChristianPaolo_Activity_Compilation.pdf
     docs/figures/*.png
 """
 import os
@@ -24,7 +24,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 COMPILATION = os.path.join(ROOT, "COMPILATION")
 DOCS = os.path.join(ROOT, "docs")
 FIGURES = os.path.join(DOCS, "figures")
-DOC_BASENAME = "Mangalili_Fhetz_Activity_Compilation"
+DOC_BASENAME = "Sonajo_ChristianPaolo_Activity_Compilation"
 
 
 # ---------------------------------------------------------------------------
@@ -160,7 +160,7 @@ def build_docx(figures, out_path):
     footer_paragraph = section.footer.paragraphs[0]
     footer_paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
     footer_paragraph.paragraph_format.space_before = Pt(2)
-    run = footer_paragraph.add_run("Mangalili, Fhetz  |  " + SUBJECT + "  |  page ")
+    run = footer_paragraph.add_run("Sonajo, Christian Paolo  |  " + SUBJECT + "  |  page ")
     run.font.size = Pt(8)
     run.font.color.rgb = RGBColor(0x64, 0x74, 0x8B)
     add_field(footer_paragraph, "PAGE")
@@ -378,7 +378,7 @@ def build_docx(figures, out_path):
         ("Author and course", "The author name and the course line were replaced in every "
                               "project, every form title, the About form, the application "
                               "configuration file and the console programs, so the name now reads "
-                              "Mangalili, Fhetz and the course reads BSIT 3B."),
+                              "Sonajo, Christian Paolo and the course reads BSIT 3B."),
         ("Activity 4", "New two panel design with a dark banner, a shared ReadInputs() function, "
                        "four decimal result formatting and a division by zero guard."),
         ("Activity 5", "New side rail layout with three result cards, the Enter key runs the "
@@ -390,7 +390,7 @@ def build_docx(figures, out_path):
         ("Activity 10", "Both forms were rebuilt: Panel Playground with an event log and an API "
                         "inspector, and Split Container Lab with a category list, a record list, "
                         "a details pane and a reset layout feature."),
-        ("Activity 12", "The explorer was rewritten as Mangalili Explorer with history stacks, an "
+        ("Activity 12", "The explorer was rewritten as Sonajo Explorer with history stacks, an "
                         "address bar, a live filter, numeric column sorting, safe image preview and "
                         "layout buttons for the nested splitters."),
         ("Author shown in every activity", "Activities 1 and 2 print the activity name, the author "
@@ -501,7 +501,7 @@ def build_pdf(figures, out_path):
             canvas.setFont("Helvetica", 7.6)
             canvas.setFillColor(grey)
             canvas.drawCentredString(A4[0] / 2.0, 1.05 * cm,
-                                     "Mangalili, Fhetz  |  %s  |  page %d" % (SUBJECT, doc.page))
+                                     "Sonajo, Christian Paolo  |  %s  |  page %d" % (SUBJECT, doc.page))
             canvas.restoreState()
 
         def afterFlowable(self, flowable):
@@ -657,7 +657,7 @@ def build_pdf(figures, out_path):
         ("Author and course",
          "The author name and the course line were replaced in every project, every form title, "
          "the About form, the application configuration file and the console programs, so the "
-         "name now reads Mangalili, Fhetz and the course reads BSIT 3B."),
+         "name now reads Sonajo, Christian Paolo and the course reads BSIT 3B."),
         ("Activity 4",
          "New two panel design with a dark banner, a shared ReadInputs() function, four decimal "
          "result formatting and a division by zero guard."),
@@ -675,7 +675,7 @@ def build_pdf(figures, out_path):
          "Split Container Lab with a category list, a record list, a details pane and a reset "
          "layout feature."),
         ("Activity 12",
-         "The explorer was rewritten as Mangalili Explorer with history stacks, an address bar, "
+         "The explorer was rewritten as Sonajo Explorer with history stacks, an address bar, "
          "a live filter, numeric column sorting, safe image preview and layout buttons for the "
          "nested splitters."),
         ("Author shown in every activity",

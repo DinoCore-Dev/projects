@@ -10,7 +10,7 @@ Public Class frmMain
 
     Private Sub frmMain_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Try
-            toolstripUserInfo.Text = "UserInfo: Mangalili, Fhetz  |  BSIT 3B"
+            toolstripUserInfo.Text = "UserInfo: Sonajo, Christian Paolo  |  BSIT 3B"
             UpdateDateTime()
             Timer1.Interval = 1000
             Timer1.Start()

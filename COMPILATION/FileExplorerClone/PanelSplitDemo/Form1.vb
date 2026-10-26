@@ -1,8 +1,8 @@
 ' ============================================================
-' Activity 12 - PanelSplitDemo  (Mangalili Explorer)
+' Activity 12 - PanelSplitDemo  (Sonajo Explorer)
 ' A small file explorer built with TreeView + ListView + preview
 ' inside nested SplitContainer controls.
-' Author : Mangalili, Fhetz   |   BSIT 3B
+' Author : Sonajo, Christian Paolo   |   BSIT 3B
 ' ============================================================
 Option Strict On
 Option Explicit On

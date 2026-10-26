@@ -142,7 +142,7 @@ Partial Class Form1
         Me.lblApp.Name = "lblApp"
         Me.lblApp.Size = New System.Drawing.Size(214, 28)
         Me.lblApp.TabIndex = 0
-        Me.lblApp.Text = "MANGALILI EXPLORER"
+        Me.lblApp.Text = "SONAJO EXPLORER"
         '
         'lblHeaderSub
         '
@@ -164,7 +164,7 @@ Partial Class Form1
         Me.lblAuthor.Name = "lblAuthor"
         Me.lblAuthor.Size = New System.Drawing.Size(322, 20)
         Me.lblAuthor.TabIndex = 2
-        Me.lblAuthor.Text = "Mangalili, Fhetz  |  BSIT 3B"
+        Me.lblAuthor.Text = "Sonajo, Christian Paolo  |  BSIT 3B"
         Me.lblAuthor.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'btnBack
@@ -616,7 +616,7 @@ Partial Class Form1
         Me.MinimumSize = New System.Drawing.Size(980, 620)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Activity 12 - Mangalili Explorer  |  Mangalili, Fhetz"
+        Me.Text = "Activity 12 - Sonajo Explorer  |  Sonajo, Christian Paolo"
         Me.pnlHeader.ResumeLayout(False)
         Me.pnlTools.ResumeLayout(False)
         Me.splRoot.Panel1.ResumeLayout(False)

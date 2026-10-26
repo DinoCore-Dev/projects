@@ -1,6 +1,6 @@
-# Activity Compilation - Mangalili, Fhetz (BSIT 3B)
+# Activity Compilation - Sonajo, Christian Paolo (BSIT 3B)
 
-Visual Basic .NET activity compilation of **Mangalili, Fhetz - BSIT 3B**
+Visual Basic .NET activity compilation of **Sonajo, Christian Paolo - BSIT 3B**
 for the subject **Integrative Programming**, built for **Visual Studio 2010**
 (.NET Framework 4.0).
 
@@ -11,10 +11,10 @@ for the subject **Integrative Programming**, built for **Visual Studio 2010**
 Isang zip lang ang kailangan. Nasa root ito ng repository:
 
 ```
-Mangalili_Fhetz_Compilation.zip          <- ito ang i-download at i-extract
+Sonajo_ChristianPaolo_Compilation.zip          <- ito ang i-download at i-extract
 ```
 
-Sa GitHub: i-click ang file na `Mangalili_Fhetz_Compilation.zip`, tapos
+Sa GitHub: i-click ang file na `Sonajo_ChristianPaolo_Compilation.zip`, tapos
 **Download raw file** (o `Code` -> `Download ZIP` para sa buong repo).
 
 Naka-private ang repository na ito, kaya kailangang naka-sign in sa GitHub
@@ -28,8 +28,8 @@ pangalawang zip:
 
 | Laman | Detalye |
 |-------|---------|
-| `Mangalili_Fhetz_Activity_Compilation.pdf` | Ang compilation document, **69 pages**, ito ang ipapasa |
-| `Mangalili_Fhetz_Activity_Compilation.docx` | Parehong document, editable |
+| `Sonajo_ChristianPaolo_Activity_Compilation.pdf` | Ang compilation document, **69 pages**, ito ang ipapasa |
+| `Sonajo_ChristianPaolo_Activity_Compilation.docx` | Parehong document, editable |
 | `Master_Prompt.md` | Reusable prompt para kung magbabago ang pangalan |
 | `Form_Designs/` | 9 PNG na drawing ng mga form |
 | `01_ ... 13_ ...` | Isang folder bawat activity, buong Visual Studio 2010 solution |
@@ -54,12 +54,12 @@ Walang `bin`, `obj` at `.suo` sa loob, kaya malinis at maliit lang.
 | 9 | `09_Act9_ListView_File_Explorer` | `SW202609301600.sln` | ListView file explorer |
 | 10 | `10_Act10_Panel_and_SplitContainer` | `PanelSplitPanelDemo.sln` | Panel Playground and Split Container Lab (**both forms and code rewritten**) |
 | 11 | `11_Act11_Controls_Collection` | `SW202610021600.sln` | TabControl collection of ListView, TreeView and file dialogs |
-| 12 | `12_Act12_File_Explorer_Clone` | `PanelSplitDemo.sln` | Mangalili Explorer (**design and code rewritten**) |
+| 12 | `12_Act12_File_Explorer_Clone` | `PanelSplitDemo.sln` | Sonajo Explorer (**design and code rewritten**) |
 | 13 | `13_Act13_Integrative_Project_MDI` | `IntegProgProject2026.sln` | MDI integrative project (Schedules, Quotes, Bible Verses, About) |
 
 ## Names and details used
 
-* Author: **Mangalili, Fhetz**
+* Author: **Sonajo, Christian Paolo**
 * Course, year and section: **BSIT 3B**
 * Subject: **Integrative Programming**
 * Submitted to: blank line in the document, ready to be filled in
@@ -96,7 +96,7 @@ Activities 1, 2 and 3 are console applications; the rest are Windows Forms appli
 
 | Path | Content |
 |------|---------|
-| `Mangalili_Fhetz_Compilation.zip` | **The single submission zip** (docs + PDF + all activities) |
+| `Sonajo_ChristianPaolo_Compilation.zip` | **The single submission zip** (docs + PDF + all activities) |
 | `COMPILATION/` | Working copy of the 13 activity projects, source of the zip |
 | `docs/` | The DOCX, the PDF, the figures and `Master_Prompt.md` |
 | `tools/` | The Python scripts that build the figures, the documents and the zip |
@@ -106,7 +106,7 @@ Activities 1, 2 and 3 are console applications; the rest are Windows Forms appli
 
 ```bash
 python3 tools/build_documents.py     # figures + DOCX + PDF  (needs python-docx, reportlab, pillow)
-python3 tools/build_package.py       # rebuilds Mangalili_Fhetz_Compilation.zip
+python3 tools/build_package.py       # rebuilds Sonajo_ChristianPaolo_Compilation.zip
 ```
 
 ## Changing the name

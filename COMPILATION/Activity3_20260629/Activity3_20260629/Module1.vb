@@ -7,7 +7,7 @@ Module Module1
         Try
 ulit:
             Console.WriteLine("Activity3_20260629")
-            Console.WriteLine("Author: Mangalili, Fhetz")
+            Console.WriteLine("Author: Sonajo, Christian Paolo")
             Console.WriteLine("Course Year Section: BSIT 3B")
 
             Console.Write("Enter number 1: ")
