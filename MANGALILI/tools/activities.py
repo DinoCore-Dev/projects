@@ -418,7 +418,7 @@ ACTIVITIES = [
     },
     {
         "number": 11,
-        "title": "Windows Forms Controls Collection (TabControl, TreeView, ListView, Dialogs)",
+        "title": "Windows Forms Controls (Menu, TreeView, OpenFileDialog and Combined Explorer)",
         "project": "SW202610021600",
         "folder": "SW202610021600",
         "figures": [("SW202610021600/CombinedSample.Designer.vb",
@@ -568,10 +568,7 @@ GROUPS = {
         ("Form2  -  Split Container Lab", [(_P10 + "Form2.vb", "Form2.vb")], _P10 + "Form2.Designer.vb"),
     ],
     11: [
-        ("Application", [(_P11 + "Application.vb", "Application.vb")], None),
-        ("MainForm", [(_P11 + "MainForm.vb", "MainForm.vb")], "tools:figure_sources/MainForm.Designer.vb"),
         ("MenuForm", [(_P11 + "MenuForm.vb", "MenuForm.vb")], "tools:figure_sources/MenuForm.Designer.vb"),
-        ("ListViewSample", [(_P11 + "ListViewSample.vb", "ListViewSample.vb")], _P11 + "ListViewSample.Designer.vb"),
         ("TreeViewSample", [(_P11 + "TreeViewSample.vb", "TreeViewSample.vb")], _P11 + "TreeViewSample.Designer.vb"),
         ("OpenFileDialogSample", [(_P11 + "OpenFileDialogSample.vb", "OpenFileDialogSample.vb")], _P11 + "OpenFileDialogSample.Designer.vb"),
         ("CombinedSample", [(_P11 + "CombinedSample.vb", "CombinedSample.vb")], _P11 + "CombinedSample.Designer.vb"),

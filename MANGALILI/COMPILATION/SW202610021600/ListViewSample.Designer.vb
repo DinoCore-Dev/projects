@@ -24,7 +24,6 @@ Partial Class ListViewSample
   Me.ClientSize = New System.Drawing.Size(900, 560)
   Me.Text = "Question 6 - ListView File Explorer"
   Me.StartPosition = FormStartPosition.CenterScreen
-  Me.Controls.Add(Me.lv)
   Me.ResumeLayout(False)
  End Sub
 End Class

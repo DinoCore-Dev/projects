@@ -175,7 +175,7 @@ putol na teksto, walang kulang na menu, at tama ang pangalan.
 6C) ACTIVITY NA MARAMING FORMS (kritikal)
 ===========================================================
 Kapag ang activity ay may higit sa isang form (hal. Panel + SplitContainer,
-Controls Collection, MDI project na may frmMain / frmSchedules / frmQuotes /
+Windows Forms Controls, MDI project na may frmMain / frmSchedules / frmQuotes /
 frmBibleVerses / frmAbout), HINDI sapat ang isang picture lang. Para sa BAWAT form:
    1. pangalan ng form (maliit na linya lang)
    2. Form Design  - picture ng form na iyon

@@ -16,7 +16,7 @@ Public Class frmQuotes
     End Sub
 
     Private Function XmlPath() As String
-        Return IO.Path.Combine(Application.StartupPath, "projectDB.xml")
+        Return IO.Path.Combine(Application.StartupPath, "projectDB_Quotes.xml")
     End Function
 
     Private Function SdfPath() As String

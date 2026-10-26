@@ -151,39 +151,10 @@ SAMPLES = {
     ],
     11: [
         {
-            "designer": "tools:figure_sources/MainForm.Designer.vb",
-            "caption": "MainForm - the Assignment answers tab",
-            "values": {
-                "Form": "Activity 11 - SW202610021600 - Windows Forms Controls  |  {AUTHOR}",
-                "tabs": 3,
-                "answers": "Activity 11 - SW202610021600\nAuthor : {AUTHOR}   |   Course, Year and Section : {COURSE}\n\nQuestion 6 - ListView\nThe ListView examples tab imitates File Explorer with folder browsing, Details/List views, columns, sorting, double-click opening, and a status bar.\n\nQuestion 7 - TreeView\nThe TreeView examples tab displays drives and directories. Nodes are loaded when expanded and the selected path is shown.\n\nQuestion 8 - OpenFileDialog\nThe File explorer + dialogs tab demonstrates OpenFileDialog, file filters, multiple selection, CheckFileExists, and RestoreDirectory.\n\nQuestion 9 - Combined form\nThe File explorer + dialogs tab combines OpenFileDialog, SaveFileDialog, TreeView, ListView, folder navigation, and saving a directory listing.",
-                "statusBar": "Author: {AUTHOR}   |   {COURSE}   |   Activity 11 - SW202610021600",
-            },
-        },
-        {
             "designer": "tools:figure_sources/MenuForm.Designer.vb",
             "caption": "MenuForm - the menu that opens each explorer",
             "values": {
                 "Form": "Activity 11 - SW202610021600  |  {AUTHOR}",
-            },
-        },
-        {
-            "designer": "SW202610021600/ListViewSample.Designer.vb",
-            "caption": "ListViewSample - folder shown in Details view",
-            "values": {
-                "Form": "Question 6 - ListView File Explorer  |  {AUTHOR}",
-                "txtPath": "C:\\Users\\{USER}\\Documents",
-                "lv": {
-                    "header": ["Name", "Type", "Modified/Size"],
-                    "rows": [
-                        ["Activities", "Folder", "10/18/2026 9:05:12 PM"],
-                        ["Pictures", "Folder", "10/19/2026 8:32:40 AM"],
-                        ["Activity1.docx", ".docx", "24576 bytes"],
-                        ["Notes.txt", ".txt", "1234 bytes"],
-                        ["Screenshot.png", ".png", "1302528 bytes"],
-                    ],
-                },
-                "lbl": "5 item(s)",
             },
         },
         {
@@ -283,7 +254,7 @@ SAMPLES = {
                         ["7", "CS203", "T-005", "Saturday", "09:00", "Lab 5"],
                     ],
                 },
-                "lblDatabase": "Storage: ...\\bin\\Debug\\projectDB.xml   |   7 record(s)",
+                "lblDatabase": "Storage: ...\\bin\\Debug\\projectDB_Schedules.xml   |   7 record(s)",
             },
         },
         {
@@ -306,7 +277,7 @@ SAMPLES = {
                         ["6", "The best error message is the one that never shows up.", "Thomas Fuchs", "Conference talk", "7/19/2011"],
                     ],
                 },
-                "lblDatabase": "Storage: ...\\bin\\Debug\\projectDB.xml   |   6 record(s)",
+                "lblDatabase": "Storage: ...\\bin\\Debug\\projectDB_Quotes.xml   |   6 record(s)",
             },
         },
         {
@@ -332,7 +303,7 @@ SAMPLES = {
                         ["6", "James", "1", "22", "Do not merely listen to the word, and so deceive yourselves. Do what it says.", "NIV", "Action", "Epistle"],
                     ],
                 },
-                "lblDatabase": "Storage: ...\\bin\\Debug\\projectDB.xml   |   6 record(s)",
+                "lblDatabase": "Storage: ...\\bin\\Debug\\projectDB_BibleVerses.xml   |   6 record(s)",
             },
         },
         {

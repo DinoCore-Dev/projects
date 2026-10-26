@@ -22,7 +22,6 @@ Partial Class CombinedSample
   Me.ClientSize = New System.Drawing.Size(900, 560)
   Me.Text = "Question 9 - Combined Explorer"
   Me.StartPosition = FormStartPosition.CenterScreen
-  Me.Controls.Add(Me.lv)
   Me.ResumeLayout(False)
  End Sub
 End Class

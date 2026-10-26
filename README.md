@@ -17,7 +17,7 @@ design figures and one numbered folder per activity (`01_ ... 13_ ...`), with a
 ```
 <Name>_Compilation.zip
 ├── START_HERE.txt
-├── <Name>_Activity_Compilation.pdf        (72 pages, ito ang ipapasa)
+├── <Name>_Activity_Compilation.pdf        (67 pages, ito ang ipapasa)
 ├── <Name>_Activity_Compilation.docx
 ├── Master_Prompt.md
 ├── Form_Designs/                          (22 PNG: 11 form designs + 11 sample outputs)
@@ -86,7 +86,7 @@ identity, so the two submissions do not look like copies of each other.
 | 8 | `08_Act8_The_Message` | `TheMessage.sln` | The Message, MessageBox options |
 | 9 | `09_Act9_ListView_File_Explorer` | `SW202609301600.sln` | ListView file explorer |
 | 10 | `10_Act10_Panel_and_SplitContainer` | `PanelSplitPanelDemo.sln` | Panel Playground and Split Container Lab |
-| 11 | `11_Act11_Controls_Collection` | `SW202610021600.sln` | TabControl collection of ListView, TreeView and file dialogs |
+| 11 | `11_Act11_Controls_Collection` | `SW202610021600.sln` | Menu form that opens the TreeView, OpenFileDialog and combined explorer forms |
 | 12 | `12_Act12_File_Explorer_Clone` | `PanelSplitDemo.sln` | File explorer clone (Back/Forward history, filter, preview) |
 | 13 | `13_Act13_Integrative_Project_MDI` | `IntegProgProject2026.sln` | MDI integrative project (Schedules, Quotes, Bible Verses, About) |
 

@@ -109,7 +109,7 @@ LIST OF ACTIVITIES (folder -> solution file to open)
     Act 10 Panel and SplitContainer Laboratory
 
  11_Act11_Controls_Collection        -> SW202610021600.sln
-    Act 11 Windows Forms Controls Collection (TabControl, TreeView, ListView)
+    Act 11 Windows Forms Controls (Menu, TreeView, OpenFileDialog and Combined Explorer)
 
  12_Act12_File_Explorer_Clone        -> PanelSplitDemo.sln
     Act 12 File Explorer Clone

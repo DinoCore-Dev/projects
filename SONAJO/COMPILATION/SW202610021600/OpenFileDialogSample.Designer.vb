@@ -21,7 +21,6 @@ Partial Class OpenFileDialogSample
   Me.ClientSize = New System.Drawing.Size(900, 560)
   Me.Text = "Question 8 - OpenFileDialog"
   Me.StartPosition = FormStartPosition.CenterScreen
-  Me.Controls.Add(Me.selected)
   Me.ResumeLayout(False)
  End Sub
 End Class
