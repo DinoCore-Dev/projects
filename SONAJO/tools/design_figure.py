@@ -300,6 +300,13 @@ def parse_designer(path):
 
     each(r'Me\.(\w+)\.Font\s*=\s*New System\.Drawing\.Font\("([^"]+)",\s*([\d.]+)!', compact_font)
 
+    def compact_dock(m):
+        name = m.group(1)
+        if name in controls:
+            controls[name].dock = m.group(2)
+
+    each(r"Me\.(\w+)\.Dock\s*=\s*(?:System\.Windows\.Forms\.)?DockStyle\.(\w+)", compact_dock)
+
     def compact_add(m):
         parent, children = m.group(1), m.group(2)
         for child in re.findall(r"Me\.(\w+)", children):
@@ -315,6 +322,20 @@ def parse_designer(path):
                 controls[parent].children.append(child)
 
     each(r"Me\.(?:(\w+)\.)?Controls\.AddRange\(New (?:System\.Windows\.Forms\.)?Control\(\)\s*\{([^}]*)\}", compact_add)
+
+    # ---- items of a ToolStrip / MenuStrip / StatusStrip ----
+    for m in re.finditer(r"Me\.(\w+)\.Items\.AddRange\(New (?:System\.Windows\.Forms\.)?ToolStripItem\(\)\s*\{([^}]*)\}\)", src):
+        strip = controls.get(m.group(1))
+        if strip is not None:
+            for item in re.findall(r"Me\.(\w+)", m.group(2)):
+                if item in controls and item not in strip.children:
+                    strip.children.append(item)
+
+    for m in re.finditer(r"Me\.(\w+)\.Items\.Add\(Me\.(\w+)\)", src):
+        strip = controls.get(m.group(1))
+        if strip is not None and m.group(2) in controls:
+            if m.group(2) not in strip.children:
+                strip.children.append(m.group(2))
 
     return form, controls
 
@@ -415,14 +436,29 @@ def apply_overrides(controls, overrides):
                 control.nodes = value
 
 
-def render(designer_path, out_path, caption=None, max_width=1500, overrides=None):
+def item_name_is_button(item):
+    return item.kind in ("ToolStripButton", "ToolStripDropDownButton", "ToolStripMenuItem")
+
+
+def render(designer_path, out_path, caption=None, max_width=1500, overrides=None, mode="running"):
+    """Draw a form.
+
+    mode="running" -> the window as it looks when the program runs (title bar,
+                      menu strip, status strip, real rows).
+    mode="design"  -> the Visual Studio 2010 designer surface: dotted grid and
+                      the eight selection handles around the form, no title bar.
+    """
     form, controls = parse_designer(designer_path)
     apply_overrides(controls, overrides)
     rects = layout(form, controls)
 
     width, height = form.size
+    design_mode = (mode == "design")
+    margin = 0
+    top = TITLE_BAR
     total_w = width
-    total_h = height + TITLE_BAR
+    total_h = height + top
+
     img = Image.new("RGB", (total_w * SCALE, (total_h + 34) * SCALE), (255, 255, 255))
     draw = ImageDraw.Draw(img)
 
@@ -434,22 +470,38 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
         except Exception:
             return ImageFont.load_default()
 
-    # window frame
+    # window frame and title bar (both modes - the title carries the author name)
     draw.rectangle([0, 0, (total_w - 1) * SCALE, (total_h + 33) * SCALE], fill=(255, 255, 255),
                    outline=(120, 128, 140), width=SCALE)
     draw.rectangle([0, 0, (total_w - 1) * SCALE, TITLE_BAR * SCALE], fill=(243, 243, 243))
-    draw.line([0, TITLE_BAR * SCALE, (total_w - 1) * SCALE, TITLE_BAR * SCALE], fill=(200, 200, 200), width=SCALE)
-    draw.text((10 * SCALE, 7 * SCALE), (form.text or "Form")[:90], font=font(8.5), fill=(40, 40, 40))
-    draw.text(((total_w - 92) * SCALE, 6 * SCALE), "\u2014   \u25a1   \u2715", font=font(9), fill=(70, 70, 70))
+    draw.line([0, TITLE_BAR * SCALE, (total_w - 1) * SCALE, TITLE_BAR * SCALE],
+              fill=(200, 200, 200), width=SCALE)
+    draw.text((10 * SCALE, 7 * SCALE), (form.text or "Form")[:90], font=font(8.5),
+              fill=(40, 40, 40))
+    draw.text(((total_w - 92) * SCALE, 6 * SCALE), "\u2014   \u25a1   \u2715",
+              font=font(9), fill=(70, 70, 70))
 
-    # client background
     client_bg = form.back or (240, 240, 240)
-    draw.rectangle([SCALE, (TITLE_BAR + 1) * SCALE, (total_w - 2) * SCALE, (TITLE_BAR + height) * SCALE],
-                   fill=client_bg)
+    draw.rectangle([SCALE, (TITLE_BAR + 1) * SCALE, (total_w - 2) * SCALE,
+                    (TITLE_BAR + height) * SCALE], fill=client_bg)
+
+    if design_mode:
+        # dotted alignment grid of the Visual Studio 2010 designer
+        step = 8 * SCALE
+        dot = (214, 219, 226)
+        yy = (TITLE_BAR + 2) * SCALE
+        while yy < (TITLE_BAR + height - 2) * SCALE:
+            xx = 2 * SCALE
+            while xx < (total_w - 2) * SCALE:
+                draw.rectangle([xx, yy, xx + SCALE - 1, yy + SCALE - 1], fill=dot)
+                xx += step
+            yy += step
 
     def screen(rect):
         x, y, w, h = rect
-        return [(x) * SCALE, (y + TITLE_BAR) * SCALE, (x + w - 1) * SCALE, (y + h - 1 + TITLE_BAR) * SCALE]
+        return [(x + (margin if design_mode else 0)) * SCALE, (y + top) * SCALE,
+                (x + w - 1 + (margin if design_mode else 0)) * SCALE,
+                (y + h - 1 + top) * SCALE]
 
     def draw_control(key):
         c = controls.get(key)
@@ -501,8 +553,35 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
             return
         elif kind == "TabPage":
             return
-        elif kind in ("Panel", "GroupBox", "Form", "PictureBox", "ToolStrip", "StatusStrip",
-                    "MenuStrip", "SplitContainer"):
+        elif kind in ("MenuStrip", "ToolStrip", "StatusStrip"):
+            bar = back or (240, 240, 240)
+            draw.rectangle(box, fill=bar, outline=(214, 219, 225), width=SCALE)
+            f = font(9)
+            cursor = box[0] + 6 * SCALE
+            items = [k for k in c.children if controls.get(k) is not None]
+            for item_key in items:
+                item = controls[item_key]
+                label = item.text or ""
+                if not label:
+                    continue
+                text_w = draw.textlength(label, font=f)
+                if kind == "StatusStrip":
+                    yy = box[1] + (h * SCALE - 11 * SCALE) / 2
+                    if item_key == items[-1] and len(items) > 1:
+                        draw.text((box[2] - text_w - 8 * SCALE, yy), label, font=f,
+                                  fill=(60, 70, 80))
+                    else:
+                        draw.text((cursor, yy), label, font=f, fill=(60, 70, 80))
+                        cursor += text_w + 18 * SCALE
+                    continue
+                pad = 10 * SCALE
+                if item_name_is_button(item):
+                    draw.rectangle([cursor, box[1] + 3 * SCALE, cursor + text_w + 2 * pad,
+                                    box[3] - 3 * SCALE], outline=(200, 206, 213), width=SCALE)
+                draw.text((cursor + pad, box[1] + (h * SCALE - 11 * SCALE) / 2), label,
+                          font=f, fill=(45, 55, 65))
+                cursor += text_w + 2 * pad + 6 * SCALE
+        elif kind in ("Panel", "GroupBox", "Form", "PictureBox", "SplitContainer"):
             fill = back if back else None
             if fill:
                 draw.rectangle(box, fill=fill)
@@ -555,8 +634,16 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
                     draw.text((tx, start_y + index * line_h), line_text, font=f,
                               fill=c.fore or (30, 30, 30))
         elif kind == "Button":
-            fill = back or (240, 240, 240)
-            draw.rectangle(box, fill=fill, outline=(190, 196, 204), width=SCALE)
+            if back:
+                fill = back
+                draw.rectangle(box, fill=fill, outline=(190, 196, 204), width=SCALE)
+            else:
+                # classic WinForms button: soft gradient and a 1px border
+                for row in range(int(box[3] - box[1])):
+                    shade = 244 - int(row * 8 / max(1, (box[3] - box[1])))
+                    draw.line([box[0], box[1] + row, box[2], box[1] + row],
+                              fill=(shade, shade, shade + 1))
+                draw.rectangle(box, outline=(173, 179, 188), width=SCALE)
             f = font(c.font_size, True)
             txt = c.text
             if txt:
@@ -586,12 +673,7 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
                         break
                     draw.text((box[0] + 6 * SCALE, yy), raw, font=f,
                               fill=c.fore or (25, 35, 45))
-            elif h > 60 * 1:
-                f = font(8)
-                for i in range(0, int(h // 14)):
-                    draw.line([box[0] + 4 * SCALE, box[1] + (8 + i * 14) * SCALE,
-                               box[0] + (min(w - 20, 60 + (i * 37) % 120)) * SCALE, box[1] + (8 + i * 14) * SCALE],
-                              fill=(205, 210, 218), width=SCALE)
+
         elif kind in ("ListView", "TreeView", "ListBox", "DataGridView"):
             draw.rectangle(box, fill=back or (255, 255, 255), outline=(158, 168, 180), width=SCALE)
             f = font(8)
@@ -632,13 +714,8 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
                     draw.text((box[0] + (18 + indent) * SCALE, yy), node.strip(), font=f,
                               fill=c.fore or (35, 45, 55))
             else:
-                for r in range(start_row, max(start_row, rows)):
-                    yy = box[1] + (22 + (r - start_row) * 18) * SCALE
-                    if yy > box[3] - 4 * SCALE:
-                        break
-                    width_text = 40 + (r * 53) % max(40, int(w * 0.55))
-                    draw.rectangle([box[0] + 6 * SCALE, yy + 5 * SCALE,
-                                    box[0] + width_text * SCALE, yy + 9 * SCALE], fill=(214, 219, 226))
+                # empty list: just the white surface, no fake bars
+                pass
         elif kind in ("RadioButton", "CheckBox"):
             draw.rectangle(box, fill=back or None) if back else None
             f = font(c.font_size)
@@ -672,6 +749,20 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
 
     for key in form.children:
         draw_control(key)
+
+    if design_mode:
+        # selection border and the eight resize handles, drawn on top
+        surface = [SCALE, (TITLE_BAR + 1) * SCALE, (total_w - 2) * SCALE,
+                   (TITLE_BAR + height - 1) * SCALE]
+        draw.rectangle(surface, outline=(0, 122, 204), width=SCALE)
+        handle = 7 * SCALE
+        mid_x = (surface[0] + surface[2]) // 2
+        mid_y = (surface[1] + surface[3]) // 2
+        for hx, hy in [(surface[0], surface[1]), (mid_x, surface[1]), (surface[2], surface[1]),
+                       (surface[0], mid_y), (surface[2], mid_y),
+                       (surface[0], surface[3]), (mid_x, surface[3]), (surface[2], surface[3])]:
+            draw.rectangle([hx - handle // 2, hy - handle // 2, hx + handle // 2, hy + handle // 2],
+                           fill=(255, 255, 255), outline=(0, 122, 204), width=SCALE)
 
     # trim the extra strip used while the caption was part of the image
     img = img.crop((0, 0, total_w * SCALE, total_h * SCALE + 2 * SCALE))

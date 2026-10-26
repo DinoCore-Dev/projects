@@ -113,7 +113,8 @@ def build_figures():
         for designer_path, caption in entry.get("figures", []):
             out_name = "design_act%02d_%d.png" % (number, len(design_list) + 1)
             out_path = os.path.join(FIGURES, out_name)
-            render_figure(os.path.join(COMPILATION, designer_path), out_path)
+            render_figure(os.path.join(COMPILATION, designer_path), out_path,
+                          mode="design")
             design_list.append((out_path, caption))
         designs[number] = design_list
 

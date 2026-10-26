@@ -123,8 +123,14 @@ at LAHAT ng form activity ay may Sample Output picture.
 7) TOOLS SA REPO (gamitin, huwag magsimula sa zero kung meron na)
 ===========================================================
 - `tools/design_figure.py`     : gumagawa ng Form Design figure mula sa totoong coordinates
-                                 ng `*.Designer.vb` (suportado: Panel, Label, Button, TextBox,
-                                 ListView, TreeView, SplitContainer, TabControl, RadioButton)
+                                 ng `*.Designer.vb`. May dalawang mode: `mode="design"`
+                                 (dotted grid + asul na selection handles, hitsura ng VS2010
+                                 designer) at `mode="running"` (tumatakbong window: title bar,
+                                 MenuStrip, StatusStrip, totoong ListView/TreeView/DataGridView
+                                 rows). Suportado: Panel, Label, Button, TextBox, ListBox,
+                                 ListView, TreeView, DataGridView, ComboBox, DateTimePicker,
+                                 RadioButton, CheckBox, GroupBox, SplitContainer, TabControl,
+                                 MenuStrip, ToolStrip, StatusStrip
 - `tools/activities.py`        : metadata per activity (title, project, files, figures,
                                  output) + AUTHOR / COURSE / SUBJECT / INSTRUCTOR_LINE /
                                  SCHOOL_YEAR / DATE_LINE
