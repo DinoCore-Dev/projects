@@ -1,15 +1,12 @@
 """Build the single submission zip.
 
 The zip has everything at the top level, so the person who opens it sees
-the PDF, the DOCX, the master prompt and one folder per activity - nothing
+the DOCX, the Form_Designs pictures and one folder per activity - nothing
 else and no second zip.
 
 Layout inside the zip
 ---------------------
-    START_HERE.txt
-    Lucena_LykaJoy_Activity_Compilation.pdf
     Lucena_LykaJoy_Activity_Compilation.docx
-    Master_Prompt.md
     Form_Designs/                     (one PNG per form design)
     01_Act1_Console_Basics/           (full Visual Studio 2010 solution)
     ...
@@ -180,11 +177,7 @@ def main():
     try:
         total = 0
 
-        with open(os.path.join(staging, "START_HERE.txt"), "w",
-                  encoding="utf-8", newline="\r\n") as handle:
-            handle.write(START_HERE.format(pages=pdf_pages(), figures=figure_count()))
-
-        for name in (PDF, DOCX, "Master_Prompt.md"):
+        for name in (DOCX,):
             shutil.copy2(os.path.join(DOCS, name), os.path.join(staging, name))
 
         figures = os.path.join(staging, "Form_Designs")
