@@ -1,7 +1,7 @@
 # MASTER PROMPT — Activity Compilation (reusable, ilagay lang ang bagong pangalan)
 
 **Paano gamitin:** kopyahin ang LAHAT ng nasa loob ng code block sa ibaba, palitan lang ang
-8 na linya sa `1) IDENTITY` (pangalan, course, subject, instructor, SY, date, paboritong quote, litrato), tapos i-send.
+9 na linya sa `1) IDENTITY` (pangalan, course, subject, instructor, SY, date, paboritong quote, address, litrato), tapos i-send.
 Automatic nang susundan ng agent ang natitirang rules — walang ibang i-edit.
 
 Kung ang repo na ito ang gagamitin, puwede ring sabihin lang:
@@ -24,6 +24,8 @@ document (DOCX + PDF), tapos bigyan mo ako ng isang zip na pang-download.
 - Date Submitted               : [October 26, 2026]
 - Paboritong quote (About)     : ["I can accept failure, everyone fails at something. But I can't accept not trying." - Michael Jordan]
                                  (kung blangko: hanapin online ayon sa 3 c2)
+- Address (About)              : [Centro 1, Mallig, Isabela]
+                                 (palitan ang `lblAddress` ng `frmAbout`; kapag wala pa, iwan ang placeholder)
 - Litrato (About)              : [photo/ANICIETE, SHANE ANTOINETTE.jpg]
                                  (JPG ng estudyante; ilagay sa folder na `photo/` ng identity)
 

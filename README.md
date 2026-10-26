@@ -134,8 +134,17 @@ back to its own XML file so the program still runs (`lblDatabase` shows which on
 * School year: 2026 - 2027
 
 The other seven identities (Mangalili, Lucena, Deguzman, Pastor, Marcos, Aniciete, Marcelo) carry
-the same details with their own author / course identity. The addresses of Pastor, Marcos,
-Aniciete and Marcelo are still the placeholder `Barucboc, Quezon, Isabela` until they are supplied.
+the same details with their own author / course identity. Addresses on the About form:
+
+| Student | Address |
+|---|---|
+| Mangalili, Fhetz | Olango, Mallig, Isabela |
+| Sonajo, Christian Paolo | Sanpedro, Mallig, Isabela |
+| Marcos, Angela | Olango, Mallig, Isabela |
+| Aniciete, Shane Antoinette | Centro 1, Mallig, Isabela |
+| Pastor, James Lorenz | Centro 2, Mallig, Isabela |
+| Marcelo, John Carlo | Villanueva, San Manuel, Isabela |
+| Lucena, Lyka Joy / Deguzman, Liza Gaile | placeholder `Barucboc, Quezon, Isabela` until supplied |
 
 Each identity has its own colour theme, layout code and favourite quote (see the table above) and
 its own photo: the original JPG is in `<FOLDER>/photo/`, a resized copy is
