@@ -1,13 +1,12 @@
 """Build the single submission zip.
 
 The zip has everything at the top level, so the person who opens it sees
-the DOCX, the Form_Designs pictures and one folder per activity - nothing
+the DOCX and one folder per activity - nothing
 else and no second zip.
 
 Layout inside the zip
 ---------------------
     Pastor_LorenzJames_Activity_Compilation.docx
-    Form_Designs/                     (one PNG per form design)
     01_Act1_Console_Basics/           (full Visual Studio 2010 solution)
     ...
     13_Act13_Integrative_Project_MDI/
@@ -179,12 +178,6 @@ def main():
 
         for name in (DOCX,):
             shutil.copy2(os.path.join(DOCS, name), os.path.join(staging, name))
-
-        figures = os.path.join(staging, "Form_Designs")
-        os.makedirs(figures)
-        for name in sorted(os.listdir(os.path.join(DOCS, "figures"))):
-            shutil.copy2(os.path.join(DOCS, "figures", name),
-                         os.path.join(figures, name))
 
         for folder_name, source in FOLDERS:
             source_path = os.path.join(COMPILATION, source)

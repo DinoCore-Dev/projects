@@ -16,15 +16,14 @@ The repository holds **eight separate, complete compilations** - one folder and 
 | **Aniciete, Shane Antoinette** - BSIT 3B | `ANICIETE/` | `Aniciete_ShaneAntoinette_Compilation.zip` |
 | **Marcelo, John Carlo** - BSIT 3B | `MARCELO/` | `Marcelo_JohnCarlo_Compilation.zip` |
 
-All eight zips have the same clean layout: the DOCX, the form design figures and one numbered
-folder per activity (`01_ ... 13_ ...`). There is no PDF, no `START_HERE.txt` and no `.md` file in
+All eight zips have the same clean layout: the DOCX and one numbered
+folder per activity (`01_ ... 13_ ...`). There is no PDF, no `START_HERE.txt` and no `.md` file and no `Form_Designs/` folder in
 the zip, and no nested second zip. (The PDF and `Master_Prompt.md` stay in each identity's `docs/`
 folder in the repo.)
 
 ```
 <Name>_Compilation.zip
 ├── <Name>_Activity_Compilation.docx
-├── Form_Designs/                          (22 PNG: 11 form designs + 11 sample outputs)
 └── 01_Act1_Console_Basics/ ... 13_Act13_Integrative_Project_MDI/
 ```
 

@@ -288,7 +288,7 @@ totoong database, parehong gaya ng original, at PAREHO sa lahat ng identity:
                                  {AUTHOR} / {COURSE} token para automatic na napapalitan.
 - `tools/build_documents.py`   : binubuo ang `docs/figures/*.png`, ang DOCX at ang PDF (Courier New,
                                  auto na kulay, cover ayon sa 6E)
-- `tools/build_package.py`     : binubuo ang zip (DOCX + Form_Designs + activity folders lang)
+- `tools/build_package.py`     : binubuo ang zip (DOCX + activity folders lang)
   Command: `python3 tools/build_documents.py`  (kailangan: python-docx, reportlab, pillow)
 
 ===========================================================
@@ -300,8 +300,8 @@ totoong database, parehong gaya ng original, at PAREHO sa lahat ng identity:
 - `tools/`                  : generator scripts
 - Updated `README.md`
 - ISANG zip na pang-download, flat ang loob (walang nakapaloob na pangalawang zip):
-  ang DOCX, `Form_Designs/`, at `01_ ... 13_ ...` (isang folder kada activity, buong VS2010
-  solution). BAWAL sa loob ng zip: ang PDF, `START_HERE.txt` at kahit anong `.md` (kasama ang
+  ang DOCX at `01_ ... 13_ ...` (isang folder kada activity, buong VS2010
+  solution). BAWAL sa loob ng zip: ang `Form_Designs/` folder, ang PDF, `START_HERE.txt` at kahit anong `.md` (kasama ang
   `Master_Prompt.md`). Nasa `docs/` lang ng repo ang PDF at ang master prompt.
 - I-commit at i-push sa branch ko, tapos i-report sa dulo:
   * ano ang binago per activity
@@ -329,7 +329,7 @@ totoong database, parehong gaya ng original, at PAREHO sa lahat ng identity:
    ng estudyante (hindi ng iba) ang nasa `output_act13_5.png`
 3. Pictures: buksan ang `docs/figures/` at tingnan ang 3 random na PNG
    (isang design, isang running, isang may ListView) - walang grey bar
-4. Zip: flat ang loob (DOCX, Form_Designs/, 01_ ... 13_), WALANG PDF / START_HERE.txt / .md,
+4. Zip: flat ang loob (DOCX, 01_ ... 13_), WALANG Form_Designs/, PDF / START_HERE.txt / .md,
    walang bin/obj/suo, isang zip lang (`unzip -l <zip> | grep -iE "\.(pdf|md|txt)$"` -> walang output)
 4b. Docs: heading ay `Activity N` lang, Courier New, walang explicit na kulay, at ang page 1 ay
    ayon sa seksyon 6E (kasama ang `Submitted to  : Drymlad Rebaja`)
