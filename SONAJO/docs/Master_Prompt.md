@@ -1,7 +1,7 @@
 # MASTER PROMPT — Activity Compilation (reusable, ilagay lang ang bagong pangalan)
 
 **Paano gamitin:** kopyahin ang LAHAT ng nasa loob ng code block sa ibaba, palitan lang ang
-6 na linya sa `1) IDENTITY` (pangalan, course, subject, instructor, SY, date), tapos i-send.
+7 na linya sa `1) IDENTITY` (pangalan, course, subject, instructor, SY, date, paboritong quote), tapos i-send.
 Automatic nang susundan ng agent ang natitirang rules — walang ibang i-edit.
 
 Kung ang repo na ito ang gagamitin, puwede ring sabihin lang:
@@ -22,6 +22,8 @@ document (DOCX + PDF), tapos bigyan mo ako ng isang zip na pang-download.
 - Instructor (Submitted to)    : [BLANK / pangalan ng instructor]
 - School Year                  : [School Year 2026 - 2027]
 - Date Submitted               : [October 26, 2026]
+- Paboritong quote (About)     : ["The only way to learn a new programming language is by writing programs in it." - Dennis Ritchie]
+                                 (kung blangko: hanapin online ayon sa 3 c2)
 
 ===========================================================
 2) SOURCE NG CODE
@@ -49,6 +51,16 @@ b) Windows Forms:
      (hindi lang sa code) para makita sa screenshot at sa Form Design figure
 c) Iba pang lugar: About form (pangalan + course), `frmMain` toolstrip user info,
    `app.config` (UserInfo), MDI main form title, answers/notes tab.
+c2) Paboritong quote sa About form (`lblQuote` ng `frmAbout`, Act 13): MAGKAIBA sa bawat
+   identity. Kung walang ibinigay na quote sa seksyon 1, MAG-SEARCH ONLINE ng totoong quote
+   (programming / pag-aaral / tiyaga), at gumamit ng quote na may malinaw na pinagmulan.
+   - Format: `"quote" - Awtor`, isang linya lang ang teksto (kasya sa 300 x 80 na label,
+     humigit-kumulang 100 character)
+   - Sa VB designer, ang panipi ay `""` (`Me.lblQuote.Text = """quote"" - Awtor"`); iwasan
+     ang `&` sa teksto (nawawala ito dahil mnemonic ng Label)
+   - Huwag gamitin ang quote ng ibang identity na nasa repo (ihambing sa lahat ng
+     `frmAbout.Designer.vb`), at huwag iwan ang quote ng dating author
+   - Dapat lumabas din ito sa Sample Output picture ng `frmAbout`
 d) Compilation document: cover page, header, footer, Appendix B at LAHAT ng Sample Output.
 e) Final check: `grep -ri "<dating pangalan>"` — walang dapat mahanap sa buong repo.
 
