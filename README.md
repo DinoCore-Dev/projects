@@ -17,15 +17,29 @@ design figures and one numbered folder per activity (`01_ ... 13_ ...`), with a
 ```
 <Name>_Compilation.zip
 ├── START_HERE.txt
-├── <Name>_Activity_Compilation.pdf        (69 pages, ito ang ipapasa)
+├── <Name>_Activity_Compilation.pdf        (60 pages, ito ang ipapasa)
 ├── <Name>_Activity_Compilation.docx
 ├── Master_Prompt.md
-├── Form_Designs/                          (9 PNG figures)
+├── Form_Designs/                          (22 PNG: 11 form designs + 11 sample outputs)
 └── 01_Act1_Console_Basics/ ... 13_Act13_Integrative_Project_MDI/
 ```
 
 Each activity folder is a full Visual Studio 2010 solution (`.sln` + project + designer +
 source), without `bin`, `obj` or `.suo`.
+
+### What the document contains
+
+Only four things per activity - nothing else:
+
+1. **Title** - activity number, title, and one small line with the project, author and course
+2. **Form Design** - picture of the designer layout (form activities only)
+3. **Source Code** - the real source files, one labelled block each
+4. **Sample Output** - **picture of the running form** for form activities (textboxes filled
+   in, results on the labels, rows in the ListView / TreeView, radio button selected), and
+   the console text for Activities 1, 2 and 3
+
+There is **no** table of contents, no description, no objectives, no notes, no appendices,
+and no page header or footer. Only a plain cover page at the front.
 
 > **Note on branches:** this Arena session is bound to one branch
 > (`arena/bf05a101-projects`) and cannot create or push a second branch, so the two
@@ -109,6 +123,11 @@ python3 SONAJO/tools/build_package.py
 
 The same two commands work inside `MANGALILI/tools/` for the other compilation.
 Requirements: `python-docx`, `reportlab`, `pillow`.
+
+The sample values printed inside the Sample Output pictures live in
+`tools/samples.py` (textbox text, label results, ListView rows, TreeView nodes, checked
+radio buttons). It uses `{USER}` / `{AUTHOR}` / `{COURSE}` tokens, so the same file works for
+both students and the name inside the picture always matches the owner of the folder.
 
 ## Changing the name
 

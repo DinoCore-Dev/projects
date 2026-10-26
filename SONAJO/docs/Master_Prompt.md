@@ -92,24 +92,29 @@ at feature set) para sa mga activity na ito:
 ===========================================================
 6) COMPILATION DOCUMENT (DOCX + PDF)
 ===========================================================
-Gawa ng bagong document (huwag i-edit ang PDF ng iba) na may:
-- Cover page: subject, "ACTIVITY COMPILATION", Submitted by (pangalan), Course/Year/Section,
-  Subject, Submitted to (instructor), School Year, Date Submitted
-- Clickable Table of Contents (bookmarks)
-- Section na "How to open and run the projects" (VS2010, .NET 4.0, F5, walang NuGet)
-- Isang section kada activity, ganito ang order:
-  1. Activity number + title + project name + author
-  2. Description
-  3. Objectives
-  4. Form Design figure (para sa form activities)
-  5. Source Code
-  6. Sample Output (dapat may pangalan ng author)
-  7. Notes (kung meron)
-- Appendix A: listahan ng files per project
-- Appendix B: ano ang binago sa compilation (kasama ang identity change at VS2010 note)
-- Header at footer na may pangalan at page number
-- I-verify: walang blankong page, walang putol na code block, walang lumang pangalan,
-  at LAHAT ng Sample Output ay may pangalan
+Gawa ng bagong document (huwag i-edit ang PDF ng iba). SIMPLE lang ito - apat na bagay
+lang kada activity:
+  1. Title  (Activity number + title + isang maliit na linya: project name | author | course)
+  2. Form Design  - picture ng designer layout, para sa form activities lang
+  3. Source Code  - ang totoong source files (may label bawat file)
+  4. Sample Output - PICTURE ng tumatakbong form para sa form activities (may sample na
+     nakasulat sa textbox, resulta sa label, listahan sa ListView/TreeView, naka-pindot
+     na radio button), at TEXT na console output para sa console activities
+
+Bawal sa document (sinadya itong tanggalin):
+- Table of Contents / contents page
+- Description, Objectives, Notes, "How to open and run the projects"
+- Appendix A at Appendix B
+- Header at footer, page number sa gilid, watermarks
+Lamang ang cover page: subject, "ACTIVITY COMPILATION", pangalan, course, subject,
+Submitted to (blank), School Year, Date Submitted.
+
+Ang Sample Output picture ay gawa sa parehong `*.Designer.vb` coordinates, tapos
+nilalagyan ng sample values (textbox text, label result, ListView rows, TreeView nodes,
+checked radio button) - tingnan ang item 7.
+
+I-verify: walang blankong page, walang putol na code block, walang lumang pangalan,
+at LAHAT ng form activity ay may Sample Output picture.
 
 ===========================================================
 7) TOOLS SA REPO (gamitin, huwag magsimula sa zero kung meron na)
@@ -117,9 +122,13 @@ Gawa ng bagong document (huwag i-edit ang PDF ng iba) na may:
 - `tools/design_figure.py`     : gumagawa ng Form Design figure mula sa totoong coordinates
                                  ng `*.Designer.vb` (suportado: Panel, Label, Button, TextBox,
                                  ListView, TreeView, SplitContainer, TabControl, RadioButton)
-- `tools/activities.py`        : metadata per activity (description, objectives, files,
-                                 figures, output, notes) + AUTHOR / COURSE / SUBJECT /
-                                 INSTRUCTOR_LINE / SCHOOL_YEAR / DATE_LINE
+- `tools/activities.py`        : metadata per activity (title, project, files, figures,
+                                 output) + AUTHOR / COURSE / SUBJECT / INSTRUCTOR_LINE /
+                                 SCHOOL_YEAR / DATE_LINE
+- `tools/samples.py`           : sample values para sa Sample Output picture ng bawat form
+                                 activity (textbox text, label results, ListView rows,
+                                 TreeView nodes, checked radio button). May {USER} /
+                                 {AUTHOR} / {COURSE} token para automatic na napapalitan.
 - `tools/build_documents.py`   : binubuo ang `docs/figures/*.png`, ang DOCX at ang PDF
   Command: `python3 tools/build_documents.py`  (kailangan: python-docx, reportlab, pillow)
 
@@ -128,11 +137,12 @@ Gawa ng bagong document (huwag i-edit ang PDF ng iba) na may:
 ===========================================================
 - `COMPILATION/`            : malinis na activities (Act 1 hanggang huli)
 - `docs/…docx` at `docs/…pdf` : bagong compilation document na may bagong pangalan
-- `docs/figures/`           : Form Design figures
+- `docs/figures/`           : Form Design at Sample Output pictures
 - `tools/`                  : generator scripts
 - Updated `README.md`
-- ISANG zip na pang-download na naglalaman ng:
-  `docs/` (DOCX + PDF + figures + Master_Prompt) AT `COMPILATION/` (lahat ng activity folders)
+- ISANG zip na pang-download, flat ang loob (walang nakapaloob na pangalawang zip):
+  `START_HERE.txt`, ang PDF, ang DOCX, `Master_Prompt.md`, `Form_Designs/`, at
+  `01_ ... 13_ ...` (isang folder kada activity, buong VS2010 solution)
 - I-commit at i-push sa branch ko, tapos i-report sa dulo:
   * ano ang binago per activity
   * saan hahanapin ang files
@@ -150,7 +160,9 @@ Gawa ng bagong document (huwag i-edit ang PDF ng iba) na may:
   1. `tools/activities.py` → `AUTHOR`, `COURSE`, `SUBJECT`, `INSTRUCTOR_LINE`,
      `SCHOOL_YEAR`, `DATE_LINE`
   2. `Me.Text` / author labels sa `*.Designer.vb` at ang header ng `Module1.vb` (console)
-  Tapos `python3 tools/build_documents.py` at bagong zip.
+  Tapos `python3 tools/build_documents.py` at `python3 tools/build_package.py`.
+* Ang sample na nakikita sa Sample Output picture ay nasa `tools/samples.py`. Kung may
+  nabago sa form (bagong textbox o label), dagdagan lang ng value doon.
 * Kapag may bagong activity: magdagdag lang ng entry sa `ACTIVITIES` sa
-  `tools/activities.py` (description, objectives, files, figures, output, notes) — automatic
-  nang kasama sa TOC, sa document at sa figure numbering.
+  `tools/activities.py` (title, project, files, figures, output) — automatic nang kasama sa
+  document. Kung form activity, dagdagan din ng entry sa `tools/samples.py`.

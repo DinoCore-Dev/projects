@@ -67,6 +67,10 @@ class Control:
         self.columns = []
         self.items_added = False
         self.selected_index = 0
+        self.checked = False        # sample output state of a radio button / check box
+        self.rows = []              # sample output rows for ListView / ListBox
+        self.nodes = []             # sample output nodes for TreeView
+        self.header = []            # sample output column headers
 
 
 NEWLINE_MARK = "\x00"
@@ -242,6 +246,75 @@ def parse_designer(path):
         elif parent in controls and child in controls:
             controls[parent].children.append(child)
 
+    # ---- compact style (the original sample packs statements on one line) ----
+    def compact_instantiate(m):
+        name, kind = m.group(1), m.group(2)
+        short = kind.split(".")[-1]
+        if name != "components" and short in CTRL_TYPES and name not in controls:
+            controls[name] = Control(name, short)
+
+    each(r"Me\.(\w+)\s*=\s*New\s+(?:System\.Windows\.Forms\.)?(\w+)\(\)", compact_instantiate)
+
+    def compact_bounds(m):
+        name = m.group(1)
+        if name in controls:
+            controls[name].loc = (int(m.group(2)), int(m.group(3)))
+            controls[name].size = (int(m.group(4)), int(m.group(5)))
+
+    each(r"Me\.(\w+)\.SetBounds\((\d+),\s*(\d+),\s*(\d+),\s*(\d+)\)", compact_bounds)
+
+    def compact_text(m):
+        name = m.group(1)
+        if name in controls and not controls[name].text:
+            controls[name].text = m.group(2)
+
+    each(r'Me\.(\w+)\.Text\s*=\s*"([^"]*)"', compact_text)
+
+    def compact_color(m):
+        name, which, value = m.group(1), m.group(2), m.group(3)
+        if name in controls:
+            colour = _color(value.replace(", ", ", ").replace(",", ", "))
+            if which == "BackColor":
+                controls[name].back = colour
+            else:
+                controls[name].fore = colour
+
+    each(r"Me\.(\w+)\.(BackColor|ForeColor)\s*=\s*(System\.Drawing\.Color\.(?:FromArgb\(\d+,\s*\d+,\s*\d+\)|\w+))",
+         compact_color)
+
+    def compact_columns(m):
+        name = m.group(1)
+        if name in controls and m.group(2) not in controls[name].header:
+            controls[name].header.append(m.group(2))
+
+    each(r'Me\.(\w+)\.Columns\.Add\("([^"]*)"', compact_columns)
+
+    def compact_font(m):
+        name = m.group(1)
+        if name in controls:
+            try:
+                controls[name].font_size = float(m.group(2))
+            except ValueError:
+                pass
+
+    each(r'Me\.(\w+)\.Font\s*=\s*New System\.Drawing\.Font\("([^"]+)",\s*([\d.]+)!', compact_font)
+
+    def compact_add(m):
+        parent, children = m.group(1), m.group(2)
+        for child in re.findall(r"Me\.(\w+)", children):
+            if child not in controls:
+                continue
+            if parent is None:
+                if child not in form.children:
+                    form.children.append(child)
+            elif parent == "Form":
+                if child not in form.children:
+                    form.children.append(child)
+            elif parent in controls and child not in controls[parent].children:
+                controls[parent].children.append(child)
+
+    each(r"Me\.(?:(\w+)\.)?Controls\.AddRange\(New (?:System\.Windows\.Forms\.)?Control\(\)\s*\{([^}]*)\}", compact_add)
+
     return form, controls
 
 
@@ -308,8 +381,42 @@ def layout(form, controls, padding_top=0):
 TITLE_BAR = 30
 
 
-def render(designer_path, out_path, caption=None, max_width=1500):
+def apply_overrides(controls, overrides):
+    """Fill controls with sample values so the picture looks like a real run.
+
+    overrides = {
+        "txtN1": "12",                       # text of a control
+        "lblStatus": "Sum = 18.0000",
+        "lvItems": {"header": ["Name", "Type"], "rows": [["a.txt", "Text"]]},
+        "tvFolders": ["  Desktop", "  Documents"],
+        "tabMain": 1,                        # selected tab index
+    }
+    """
+    for name, value in (overrides or {}).items():
+        control = controls.get(name)
+        if control is None:
+            continue
+        if isinstance(value, str):
+            control.text = value
+        elif isinstance(value, int):
+            control.selected_index = value
+        elif isinstance(value, dict):
+            if value.get("checked") is not None:
+                control.checked = bool(value["checked"])
+            control.header = value.get("header", control.header)
+            control.rows = value.get("rows", control.rows)
+            if value.get("text"):
+                control.text = value["text"]
+        elif isinstance(value, (list, tuple)):
+            if value and isinstance(value[0], (list, tuple)):
+                control.rows = value
+            else:
+                control.nodes = value
+
+
+def render(designer_path, out_path, caption=None, max_width=1500, overrides=None):
     form, controls = parse_designer(designer_path)
+    apply_overrides(controls, overrides)
     rects = layout(form, controls)
 
     width, height = form.size
@@ -462,7 +569,23 @@ def render(designer_path, out_path, caption=None, max_width=1500):
                           txt, font=f, fill=c.fore or (30, 30, 30))
         elif kind == "TextBox":
             draw.rectangle(box, fill=back or (255, 255, 255), outline=(158, 168, 180), width=SCALE)
-            if h > 60 * 1:
+            if c.text and not c.multiline:
+                f = font(c.font_size)
+                txt = c.text
+                while txt and draw.textlength(txt, font=f) > (w - 12) * SCALE:
+                    txt = txt[:-1]
+                draw.text((box[0] + 6 * SCALE, box[1] + (h * SCALE - c.font_size * 1.5 * SCALE) / 2),
+                          txt, font=f, fill=c.fore or (25, 35, 45))
+            elif c.text and c.multiline:
+                f = font(c.font_size)
+                line_h = c.font_size * 1.55 * SCALE
+                for index, raw in enumerate(c.text.split("\n")):
+                    yy = box[1] + 5 * SCALE + index * line_h
+                    if yy > box[3] - 4 * SCALE:
+                        break
+                    draw.text((box[0] + 6 * SCALE, yy), raw, font=f,
+                              fill=c.fore or (25, 35, 45))
+            elif h > 60 * 1:
                 f = font(8)
                 for i in range(0, int(h // 14)):
                     draw.line([box[0] + 4 * SCALE, box[1] + (8 + i * 14) * SCALE,
@@ -473,25 +596,48 @@ def render(designer_path, out_path, caption=None, max_width=1500):
             f = font(8)
             row_h = 18 * SCALE
             rows = int((h - 4) // 18)
+            header_labels = c.header or ["Name", "Type", "Size", "Modified"]
+            start_row = 0
             if kind == "ListView":
                 header_h = 22 * SCALE
                 draw.rectangle([box[0], box[1], box[2], box[1] + header_h], fill=(246, 247, 249),
                                outline=(220, 224, 230), width=SCALE)
-                labels = ["Name", "Type", "Size", "Modified"]
-                col_w = (w - 4) / max(len(labels), 1)
-                for i, lab in enumerate(labels):
+                col_w = (w - 4) / max(len(header_labels), 1)
+                for i, lab in enumerate(header_labels):
                     draw.text((box[0] + (i * col_w + 6) * SCALE, box[1] + 4 * SCALE), lab, font=f,
                               fill=(90, 100, 112))
-                start = 1
+                start_row = 1
+            if c.rows:
+                col_w = (w - 4) / max(len(header_labels), 1)
+                for r, cells in enumerate(c.rows):
+                    yy = box[1] + (22 + r * 18) * SCALE
+                    if yy > box[3] - 6 * SCALE:
+                        break
+                    for i, cell in enumerate(list(cells)[:len(header_labels)]):
+                        txt = str(cell)
+                        while txt and draw.textlength(txt, font=f) > (col_w - 10) * SCALE:
+                            txt = txt[:-1]
+                        draw.text((box[0] + (i * col_w + 6) * SCALE, yy + 3 * SCALE), txt,
+                                  font=f, fill=c.fore or (35, 45, 55))
+            elif c.nodes:
+                for r, node in enumerate(c.nodes):
+                    yy = box[1] + (4 + r * 18) * SCALE
+                    if yy > box[3] - 6 * SCALE:
+                        break
+                    depth = (len(node) - len(node.lstrip(" "))) // 2
+                    indent = depth * 14
+                    draw.text((box[0] + (6 + indent) * SCALE, yy), "\u25b8", font=f,
+                              fill=(120, 130, 142))
+                    draw.text((box[0] + (18 + indent) * SCALE, yy), node.strip(), font=f,
+                              fill=c.fore or (35, 45, 55))
             else:
-                start = 0
-            for r in range(start, max(start, rows)):
-                yy = box[1] + (22 + (r - start) * 18) * SCALE
-                if yy > box[3] - 4 * SCALE:
-                    break
-                width_text = 40 + (r * 53) % max(40, int(w * 0.55))
-                draw.rectangle([box[0] + 6 * SCALE, yy + 5 * SCALE,
-                                box[0] + width_text * SCALE, yy + 9 * SCALE], fill=(214, 219, 226))
+                for r in range(start_row, max(start_row, rows)):
+                    yy = box[1] + (22 + (r - start_row) * 18) * SCALE
+                    if yy > box[3] - 4 * SCALE:
+                        break
+                    width_text = 40 + (r * 53) % max(40, int(w * 0.55))
+                    draw.rectangle([box[0] + 6 * SCALE, yy + 5 * SCALE,
+                                    box[0] + width_text * SCALE, yy + 9 * SCALE], fill=(214, 219, 226))
         elif kind in ("RadioButton", "CheckBox"):
             draw.rectangle(box, fill=back or None) if back else None
             f = font(c.font_size)
@@ -499,6 +645,11 @@ def render(designer_path, out_path, caption=None, max_width=1500):
             cy = box[1] + (h * SCALE) / 2
             draw.ellipse([box[0] + 2 * SCALE, cy - r, box[0] + 2 * SCALE + 2 * r, cy + r],
                          outline=(120, 130, 142), width=SCALE, fill=(255, 255, 255))
+            if c.checked:
+                inner = r - 3 * SCALE
+                draw.ellipse([box[0] + 2 * SCALE + (r - inner), cy - inner,
+                              box[0] + 2 * SCALE + (r + inner), cy + inner],
+                             fill=c.fore or (5, 150, 105))
             if c.text:
                 draw.text((box[0] + (16) * SCALE, cy - c.font_size * 0.7 * SCALE), c.text, font=f,
                           fill=c.fore or (30, 30, 30))

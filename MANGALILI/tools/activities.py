@@ -36,7 +36,6 @@ ACTIVITIES = [
             "Print output with Console.WriteLine and pause the console with Console.ReadKey.",
         ],
         "files": [("Act1_Activity202606241600/Activity202606241600/Module1.vb", "Module1.vb")],
-        "figures": [],
         "output": [
             "Activity202606241600",
             "Author: Mangalili, Fhetz",
@@ -72,7 +71,6 @@ ACTIVITIES = [
             "Apply arithmetic formulas and display the computed results.",
         ],
         "files": [("Act2 Celcius-Fahrenheit Converter/Act2/Module1.vb", "Module1.vb")],
-        "figures": [],
         "output": [
             "Act2 Celcius-Fahrenheit Converter",
             "Author: Mangalili, Fhetz",
@@ -112,7 +110,6 @@ ACTIVITIES = [
             "Handle invalid input with Try - Catch and a GoTo label so the program repeats.",
         ],
         "files": [("Activity3_20260629/Activity3_20260629/Module1.vb", "Module1.vb")],
-        "figures": [],
         "output": [
             "Activity3_20260629",
             "Author: Mangalili, Fhetz",
@@ -425,6 +422,8 @@ ACTIVITIES = [
         "title": "Windows Forms Controls Collection (TabControl, TreeView, ListView, Dialogs)",
         "project": "SW202610021600",
         "folder": "SW202610021600",
+        "figures": [("SW202610021600/CombinedSample.Designer.vb",
+                     "Combined explorer - TreeView and ListView in one form")],
         "description": [
             "The eleventh activity collects the answers to questions 6 to 9 in one TabControl "
             "based program: a ListView file explorer, a TreeView file explorer, an "
@@ -446,7 +445,6 @@ ACTIVITIES = [
             ("SW202610021600/OpenFileDialogSample.vb", "OpenFileDialogSample.vb"),
             ("SW202610021600/CombinedSample.vb", "CombinedSample.vb"),
         ],
-        "figures": [],
         "output": [
             "Title      : Activity 11 - SW202610021600 - Windows Forms Controls  |  Mangalili, Fhetz",
             "Status bar : Author: Mangalili, Fhetz   |   BSIT 3B   |   Activity 11 - SW202610021600",
@@ -510,6 +508,8 @@ ACTIVITIES = [
         "title": "Integrative Project - School Records with MDI Forms",
         "project": "IntegProgProject2026",
         "folder": "IntegProgProject2026",
+        "figures": [("IntegProgProject2026/IntegProgProject2026/Forms/frmSchedules.Designer.vb",
+                     "Schedule form of the MDI project")],
         "description": [
             "The final activity is the integrative project. A main MDI form holds a menu, a "
             "tool strip that shows the name of the user and a live date and time, and a status "
@@ -530,7 +530,6 @@ ACTIVITIES = [
             ("IntegProgProject2026/IntegProgProject2026/Forms/frmBibleVerses.vb", "frmBibleVerses.vb"),
             ("IntegProgProject2026/IntegProgProject2026/Forms/frmAbout.vb", "frmAbout.vb"),
         ],
-        "figures": [],
         "output": [
             "Main form  : Integrative Project 2026 - Mangalili, Fhetz  |  BSIT 3B",
             "Status strip: UserInfo: Mangalili, Fhetz  |  BSIT 3B",

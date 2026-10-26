@@ -61,15 +61,15 @@ START_HERE = """================================================================
  Course/Year/Sec : BSIT 3B
  Subject         : Integrative Programming
  IDE             : Visual Studio 2010 (.NET Framework 4.0)
- Document        : 69 pages (PDF at the top of this folder)
+ Document        : {pages} pages (PDF at the top of this folder)
 ====================================================================
 
 WHAT IS INSIDE THIS ZIP
 ----------------------
-  Mangalili_Fhetz_Activity_Compilation.pdf   <- ito ang ipasa (69 pages)
+  Mangalili_Fhetz_Activity_Compilation.pdf   <- ito ang ipasa ({pages} pages)
   Mangalili_Fhetz_Activity_Compilation.docx  <- kung kailangan i-edit
   Master_Prompt.md                           <- template kung magbabago ng pangalan
-  Form_Designs\\                              <- 9 PNG na drawing ng mga form
+  Form_Designs\\                              <- {figures} PNG na drawing at sample output
   01_ ... 13_ ...                            <- isang folder bawat activity
 
 Each activity folder already contains the full Visual Studio 2010
@@ -156,6 +156,25 @@ def copy_tree(src, dst):
     return count
 
 
+def pdf_pages():
+    """Page count of the compiled PDF, so START_HERE never shows a stale number."""
+    for name in os.listdir(DOCS):
+        if name.lower().endswith(".pdf"):
+            try:
+                import pymupdf
+                return str(pymupdf.open(os.path.join(DOCS, name)).page_count)
+            except Exception:
+                return "?"
+    return "?"
+
+
+def figure_count():
+    folder = os.path.join(DOCS, "figures")
+    if not os.path.isdir(folder):
+        return "0"
+    return str(len([f for f in os.listdir(folder) if f.lower().endswith(".png")]))
+
+
 def main():
     staging = tempfile.mkdtemp(prefix="package-")
     try:
@@ -163,7 +182,7 @@ def main():
 
         with open(os.path.join(staging, "START_HERE.txt"), "w",
                   encoding="utf-8", newline="\r\n") as handle:
-            handle.write(START_HERE)
+            handle.write(START_HERE.format(pages=pdf_pages(), figures=figure_count()))
 
         for name in (PDF, DOCX, "Master_Prompt.md"):
             shutil.copy2(os.path.join(DOCS, name), os.path.join(staging, name))
