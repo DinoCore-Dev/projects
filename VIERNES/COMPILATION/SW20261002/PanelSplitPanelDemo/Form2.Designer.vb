@@ -177,7 +177,7 @@ Partial Class Form2
         Me.lblAuthor.Size = New System.Drawing.Size(276, 22)
         Me.lblAuthor.TabIndex = 2
         Me.lblAuthor.Text = "Viernes, Mark Syrel  |  BSIT 3B"
-        Me.lblAuthor.TextAlign = System.Windows.Forms.ContentAlignment.MiddleRight
+        Me.lblAuthor.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'pnlTools
         '
@@ -292,7 +292,7 @@ Partial Class Form2
         Me.lblSplitInfo.ForeColor = System.Drawing.Color.FromArgb(110, 231, 183)
         Me.lblSplitInfo.Location = New System.Drawing.Point(16, 336)
         Me.lblSplitInfo.AutoSize = False
-        Me.lblSplitInfo.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblSplitInfo.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblSplitInfo.Name = "lblSplitInfo"
         Me.lblSplitInfo.Size = New System.Drawing.Size(144, 70)
         Me.lblSplitInfo.TabIndex = 6
@@ -511,7 +511,7 @@ Partial Class Form2
         Me.lblCount.Name = "lblCount"
         Me.lblCount.Size = New System.Drawing.Size(284, 16)
         Me.lblCount.TabIndex = 1
-        Me.lblCount.TextAlign = System.Windows.Forms.ContentAlignment.MiddleRight
+        Me.lblCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Form2
         '

@@ -166,7 +166,7 @@ Partial Class Form1
         Me.lblAuthorName.Size = New System.Drawing.Size(204, 24)
         Me.lblAuthorName.TabIndex = 2
         Me.lblAuthorName.Text = "Viernes, Mark Syrel"
-        Me.lblAuthorName.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblAuthorName.TextAlign = System.Drawing.ContentAlignment.TopLeft
         '
         'lblAuthorCourse
         '
@@ -179,7 +179,7 @@ Partial Class Form1
         Me.lblAuthorCourse.Size = New System.Drawing.Size(204, 40)
         Me.lblAuthorCourse.TabIndex = 3
         Me.lblAuthorCourse.Text = "BSIT 3B  |  Integrative Programming"
-        Me.lblAuthorCourse.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblAuthorCourse.TextAlign = System.Drawing.ContentAlignment.TopLeft
         '
         'pnlInput
         '
@@ -338,7 +338,7 @@ Partial Class Form1
         Me.lblSumValue.Size = New System.Drawing.Size(98, 52)
         Me.lblSumValue.TabIndex = 2
         Me.lblSumValue.Text = "-"
-        Me.lblSumValue.TextAlign = System.Windows.Forms.ContentAlignment.MiddleCenter
+        Me.lblSumValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblDiffCaption
         '
@@ -363,7 +363,7 @@ Partial Class Form1
         Me.lblDiffValue.Size = New System.Drawing.Size(98, 52)
         Me.lblDiffValue.TabIndex = 4
         Me.lblDiffValue.Text = "-"
-        Me.lblDiffValue.TextAlign = System.Windows.Forms.ContentAlignment.MiddleCenter
+        Me.lblDiffValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblProdCaption
         '
@@ -388,7 +388,7 @@ Partial Class Form1
         Me.lblProdValue.Size = New System.Drawing.Size(98, 52)
         Me.lblProdValue.TabIndex = 6
         Me.lblProdValue.Text = "-"
-        Me.lblProdValue.TextAlign = System.Windows.Forms.ContentAlignment.MiddleCenter
+        Me.lblProdValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblQuotCaption
         '
@@ -413,7 +413,7 @@ Partial Class Form1
         Me.lblQuotValue.Size = New System.Drawing.Size(98, 52)
         Me.lblQuotValue.TabIndex = 8
         Me.lblQuotValue.Text = "-"
-        Me.lblQuotValue.TextAlign = System.Windows.Forms.ContentAlignment.MiddleCenter
+        Me.lblQuotValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblAveCaption
         '
@@ -438,7 +438,7 @@ Partial Class Form1
         Me.lblAveValue.Size = New System.Drawing.Size(98, 52)
         Me.lblAveValue.TabIndex = 10
         Me.lblAveValue.Text = "-"
-        Me.lblAveValue.TextAlign = System.Windows.Forms.ContentAlignment.MiddleCenter
+        Me.lblAveValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pnlActions
         '

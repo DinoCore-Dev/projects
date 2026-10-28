@@ -420,7 +420,7 @@ Partial Class Form1
         Me.classAverageLabel.Location = New System.Drawing.Point(348, 112)
         Me.classAverageLabel.BackColor = System.Drawing.Color.FromArgb(24, 27, 35)
         Me.classAverageLabel.ForeColor = System.Drawing.Color.FromArgb(110, 231, 183)
-        Me.classAverageLabel.TextAlign = System.Windows.Forms.ContentAlignment.MiddleCenter
+        Me.classAverageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.classAverageLabel.Name = "classAverageLabel"
         Me.classAverageLabel.Font = New System.Drawing.Font("Corbel", 14.0!, System.Drawing.FontStyle.Bold)
         Me.classAverageLabel.Size = New System.Drawing.Size(352, 198)
@@ -522,7 +522,7 @@ Partial Class Form1
         Me.lblAuthor.Size = New System.Drawing.Size(712, 20)
         Me.lblAuthor.TabIndex = 1
         Me.lblAuthor.Text = "Author: Viernes, Mark Syrel   |   BSIT 3B   |   Activity 7"
-        Me.lblAuthor.TextAlign = System.Windows.Forms.ContentAlignment.MiddleRight
+        Me.lblAuthor.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'pnlTop
         '
@@ -564,7 +564,7 @@ Partial Class Form1
         Me.lblTopTitle.ForeColor = System.Drawing.Color.FromArgb(236, 239, 244)
         Me.lblTopTitle.Font = New System.Drawing.Font("Corbel", 18.0!, System.Drawing.FontStyle.Bold)
         Me.lblTopTitle.Text = "Integrative Program 1"
-        Me.lblTopTitle.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblTopTitle.TextAlign = System.Drawing.ContentAlignment.TopLeft
         '
         'lblTopSub
         '
@@ -576,7 +576,7 @@ Partial Class Form1
         Me.lblTopSub.ForeColor = System.Drawing.Color.FromArgb(110, 231, 183)
         Me.lblTopSub.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblTopSub.Text = "Activity 7  |  IntegProg1_SW20260720"
-        Me.lblTopSub.TextAlign = System.Windows.Forms.ContentAlignment.MiddleRight
+        Me.lblTopSub.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Form1
         '

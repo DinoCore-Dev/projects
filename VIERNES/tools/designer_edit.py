@@ -23,7 +23,9 @@ def font(family, size, bold=False):
 
 
 def _enum(kind, value):
-    return "System.Windows.Forms.%s.%s" % (kind, value)
+    # ContentAlignment lives in System.Drawing, everything else used here in System.Windows.Forms
+    ns = "System.Drawing." if kind == "ContentAlignment" else "System.Windows.Forms."
+    return "%s%s.%s" % (ns, kind, value)
 
 
 ANCH = {"T": "Top", "B": "Bottom", "L": "Left", "R": "Right"}

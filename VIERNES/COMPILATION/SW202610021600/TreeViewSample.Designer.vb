@@ -67,7 +67,7 @@ Partial Class TreeViewSample
         Me.lblPathCaption.AutoSize = False
         Me.lblPathCaption.Font = New System.Drawing.Font("Corbel", 9.0!, System.Drawing.FontStyle.Bold)
         Me.lblPathCaption.ForeColor = System.Drawing.Color.FromArgb(141, 152, 170)
-        Me.lblPathCaption.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblPathCaption.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblPathCaption.Name = "lblPathCaption"
         Me.lblPathCaption.TabIndex = 2
         '
@@ -112,7 +112,7 @@ Partial Class TreeViewSample
         Me.lblTitle_pnlSide.AutoSize = False
         Me.lblTitle_pnlSide.Font = New System.Drawing.Font("Corbel", 15.0!, System.Drawing.FontStyle.Bold)
         Me.lblTitle_pnlSide.ForeColor = System.Drawing.Color.FromArgb(236, 239, 244)
-        Me.lblTitle_pnlSide.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblTitle_pnlSide.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblTitle_pnlSide.Name = "lblTitle_pnlSide"
         Me.lblTitle_pnlSide.TabIndex = 6
         '
@@ -124,7 +124,7 @@ Partial Class TreeViewSample
         Me.lblSub_pnlSide.AutoSize = False
         Me.lblSub_pnlSide.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblSub_pnlSide.ForeColor = System.Drawing.Color.FromArgb(141, 152, 170)
-        Me.lblSub_pnlSide.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblSub_pnlSide.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblSub_pnlSide.Name = "lblSub_pnlSide"
         Me.lblSub_pnlSide.TabIndex = 7
         '

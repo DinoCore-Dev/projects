@@ -137,7 +137,7 @@ Partial Class Form1
         Me.lblAuthor.Size = New System.Drawing.Size(196, 24)
         Me.lblAuthor.TabIndex = 2
         Me.lblAuthor.Text = "Viernes, Mark Syrel"
-        Me.lblAuthor.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblAuthor.TextAlign = System.Drawing.ContentAlignment.TopLeft
         '
         'lblCourse
         '
@@ -150,7 +150,7 @@ Partial Class Form1
         Me.lblCourse.Size = New System.Drawing.Size(196, 40)
         Me.lblCourse.TabIndex = 3
         Me.lblCourse.Text = "BSIT 3B  |  Integrative Programming"
-        Me.lblCourse.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblCourse.TextAlign = System.Drawing.ContentAlignment.TopLeft
         '
         'pnlLeft
         '
@@ -355,7 +355,7 @@ Partial Class Form1
         Me.lblRemarks1.Size = New System.Drawing.Size(380, 56)
         Me.lblRemarks1.TabIndex = 4
         Me.lblRemarks1.Text = "-"
-        Me.lblRemarks1.TextAlign = System.Windows.Forms.ContentAlignment.MiddleCenter
+        Me.lblRemarks1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblR2Caption
         '
@@ -380,7 +380,7 @@ Partial Class Form1
         Me.lblRemarks2.Size = New System.Drawing.Size(380, 56)
         Me.lblRemarks2.TabIndex = 6
         Me.lblRemarks2.Text = "-"
-        Me.lblRemarks2.TextAlign = System.Windows.Forms.ContentAlignment.MiddleCenter
+        Me.lblRemarks2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblR3Caption
         '
@@ -405,7 +405,7 @@ Partial Class Form1
         Me.lblRemarks3.Size = New System.Drawing.Size(380, 56)
         Me.lblRemarks3.TabIndex = 8
         Me.lblRemarks3.Text = "-"
-        Me.lblRemarks3.TextAlign = System.Windows.Forms.ContentAlignment.MiddleCenter
+        Me.lblRemarks3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pnlActions
         '

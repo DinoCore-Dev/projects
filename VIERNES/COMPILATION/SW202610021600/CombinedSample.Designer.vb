@@ -151,7 +151,7 @@ Partial Class CombinedSample
         Me.lblHead.AutoSize = False
         Me.lblHead.Font = New System.Drawing.Font("Corbel", 15.0!, System.Drawing.FontStyle.Bold)
         Me.lblHead.ForeColor = System.Drawing.Color.FromArgb(236, 239, 244)
-        Me.lblHead.TextAlign = System.Windows.Forms.ContentAlignment.MiddleLeft
+        Me.lblHead.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.lblHead.Name = "lblHead"
         Me.lblHead.TabIndex = 8
         '
@@ -163,7 +163,7 @@ Partial Class CombinedSample
         Me.lblHeadHint.AutoSize = False
         Me.lblHeadHint.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblHeadHint.ForeColor = System.Drawing.Color.FromArgb(141, 152, 170)
-        Me.lblHeadHint.TextAlign = System.Windows.Forms.ContentAlignment.MiddleLeft
+        Me.lblHeadHint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.lblHeadHint.Name = "lblHeadHint"
         Me.lblHeadHint.TabIndex = 9
         '

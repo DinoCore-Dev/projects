@@ -68,7 +68,7 @@ Partial Class OpenFileDialogSample
         Me.lblHead.AutoSize = False
         Me.lblHead.Font = New System.Drawing.Font("Corbel", 10.0!, System.Drawing.FontStyle.Bold)
         Me.lblHead.ForeColor = System.Drawing.Color.FromArgb(110, 231, 183)
-        Me.lblHead.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblHead.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblHead.Name = "lblHead"
         Me.lblHead.TabIndex = 2
         '
@@ -103,7 +103,7 @@ Partial Class OpenFileDialogSample
         Me.lblTitle_pnlRail.AutoSize = False
         Me.lblTitle_pnlRail.Font = New System.Drawing.Font("Corbel", 15.0!, System.Drawing.FontStyle.Bold)
         Me.lblTitle_pnlRail.ForeColor = System.Drawing.Color.FromArgb(236, 239, 244)
-        Me.lblTitle_pnlRail.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblTitle_pnlRail.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblTitle_pnlRail.Name = "lblTitle_pnlRail"
         Me.lblTitle_pnlRail.TabIndex = 5
         '
@@ -115,7 +115,7 @@ Partial Class OpenFileDialogSample
         Me.lblSub_pnlRail.AutoSize = False
         Me.lblSub_pnlRail.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblSub_pnlRail.ForeColor = System.Drawing.Color.FromArgb(141, 152, 170)
-        Me.lblSub_pnlRail.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblSub_pnlRail.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblSub_pnlRail.Name = "lblSub_pnlRail"
         Me.lblSub_pnlRail.TabIndex = 6
         '

@@ -69,7 +69,7 @@ Private Sub InitializeComponent()
         Me.lblQuoteID.AutoSize = False
         Me.lblQuoteID.Location = New System.Drawing.Point(14, 26)
         Me.lblQuoteID.ForeColor = System.Drawing.Color.FromArgb(190, 198, 211)
-        Me.lblQuoteID.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblQuoteID.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblQuoteID.Name = "lblQuoteID"
         Me.lblQuoteID.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblQuoteID.Size = New System.Drawing.Size(295, 16)
@@ -93,7 +93,7 @@ Private Sub InitializeComponent()
         Me.lblContent.AutoSize = False
         Me.lblContent.Location = New System.Drawing.Point(333, 26)
         Me.lblContent.ForeColor = System.Drawing.Color.FromArgb(190, 198, 211)
-        Me.lblContent.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblContent.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblContent.Name = "lblContent"
         Me.lblContent.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblContent.Size = New System.Drawing.Size(295, 16)
@@ -116,7 +116,7 @@ Private Sub InitializeComponent()
         Me.lblAuthor.AutoSize = False
         Me.lblAuthor.Location = New System.Drawing.Point(652, 26)
         Me.lblAuthor.ForeColor = System.Drawing.Color.FromArgb(190, 198, 211)
-        Me.lblAuthor.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblAuthor.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblAuthor.Name = "lblAuthor"
         Me.lblAuthor.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblAuthor.Size = New System.Drawing.Size(295, 16)
@@ -139,7 +139,7 @@ Private Sub InitializeComponent()
         Me.lblSource.AutoSize = False
         Me.lblSource.Location = New System.Drawing.Point(14, 80)
         Me.lblSource.ForeColor = System.Drawing.Color.FromArgb(190, 198, 211)
-        Me.lblSource.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblSource.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblSource.Name = "lblSource"
         Me.lblSource.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblSource.Size = New System.Drawing.Size(295, 16)
@@ -162,7 +162,7 @@ Private Sub InitializeComponent()
         Me.lblQuoteDate.AutoSize = False
         Me.lblQuoteDate.Location = New System.Drawing.Point(333, 80)
         Me.lblQuoteDate.ForeColor = System.Drawing.Color.FromArgb(190, 198, 211)
-        Me.lblQuoteDate.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblQuoteDate.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblQuoteDate.Name = "lblQuoteDate"
         Me.lblQuoteDate.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblQuoteDate.Size = New System.Drawing.Size(295, 16)
@@ -301,7 +301,7 @@ Private Sub InitializeComponent()
         Me.lblDatabase.AutoSize = False
         Me.lblDatabase.Location = New System.Drawing.Point(12, 458)
         Me.lblDatabase.ForeColor = System.Drawing.Color.FromArgb(141, 152, 170)
-        Me.lblDatabase.TextAlign = System.Windows.Forms.ContentAlignment.MiddleLeft
+        Me.lblDatabase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.lblDatabase.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblDatabase.Name = "lblDatabase"
         Me.lblDatabase.Font = New System.Drawing.Font("Corbel", 9.0!)

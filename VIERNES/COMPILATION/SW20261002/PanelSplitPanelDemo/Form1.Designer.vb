@@ -178,7 +178,7 @@ Partial Class Form1
         Me.lblRailBadge.Font = New System.Drawing.Font("Corbel", 8.25!, System.Drawing.FontStyle.Bold)
         Me.lblRailBadge.ForeColor = System.Drawing.Color.FromArgb(52, 211, 153)
         Me.lblRailBadge.Location = New System.Drawing.Point(24, 12)
-        Me.lblRailBadge.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblRailBadge.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblRailBadge.Name = "lblRailBadge"
         Me.lblRailBadge.Size = New System.Drawing.Size(120, 14)
         Me.lblRailBadge.TabIndex = 0
@@ -190,7 +190,7 @@ Partial Class Form1
         Me.lblRailTitle.ForeColor = System.Drawing.Color.FromArgb(236, 239, 244)
         Me.lblRailTitle.Location = New System.Drawing.Point(24, 28)
         Me.lblRailTitle.AutoSize = False
-        Me.lblRailTitle.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblRailTitle.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblRailTitle.Name = "lblRailTitle"
         Me.lblRailTitle.Size = New System.Drawing.Size(320, 34)
         Me.lblRailTitle.TabIndex = 1
@@ -242,7 +242,7 @@ Partial Class Form1
         Me.lblRailHint.ForeColor = System.Drawing.Color.FromArgb(141, 152, 170)
         Me.lblRailHint.Location = New System.Drawing.Point(16, 232)
         Me.lblRailHint.AutoSize = False
-        Me.lblRailHint.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblRailHint.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblRailHint.Name = "lblRailHint"
         Me.lblRailHint.Size = New System.Drawing.Size(456, 32)
         Me.lblRailHint.TabIndex = 5
@@ -256,7 +256,7 @@ Partial Class Form1
         Me.lblRailAuthor.ForeColor = System.Drawing.Color.FromArgb(236, 239, 244)
         Me.lblRailAuthor.Location = New System.Drawing.Point(380, 18)
         Me.lblRailAuthor.AutoSize = False
-        Me.lblRailAuthor.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblRailAuthor.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblRailAuthor.Name = "lblRailAuthor"
         Me.lblRailAuthor.Size = New System.Drawing.Size(280, 22)
         Me.lblRailAuthor.TabIndex = 6
@@ -269,7 +269,7 @@ Partial Class Form1
         Me.lblRailCourse.ForeColor = System.Drawing.Color.FromArgb(141, 152, 170)
         Me.lblRailCourse.Location = New System.Drawing.Point(380, 42)
         Me.lblRailCourse.AutoSize = False
-        Me.lblRailCourse.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblRailCourse.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblRailCourse.Name = "lblRailCourse"
         Me.lblRailCourse.Size = New System.Drawing.Size(280, 18)
         Me.lblRailCourse.TabIndex = 7
@@ -729,7 +729,7 @@ Partial Class Form1
         Me.lblCounter.Size = New System.Drawing.Size(300, 16)
         Me.lblCounter.TabIndex = 1
         Me.lblCounter.Text = "0 action(s) performed"
-        Me.lblCounter.TextAlign = System.Windows.Forms.ContentAlignment.MiddleRight
+        Me.lblCounter.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Form1
         '

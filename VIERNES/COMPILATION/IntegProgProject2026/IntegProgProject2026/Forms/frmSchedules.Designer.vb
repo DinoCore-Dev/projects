@@ -73,7 +73,7 @@ Private Sub InitializeComponent()
         Me.lblScheduleID.AutoSize = False
         Me.lblScheduleID.Location = New System.Drawing.Point(14, 26)
         Me.lblScheduleID.ForeColor = System.Drawing.Color.FromArgb(190, 198, 211)
-        Me.lblScheduleID.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblScheduleID.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblScheduleID.Name = "lblScheduleID"
         Me.lblScheduleID.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblScheduleID.Size = New System.Drawing.Size(295, 16)
@@ -97,7 +97,7 @@ Private Sub InitializeComponent()
         Me.lblCourseID.AutoSize = False
         Me.lblCourseID.Location = New System.Drawing.Point(333, 26)
         Me.lblCourseID.ForeColor = System.Drawing.Color.FromArgb(190, 198, 211)
-        Me.lblCourseID.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblCourseID.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblCourseID.Name = "lblCourseID"
         Me.lblCourseID.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblCourseID.Size = New System.Drawing.Size(295, 16)
@@ -120,7 +120,7 @@ Private Sub InitializeComponent()
         Me.lblTeacherID.AutoSize = False
         Me.lblTeacherID.Location = New System.Drawing.Point(652, 26)
         Me.lblTeacherID.ForeColor = System.Drawing.Color.FromArgb(190, 198, 211)
-        Me.lblTeacherID.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblTeacherID.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblTeacherID.Name = "lblTeacherID"
         Me.lblTeacherID.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblTeacherID.Size = New System.Drawing.Size(295, 16)
@@ -143,7 +143,7 @@ Private Sub InitializeComponent()
         Me.lblDay.AutoSize = False
         Me.lblDay.Location = New System.Drawing.Point(14, 80)
         Me.lblDay.ForeColor = System.Drawing.Color.FromArgb(190, 198, 211)
-        Me.lblDay.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblDay.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblDay.Name = "lblDay"
         Me.lblDay.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblDay.Size = New System.Drawing.Size(295, 16)
@@ -168,7 +168,7 @@ Private Sub InitializeComponent()
         Me.lblTime.AutoSize = False
         Me.lblTime.Location = New System.Drawing.Point(333, 80)
         Me.lblTime.ForeColor = System.Drawing.Color.FromArgb(190, 198, 211)
-        Me.lblTime.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblTime.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblTime.Name = "lblTime"
         Me.lblTime.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblTime.Size = New System.Drawing.Size(295, 16)
@@ -193,7 +193,7 @@ Private Sub InitializeComponent()
         Me.lblRoom.AutoSize = False
         Me.lblRoom.Location = New System.Drawing.Point(652, 80)
         Me.lblRoom.ForeColor = System.Drawing.Color.FromArgb(190, 198, 211)
-        Me.lblRoom.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblRoom.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblRoom.Name = "lblRoom"
         Me.lblRoom.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblRoom.Size = New System.Drawing.Size(295, 16)
@@ -332,7 +332,7 @@ Private Sub InitializeComponent()
         Me.lblDatabase.AutoSize = False
         Me.lblDatabase.Location = New System.Drawing.Point(12, 458)
         Me.lblDatabase.ForeColor = System.Drawing.Color.FromArgb(141, 152, 170)
-        Me.lblDatabase.TextAlign = System.Windows.Forms.ContentAlignment.MiddleLeft
+        Me.lblDatabase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.lblDatabase.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblDatabase.Name = "lblDatabase"
         Me.lblDatabase.Font = New System.Drawing.Font("Corbel", 9.0!)

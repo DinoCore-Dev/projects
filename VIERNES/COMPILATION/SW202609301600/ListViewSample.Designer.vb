@@ -68,7 +68,7 @@ Partial Class ListViewSample
         Me.lblPathCaption.AutoSize = False
         Me.lblPathCaption.Font = New System.Drawing.Font("Corbel", 9.0!, System.Drawing.FontStyle.Bold)
         Me.lblPathCaption.ForeColor = System.Drawing.Color.FromArgb(141, 152, 170)
-        Me.lblPathCaption.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblPathCaption.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblPathCaption.Name = "lblPathCaption"
         Me.lblPathCaption.TabIndex = 1
         '
@@ -109,7 +109,7 @@ Partial Class ListViewSample
         Me.lbl.AutoSize = False
         Me.lbl.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lbl.ForeColor = System.Drawing.Color.FromArgb(141, 152, 170)
-        Me.lbl.TextAlign = System.Windows.Forms.ContentAlignment.MiddleLeft
+        Me.lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.lbl.Name = "lbl"
         Me.lbl.TabIndex = 4
         '
@@ -146,7 +146,7 @@ Partial Class ListViewSample
         Me.lblRailTitle.AutoSize = False
         Me.lblRailTitle.Font = New System.Drawing.Font("Corbel", 15.0!, System.Drawing.FontStyle.Bold)
         Me.lblRailTitle.ForeColor = System.Drawing.Color.FromArgb(236, 239, 244)
-        Me.lblRailTitle.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblRailTitle.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblRailTitle.Name = "lblRailTitle"
         Me.lblRailTitle.TabIndex = 7
         '
@@ -158,7 +158,7 @@ Partial Class ListViewSample
         Me.lblRailSub.AutoSize = False
         Me.lblRailSub.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblRailSub.ForeColor = System.Drawing.Color.FromArgb(141, 152, 170)
-        Me.lblRailSub.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblRailSub.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblRailSub.Name = "lblRailSub"
         Me.lblRailSub.TabIndex = 8
         '
@@ -230,7 +230,7 @@ Partial Class ListViewSample
         Me.lblAuthor.AutoSize = False
         Me.lblAuthor.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblAuthor.ForeColor = System.Drawing.Color.FromArgb(141, 152, 170)
-        Me.lblAuthor.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblAuthor.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblAuthor.Name = "lblAuthor"
         Me.lblAuthor.TabIndex = 13
         '

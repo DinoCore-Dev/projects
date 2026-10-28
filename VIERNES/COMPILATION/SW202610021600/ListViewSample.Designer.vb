@@ -158,7 +158,7 @@ Partial Class ListViewSample
         Me.lbl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lbl.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lbl.ForeColor = System.Drawing.Color.FromArgb(141, 152, 170)
-        Me.lbl.TextAlign = System.Windows.Forms.ContentAlignment.MiddleRight
+        Me.lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.lbl.Name = "lbl"
         Me.lbl.TabIndex = 8
         '

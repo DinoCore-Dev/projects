@@ -50,7 +50,7 @@ Partial Class frmAbout
         Me.lblName.Font = New System.Drawing.Font("Corbel", 20.0!, System.Drawing.FontStyle.Bold)
         Me.lblName.Location = New System.Drawing.Point(28, 46)
         Me.lblName.ForeColor = System.Drawing.Color.FromArgb(236, 239, 244)
-        Me.lblName.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblName.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblName.Name = "lblName"
         Me.lblName.Size = New System.Drawing.Size(370, 34)
         Me.lblName.TabIndex = 1
@@ -61,7 +61,7 @@ Partial Class frmAbout
         Me.lblCourse.AutoSize = False
         Me.lblCourse.Location = New System.Drawing.Point(28, 92)
         Me.lblCourse.ForeColor = System.Drawing.Color.FromArgb(110, 231, 183)
-        Me.lblCourse.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblCourse.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblCourse.Name = "lblCourse"
         Me.lblCourse.Font = New System.Drawing.Font("Corbel", 10.5!)
         Me.lblCourse.Size = New System.Drawing.Size(370, 20)
@@ -73,7 +73,7 @@ Partial Class frmAbout
         Me.lblAddress.AutoSize = False
         Me.lblAddress.Location = New System.Drawing.Point(28, 120)
         Me.lblAddress.ForeColor = System.Drawing.Color.FromArgb(190, 198, 211)
-        Me.lblAddress.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblAddress.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblAddress.Name = "lblAddress"
         Me.lblAddress.Font = New System.Drawing.Font("Corbel", 10.5!)
         Me.lblAddress.Size = New System.Drawing.Size(370, 20)
@@ -85,7 +85,7 @@ Partial Class frmAbout
         Me.lblSkills.AutoSize = False
         Me.lblSkills.Location = New System.Drawing.Point(28, 148)
         Me.lblSkills.ForeColor = System.Drawing.Color.FromArgb(190, 198, 211)
-        Me.lblSkills.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblSkills.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblSkills.Name = "lblSkills"
         Me.lblSkills.Font = New System.Drawing.Font("Corbel", 10.5!)
         Me.lblSkills.Size = New System.Drawing.Size(370, 20)
@@ -97,7 +97,7 @@ Partial Class frmAbout
         Me.lblQuote.Location = New System.Drawing.Point(20, 8)
         Me.lblQuote.AutoSize = False
         Me.lblQuote.ForeColor = System.Drawing.Color.FromArgb(236, 239, 244)
-        Me.lblQuote.TextAlign = System.Windows.Forms.ContentAlignment.MiddleLeft
+        Me.lblQuote.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.lblQuote.Name = "lblQuote"
         Me.lblQuote.Size = New System.Drawing.Size(550, 58)
         Me.lblQuote.Font = New System.Drawing.Font("Corbel", 11.0!, System.Drawing.FontStyle.Bold)

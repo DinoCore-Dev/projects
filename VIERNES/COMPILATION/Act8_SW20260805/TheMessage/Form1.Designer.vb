@@ -145,7 +145,7 @@ Partial Class Form1
         Me.lblAuthor.Size = New System.Drawing.Size(206, 44)
         Me.lblAuthor.TabIndex = 2
         Me.lblAuthor.Text = "Author : Viernes, Mark Syrel  |  BSIT 3B"
-        Me.lblAuthor.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblAuthor.TextAlign = System.Drawing.ContentAlignment.TopLeft
         '
         'pnlCompose
         '

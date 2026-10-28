@@ -138,7 +138,7 @@ Partial Class Form1
         Me.lblApp.Font = New System.Drawing.Font("Corbel", 14.0!, System.Drawing.FontStyle.Bold)
         Me.lblApp.ForeColor = System.Drawing.Color.FromArgb(236, 239, 244)
         Me.lblApp.Location = New System.Drawing.Point(20, 8)
-        Me.lblApp.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblApp.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblApp.Name = "lblApp"
         Me.lblApp.Size = New System.Drawing.Size(270, 28)
         Me.lblApp.TabIndex = 0
@@ -150,7 +150,7 @@ Partial Class Form1
         Me.lblHeaderSub.Font = New System.Drawing.Font("Corbel", 6.5!)
         Me.lblHeaderSub.ForeColor = System.Drawing.Color.FromArgb(110, 231, 183)
         Me.lblHeaderSub.Location = New System.Drawing.Point(22, 36)
-        Me.lblHeaderSub.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblHeaderSub.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblHeaderSub.Name = "lblHeaderSub"
         Me.lblHeaderSub.Size = New System.Drawing.Size(270, 16)
         Me.lblHeaderSub.TabIndex = 1
@@ -167,7 +167,7 @@ Partial Class Form1
         Me.lblAuthor.Size = New System.Drawing.Size(380, 18)
         Me.lblAuthor.TabIndex = 2
         Me.lblAuthor.Text = "Viernes, Mark Syrel  |  BSIT 3B"
-        Me.lblAuthor.TextAlign = System.Windows.Forms.ContentAlignment.MiddleRight
+        Me.lblAuthor.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'btnBack
         '
@@ -358,7 +358,7 @@ Partial Class Form1
         Me.lblSplitInfo.Size = New System.Drawing.Size(136, 120)
         Me.lblSplitInfo.TabIndex = 4
         Me.lblSplitInfo.Text = "splitRoot : 240 px   |   splitWorkspace : 340 px"
-        Me.lblSplitInfo.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblSplitInfo.TextAlign = System.Drawing.ContentAlignment.TopLeft
         '
         'splRoot
         '
@@ -614,7 +614,7 @@ Partial Class Form1
         Me.lblStatus.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblStatus.ForeColor = System.Drawing.Color.FromArgb(141, 152, 170)
         Me.lblStatus.Location = New System.Drawing.Point(14, 6)
-        Me.lblStatus.TextAlign = System.Windows.Forms.ContentAlignment.MiddleLeft
+        Me.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.lblStatus.Name = "lblStatus"
         Me.lblStatus.Size = New System.Drawing.Size(480, 18)
         Me.lblStatus.TabIndex = 0
@@ -631,7 +631,7 @@ Partial Class Form1
         Me.lblCount.Size = New System.Drawing.Size(280, 18)
         Me.lblCount.TabIndex = 1
         Me.lblCount.Text = "0 item(s)"
-        Me.lblCount.TextAlign = System.Windows.Forms.ContentAlignment.MiddleRight
+        Me.lblCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Form1
         '

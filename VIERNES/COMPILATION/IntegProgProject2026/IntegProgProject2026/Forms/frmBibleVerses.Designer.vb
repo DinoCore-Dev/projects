@@ -81,7 +81,7 @@ Private Sub InitializeComponent()
         Me.lblVerseID.AutoSize = False
         Me.lblVerseID.Location = New System.Drawing.Point(14, 26)
         Me.lblVerseID.ForeColor = System.Drawing.Color.FromArgb(190, 198, 211)
-        Me.lblVerseID.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblVerseID.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblVerseID.Name = "lblVerseID"
         Me.lblVerseID.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblVerseID.Size = New System.Drawing.Size(215, 16)
@@ -105,7 +105,7 @@ Private Sub InitializeComponent()
         Me.lblBook.AutoSize = False
         Me.lblBook.Location = New System.Drawing.Point(253, 26)
         Me.lblBook.ForeColor = System.Drawing.Color.FromArgb(190, 198, 211)
-        Me.lblBook.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblBook.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblBook.Name = "lblBook"
         Me.lblBook.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblBook.Size = New System.Drawing.Size(215, 16)
@@ -128,7 +128,7 @@ Private Sub InitializeComponent()
         Me.lblChapter.AutoSize = False
         Me.lblChapter.Location = New System.Drawing.Point(492, 26)
         Me.lblChapter.ForeColor = System.Drawing.Color.FromArgb(190, 198, 211)
-        Me.lblChapter.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblChapter.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblChapter.Name = "lblChapter"
         Me.lblChapter.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblChapter.Size = New System.Drawing.Size(215, 16)
@@ -151,7 +151,7 @@ Private Sub InitializeComponent()
         Me.lblVerse.AutoSize = False
         Me.lblVerse.Location = New System.Drawing.Point(731, 26)
         Me.lblVerse.ForeColor = System.Drawing.Color.FromArgb(190, 198, 211)
-        Me.lblVerse.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblVerse.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblVerse.Name = "lblVerse"
         Me.lblVerse.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblVerse.Size = New System.Drawing.Size(215, 16)
@@ -174,7 +174,7 @@ Private Sub InitializeComponent()
         Me.lblContent.AutoSize = False
         Me.lblContent.Location = New System.Drawing.Point(14, 80)
         Me.lblContent.ForeColor = System.Drawing.Color.FromArgb(190, 198, 211)
-        Me.lblContent.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblContent.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblContent.Name = "lblContent"
         Me.lblContent.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblContent.Size = New System.Drawing.Size(215, 16)
@@ -197,7 +197,7 @@ Private Sub InitializeComponent()
         Me.lblTranslation.AutoSize = False
         Me.lblTranslation.Location = New System.Drawing.Point(253, 80)
         Me.lblTranslation.ForeColor = System.Drawing.Color.FromArgb(190, 198, 211)
-        Me.lblTranslation.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblTranslation.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblTranslation.Name = "lblTranslation"
         Me.lblTranslation.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblTranslation.Size = New System.Drawing.Size(215, 16)
@@ -220,7 +220,7 @@ Private Sub InitializeComponent()
         Me.lblRemarks.AutoSize = False
         Me.lblRemarks.Location = New System.Drawing.Point(492, 80)
         Me.lblRemarks.ForeColor = System.Drawing.Color.FromArgb(190, 198, 211)
-        Me.lblRemarks.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblRemarks.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblRemarks.Name = "lblRemarks"
         Me.lblRemarks.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblRemarks.Size = New System.Drawing.Size(215, 16)
@@ -243,7 +243,7 @@ Private Sub InitializeComponent()
         Me.lblCategory.AutoSize = False
         Me.lblCategory.Location = New System.Drawing.Point(731, 80)
         Me.lblCategory.ForeColor = System.Drawing.Color.FromArgb(190, 198, 211)
-        Me.lblCategory.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblCategory.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblCategory.Name = "lblCategory"
         Me.lblCategory.Font = New System.Drawing.Font("Corbel", 9.0!)
         Me.lblCategory.Size = New System.Drawing.Size(215, 16)
@@ -382,7 +382,7 @@ Private Sub InitializeComponent()
         Me.lblDatabase.AutoSize = False
         Me.lblDatabase.Location = New System.Drawing.Point(12, 458)
         Me.lblDatabase.ForeColor = System.Drawing.Color.FromArgb(141, 152, 170)
-        Me.lblDatabase.TextAlign = System.Windows.Forms.ContentAlignment.MiddleLeft
+        Me.lblDatabase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.lblDatabase.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblDatabase.Name = "lblDatabase"
         Me.lblDatabase.Font = New System.Drawing.Font("Corbel", 9.0!)

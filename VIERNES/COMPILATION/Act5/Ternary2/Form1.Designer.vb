@@ -111,7 +111,7 @@ Partial Class Form1
         Me.lblRailBadge.Font = New System.Drawing.Font("Corbel", 9.0!, System.Drawing.FontStyle.Bold)
         Me.lblRailBadge.ForeColor = System.Drawing.Color.FromArgb(52, 211, 153)
         Me.lblRailBadge.Location = New System.Drawing.Point(480, 24)
-        Me.lblRailBadge.TextAlign = System.Windows.Forms.ContentAlignment.MiddleRight
+        Me.lblRailBadge.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.lblRailBadge.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblRailBadge.Name = "lblRailBadge"
         Me.lblRailBadge.Size = New System.Drawing.Size(316, 18)
@@ -157,7 +157,7 @@ Partial Class Form1
         Me.lblRailAuthor.ForeColor = System.Drawing.Color.FromArgb(236, 239, 244)
         Me.lblRailAuthor.Location = New System.Drawing.Point(24, 11)
         Me.lblRailAuthor.AutoSize = False
-        Me.lblRailAuthor.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblRailAuthor.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblRailAuthor.Name = "lblRailAuthor"
         Me.lblRailAuthor.Size = New System.Drawing.Size(360, 24)
         Me.lblRailAuthor.TabIndex = 4
@@ -170,7 +170,7 @@ Partial Class Form1
         Me.lblRailCourse.ForeColor = System.Drawing.Color.FromArgb(141, 152, 170)
         Me.lblRailCourse.Location = New System.Drawing.Point(24, 36)
         Me.lblRailCourse.AutoSize = False
-        Me.lblRailCourse.TextAlign = System.Windows.Forms.ContentAlignment.TopLeft
+        Me.lblRailCourse.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblRailCourse.Name = "lblRailCourse"
         Me.lblRailCourse.Size = New System.Drawing.Size(360, 20)
         Me.lblRailCourse.TabIndex = 5
@@ -315,7 +315,7 @@ Partial Class Form1
         Me.lblCard1Value.Size = New System.Drawing.Size(216, 56)
         Me.lblCard1Value.TabIndex = 1
         Me.lblCard1Value.Text = "--"
-        Me.lblCard1Value.TextAlign = System.Windows.Forms.ContentAlignment.MiddleCenter
+        Me.lblCard1Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblCard1Note
         '
@@ -327,7 +327,7 @@ Partial Class Form1
         Me.lblCard1Note.Size = New System.Drawing.Size(200, 18)
         Me.lblCard1Note.TabIndex = 2
         Me.lblCard1Note.Text = "passed / failed"
-        Me.lblCard1Note.TextAlign = System.Windows.Forms.ContentAlignment.MiddleCenter
+        Me.lblCard1Note.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pnlCard2
         '
@@ -362,7 +362,7 @@ Partial Class Form1
         Me.lblCard2Value.Size = New System.Drawing.Size(216, 56)
         Me.lblCard2Value.TabIndex = 1
         Me.lblCard2Value.Text = "--"
-        Me.lblCard2Value.TextAlign = System.Windows.Forms.ContentAlignment.MiddleCenter
+        Me.lblCard2Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblCard2Note
         '
@@ -374,7 +374,7 @@ Partial Class Form1
         Me.lblCard2Note.Size = New System.Drawing.Size(200, 18)
         Me.lblCard2Note.TabIndex = 2
         Me.lblCard2Note.Text = "letter grade"
-        Me.lblCard2Note.TextAlign = System.Windows.Forms.ContentAlignment.MiddleCenter
+        Me.lblCard2Note.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pnlCard3
         '
@@ -409,7 +409,7 @@ Partial Class Form1
         Me.lblCard3Value.Size = New System.Drawing.Size(216, 56)
         Me.lblCard3Value.TabIndex = 1
         Me.lblCard3Value.Text = "--"
-        Me.lblCard3Value.TextAlign = System.Windows.Forms.ContentAlignment.MiddleCenter
+        Me.lblCard3Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblCard3Note
         '
@@ -421,7 +421,7 @@ Partial Class Form1
         Me.lblCard3Note.Size = New System.Drawing.Size(200, 18)
         Me.lblCard3Note.TabIndex = 2
         Me.lblCard3Note.Text = "numeric rating"
-        Me.lblCard3Note.TextAlign = System.Windows.Forms.ContentAlignment.MiddleCenter
+        Me.lblCard3Note.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pnlInfo
         '
