@@ -1,9 +1,9 @@
-# Activity Compilation - twelve students, twelve separate packages
+# Activity Compilation - thirteen students, thirteen separate packages
 
 Repository for the **Integrative Programming** activity compilation (13 activities each),
 built for **Visual Studio 2010 / .NET Framework 4.0**.
 
-The repository holds **twelve separate, complete compilations** - one folder and one zip each:
+The repository holds **thirteen separate, complete compilations** - one folder and one zip each:
 
 | Student | Folder (source) | Download zip (one click) |
 |---------|-----------------|--------------|
@@ -19,10 +19,11 @@ The repository holds **twelve separate, complete compilations** - one folder and
 | **Alap, Adrian** - BSIT 3B | `ALAP/` | [**Download**](Alap_Adrian_Compilation.zip?raw=true) `Alap_Adrian_Compilation.zip` |
 | **Gaudan, Darwin** - BSIT 3B | `GAUDAN/` | [**Download**](Gaudan_Darwin_Compilation.zip?raw=true) `Gaudan_Darwin_Compilation.zip` |
 | **Mayo, Mhike Charles** - BSIT 3B | `MAYO/` | [**Download**](Mayo_MhikeCharles_Compilation.zip?raw=true) `Mayo_MhikeCharles_Compilation.zip` |
+| **Viernes, Mark Syrel** - BSIT 3B | `VIERNES/` | [**Download**](Viernes_MarkSyrel_Compilation.zip?raw=true) `Viernes_MarkSyrel_Compilation.zip` |
 
-All twelve in one file: [**Download All_Compilations.zip**](All_Compilations.zip?raw=true) (the twelve student zips).
+All thirteen in one file: [**Download All_Compilations.zip**](All_Compilations.zip?raw=true) (the thirteen student zips).
 
-All twelve zips have the same clean layout: the DOCX and one numbered
+All thirteen zips have the same clean layout: the DOCX and one numbered
 folder per activity (`01_ ... 13_ ...`). There is no PDF, no `START_HERE.txt` and no `.md` file and no `Form_Designs/` folder in
 the zip, and no nested second zip. (The PDF and `Master_Prompt.md` stay in each identity's `docs/`
 folder in the repo.)
@@ -70,7 +71,7 @@ blank lines / author / `BSIT 3B` / `Subject  :  Integrative Programming` /
 
 > **Note on branches:** this Arena session is bound to one branch
 > (`arena/bf05a101-projects`) and cannot create or push a second branch, so the
-> compilations are separated **inside this branch** by folder (`SONAJO/`, `MANGALILI/`, `LUCENA/`, `DEGUZMAN/`, `PASTOR/`, `MARCOS/`, `ANICIETE/`, `MARCELO/`, `ATIENZA/`, `ALAP/`, `GAUDAN/`, `MAYO/`)
+> compilations are separated **inside this branch** by folder (`SONAJO/`, `MANGALILI/`, `LUCENA/`, `DEGUZMAN/`, `PASTOR/`, `MARCOS/`, `ANICIETE/`, `MARCELO/`, `ATIENZA/`, `ALAP/`, `GAUDAN/`, `MAYO/`, `VIERNES/`)
 > and by zip name. Every file of each student lives only in their own folder - nothing is
 > shared or overwritten.
 
@@ -92,6 +93,7 @@ blank lines / author / `BSIT 3B` / `Subject  :  Integrative Programming` /
 | Alap, Adrian | `ALAP/` | maroon / red | 9 | "A journey of a thousand miles begins with a single step." - Lao Tzu (*Tao Te Ching*) |
 | Gaudan, Darwin | `GAUDAN/` | moss / forest green | 10 | "Well done is better than well said." - Benjamin Franklin (*Poor Richard's Almanack*, 1737) |
 | Mayo, Mhike Charles | `MAYO/` | gold / bronze (dark) | 11 | "Education is the passport to the future, for tomorrow belongs to those who prepare for it today." - Malcolm X (1964) |
+| Viernes, Mark Syrel | `VIERNES/` | graphite + mint (dark, full redesign) | 12 | "If I have seen further, it is by standing on the shoulders of giants." - Isaac Newton |
 
 Each identity also has its own app name (**<Surname> Explorer**), its own name / BSIT 3B on every
 console header, banner, author label, About form and MDI status strip, and its own photo.
@@ -105,7 +107,7 @@ other side of the form, button rows reversed, the rail moved to the right, heade
 author swapped, grid and details swapped on the CRUD forms, photo and text swapped on the About
 form, menu items re-ordered, and so on. Only `Location`, `Size`, `Dock`, `TextAlign` and the
 order of menu items change; the control names, and therefore the code-behind, stay the same.
-Because the twelve codes are all different, no two identities share a layout, and the Form
+Because the thirteen codes are all different, no two identities share a layout, and the Form
 Design and Sample Output pictures in each document show that identity's own arrangement.
 The script runs once per folder (marker `tools/layout_code.txt`).
 
@@ -131,11 +133,19 @@ header that the wider font would push out of its box.
 | 9 | Alap | Tahoma | heavy border |
 | 10 | Gaudan | Trebuchet MS | inverse (dark fill, light border) |
 | 11 | Mayo | Candara | halo (thick pale frame) |
+| 12 | Viernes | Corbel | neon outline on a dark fill |
 
 The Form Design / Sample Output pictures are drawn with metric-compatible free fonts (Cousine,
-Gelasio, Carlito, Caladea, Arimo, Tinos, Inconsolata, Lato, Cabin, Open Sans) kept in each `tools/fonts/`;
+Gelasio, Carlito, Caladea, Arimo, Tinos, Inconsolata, Lato, Cabin, Nunito Sans, Open Sans) kept in each `tools/fonts/`;
 the real VB projects reference the Windows fonts only. Header text of list / grid columns is clipped with ".." when it does not fit, like the real control. Also in the repo root:
-`All_Compilations.zip` contains the twelve student zips.
+`All_Compilations.zip` contains the thirteen student zips.
+
+**Viernes (code 12) is a full redesign, not a re-arrangement.** Every form of Activities 4-13 has a new composition
+(for example a top header + side rail in Act 4, a bottom bar in Act 5, a docked sidebar and a status badge in Acts 6 and 8,
+an info-left / button-bottom tab form in Act 7, a left button rail in Act 9, a horizontal title bar with two columns in Act 10,
+a vertical tool rail in Act 10 Form 2 and Act 12, button bars in Act 11, a full-width grid above the field grid in Act 13 and a
+photo-right About card). Control names never change, so the code-behind still works. It is reproducible with
+`VIERNES/tools/apply_redesign.py` (see the docstring).
 
 ## Activities (same 13 for every student)
 
@@ -175,7 +185,7 @@ back to its own XML file so the program still runs (`lblDatabase` shows which on
 * Submitted to: Drymlad Rebaja
 * School year: 2026 - 2027
 
-The other eleven identities (Mangalili, Lucena, Deguzman, Pastor, Marcos, Aniciete, Marcelo, Atienza, Alap, Gaudan, Mayo) carry
+The other twelve identities (Mangalili, Lucena, Deguzman, Pastor, Marcos, Aniciete, Marcelo, Atienza, Alap, Gaudan, Mayo, Viernes) carry
 the same details with their own author / course identity. Addresses on the About form:
 
 | Student | Address |
@@ -190,6 +200,7 @@ the same details with their own author / course identity. Addresses on the About
 | Alap, Adrian | Casili, Mallig, Isabela |
 | Gaudan, Darwin | Santos, Quezon, Isabela |
 | Mayo, Mhike Charles | Catalina, Quirino, Isabela |
+| Viernes, Mark Syrel | Alunan, Quezon, Isabela |
 | Lucena, Lyka Joy | Villa Concepcion, Roxas, Isabela |
 | Deguzman, Liza Gaile | Purok Pag-asa, San Pedro, Mallig, Isabela |
 

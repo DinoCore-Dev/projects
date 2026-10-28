@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """Font and button-style variants for the form activities (Acts 4-13).
 
-Every identity gets its own STYLE CODE (0..11).  A style is
+Every identity gets its own STYLE CODE (0..12).  A style is
 
     * one font family that Visual Studio 2010 offers on any Windows PC
       (Segoe UI, Courier New, Georgia, Verdana, Calibri, Cambria, Arial,
-       Times New Roman, Consolas, Tahoma, Trebuchet MS, Candara), and
+       Times New Roman, Consolas, Tahoma, Trebuchet MS, Candara, Corbel), and
     * one button look: borderless, 2px border, outline, 3D, popup, thin, native,
       3px outline, tonal, heavy border, inverse (dark fill, light border) or halo (thick pale frame).
 
@@ -20,7 +20,7 @@ What the script rewrites inside the *.Designer.vb files (and the two forms built
 Control names, positions and event handlers stay the same, so the code-behind is untouched.
 Run once per identity folder (a marker file tools/style_code.txt stops a second run):
 
-    python3 tools/style_variants.py <STYLE_CODE 0-11>
+    python3 tools/style_variants.py <STYLE_CODE 0-12>
 """
 import colorsys
 import glob
@@ -47,6 +47,7 @@ STYLES = {
     9: ("Tahoma", 0.95, "heavy"),
     10: ("Trebuchet MS", 0.98, "inverse"),
     11: ("Candara", 1.05, "halo"),
+    12: ("Corbel", 1.00, "neon"),
 }
 MIN_SIZE = 7.0
 FONT_KINDS = ("Label", "Button", "TextBox", "ComboBox", "DateTimePicker", "DataGridView", "GroupBox",
@@ -171,7 +172,7 @@ def restyle_one(text, name, style, accent):
     back = parse_color(prop(text, name, "BackColor"))
     fore = parse_color(prop(text, name, "ForeColor"))
     styled = flat is not None            # the designed (coloured) buttons
-    if style == "solid":
+    if style in ("solid", "neon"):
         return text
     indent = "        "
     m = re.search(r"^([ \t]*)Me\.%s\.(?:Font|Location|Name) = " % re.escape(name), text, re.M)

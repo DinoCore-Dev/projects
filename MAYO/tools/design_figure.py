@@ -31,6 +31,7 @@ FONT_TABLE = {
     "Tahoma": ("DejaVuSans.ttf", "DejaVuSans-Bold.ttf", 0.92),
     "Trebuchet MS": ("Lato_400Regular.ttf", "Lato_700Bold.ttf", 1.03),
     "Candara": ("Cabin_400Regular.ttf", "Cabin_700Bold.ttf", 1.0),
+    "Corbel": ("NunitoSans_400Regular.ttf", "NunitoSans_700Bold.ttf", 0.94),
     "Microsoft Sans Serif": ("Arimo_400Regular.ttf", "Arimo_700Bold.ttf", 0.97),
     "Lucida Console": ("DejaVuSansMono.ttf", "DejaVuSansMono-Bold.ttf", 0.9),
 }
@@ -260,6 +261,9 @@ def parse_designer(path):
     each(r"^\s*Me\.(\w+)\.Size = New System\.Drawing\.Size\((\d+), (\d+)\)", size)
     each(r'^\s*Me\.(\w+)\.Text = (".*?)\s*$', text)
     each(r"^\s*Me\.(\w+)\.BackColor = (System\.Drawing\.Color\.(?:FromArgb\(\d+, \d+, \d+\)|\w+))\s*$", back)
+    def form_back(m):
+        form.back = _color(m.group(1))
+    each(r"^\s*Me\.BackColor = (System\.Drawing\.Color\.(?:FromArgb\(\d+, \d+, \d+\)|\w+))\s*$", form_back)
     each(r"^\s*Me\.(\w+)\.ForeColor = (System\.Drawing\.Color\.(?:FromArgb\(\d+, \d+, \d+\)|\w+))\s*$", fore)
     each(r'^\s*Me\.(\w+)\.Font = New System\.Drawing\.Font\("([^"]+)", ([\d.]+)!(?:, System\.Drawing\.FontStyle\.(\w+))?\)', font)
     each(r"^\s*Me\.(\w+)\.FlatStyle = System\.Windows\.Forms\.FlatStyle\.(\w+)\s*$", flatstyle)
@@ -638,7 +642,7 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
                 if page_rect is None:
                     page_rect = (x + 2, y + 22, w - 4, h - 24)
                 page_box = screen(page_rect)
-                draw.rectangle(page_box, fill=(255, 255, 255))
+                draw.rectangle(page_box, fill=page.back or (255, 255, 255))
                 for child in page.children:
                     draw_control(child)
             return
@@ -646,7 +650,10 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
             return
         elif kind in ("MenuStrip", "ToolStrip", "StatusStrip"):
             bar = back or (240, 240, 240)
-            draw.rectangle(box, fill=bar, outline=(214, 219, 225), width=SCALE)
+            dark_bar = sum(bar) < 330
+            ink = (214, 220, 230) if dark_bar else (45, 55, 65)
+            ink_st = (170, 180, 195) if dark_bar else (60, 70, 80)
+            draw.rectangle(box, fill=bar, outline=(54, 60, 74) if dark_bar else (214, 219, 225), width=SCALE)
             f = font(9)
             cursor = box[0] + 6 * SCALE
             items = [k for k in c.children if controls.get(k) is not None]
@@ -660,9 +667,9 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
                     yy = box[1] + (h * SCALE - 11 * SCALE) / 2
                     if item_key == items[-1] and len(items) > 1:
                         draw.text((box[2] - text_w - 8 * SCALE, yy), label, font=f,
-                                  fill=(60, 70, 80))
+                                  fill=ink_st)
                     else:
-                        draw.text((cursor, yy), label, font=f, fill=(60, 70, 80))
+                        draw.text((cursor, yy), label, font=f, fill=ink_st)
                         cursor += text_w + 18 * SCALE
                     continue
                 pad = 10 * SCALE
@@ -672,7 +679,7 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
                 if kind == "MenuStrip" and item_key != items[0]:
                     pad = 10 * SCALE
                 draw.text((cursor + pad, box[1] + (h * SCALE - 11 * SCALE) / 2), label,
-                          font=f, fill=(45, 55, 65))
+                          font=f, fill=ink)
                 cursor += text_w + 2 * pad + 6 * SCALE
             return  # the items are already drawn, skip the generic recursion
         elif kind in ("Panel", "GroupBox", "Form", "PictureBox", "SplitContainer"):
@@ -680,7 +687,8 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
             if fill:
                 draw.rectangle(box, fill=fill)
             if c.border in ("FixedSingle",) or kind in ("GroupBox",):
-                draw.rectangle(box, outline=line, width=SCALE)
+                dark_surface = back is not None and sum(back) < 330
+                draw.rectangle(box, outline=(96, 100, 108) if dark_surface else line, width=SCALE)
             elif c.border == "Fixed3D":
                 draw.rectangle(box, outline=(190, 195, 202), width=SCALE)
                 draw.rectangle([box[0] + SCALE, box[1] + SCALE, box[2] - SCALE, box[3] - SCALE],
@@ -717,7 +725,7 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
             if back:
                 draw.rectangle(box, fill=back)
             if c.border == "FixedSingle":
-                draw.rectangle(box, outline=(200, 205, 212), width=SCALE)
+                draw.rectangle(box, outline=(96, 100, 108) if (back is not None and sum(back) < 330) else (200, 205, 212), width=SCALE)
             txt = c.text
             if txt:
                 f = font(c.font_size, c.bold)
@@ -821,10 +829,13 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
             rows = int((h - 4) // 18)
             header_labels = c.header or ["Name", "Type", "Size", "Modified"]
             start_row = 0
+            dgv_dark = kind == "DataGridView" and back is not None and sum(back) < 330
+            cell_ink = c.fore or ((226, 232, 240) if dgv_dark else (35, 45, 55))
             if kind in ("ListView", "DataGridView"):
                 header_h = 22 * SCALE
-                draw.rectangle([box[0], box[1], box[2], box[1] + header_h], fill=(246, 247, 249),
-                               outline=(220, 224, 230), width=SCALE)
+                draw.rectangle([box[0], box[1], box[2], box[1] + header_h],
+                               fill=(30, 36, 48) if dgv_dark else (246, 247, 249),
+                               outline=(58, 65, 80) if dgv_dark else (220, 224, 230), width=SCALE)
                 col_w = (w - 4) / max(len(header_labels), 1)
                 for i, lab in enumerate(header_labels):
                     if draw.textlength(lab, font=f) > (col_w - 10) * SCALE:
@@ -832,7 +843,7 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
                             lab = lab[:-1]
                         lab += ".."
                     draw.text((box[0] + (i * col_w + 6) * SCALE, box[1] + 4 * SCALE), lab, font=f,
-                              fill=(90, 100, 112))
+                              fill=(110, 231, 183) if dgv_dark else (90, 100, 112))
                 start_row = 1
             if c.rows:
                 col_w = (w - 4) / max(len(header_labels), 1)
@@ -845,7 +856,7 @@ def render(designer_path, out_path, caption=None, max_width=1500, overrides=None
                         while txt and draw.textlength(txt, font=f) > (col_w - 10) * SCALE:
                             txt = txt[:-1]
                         draw.text((box[0] + (i * col_w + 6) * SCALE, yy + 3 * SCALE), txt,
-                                  font=f, fill=c.fore or (35, 45, 55))
+                                  font=f, fill=cell_ink)
             elif c.nodes:
                 for r, node in enumerate(c.nodes):
                     yy = box[1] + (4 + r * 18) * SCALE

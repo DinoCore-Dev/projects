@@ -88,8 +88,9 @@ c4) LAYOUT NG MGA FORM (Act 4 - 13): MAGKAIBA ang layout ng bawat identity sa la
      ang hanay ng buttons, rail sa kanan, header na baliktad, at ang pagkakasunod ng menu items.
      Bit 0/1/2/3 ng code = op0/op1/op2/op3 (ang op3 ay unang inaapply). Walang pareho ang mga code, kaya magkakaiba ang layout ng lahat.
    - Walang laman ng repo ang pwedeng may parehong code. Mga code ngayon: ATIENZA 0, SONAJO 1,
-     LUCENA 2, DEGUZMAN 3, PASTOR 4, MARCOS 5, MARCELO 6, ANICIETE 7, ATIENZA 8, ALAP 9, GAUDAN 10, MAYO 11. Ang bagong
-     identity ay gumagamit ng susunod na hindi pa nagagamit (12 hanggang 15 ay may op3 na; lampas 15:
+     LUCENA 2, DEGUZMAN 3, PASTOR 4, MARCOS 5, MARCELO 6, ANICIETE 7, ATIENZA 8, ALAP 9, GAUDAN 10, MAYO 11, VIERNES 12 (espesyal:
+     buong redesign na dark graphite + mint; tingnan ang `VIERNES/tools/apply_redesign.py`). Ang bagong
+     identity ay gumagamit ng susunod na hindi pa nagagamit (13 hanggang 15 ay may op3 na; lampas 15:
      dagdagan ang op ng bawat form).
    - Pangalan ng controls ang ginagamit ng code, kaya Location / Size / Dock lang ang nagbabago;
      huwag baguhin ang logic. I-rebuild ang `docs/figures` pagkatapos para tumugma ang Form Design
