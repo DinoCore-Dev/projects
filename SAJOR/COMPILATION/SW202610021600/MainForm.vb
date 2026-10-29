@@ -21,7 +21,8 @@ Public Class MainForm
         statusBar.Dock = DockStyle.Bottom
         statusBar.Height = 24
         statusBar.TextAlign = ContentAlignment.MiddleRight
-        statusBar.ForeColor = Color.FromArgb(102, 100, 139)
+        statusBar.ForeColor = Color.FromArgb(72, 70, 122)
+        statusBar.BackColor = Color.FromArgb(232, 234, 250)
         statusBar.Text = "Author: Sajor, Renz   |   BSIT 3B   |   Activity 11 - SW202610021600"
         Me.Controls.Add(statusBar)
 
@@ -54,6 +55,8 @@ Public Class MainForm
         Dim text As New RichTextBox()
         text.Dock = DockStyle.Fill
         text.ReadOnly = True
+        text.BackColor = Color.FromArgb(255, 255, 255)
+        text.BorderStyle = BorderStyle.None
         text.Font = New Font("Franklin Gothic Medium", 10.75F)
         text.Text = "Activity 11 - SW202610021600" & Environment.NewLine & _
                     "Author : Sajor, Renz   |   Course, Year and Section : BSIT 3B" & _

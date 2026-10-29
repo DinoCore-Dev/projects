@@ -11,6 +11,8 @@ Public Class MenuForm
     Private openMenu As ToolStripMenuItem
     Private combinedMenu As ToolStripMenuItem
     Private exitMenu As ToolStripMenuItem
+    Private lblHeading As Label
+    Private lblSubheading As Label
 
     Public Sub New()
         Me.Text = "Activity 11 - SW202610021600  |  Sajor, Renz"
@@ -21,8 +23,25 @@ Public Class MenuForm
         openMenu = New ToolStripMenuItem("OpenFileDialog File Explorer")
         combinedMenu = New ToolStripMenuItem("Combined File Explorer")
         exitMenu = New ToolStripMenuItem("Exit")
-        menuStrip1.Items.AddRange(New ToolStripItem() {openMenu, exitMenu, combinedMenu, treeMenu})
+        menuStrip1.Items.AddRange(New ToolStripItem() {combinedMenu, treeMenu, openMenu, exitMenu})
         menuStrip1.Dock = DockStyle.Top
+        menuStrip1.BackColor = Color.FromArgb(255, 255, 255)
+        menuStrip1.ForeColor = Color.FromArgb(30, 27, 75)
+        Me.BackColor = Color.FromArgb(244, 245, 252)
+        lblHeading = New Label()
+        lblHeading.AutoSize = False
+        lblHeading.SetBounds(48, 96, 620, 44)
+        lblHeading.Font = New Font("Franklin Gothic Medium", 22.0F, FontStyle.Bold)
+        lblHeading.ForeColor = Color.FromArgb(30, 27, 75)
+        lblHeading.Text = "Windows Forms Controls"
+        lblSubheading = New Label()
+        lblSubheading.AutoSize = False
+        lblSubheading.SetBounds(48, 146, 620, 44)
+        lblSubheading.Font = New Font("Franklin Gothic Medium", 10.0F)
+        lblSubheading.ForeColor = Color.FromArgb(67, 56, 202)
+        lblSubheading.Text = "File explorer demos: the combined explorer, the TreeView and OpenFileDialog."
+        Me.Controls.Add(lblHeading)
+        Me.Controls.Add(lblSubheading)
         Me.Controls.Add(menuStrip1)
         Me.MainMenuStrip = menuStrip1
 

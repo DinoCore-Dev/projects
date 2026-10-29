@@ -1,27 +1,200 @@
-Imports System.Windows.Forms
-Imports System.Drawing
-
-<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class CombinedSample
- Inherits System.Windows.Forms.Form
- Private components As System.ComponentModel.IContainer
-  Friend WithEvents tree As TreeView
- Friend WithEvents lv As ListView
- Friend WithEvents open As Button
- Friend WithEvents save As Button
- Friend WithEvents btnRefresh As Button
- <System.Diagnostics.DebuggerNonUserCode()> Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-  If disposing AndAlso components IsNot Nothing Then components.Dispose()
-  MyBase.Dispose(disposing)
- End Sub
- <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-  Me.components = New System.ComponentModel.Container()
-  Me.tree=New TreeView() : Me.lv=New ListView() : Me.open=New Button() : Me.save=New Button() : Me.btnRefresh=New Button()
-  Me.SuspendLayout()
-  Me.open.SetBounds(10,502,100,28) : Me.open.Text="Open file" : Me.save.SetBounds(120,502,100,28) : Me.save.Text="Save As" : Me.btnRefresh.SetBounds(230,502,90,28) : Me.btnRefresh.Text="Refresh" : Me.tree.SetBounds(500,10,380,480) : Me.tree.Anchor=AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left : Me.lv.SetBounds(10,10,480,480) : Me.lv.Anchor=AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right : Me.lv.View=View.Details : Me.lv.Columns.Add("Name",300) : Me.lv.Columns.Add("Type",150) : Me.Controls.AddRange(New Control() {Me.tree,Me.lv,Me.open,Me.save,Me.btnRefresh})
-  Me.ClientSize = New System.Drawing.Size(900, 560)
-  Me.Text = "Question 9 - Combined Explorer"
-  Me.StartPosition = FormStartPosition.CenterScreen
-  Me.ResumeLayout(False)
- End Sub
+    Inherits System.Windows.Forms.Form
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Me.lv = New System.Windows.Forms.ListView()
+        Me.tree = New System.Windows.Forms.TreeView()
+        Me.pnlBar = New System.Windows.Forms.Panel()
+        Me.open = New System.Windows.Forms.Button()
+        Me.save = New System.Windows.Forms.Button()
+        Me.btnRefresh = New System.Windows.Forms.Button()
+        Me.pnlHead = New System.Windows.Forms.Panel()
+        Me.pnlHeadRule = New System.Windows.Forms.Panel()
+        Me.lblHead = New System.Windows.Forms.Label()
+        Me.lblHeadHint = New System.Windows.Forms.Label()
+        Me.pnlBar.SuspendLayout()
+        Me.pnlHead.SuspendLayout()
+        Me.pnlHeadRule.SuspendLayout()
+        Me.SuspendLayout()
+        '
+        'lv
+        '
+        Me.lv.Location = New System.Drawing.Point(300, 120)
+        Me.lv.Size = New System.Drawing.Size(640, 460)
+        Me.lv.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lv.View = System.Windows.Forms.View.Details
+        Me.lv.FullRowSelect = True
+        Me.lv.HideSelection = False
+        Me.lv.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lv.Columns.Add("Name", 300)
+        Me.lv.Columns.Add("Type", 150)
+        Me.lv.Font = New System.Drawing.Font("Franklin Gothic Medium", 10.0!)
+        Me.lv.BackColor = System.Drawing.Color.FromArgb(255, 255, 255)
+        Me.lv.ForeColor = System.Drawing.Color.FromArgb(38, 36, 92)
+        Me.lv.Name = "lv"
+        Me.lv.TabIndex = 0
+        '
+        'tree
+        '
+        Me.tree.Location = New System.Drawing.Point(0, 120)
+        Me.tree.Size = New System.Drawing.Size(300, 460)
+        Me.tree.Dock = System.Windows.Forms.DockStyle.Left
+        Me.tree.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.tree.BackColor = System.Drawing.Color.FromArgb(255, 255, 255)
+        Me.tree.ForeColor = System.Drawing.Color.FromArgb(38, 36, 92)
+        Me.tree.Name = "tree"
+        Me.tree.TabIndex = 1
+        '
+        'pnlBar
+        '
+        Me.pnlBar.Controls.Add(Me.open)
+        Me.pnlBar.Controls.Add(Me.save)
+        Me.pnlBar.Controls.Add(Me.btnRefresh)
+        Me.pnlBar.Location = New System.Drawing.Point(0, 60)
+        Me.pnlBar.Size = New System.Drawing.Size(940, 60)
+        Me.pnlBar.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlBar.BackColor = System.Drawing.Color.FromArgb(232, 234, 250)
+        Me.pnlBar.Name = "pnlBar"
+        Me.pnlBar.TabIndex = 2
+        '
+        'open
+        '
+        Me.open.Location = New System.Drawing.Point(16, 10)
+        Me.open.Size = New System.Drawing.Size(130, 40)
+        Me.open.Text = "Open file"
+        Me.open.Font = New System.Drawing.Font("Franklin Gothic Medium", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.open.BackColor = System.Drawing.Color.FromArgb(30, 27, 75)
+        Me.open.ForeColor = System.Drawing.Color.FromArgb(199, 210, 254)
+        Me.open.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(99, 102, 241)
+        Me.open.FlatAppearance.BorderSize = 1
+        Me.open.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.open.UseVisualStyleBackColor = False
+        Me.open.Name = "open"
+        Me.open.TabIndex = 3
+        '
+        'save
+        '
+        Me.save.Location = New System.Drawing.Point(156, 10)
+        Me.save.Size = New System.Drawing.Size(130, 40)
+        Me.save.Text = "Save As"
+        Me.save.Font = New System.Drawing.Font("Franklin Gothic Medium", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.save.BackColor = System.Drawing.Color.FromArgb(12, 52, 66)
+        Me.save.ForeColor = System.Drawing.Color.FromArgb(186, 236, 248)
+        Me.save.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(34, 170, 200)
+        Me.save.FlatAppearance.BorderSize = 1
+        Me.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.save.UseVisualStyleBackColor = False
+        Me.save.Name = "save"
+        Me.save.TabIndex = 4
+        '
+        'btnRefresh
+        '
+        Me.btnRefresh.Location = New System.Drawing.Point(296, 10)
+        Me.btnRefresh.Size = New System.Drawing.Size(120, 40)
+        Me.btnRefresh.Text = "Refresh"
+        Me.btnRefresh.Font = New System.Drawing.Font("Franklin Gothic Medium", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.btnRefresh.BackColor = System.Drawing.Color.FromArgb(48, 48, 66)
+        Me.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(224, 226, 240)
+        Me.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(150, 152, 182)
+        Me.btnRefresh.FlatAppearance.BorderSize = 1
+        Me.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRefresh.UseVisualStyleBackColor = False
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.TabIndex = 5
+        '
+        'pnlHead
+        '
+        Me.pnlHead.Controls.Add(Me.pnlHeadRule)
+        Me.pnlHead.Controls.Add(Me.lblHead)
+        Me.pnlHead.Controls.Add(Me.lblHeadHint)
+        Me.pnlHead.Location = New System.Drawing.Point(0, 0)
+        Me.pnlHead.Size = New System.Drawing.Size(940, 60)
+        Me.pnlHead.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlHead.BackColor = System.Drawing.Color.FromArgb(255, 255, 255)
+        Me.pnlHead.Name = "pnlHead"
+        Me.pnlHead.TabIndex = 6
+        '
+        'pnlHeadRule
+        '
+        Me.pnlHeadRule.Location = New System.Drawing.Point(0, 56)
+        Me.pnlHeadRule.Size = New System.Drawing.Size(940, 4)
+        Me.pnlHeadRule.BackColor = System.Drawing.Color.FromArgb(67, 56, 202)
+        Me.pnlHeadRule.Name = "pnlHeadRule"
+        Me.pnlHeadRule.TabIndex = 7
+        '
+        'lblHead
+        '
+        Me.lblHead.Location = New System.Drawing.Point(20, 12)
+        Me.lblHead.Size = New System.Drawing.Size(420, 32)
+        Me.lblHead.Text = "Combined Explorer"
+        Me.lblHead.AutoSize = False
+        Me.lblHead.Font = New System.Drawing.Font("Franklin Gothic Medium", 19.0!, System.Drawing.FontStyle.Bold)
+        Me.lblHead.ForeColor = System.Drawing.Color.FromArgb(30, 27, 75)
+        Me.lblHead.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblHead.Name = "lblHead"
+        Me.lblHead.TabIndex = 8
+        '
+        'lblHeadHint
+        '
+        Me.lblHeadHint.Location = New System.Drawing.Point(480, 20)
+        Me.lblHeadHint.Size = New System.Drawing.Size(440, 20)
+        Me.lblHeadHint.Text = "Folders on the left, folder contents on the right."
+        Me.lblHeadHint.AutoSize = False
+        Me.lblHeadHint.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.0!)
+        Me.lblHeadHint.ForeColor = System.Drawing.Color.FromArgb(105, 103, 150)
+        Me.lblHeadHint.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblHeadHint.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblHeadHint.Name = "lblHeadHint"
+        Me.lblHeadHint.TabIndex = 9
+        '
+        'CombinedSample
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(940, 580)
+        Me.Controls.Add(Me.lv)
+        Me.Controls.Add(Me.tree)
+        Me.Controls.Add(Me.pnlBar)
+        Me.Controls.Add(Me.pnlHead)
+        Me.BackColor = System.Drawing.Color.FromArgb(244, 245, 252)
+        Me.Name = "CombinedSample"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Question 9 - Combined Explorer"
+        Me.pnlBar.ResumeLayout(False)
+        Me.pnlHead.ResumeLayout(False)
+        Me.pnlHeadRule.ResumeLayout(False)
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
+    End Sub
+    Friend WithEvents lv As System.Windows.Forms.ListView
+    Friend WithEvents tree As System.Windows.Forms.TreeView
+    Friend WithEvents pnlBar As System.Windows.Forms.Panel
+    Friend WithEvents open As System.Windows.Forms.Button
+    Friend WithEvents save As System.Windows.Forms.Button
+    Friend WithEvents btnRefresh As System.Windows.Forms.Button
+    Friend WithEvents pnlHead As System.Windows.Forms.Panel
+    Friend WithEvents pnlHeadRule As System.Windows.Forms.Panel
+    Friend WithEvents lblHead As System.Windows.Forms.Label
+    Friend WithEvents lblHeadHint As System.Windows.Forms.Label
 End Class

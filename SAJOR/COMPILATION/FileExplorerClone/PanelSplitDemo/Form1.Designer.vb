@@ -54,6 +54,7 @@ Partial Class Form1
     Friend WithEvents pnlStatus As System.Windows.Forms.Panel
     Friend WithEvents lblStatus As System.Windows.Forms.Label
     Friend WithEvents lblCount As System.Windows.Forms.Label
+    Friend WithEvents pnlRuleH As System.Windows.Forms.Panel
 
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
@@ -96,6 +97,7 @@ Partial Class Form1
         Me.pnlStatus = New System.Windows.Forms.Panel()
         Me.lblCount = New System.Windows.Forms.Label()
         Me.lblStatus = New System.Windows.Forms.Label()
+        Me.pnlRuleH = New System.Windows.Forms.Panel()
         Me.pnlHeader.SuspendLayout()
         Me.pnlTools.SuspendLayout()
         CType(Me.splRoot, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -112,11 +114,12 @@ Partial Class Form1
         Me.pnlPreviewHost.SuspendLayout()
         CType(Me.pbPreview, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlStatus.SuspendLayout()
+        Me.pnlRuleH.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlHeader
         '
-        Me.pnlHeader.BackColor = System.Drawing.Color.FromArgb(18, 15, 42)
+        Me.pnlHeader.BackColor = System.Drawing.Color.FromArgb(255, 255, 255)
         Me.pnlHeader.Controls.Add(Me.btnGo)
         Me.pnlHeader.Controls.Add(Me.txtPath)
         Me.pnlHeader.Controls.Add(Me.btnRefresh)
@@ -127,218 +130,224 @@ Partial Class Form1
         Me.pnlHeader.Controls.Add(Me.lblAuthor)
         Me.pnlHeader.Controls.Add(Me.lblHeaderSub)
         Me.pnlHeader.Controls.Add(Me.lblApp)
+        Me.pnlHeader.Controls.Add(Me.pnlRuleH)
         Me.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlHeader.Location = New System.Drawing.Point(0, 0)
         Me.pnlHeader.Name = "pnlHeader"
-        Me.pnlHeader.Size = New System.Drawing.Size(1200, 96)
+        Me.pnlHeader.Size = New System.Drawing.Size(1200, 98)
         Me.pnlHeader.TabIndex = 0
         '
         'lblApp
         '
-        Me.lblApp.AutoSize = True
-        Me.lblApp.Font = New System.Drawing.Font("Franklin Gothic Medium", 14.75!, System.Drawing.FontStyle.Bold)
-        Me.lblApp.ForeColor = System.Drawing.Color.White
-        Me.lblApp.Location = New System.Drawing.Point(749, 10)
+        Me.lblApp.AutoSize = False
+        Me.lblApp.Font = New System.Drawing.Font("Franklin Gothic Medium", 15.0!, System.Drawing.FontStyle.Bold)
+        Me.lblApp.ForeColor = System.Drawing.Color.FromArgb(30, 27, 75)
+        Me.lblApp.Location = New System.Drawing.Point(20, 8)
+        Me.lblApp.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.lblApp.Name = "lblApp"
-        Me.lblApp.Size = New System.Drawing.Size(214, 28)
+        Me.lblApp.Size = New System.Drawing.Size(300, 28)
         Me.lblApp.TabIndex = 0
         Me.lblApp.Text = "SAJOR EXPLORER"
         '
         'lblHeaderSub
         '
-        Me.lblHeaderSub.AutoSize = True
-        Me.lblHeaderSub.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.0!)
-        Me.lblHeaderSub.ForeColor = System.Drawing.Color.FromArgb(149, 148, 184)
-        Me.lblHeaderSub.Location = New System.Drawing.Point(752, 36)
+        Me.lblHeaderSub.AutoSize = False
+        Me.lblHeaderSub.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.0!)
+        Me.lblHeaderSub.ForeColor = System.Drawing.Color.FromArgb(105, 103, 150)
+        Me.lblHeaderSub.Location = New System.Drawing.Point(326, 14)
+        Me.lblHeaderSub.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.lblHeaderSub.Name = "lblHeaderSub"
-        Me.lblHeaderSub.Size = New System.Drawing.Size(430, 13)
+        Me.lblHeaderSub.Size = New System.Drawing.Size(520, 18)
         Me.lblHeaderSub.TabIndex = 1
         Me.lblHeaderSub.Text = "Activity 12 - PanelSplitDemo  |  TreeView + ListView + live preview inside SplitContainers"
         '
         'lblAuthor
         '
         Me.lblAuthor.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblAuthor.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.lblAuthor.ForeColor = System.Drawing.Color.White
-        Me.lblAuthor.Location = New System.Drawing.Point(18, 16)
+        Me.lblAuthor.Font = New System.Drawing.Font("Franklin Gothic Medium", 11.5!, System.Drawing.FontStyle.Bold)
+        Me.lblAuthor.ForeColor = System.Drawing.Color.FromArgb(30, 27, 75)
+        Me.lblAuthor.Location = New System.Drawing.Point(880, 12)
+        Me.lblAuthor.AutoSize = False
         Me.lblAuthor.Name = "lblAuthor"
-        Me.lblAuthor.Size = New System.Drawing.Size(322, 20)
+        Me.lblAuthor.Size = New System.Drawing.Size(300, 22)
         Me.lblAuthor.TabIndex = 2
         Me.lblAuthor.Text = "Sajor, Renz  |  BSIT 3B"
-        Me.lblAuthor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblAuthor.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'btnBack
         '
-        Me.btnBack.BackColor = System.Drawing.Color.FromArgb(9, 9, 17)
-        Me.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(32, 30, 59)
+        Me.btnBack.BackColor = System.Drawing.Color.FromArgb(48, 48, 66)
+        Me.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(150, 152, 182)
         Me.btnBack.FlatAppearance.BorderSize = 1
         Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBack.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.25!)
-        Me.btnBack.ForeColor = System.Drawing.Color.FromArgb(205, 205, 211)
-        Me.btnBack.Location = New System.Drawing.Point(292, 58)
+        Me.btnBack.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.btnBack.ForeColor = System.Drawing.Color.FromArgb(224, 226, 240)
+        Me.btnBack.Location = New System.Drawing.Point(20, 48)
         Me.btnBack.Name = "btnBack"
-        Me.btnBack.Size = New System.Drawing.Size(62, 26)
+        Me.btnBack.Size = New System.Drawing.Size(70, 36)
         Me.btnBack.TabIndex = 3
         Me.btnBack.Text = "Back"
         Me.btnBack.UseVisualStyleBackColor = False
         '
         'btnForward
         '
-        Me.btnForward.BackColor = System.Drawing.Color.FromArgb(9, 9, 17)
-        Me.btnForward.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(32, 30, 59)
+        Me.btnForward.BackColor = System.Drawing.Color.FromArgb(48, 48, 66)
+        Me.btnForward.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(150, 152, 182)
         Me.btnForward.FlatAppearance.BorderSize = 1
         Me.btnForward.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnForward.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.25!)
-        Me.btnForward.ForeColor = System.Drawing.Color.FromArgb(205, 205, 211)
-        Me.btnForward.Location = New System.Drawing.Point(216, 58)
+        Me.btnForward.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.btnForward.ForeColor = System.Drawing.Color.FromArgb(224, 226, 240)
+        Me.btnForward.Location = New System.Drawing.Point(96, 48)
         Me.btnForward.Name = "btnForward"
-        Me.btnForward.Size = New System.Drawing.Size(70, 26)
+        Me.btnForward.Size = New System.Drawing.Size(86, 36)
         Me.btnForward.TabIndex = 4
         Me.btnForward.Text = "Forward"
         Me.btnForward.UseVisualStyleBackColor = False
         '
         'btnUp
         '
-        Me.btnUp.BackColor = System.Drawing.Color.FromArgb(9, 9, 17)
-        Me.btnUp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(32, 30, 59)
+        Me.btnUp.BackColor = System.Drawing.Color.FromArgb(48, 48, 66)
+        Me.btnUp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(150, 152, 182)
         Me.btnUp.FlatAppearance.BorderSize = 1
         Me.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUp.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.25!)
-        Me.btnUp.ForeColor = System.Drawing.Color.FromArgb(205, 205, 211)
-        Me.btnUp.Location = New System.Drawing.Point(160, 58)
+        Me.btnUp.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.btnUp.ForeColor = System.Drawing.Color.FromArgb(224, 226, 240)
+        Me.btnUp.Location = New System.Drawing.Point(188, 48)
         Me.btnUp.Name = "btnUp"
-        Me.btnUp.Size = New System.Drawing.Size(50, 26)
+        Me.btnUp.Size = New System.Drawing.Size(58, 36)
         Me.btnUp.TabIndex = 5
         Me.btnUp.Text = "Up"
         Me.btnUp.UseVisualStyleBackColor = False
         '
         'btnHome
         '
-        Me.btnHome.BackColor = System.Drawing.Color.FromArgb(9, 9, 17)
-        Me.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(32, 30, 59)
+        Me.btnHome.BackColor = System.Drawing.Color.FromArgb(48, 48, 66)
+        Me.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(150, 152, 182)
         Me.btnHome.FlatAppearance.BorderSize = 1
         Me.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnHome.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.25!)
-        Me.btnHome.ForeColor = System.Drawing.Color.FromArgb(205, 205, 211)
-        Me.btnHome.Location = New System.Drawing.Point(92, 58)
+        Me.btnHome.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.btnHome.ForeColor = System.Drawing.Color.FromArgb(224, 226, 240)
+        Me.btnHome.Location = New System.Drawing.Point(252, 48)
         Me.btnHome.Name = "btnHome"
-        Me.btnHome.Size = New System.Drawing.Size(62, 26)
+        Me.btnHome.Size = New System.Drawing.Size(70, 36)
         Me.btnHome.TabIndex = 6
         Me.btnHome.Text = "Home"
         Me.btnHome.UseVisualStyleBackColor = False
         '
         'btnRefresh
         '
-        Me.btnRefresh.BackColor = System.Drawing.Color.FromArgb(17, 11, 70)
-        Me.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(57, 37, 235)
+        Me.btnRefresh.BackColor = System.Drawing.Color.FromArgb(12, 52, 66)
+        Me.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(34, 170, 200)
         Me.btnRefresh.FlatAppearance.BorderSize = 1
         Me.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRefresh.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(211, 207, 250)
-        Me.btnRefresh.Location = New System.Drawing.Point(16, 58)
+        Me.btnRefresh.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(186, 236, 248)
+        Me.btnRefresh.Location = New System.Drawing.Point(328, 48)
         Me.btnRefresh.Name = "btnRefresh"
-        Me.btnRefresh.Size = New System.Drawing.Size(70, 26)
+        Me.btnRefresh.Size = New System.Drawing.Size(86, 36)
         Me.btnRefresh.TabIndex = 7
         Me.btnRefresh.Text = "Refresh"
         Me.btnRefresh.UseVisualStyleBackColor = False
         '
         'txtPath
         '
-        Me.txtPath.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.txtPath.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtPath.Font = New System.Drawing.Font("Consolas", 9.5!)
-        Me.txtPath.Location = New System.Drawing.Point(436, 58)
+        Me.txtPath.Font = New System.Drawing.Font("Franklin Gothic Medium", 11.0!)
+        Me.txtPath.Location = New System.Drawing.Point(430, 54)
+        Me.txtPath.BackColor = System.Drawing.Color.FromArgb(247, 248, 255)
+        Me.txtPath.ForeColor = System.Drawing.Color.FromArgb(38, 36, 92)
         Me.txtPath.Name = "txtPath"
-        Me.txtPath.Size = New System.Drawing.Size(700, 22)
+        Me.txtPath.Size = New System.Drawing.Size(664, 24)
         Me.txtPath.TabIndex = 8
         '
         'btnGo
         '
         Me.btnGo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnGo.BackColor = System.Drawing.Color.FromArgb(3, 44, 40)
-        Me.btnGo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(13, 148, 136)
+        Me.btnGo.BackColor = System.Drawing.Color.FromArgb(30, 27, 75)
+        Me.btnGo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(99, 102, 241)
         Me.btnGo.FlatAppearance.BorderSize = 1
         Me.btnGo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGo.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.btnGo.ForeColor = System.Drawing.Color.FromArgb(201, 231, 228)
-        Me.btnGo.Location = New System.Drawing.Point(364, 58)
+        Me.btnGo.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.btnGo.ForeColor = System.Drawing.Color.FromArgb(199, 210, 254)
+        Me.btnGo.Location = New System.Drawing.Point(1104, 48)
         Me.btnGo.Name = "btnGo"
-        Me.btnGo.Size = New System.Drawing.Size(62, 26)
+        Me.btnGo.Size = New System.Drawing.Size(76, 36)
         Me.btnGo.TabIndex = 9
         Me.btnGo.Text = "Go"
         Me.btnGo.UseVisualStyleBackColor = False
         '
         'pnlTools
         '
-        Me.pnlTools.BackColor = System.Drawing.Color.FromArgb(226, 226, 240)
+        Me.pnlTools.BackColor = System.Drawing.Color.FromArgb(232, 234, 250)
         Me.pnlTools.Controls.Add(Me.lblSplitInfo)
         Me.pnlTools.Controls.Add(Me.btnLockSplitters)
         Me.pnlTools.Controls.Add(Me.btnSwapLayout)
         Me.pnlTools.Controls.Add(Me.btnPreviewToggle)
         Me.pnlTools.Controls.Add(Me.btnTreeToggle)
-        Me.pnlTools.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlTools.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.pnlTools.Location = New System.Drawing.Point(0, 96)
         Me.pnlTools.Name = "pnlTools"
-        Me.pnlTools.Size = New System.Drawing.Size(1200, 44)
+        Me.pnlTools.Size = New System.Drawing.Size(1200, 54)
         Me.pnlTools.TabIndex = 1
         '
         'btnTreeToggle
         '
-        Me.btnTreeToggle.BackColor = System.Drawing.Color.White
-        Me.btnTreeToggle.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(191, 191, 191)
+        Me.btnTreeToggle.BackColor = System.Drawing.Color.FromArgb(12, 52, 66)
+        Me.btnTreeToggle.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(34, 170, 200)
         Me.btnTreeToggle.FlatAppearance.BorderSize = 1
         Me.btnTreeToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTreeToggle.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.25!)
-        Me.btnTreeToggle.ForeColor = System.Drawing.Color.FromArgb(32, 30, 59)
-        Me.btnTreeToggle.Location = New System.Drawing.Point(16, 7)
+        Me.btnTreeToggle.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.btnTreeToggle.ForeColor = System.Drawing.Color.FromArgb(186, 236, 248)
+        Me.btnTreeToggle.Location = New System.Drawing.Point(16, 9)
         Me.btnTreeToggle.Name = "btnTreeToggle"
-        Me.btnTreeToggle.Size = New System.Drawing.Size(132, 30)
+        Me.btnTreeToggle.Size = New System.Drawing.Size(160, 36)
         Me.btnTreeToggle.TabIndex = 0
         Me.btnTreeToggle.Text = "Hide folder tree"
         Me.btnTreeToggle.UseVisualStyleBackColor = False
         '
         'btnPreviewToggle
         '
-        Me.btnPreviewToggle.BackColor = System.Drawing.Color.White
-        Me.btnPreviewToggle.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(191, 191, 191)
+        Me.btnPreviewToggle.BackColor = System.Drawing.Color.FromArgb(12, 52, 66)
+        Me.btnPreviewToggle.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(34, 170, 200)
         Me.btnPreviewToggle.FlatAppearance.BorderSize = 1
         Me.btnPreviewToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPreviewToggle.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.25!)
-        Me.btnPreviewToggle.ForeColor = System.Drawing.Color.FromArgb(32, 30, 59)
-        Me.btnPreviewToggle.Location = New System.Drawing.Point(154, 7)
+        Me.btnPreviewToggle.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.btnPreviewToggle.ForeColor = System.Drawing.Color.FromArgb(186, 236, 248)
+        Me.btnPreviewToggle.Location = New System.Drawing.Point(186, 9)
         Me.btnPreviewToggle.Name = "btnPreviewToggle"
-        Me.btnPreviewToggle.Size = New System.Drawing.Size(140, 30)
+        Me.btnPreviewToggle.Size = New System.Drawing.Size(170, 36)
         Me.btnPreviewToggle.TabIndex = 1
         Me.btnPreviewToggle.Text = "Hide preview pane"
         Me.btnPreviewToggle.UseVisualStyleBackColor = False
         '
         'btnSwapLayout
         '
-        Me.btnSwapLayout.BackColor = System.Drawing.Color.White
-        Me.btnSwapLayout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(191, 191, 191)
+        Me.btnSwapLayout.BackColor = System.Drawing.Color.FromArgb(30, 27, 75)
+        Me.btnSwapLayout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(99, 102, 241)
         Me.btnSwapLayout.FlatAppearance.BorderSize = 1
         Me.btnSwapLayout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSwapLayout.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.25!)
-        Me.btnSwapLayout.ForeColor = System.Drawing.Color.FromArgb(32, 30, 59)
-        Me.btnSwapLayout.Location = New System.Drawing.Point(300, 7)
+        Me.btnSwapLayout.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.btnSwapLayout.ForeColor = System.Drawing.Color.FromArgb(199, 210, 254)
+        Me.btnSwapLayout.Location = New System.Drawing.Point(366, 9)
         Me.btnSwapLayout.Name = "btnSwapLayout"
-        Me.btnSwapLayout.Size = New System.Drawing.Size(140, 30)
+        Me.btnSwapLayout.Size = New System.Drawing.Size(170, 36)
         Me.btnSwapLayout.TabIndex = 2
         Me.btnSwapLayout.Text = "Preview beside list"
         Me.btnSwapLayout.UseVisualStyleBackColor = False
         '
         'btnLockSplitters
         '
-        Me.btnLockSplitters.BackColor = System.Drawing.Color.White
-        Me.btnLockSplitters.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(191, 191, 191)
+        Me.btnLockSplitters.BackColor = System.Drawing.Color.FromArgb(74, 28, 36)
+        Me.btnLockSplitters.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(240, 110, 95)
         Me.btnLockSplitters.FlatAppearance.BorderSize = 1
         Me.btnLockSplitters.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLockSplitters.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.25!)
-        Me.btnLockSplitters.ForeColor = System.Drawing.Color.FromArgb(32, 30, 59)
-        Me.btnLockSplitters.Location = New System.Drawing.Point(446, 7)
+        Me.btnLockSplitters.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.btnLockSplitters.ForeColor = System.Drawing.Color.FromArgb(254, 205, 198)
+        Me.btnLockSplitters.Location = New System.Drawing.Point(546, 9)
         Me.btnLockSplitters.Name = "btnLockSplitters"
-        Me.btnLockSplitters.Size = New System.Drawing.Size(132, 30)
+        Me.btnLockSplitters.Size = New System.Drawing.Size(140, 36)
         Me.btnLockSplitters.TabIndex = 3
         Me.btnLockSplitters.Text = "Lock splitters"
         Me.btnLockSplitters.UseVisualStyleBackColor = False
@@ -346,11 +355,12 @@ Partial Class Form1
         'lblSplitInfo
         '
         Me.lblSplitInfo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblSplitInfo.Font = New System.Drawing.Font("Consolas", 8.25!)
-        Me.lblSplitInfo.ForeColor = System.Drawing.Color.FromArgb(72, 71, 105)
-        Me.lblSplitInfo.Location = New System.Drawing.Point(760, 7)
+        Me.lblSplitInfo.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.0!)
+        Me.lblSplitInfo.ForeColor = System.Drawing.Color.FromArgb(72, 70, 122)
+        Me.lblSplitInfo.Location = New System.Drawing.Point(700, 9)
+        Me.lblSplitInfo.AutoSize = False
         Me.lblSplitInfo.Name = "lblSplitInfo"
-        Me.lblSplitInfo.Size = New System.Drawing.Size(424, 30)
+        Me.lblSplitInfo.Size = New System.Drawing.Size(480, 36)
         Me.lblSplitInfo.TabIndex = 4
         Me.lblSplitInfo.Text = "splitRoot : 240 px   |   splitWorkspace : 340 px"
         Me.lblSplitInfo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -359,6 +369,7 @@ Partial Class Form1
         '
         Me.splRoot.Dock = System.Windows.Forms.DockStyle.Fill
         Me.splRoot.Location = New System.Drawing.Point(0, 140)
+        Me.splRoot.BackColor = System.Drawing.Color.FromArgb(200, 204, 232)
         Me.splRoot.Name = "splRoot"
         Me.splRoot.Orientation = System.Windows.Forms.Orientation.Vertical
         '
@@ -378,7 +389,7 @@ Partial Class Form1
         '
         'pnlTreeHost
         '
-        Me.pnlTreeHost.BackColor = System.Drawing.Color.FromArgb(248, 248, 252)
+        Me.pnlTreeHost.BackColor = System.Drawing.Color.FromArgb(255, 255, 255)
         Me.pnlTreeHost.Controls.Add(Me.tvFolders)
         Me.pnlTreeHost.Controls.Add(Me.lblTreeTitle)
         Me.pnlTreeHost.Dock = System.Windows.Forms.DockStyle.Fill
@@ -391,9 +402,10 @@ Partial Class Form1
         'lblTreeTitle
         '
         Me.lblTreeTitle.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblTreeTitle.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.0!, System.Drawing.FontStyle.Bold)
-        Me.lblTreeTitle.ForeColor = System.Drawing.Color.FromArgb(102, 100, 139)
+        Me.lblTreeTitle.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.5!, System.Drawing.FontStyle.Bold)
+        Me.lblTreeTitle.ForeColor = System.Drawing.Color.FromArgb(67, 56, 202)
         Me.lblTreeTitle.Location = New System.Drawing.Point(10, 10)
+        Me.lblTreeTitle.BackColor = System.Drawing.Color.FromArgb(232, 234, 250)
         Me.lblTreeTitle.Name = "lblTreeTitle"
         Me.lblTreeTitle.Size = New System.Drawing.Size(220, 26)
         Me.lblTreeTitle.TabIndex = 0
@@ -408,6 +420,8 @@ Partial Class Form1
         Me.tvFolders.HideSelection = False
         Me.tvFolders.ItemHeight = 22
         Me.tvFolders.Location = New System.Drawing.Point(10, 36)
+        Me.tvFolders.BackColor = System.Drawing.Color.FromArgb(255, 255, 255)
+        Me.tvFolders.ForeColor = System.Drawing.Color.FromArgb(38, 36, 92)
         Me.tvFolders.Name = "tvFolders"
         Me.tvFolders.ShowLines = False
         Me.tvFolders.Size = New System.Drawing.Size(220, 506)
@@ -417,6 +431,7 @@ Partial Class Form1
         '
         Me.splWorkspace.Dock = System.Windows.Forms.DockStyle.Fill
         Me.splWorkspace.Location = New System.Drawing.Point(0, 0)
+        Me.splWorkspace.BackColor = System.Drawing.Color.FromArgb(200, 204, 232)
         Me.splWorkspace.Name = "splWorkspace"
         Me.splWorkspace.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
@@ -436,7 +451,7 @@ Partial Class Form1
         '
         'pnlListHost
         '
-        Me.pnlListHost.BackColor = System.Drawing.Color.White
+        Me.pnlListHost.BackColor = System.Drawing.Color.FromArgb(255, 255, 255)
         Me.pnlListHost.Controls.Add(Me.lvFiles)
         Me.pnlListHost.Controls.Add(Me.pnlFilterBar)
         Me.pnlListHost.Controls.Add(Me.lblListTitle)
@@ -450,9 +465,10 @@ Partial Class Form1
         'lblListTitle
         '
         Me.lblListTitle.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblListTitle.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.75!, System.Drawing.FontStyle.Bold)
-        Me.lblListTitle.ForeColor = System.Drawing.Color.FromArgb(32, 30, 59)
+        Me.lblListTitle.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.5!, System.Drawing.FontStyle.Bold)
+        Me.lblListTitle.ForeColor = System.Drawing.Color.FromArgb(67, 56, 202)
         Me.lblListTitle.Location = New System.Drawing.Point(10, 10)
+        Me.lblListTitle.BackColor = System.Drawing.Color.FromArgb(232, 234, 250)
         Me.lblListTitle.Name = "lblListTitle"
         Me.lblListTitle.Size = New System.Drawing.Size(934, 24)
         Me.lblListTitle.TabIndex = 0
@@ -464,6 +480,7 @@ Partial Class Form1
         Me.pnlFilterBar.Controls.Add(Me.lblFilterCaption)
         Me.pnlFilterBar.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlFilterBar.Location = New System.Drawing.Point(10, 34)
+        Me.pnlFilterBar.BackColor = System.Drawing.Color.FromArgb(255, 255, 255)
         Me.pnlFilterBar.Name = "pnlFilterBar"
         Me.pnlFilterBar.Size = New System.Drawing.Size(934, 30)
         Me.pnlFilterBar.TabIndex = 1
@@ -472,8 +489,8 @@ Partial Class Form1
         '
         Me.lblFilterCaption.AutoSize = True
         Me.lblFilterCaption.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.25!)
-        Me.lblFilterCaption.ForeColor = System.Drawing.Color.FromArgb(102, 100, 139)
-        Me.lblFilterCaption.Location = New System.Drawing.Point(774, 7)
+        Me.lblFilterCaption.ForeColor = System.Drawing.Color.FromArgb(105, 103, 150)
+        Me.lblFilterCaption.Location = New System.Drawing.Point(0, 7)
         Me.lblFilterCaption.Name = "lblFilterCaption"
         Me.lblFilterCaption.Size = New System.Drawing.Size(160, 13)
         Me.lblFilterCaption.TabIndex = 0
@@ -483,10 +500,12 @@ Partial Class Form1
         '
         Me.txtFilter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtFilter.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.75!)
-        Me.txtFilter.Location = New System.Drawing.Point(0, 3)
+        Me.txtFilter.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.5!)
+        Me.txtFilter.Location = New System.Drawing.Point(520, 3)
+        Me.txtFilter.BackColor = System.Drawing.Color.FromArgb(247, 248, 255)
+        Me.txtFilter.ForeColor = System.Drawing.Color.FromArgb(38, 36, 92)
         Me.txtFilter.Name = "txtFilter"
-        Me.txtFilter.Size = New System.Drawing.Size(230, 23)
+        Me.txtFilter.Size = New System.Drawing.Size(250, 23)
         Me.txtFilter.TabIndex = 1
         '
         'lvFiles
@@ -494,12 +513,14 @@ Partial Class Form1
         Me.lvFiles.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lvFiles.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colName, Me.colType, Me.colSize, Me.colModified})
         Me.lvFiles.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lvFiles.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.25!)
+        Me.lvFiles.Font = New System.Drawing.Font("Franklin Gothic Medium", 10.0!)
         Me.lvFiles.FullRowSelect = True
         Me.lvFiles.GridLines = False
         Me.lvFiles.HideSelection = False
         Me.lvFiles.Location = New System.Drawing.Point(10, 64)
         Me.lvFiles.MultiSelect = False
+        Me.lvFiles.BackColor = System.Drawing.Color.FromArgb(255, 255, 255)
+        Me.lvFiles.ForeColor = System.Drawing.Color.FromArgb(38, 36, 92)
         Me.lvFiles.Name = "lvFiles"
         Me.lvFiles.Size = New System.Drawing.Size(934, 266)
         Me.lvFiles.TabIndex = 2
@@ -529,7 +550,7 @@ Partial Class Form1
         '
         'pnlPreviewHost
         '
-        Me.pnlPreviewHost.BackColor = System.Drawing.Color.White
+        Me.pnlPreviewHost.BackColor = System.Drawing.Color.FromArgb(255, 255, 255)
         Me.pnlPreviewHost.Controls.Add(Me.pbPreview)
         Me.pnlPreviewHost.Controls.Add(Me.txtPreview)
         Me.pnlPreviewHost.Controls.Add(Me.lblPreviewTitle)
@@ -543,9 +564,10 @@ Partial Class Form1
         'lblPreviewTitle
         '
         Me.lblPreviewTitle.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblPreviewTitle.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.75!, System.Drawing.FontStyle.Bold)
-        Me.lblPreviewTitle.ForeColor = System.Drawing.Color.FromArgb(32, 30, 59)
+        Me.lblPreviewTitle.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.5!, System.Drawing.FontStyle.Bold)
+        Me.lblPreviewTitle.ForeColor = System.Drawing.Color.FromArgb(67, 56, 202)
         Me.lblPreviewTitle.Location = New System.Drawing.Point(10, 10)
+        Me.lblPreviewTitle.BackColor = System.Drawing.Color.FromArgb(232, 234, 250)
         Me.lblPreviewTitle.Name = "lblPreviewTitle"
         Me.lblPreviewTitle.Size = New System.Drawing.Size(934, 24)
         Me.lblPreviewTitle.TabIndex = 0
@@ -553,11 +575,11 @@ Partial Class Form1
         '
         'txtPreview
         '
-        Me.txtPreview.BackColor = System.Drawing.Color.FromArgb(248, 248, 252)
+        Me.txtPreview.BackColor = System.Drawing.Color.FromArgb(247, 248, 255)
         Me.txtPreview.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtPreview.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtPreview.Font = New System.Drawing.Font("Consolas", 8.75!)
-        Me.txtPreview.ForeColor = System.Drawing.Color.FromArgb(32, 30, 59)
+        Me.txtPreview.Font = New System.Drawing.Font("Consolas", 9.5!)
+        Me.txtPreview.ForeColor = System.Drawing.Color.FromArgb(38, 36, 92)
         Me.txtPreview.Location = New System.Drawing.Point(10, 34)
         Me.txtPreview.Multiline = True
         Me.txtPreview.Name = "txtPreview"
@@ -581,7 +603,7 @@ Partial Class Form1
         '
         'pnlStatus
         '
-        Me.pnlStatus.BackColor = System.Drawing.Color.FromArgb(226, 226, 240)
+        Me.pnlStatus.BackColor = System.Drawing.Color.FromArgb(255, 255, 255)
         Me.pnlStatus.Controls.Add(Me.lblCount)
         Me.pnlStatus.Controls.Add(Me.lblStatus)
         Me.pnlStatus.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -592,36 +614,47 @@ Partial Class Form1
         '
         'lblStatus
         '
-        Me.lblStatus.AutoSize = True
-        Me.lblStatus.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.25!)
-        Me.lblStatus.ForeColor = System.Drawing.Color.FromArgb(52, 51, 85)
-        Me.lblStatus.Location = New System.Drawing.Point(14, 7)
+        Me.lblStatus.AutoSize = False
+        Me.lblStatus.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.5!)
+        Me.lblStatus.ForeColor = System.Drawing.Color.FromArgb(72, 70, 122)
+        Me.lblStatus.Location = New System.Drawing.Point(14, 5)
+        Me.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(196, 13)
+        Me.lblStatus.Size = New System.Drawing.Size(700, 18)
         Me.lblStatus.TabIndex = 0
         Me.lblStatus.Text = "Choose a folder from the tree to start."
         '
         'lblCount
         '
         Me.lblCount.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblCount.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.0!)
-        Me.lblCount.ForeColor = System.Drawing.Color.FromArgb(102, 100, 139)
-        Me.lblCount.Location = New System.Drawing.Point(800, 7)
+        Me.lblCount.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.lblCount.ForeColor = System.Drawing.Color.FromArgb(67, 56, 202)
+        Me.lblCount.Location = New System.Drawing.Point(900, 5)
+        Me.lblCount.AutoSize = False
         Me.lblCount.Name = "lblCount"
-        Me.lblCount.Size = New System.Drawing.Size(384, 16)
+        Me.lblCount.Size = New System.Drawing.Size(280, 18)
         Me.lblCount.TabIndex = 1
         Me.lblCount.Text = "0 item(s)"
         Me.lblCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'pnlRuleH
+        '
+        Me.pnlRuleH.Location = New System.Drawing.Point(0, 94)
+        Me.pnlRuleH.Size = New System.Drawing.Size(1200, 4)
+        Me.pnlRuleH.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnlRuleH.Name = "pnlRuleH"
+        Me.pnlRuleH.TabIndex = 0
+        Me.pnlRuleH.BackColor = System.Drawing.Color.FromArgb(67, 56, 202)
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(241, 241, 249)
+        Me.BackColor = System.Drawing.Color.FromArgb(244, 245, 252)
         Me.ClientSize = New System.Drawing.Size(1200, 720)
         Me.Controls.Add(Me.splRoot)
-        Me.Controls.Add(Me.pnlStatus)
         Me.Controls.Add(Me.pnlTools)
+        Me.Controls.Add(Me.pnlStatus)
         Me.Controls.Add(Me.pnlHeader)
         Me.MinimumSize = New System.Drawing.Size(980, 620)
         Me.Name = "Form1"
@@ -643,6 +676,7 @@ Partial Class Form1
         Me.pnlPreviewHost.ResumeLayout(False)
         CType(Me.pbPreview, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlStatus.ResumeLayout(False)
+        Me.pnlRuleH.ResumeLayout(False)
         Me.ResumeLayout(False)
     End Sub
 End Class

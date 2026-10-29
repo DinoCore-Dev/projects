@@ -33,47 +33,87 @@ Partial Class frmMain
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem, Me.QuotesToolStripMenuItem, Me.AboutToolStripMenuItem, Me.SchedulesToolStripMenuItem, Me.BibleVerseToolStripMenuItem})
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.QuotesToolStripMenuItem, Me.BibleVerseToolStripMenuItem, Me.SchedulesToolStripMenuItem, Me.AboutToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(255, 255, 255)
+        Me.MenuStrip1.ForeColor = System.Drawing.Color.FromArgb(30, 27, 75)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.0!)
+        Me.MenuStrip1.Font = New System.Drawing.Font("Franklin Gothic Medium", 10.0!)
         Me.MenuStrip1.Size = New System.Drawing.Size(1024, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'SchedulesToolStripMenuItem
+        '
         Me.SchedulesToolStripMenuItem.Name = "SchedulesToolStripMenuItem"
         Me.SchedulesToolStripMenuItem.Size = New System.Drawing.Size(74, 20)
         Me.SchedulesToolStripMenuItem.Text = "Schedules"
+        '
+        'AboutToolStripMenuItem
+        '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
         Me.AboutToolStripMenuItem.Text = "About"
+        '
+        'QuotesToolStripMenuItem
+        '
         Me.QuotesToolStripMenuItem.Name = "QuotesToolStripMenuItem"
         Me.QuotesToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.QuotesToolStripMenuItem.Text = "Quotes"
+        '
+        'BibleVerseToolStripMenuItem
+        '
         Me.BibleVerseToolStripMenuItem.Name = "BibleVerseToolStripMenuItem"
         Me.BibleVerseToolStripMenuItem.Size = New System.Drawing.Size(78, 20)
         Me.BibleVerseToolStripMenuItem.Text = "BibleVerse"
+        '
+        'ExitToolStripMenuItem
+        '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(40, 20)
         Me.ExitToolStripMenuItem.Text = "Exit"
+        '
+        'StatusStrip1
+        '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolstripUserInfo, Me.toolstripCurrentDate, Me.toolstripCurrentTime, Me.lblStatusBar})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 546)
+        Me.StatusStrip1.BackColor = System.Drawing.Color.FromArgb(232, 234, 250)
+        Me.StatusStrip1.ForeColor = System.Drawing.Color.FromArgb(72, 70, 122)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.0!)
+        Me.StatusStrip1.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.0!)
         Me.StatusStrip1.Size = New System.Drawing.Size(1024, 22)
         Me.StatusStrip1.TabIndex = 1
         Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'toolstripUserInfo
+        '
         Me.toolstripUserInfo.Name = "toolstripUserInfo"
         Me.toolstripUserInfo.Size = New System.Drawing.Size(60, 17)
         Me.toolstripUserInfo.Text = "UserInfo"
+        '
+        'toolstripCurrentDate
+        '
         Me.toolstripCurrentDate.Name = "toolstripCurrentDate"
         Me.toolstripCurrentDate.Size = New System.Drawing.Size(76, 17)
         Me.toolstripCurrentDate.Text = "CurrentDate"
+        '
+        'toolstripCurrentTime
+        '
         Me.toolstripCurrentTime.Name = "toolstripCurrentTime"
         Me.toolstripCurrentTime.Size = New System.Drawing.Size(80, 17)
         Me.toolstripCurrentTime.Text = "Current Time"
+        '
+        'lblStatusBar
+        '
         Me.lblStatusBar.Name = "lblStatusBar"
         Me.lblStatusBar.Size = New System.Drawing.Size(40, 17)
         Me.lblStatusBar.Text = "Ready"
+        '
+        'frmMain
+        '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 568)
@@ -81,6 +121,7 @@ Partial Class frmMain
         Me.Controls.Add(Me.MenuStrip1)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.BackColor = System.Drawing.Color.FromArgb(244, 245, 252)
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Integrative Project 2026 - Sajor, Renz  |  BSIT 3B"

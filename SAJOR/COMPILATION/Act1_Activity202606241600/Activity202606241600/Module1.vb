@@ -20,9 +20,9 @@ Module Module1
         Dim n1 As Integer = 0
         Dim n2 As Double = 0.0
         Dim isValid As Boolean = True
-        Dim character As Char = "A"c
-        Dim number1 As Integer = 12
-        Dim number2 As Double = 12.12
+        Dim character As Char = "R"c
+        Dim number1 As Integer = 27
+        Dim number2 As Double = 3.14
 
         Console.WriteLine("n1        = " & n1.ToString())
         Console.WriteLine("n2        = " & n2.ToString())

@@ -8,12 +8,16 @@ Partial Class MenuForm
         Me.openMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.combinedMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.exitMenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.lblHeading = New System.Windows.Forms.Label()
+        Me.lblSubheading = New System.Windows.Forms.Label()
         '
         'menuStrip1
         '
-        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.openMenu, Me.exitMenu, Me.combinedMenu, Me.treeMenu})
+        Me.menuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.combinedMenu, Me.treeMenu, Me.openMenu, Me.exitMenu})
         Me.menuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip1.Name = "menuStrip1"
+        Me.menuStrip1.BackColor = System.Drawing.Color.FromArgb(255, 255, 255)
+        Me.menuStrip1.ForeColor = System.Drawing.Color.FromArgb(30, 27, 75)
         Me.menuStrip1.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.0!)
         Me.menuStrip1.Size = New System.Drawing.Size(720, 24)
         '
@@ -41,9 +45,32 @@ Partial Class MenuForm
         Me.exitMenu.Size = New System.Drawing.Size(40, 20)
         Me.exitMenu.Text = "Exit"
         '
+        'lblHeading
+        '
+        Me.lblHeading.AutoSize = False
+        Me.lblHeading.Font = New System.Drawing.Font("Franklin Gothic Medium", 22.0!, System.Drawing.FontStyle.Bold)
+        Me.lblHeading.ForeColor = System.Drawing.Color.FromArgb(30, 27, 75)
+        Me.lblHeading.Location = New System.Drawing.Point(48, 96)
+        Me.lblHeading.Name = "lblHeading"
+        Me.lblHeading.Size = New System.Drawing.Size(620, 44)
+        Me.lblHeading.Text = "Windows Forms Controls"
+        '
+        'lblSubheading
+        '
+        Me.lblSubheading.AutoSize = False
+        Me.lblSubheading.Font = New System.Drawing.Font("Franklin Gothic Medium", 10.0!)
+        Me.lblSubheading.ForeColor = System.Drawing.Color.FromArgb(67, 56, 202)
+        Me.lblSubheading.Location = New System.Drawing.Point(48, 146)
+        Me.lblSubheading.Name = "lblSubheading"
+        Me.lblSubheading.Size = New System.Drawing.Size(620, 44)
+        Me.lblSubheading.Text = "File explorer demos: the combined explorer, the TreeView and OpenFileDialog."
+        '
         'MenuForm
         '
+        Me.BackColor = System.Drawing.Color.FromArgb(244, 245, 252)
         Me.ClientSize = New System.Drawing.Size(720, 376)
+        Me.Controls.Add(Me.lblHeading)
+        Me.Controls.Add(Me.lblSubheading)
         Me.Controls.Add(Me.menuStrip1)
         Me.Name = "MenuForm"
         Me.Text = "MenuForm"
@@ -53,4 +80,6 @@ Partial Class MenuForm
     Friend WithEvents openMenu As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents combinedMenu As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents exitMenu As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents lblHeading As System.Windows.Forms.Label
+    Friend WithEvents lblSubheading As System.Windows.Forms.Label
 End Class

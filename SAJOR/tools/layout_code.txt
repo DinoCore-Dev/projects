@@ -1,1 +1,1 @@
-layout code 13
+layout code 13 (full redesign: tools/apply_redesign.py)

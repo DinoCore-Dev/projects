@@ -48,6 +48,8 @@ Partial Class Form2
     Friend WithEvents pnlStatus As System.Windows.Forms.Panel
     Friend WithEvents lblStatus As System.Windows.Forms.Label
     Friend WithEvents lblCount As System.Windows.Forms.Label
+    Friend WithEvents pnlRuleT As System.Windows.Forms.Panel
+    Friend WithEvents pnlRuleB As System.Windows.Forms.Panel
 
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
@@ -84,6 +86,8 @@ Partial Class Form2
         Me.pnlStatus = New System.Windows.Forms.Panel()
         Me.lblCount = New System.Windows.Forms.Label()
         Me.lblStatus = New System.Windows.Forms.Label()
+        Me.pnlRuleT = New System.Windows.Forms.Panel()
+        Me.pnlRuleB = New System.Windows.Forms.Panel()
         Me.menuMain.SuspendLayout()
         Me.pnlTop.SuspendLayout()
         Me.pnlTools.SuspendLayout()
@@ -99,12 +103,16 @@ Partial Class Form2
         Me.pnlTopPane.SuspendLayout()
         Me.pnlBottomPane.SuspendLayout()
         Me.pnlStatus.SuspendLayout()
+        Me.pnlRuleT.SuspendLayout()
+        Me.pnlRuleB.SuspendLayout()
         Me.SuspendLayout()
         '
         'menuMain
         '
         Me.menuMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuLab})
         Me.menuMain.Location = New System.Drawing.Point(0, 0)
+        Me.menuMain.BackColor = System.Drawing.Color.FromArgb(255, 255, 255)
+        Me.menuMain.ForeColor = System.Drawing.Color.FromArgb(30, 27, 75)
         Me.menuMain.Name = "menuMain"
         Me.menuMain.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.0!)
         Me.menuMain.Size = New System.Drawing.Size(1000, 24)
@@ -113,6 +121,7 @@ Partial Class Form2
         'mnuLab
         '
         Me.mnuLab.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuPanelDemo, Me.mnuExit})
+        Me.mnuLab.ForeColor = System.Drawing.Color.FromArgb(30, 27, 75)
         Me.mnuLab.Name = "mnuLab"
         Me.mnuLab.Size = New System.Drawing.Size(39, 20)
         Me.mnuLab.Text = "&Lab"
@@ -131,53 +140,55 @@ Partial Class Form2
         '
         'pnlTop
         '
-        Me.pnlTop.BackColor = System.Drawing.Color.FromArgb(43, 27, 75)
+        Me.pnlTop.BackColor = System.Drawing.Color.FromArgb(255, 255, 255)
         Me.pnlTop.Controls.Add(Me.lblAuthor)
         Me.pnlTop.Controls.Add(Me.lblSub)
         Me.pnlTop.Controls.Add(Me.lblTitle)
+        Me.pnlTop.Controls.Add(Me.pnlRuleT)
         Me.pnlTop.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlTop.Location = New System.Drawing.Point(0, 24)
         Me.pnlTop.Name = "pnlTop"
-        Me.pnlTop.Size = New System.Drawing.Size(1000, 84)
+        Me.pnlTop.Size = New System.Drawing.Size(1000, 62)
         Me.pnlTop.TabIndex = 1
         '
         'lblTitle
         '
-        Me.lblTitle.AutoSize = True
-        Me.lblTitle.Font = New System.Drawing.Font("Franklin Gothic Medium", 17.75!, System.Drawing.FontStyle.Bold)
-        Me.lblTitle.ForeColor = System.Drawing.Color.White
-        Me.lblTitle.Location = New System.Drawing.Point(519, 35)
+        Me.lblTitle.AutoSize = False
+        Me.lblTitle.Font = New System.Drawing.Font("Franklin Gothic Medium", 17.0!, System.Drawing.FontStyle.Bold)
+        Me.lblTitle.ForeColor = System.Drawing.Color.FromArgb(30, 27, 75)
+        Me.lblTitle.Location = New System.Drawing.Point(24, 8)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(224, 32)
+        Me.lblTitle.Size = New System.Drawing.Size(380, 28)
         Me.lblTitle.TabIndex = 0
         Me.lblTitle.Text = "Split Container Lab"
         '
         'lblSub
         '
-        Me.lblSub.AutoSize = True
-        Me.lblSub.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.75!)
-        Me.lblSub.ForeColor = System.Drawing.Color.FromArgb(208, 199, 254)
-        Me.lblSub.Location = New System.Drawing.Point(522, 14)
+        Me.lblSub.AutoSize = False
+        Me.lblSub.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.0!)
+        Me.lblSub.ForeColor = System.Drawing.Color.FromArgb(105, 103, 150)
+        Me.lblSub.Location = New System.Drawing.Point(26, 38)
         Me.lblSub.Name = "lblSub"
-        Me.lblSub.Size = New System.Drawing.Size(430, 15)
+        Me.lblSub.Size = New System.Drawing.Size(640, 18)
         Me.lblSub.TabIndex = 1
         Me.lblSub.Text = "Activity 10 - SW20261002  |  nested SplitContainer, orientation, collapsing and locking"
         '
         'lblAuthor
         '
         Me.lblAuthor.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblAuthor.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.lblAuthor.ForeColor = System.Drawing.Color.White
-        Me.lblAuthor.Location = New System.Drawing.Point(24, 30)
+        Me.lblAuthor.Font = New System.Drawing.Font("Franklin Gothic Medium", 11.5!, System.Drawing.FontStyle.Bold)
+        Me.lblAuthor.ForeColor = System.Drawing.Color.FromArgb(30, 27, 75)
+        Me.lblAuthor.Location = New System.Drawing.Point(700, 22)
+        Me.lblAuthor.AutoSize = False
         Me.lblAuthor.Name = "lblAuthor"
-        Me.lblAuthor.Size = New System.Drawing.Size(276, 20)
+        Me.lblAuthor.Size = New System.Drawing.Size(276, 22)
         Me.lblAuthor.TabIndex = 2
         Me.lblAuthor.Text = "Sajor, Renz  |  BSIT 3B"
-        Me.lblAuthor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblAuthor.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'pnlTools
         '
-        Me.pnlTools.BackColor = System.Drawing.Color.FromArgb(226, 226, 240)
+        Me.pnlTools.BackColor = System.Drawing.Color.FromArgb(255, 255, 255)
         Me.pnlTools.Controls.Add(Me.lblSplitInfo)
         Me.pnlTools.Controls.Add(Me.btnExit)
         Me.pnlTools.Controls.Add(Me.btnReset)
@@ -185,98 +196,99 @@ Partial Class Form2
         Me.pnlTools.Controls.Add(Me.btnSwapOrientation)
         Me.pnlTools.Controls.Add(Me.btnCollapseTop)
         Me.pnlTools.Controls.Add(Me.btnCollapseLeft)
-        Me.pnlTools.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlTools.Controls.Add(Me.pnlRuleB)
+        Me.pnlTools.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.pnlTools.Location = New System.Drawing.Point(0, 108)
         Me.pnlTools.Name = "pnlTools"
-        Me.pnlTools.Size = New System.Drawing.Size(1000, 58)
+        Me.pnlTools.Size = New System.Drawing.Size(1000, 64)
         Me.pnlTools.TabIndex = 2
         '
         'btnCollapseLeft
         '
-        Me.btnCollapseLeft.BackColor = System.Drawing.Color.White
-        Me.btnCollapseLeft.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(191, 191, 191)
+        Me.btnCollapseLeft.BackColor = System.Drawing.Color.FromArgb(12, 52, 66)
+        Me.btnCollapseLeft.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(34, 170, 200)
         Me.btnCollapseLeft.FlatAppearance.BorderSize = 1
         Me.btnCollapseLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCollapseLeft.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.25!)
-        Me.btnCollapseLeft.ForeColor = System.Drawing.Color.FromArgb(32, 30, 59)
-        Me.btnCollapseLeft.Location = New System.Drawing.Point(224, 12)
+        Me.btnCollapseLeft.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.btnCollapseLeft.ForeColor = System.Drawing.Color.FromArgb(186, 236, 248)
+        Me.btnCollapseLeft.Location = New System.Drawing.Point(16, 12)
         Me.btnCollapseLeft.Name = "btnCollapseLeft"
-        Me.btnCollapseLeft.Size = New System.Drawing.Size(132, 34)
+        Me.btnCollapseLeft.Size = New System.Drawing.Size(140, 40)
         Me.btnCollapseLeft.TabIndex = 0
         Me.btnCollapseLeft.Text = "Hide / show list"
         Me.btnCollapseLeft.UseVisualStyleBackColor = False
         '
         'btnCollapseTop
         '
-        Me.btnCollapseTop.BackColor = System.Drawing.Color.White
-        Me.btnCollapseTop.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(191, 191, 191)
+        Me.btnCollapseTop.BackColor = System.Drawing.Color.FromArgb(12, 52, 66)
+        Me.btnCollapseTop.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(34, 170, 200)
         Me.btnCollapseTop.FlatAppearance.BorderSize = 1
         Me.btnCollapseTop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCollapseTop.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.25!)
-        Me.btnCollapseTop.ForeColor = System.Drawing.Color.FromArgb(32, 30, 59)
-        Me.btnCollapseTop.Location = New System.Drawing.Point(364, 12)
+        Me.btnCollapseTop.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.btnCollapseTop.ForeColor = System.Drawing.Color.FromArgb(186, 236, 248)
+        Me.btnCollapseTop.Location = New System.Drawing.Point(164, 12)
         Me.btnCollapseTop.Name = "btnCollapseTop"
-        Me.btnCollapseTop.Size = New System.Drawing.Size(132, 34)
+        Me.btnCollapseTop.Size = New System.Drawing.Size(156, 40)
         Me.btnCollapseTop.TabIndex = 1
         Me.btnCollapseTop.Text = "Hide / show records"
         Me.btnCollapseTop.UseVisualStyleBackColor = False
         '
         'btnSwapOrientation
         '
-        Me.btnSwapOrientation.BackColor = System.Drawing.Color.White
-        Me.btnSwapOrientation.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(191, 191, 191)
+        Me.btnSwapOrientation.BackColor = System.Drawing.Color.FromArgb(30, 27, 75)
+        Me.btnSwapOrientation.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(99, 102, 241)
         Me.btnSwapOrientation.FlatAppearance.BorderSize = 1
         Me.btnSwapOrientation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSwapOrientation.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.25!)
-        Me.btnSwapOrientation.ForeColor = System.Drawing.Color.FromArgb(32, 30, 59)
-        Me.btnSwapOrientation.Location = New System.Drawing.Point(504, 12)
+        Me.btnSwapOrientation.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.btnSwapOrientation.ForeColor = System.Drawing.Color.FromArgb(199, 210, 254)
+        Me.btnSwapOrientation.Location = New System.Drawing.Point(328, 12)
         Me.btnSwapOrientation.Name = "btnSwapOrientation"
-        Me.btnSwapOrientation.Size = New System.Drawing.Size(132, 34)
+        Me.btnSwapOrientation.Size = New System.Drawing.Size(140, 40)
         Me.btnSwapOrientation.TabIndex = 2
         Me.btnSwapOrientation.Text = "Swap orientation"
         Me.btnSwapOrientation.UseVisualStyleBackColor = False
         '
         'btnLock
         '
-        Me.btnLock.BackColor = System.Drawing.Color.White
-        Me.btnLock.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(191, 191, 191)
+        Me.btnLock.BackColor = System.Drawing.Color.FromArgb(74, 28, 36)
+        Me.btnLock.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(240, 110, 95)
         Me.btnLock.FlatAppearance.BorderSize = 1
         Me.btnLock.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLock.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.25!)
-        Me.btnLock.ForeColor = System.Drawing.Color.FromArgb(32, 30, 59)
-        Me.btnLock.Location = New System.Drawing.Point(644, 12)
+        Me.btnLock.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.btnLock.ForeColor = System.Drawing.Color.FromArgb(254, 205, 198)
+        Me.btnLock.Location = New System.Drawing.Point(476, 12)
         Me.btnLock.Name = "btnLock"
-        Me.btnLock.Size = New System.Drawing.Size(118, 34)
+        Me.btnLock.Size = New System.Drawing.Size(120, 40)
         Me.btnLock.TabIndex = 3
         Me.btnLock.Text = "Lock splitters"
         Me.btnLock.UseVisualStyleBackColor = False
         '
         'btnReset
         '
-        Me.btnReset.BackColor = System.Drawing.Color.FromArgb(36, 21, 68)
-        Me.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(122, 70, 229)
+        Me.btnReset.BackColor = System.Drawing.Color.FromArgb(48, 48, 66)
+        Me.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(150, 152, 182)
         Me.btnReset.FlatAppearance.BorderSize = 1
         Me.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReset.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.btnReset.ForeColor = System.Drawing.Color.FromArgb(225, 214, 249)
-        Me.btnReset.Location = New System.Drawing.Point(770, 12)
+        Me.btnReset.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.btnReset.ForeColor = System.Drawing.Color.FromArgb(224, 226, 240)
+        Me.btnReset.Location = New System.Drawing.Point(604, 12)
         Me.btnReset.Name = "btnReset"
-        Me.btnReset.Size = New System.Drawing.Size(118, 34)
+        Me.btnReset.Size = New System.Drawing.Size(110, 40)
         Me.btnReset.TabIndex = 4
         Me.btnReset.Text = "Reset layout"
         Me.btnReset.UseVisualStyleBackColor = False
         '
         'btnExit
         '
-        Me.btnExit.BackColor = System.Drawing.Color.FromArgb(66, 11, 11)
-        Me.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(220, 38, 38)
+        Me.btnExit.BackColor = System.Drawing.Color.FromArgb(88, 20, 34)
+        Me.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(225, 60, 90)
         Me.btnExit.FlatAppearance.BorderSize = 1
         Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnExit.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.btnExit.ForeColor = System.Drawing.Color.FromArgb(247, 207, 207)
-        Me.btnExit.Location = New System.Drawing.Point(896, 12)
+        Me.btnExit.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.btnExit.ForeColor = System.Drawing.Color.FromArgb(255, 214, 220)
+        Me.btnExit.Location = New System.Drawing.Point(722, 12)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(90, 34)
+        Me.btnExit.Size = New System.Drawing.Size(70, 40)
         Me.btnExit.TabIndex = 5
         Me.btnExit.Text = "Exit"
         Me.btnExit.UseVisualStyleBackColor = False
@@ -284,11 +296,13 @@ Partial Class Form2
         'lblSplitInfo
         '
         Me.lblSplitInfo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblSplitInfo.Font = New System.Drawing.Font("Consolas", 8.25!)
-        Me.lblSplitInfo.ForeColor = System.Drawing.Color.FromArgb(72, 71, 105)
-        Me.lblSplitInfo.Location = New System.Drawing.Point(14, 12)
+        Me.lblSplitInfo.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.0!)
+        Me.lblSplitInfo.ForeColor = System.Drawing.Color.FromArgb(72, 70, 122)
+        Me.lblSplitInfo.Location = New System.Drawing.Point(810, 12)
+        Me.lblSplitInfo.AutoSize = False
+        Me.lblSplitInfo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.lblSplitInfo.Name = "lblSplitInfo"
-        Me.lblSplitInfo.Size = New System.Drawing.Size(200, 34)
+        Me.lblSplitInfo.Size = New System.Drawing.Size(170, 40)
         Me.lblSplitInfo.TabIndex = 6
         Me.lblSplitInfo.Text = "outer : 220 px" & Microsoft.VisualBasic.ChrW(13) & Microsoft.VisualBasic.ChrW(10) & "inner : 260 px"
         '
@@ -296,6 +310,7 @@ Partial Class Form2
         '
         Me.splOuter.Dock = System.Windows.Forms.DockStyle.Fill
         Me.splOuter.Location = New System.Drawing.Point(0, 166)
+        Me.splOuter.BackColor = System.Drawing.Color.FromArgb(200, 204, 232)
         Me.splOuter.Name = "splOuter"
         Me.splOuter.Orientation = System.Windows.Forms.Orientation.Vertical
         '
@@ -315,7 +330,7 @@ Partial Class Form2
         '
         'pnlLeft
         '
-        Me.pnlLeft.BackColor = System.Drawing.Color.White
+        Me.pnlLeft.BackColor = System.Drawing.Color.FromArgb(255, 255, 255)
         Me.pnlLeft.Controls.Add(Me.lstCategories)
         Me.pnlLeft.Controls.Add(Me.lblLeftTitle)
         Me.pnlLeft.Dock = System.Windows.Forms.DockStyle.Fill
@@ -328,9 +343,10 @@ Partial Class Form2
         'lblLeftTitle
         '
         Me.lblLeftTitle.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblLeftTitle.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.0!, System.Drawing.FontStyle.Bold)
-        Me.lblLeftTitle.ForeColor = System.Drawing.Color.FromArgb(102, 100, 139)
+        Me.lblLeftTitle.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.5!, System.Drawing.FontStyle.Bold)
+        Me.lblLeftTitle.ForeColor = System.Drawing.Color.FromArgb(67, 56, 202)
         Me.lblLeftTitle.Location = New System.Drawing.Point(12, 12)
+        Me.lblLeftTitle.BackColor = System.Drawing.Color.FromArgb(232, 234, 250)
         Me.lblLeftTitle.Name = "lblLeftTitle"
         Me.lblLeftTitle.Size = New System.Drawing.Size(196, 26)
         Me.lblLeftTitle.TabIndex = 0
@@ -340,11 +356,13 @@ Partial Class Form2
         '
         Me.lstCategories.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lstCategories.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lstCategories.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.75!)
+        Me.lstCategories.Font = New System.Drawing.Font("Franklin Gothic Medium", 10.5!)
         Me.lstCategories.FormattingEnabled = True
         Me.lstCategories.IntegralHeight = False
         Me.lstCategories.ItemHeight = 17
         Me.lstCategories.Location = New System.Drawing.Point(12, 38)
+        Me.lstCategories.BackColor = System.Drawing.Color.FromArgb(255, 255, 255)
+        Me.lstCategories.ForeColor = System.Drawing.Color.FromArgb(38, 36, 92)
         Me.lstCategories.Name = "lstCategories"
         Me.lstCategories.Size = New System.Drawing.Size(196, 384)
         Me.lstCategories.TabIndex = 1
@@ -353,6 +371,7 @@ Partial Class Form2
         '
         Me.splInner.Dock = System.Windows.Forms.DockStyle.Fill
         Me.splInner.Location = New System.Drawing.Point(0, 0)
+        Me.splInner.BackColor = System.Drawing.Color.FromArgb(200, 204, 232)
         Me.splInner.Name = "splInner"
         Me.splInner.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
@@ -372,7 +391,7 @@ Partial Class Form2
         '
         'pnlTopPane
         '
-        Me.pnlTopPane.BackColor = System.Drawing.Color.White
+        Me.pnlTopPane.BackColor = System.Drawing.Color.FromArgb(255, 255, 255)
         Me.pnlTopPane.Controls.Add(Me.lvRecords)
         Me.pnlTopPane.Controls.Add(Me.lblRecordsTitle)
         Me.pnlTopPane.Dock = System.Windows.Forms.DockStyle.Fill
@@ -385,9 +404,10 @@ Partial Class Form2
         'lblRecordsTitle
         '
         Me.lblRecordsTitle.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblRecordsTitle.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.0!, System.Drawing.FontStyle.Bold)
-        Me.lblRecordsTitle.ForeColor = System.Drawing.Color.FromArgb(102, 100, 139)
+        Me.lblRecordsTitle.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.5!, System.Drawing.FontStyle.Bold)
+        Me.lblRecordsTitle.ForeColor = System.Drawing.Color.FromArgb(67, 56, 202)
         Me.lblRecordsTitle.Location = New System.Drawing.Point(12, 12)
+        Me.lblRecordsTitle.BackColor = System.Drawing.Color.FromArgb(232, 234, 250)
         Me.lblRecordsTitle.Name = "lblRecordsTitle"
         Me.lblRecordsTitle.Size = New System.Drawing.Size(748, 26)
         Me.lblRecordsTitle.TabIndex = 0
@@ -404,6 +424,8 @@ Partial Class Form2
         Me.lvRecords.HideSelection = False
         Me.lvRecords.Location = New System.Drawing.Point(12, 38)
         Me.lvRecords.MultiSelect = False
+        Me.lvRecords.BackColor = System.Drawing.Color.FromArgb(255, 255, 255)
+        Me.lvRecords.ForeColor = System.Drawing.Color.FromArgb(38, 36, 92)
         Me.lvRecords.Name = "lvRecords"
         Me.lvRecords.Size = New System.Drawing.Size(748, 210)
         Me.lvRecords.TabIndex = 1
@@ -427,7 +449,7 @@ Partial Class Form2
         '
         'pnlBottomPane
         '
-        Me.pnlBottomPane.BackColor = System.Drawing.Color.FromArgb(248, 248, 252)
+        Me.pnlBottomPane.BackColor = System.Drawing.Color.FromArgb(255, 255, 255)
         Me.pnlBottomPane.Controls.Add(Me.txtDetails)
         Me.pnlBottomPane.Controls.Add(Me.lblDetailTitle)
         Me.pnlBottomPane.Dock = System.Windows.Forms.DockStyle.Fill
@@ -440,9 +462,10 @@ Partial Class Form2
         'lblDetailTitle
         '
         Me.lblDetailTitle.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblDetailTitle.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.0!, System.Drawing.FontStyle.Bold)
-        Me.lblDetailTitle.ForeColor = System.Drawing.Color.FromArgb(102, 100, 139)
+        Me.lblDetailTitle.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.5!, System.Drawing.FontStyle.Bold)
+        Me.lblDetailTitle.ForeColor = System.Drawing.Color.FromArgb(67, 56, 202)
         Me.lblDetailTitle.Location = New System.Drawing.Point(12, 12)
+        Me.lblDetailTitle.BackColor = System.Drawing.Color.FromArgb(232, 234, 250)
         Me.lblDetailTitle.Name = "lblDetailTitle"
         Me.lblDetailTitle.Size = New System.Drawing.Size(748, 26)
         Me.lblDetailTitle.TabIndex = 0
@@ -450,11 +473,11 @@ Partial Class Form2
         '
         'txtDetails
         '
-        Me.txtDetails.BackColor = System.Drawing.Color.FromArgb(248, 248, 252)
+        Me.txtDetails.BackColor = System.Drawing.Color.FromArgb(247, 248, 255)
         Me.txtDetails.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtDetails.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtDetails.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.25!)
-        Me.txtDetails.ForeColor = System.Drawing.Color.FromArgb(32, 30, 59)
+        Me.txtDetails.Font = New System.Drawing.Font("Franklin Gothic Medium", 10.0!)
+        Me.txtDetails.ForeColor = System.Drawing.Color.FromArgb(38, 36, 92)
         Me.txtDetails.Location = New System.Drawing.Point(12, 38)
         Me.txtDetails.Multiline = True
         Me.txtDetails.Name = "txtDetails"
@@ -466,46 +489,63 @@ Partial Class Form2
         '
         'pnlStatus
         '
-        Me.pnlStatus.BackColor = System.Drawing.Color.FromArgb(226, 226, 240)
+        Me.pnlStatus.BackColor = System.Drawing.Color.FromArgb(232, 234, 250)
         Me.pnlStatus.Controls.Add(Me.lblCount)
         Me.pnlStatus.Controls.Add(Me.lblStatus)
         Me.pnlStatus.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.pnlStatus.Location = New System.Drawing.Point(0, 600)
         Me.pnlStatus.Name = "pnlStatus"
-        Me.pnlStatus.Size = New System.Drawing.Size(1000, 30)
+        Me.pnlStatus.Size = New System.Drawing.Size(1000, 28)
         Me.pnlStatus.TabIndex = 4
         '
         'lblStatus
         '
-        Me.lblStatus.AutoSize = True
-        Me.lblStatus.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.75!)
-        Me.lblStatus.ForeColor = System.Drawing.Color.FromArgb(52, 51, 85)
-        Me.lblStatus.Location = New System.Drawing.Point(14, 7)
+        Me.lblStatus.AutoSize = False
+        Me.lblStatus.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.5!)
+        Me.lblStatus.ForeColor = System.Drawing.Color.FromArgb(72, 70, 122)
+        Me.lblStatus.Location = New System.Drawing.Point(14, 5)
         Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(222, 15)
+        Me.lblStatus.Size = New System.Drawing.Size(600, 18)
         Me.lblStatus.TabIndex = 0
         Me.lblStatus.Text = "Drag any splitter to resize the panels."
         '
         'lblCount
         '
         Me.lblCount.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblCount.Font = New System.Drawing.Font("Franklin Gothic Medium", 8.0!)
-        Me.lblCount.ForeColor = System.Drawing.Color.FromArgb(102, 100, 139)
-        Me.lblCount.Location = New System.Drawing.Point(700, 7)
+        Me.lblCount.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.5!, System.Drawing.FontStyle.Bold)
+        Me.lblCount.ForeColor = System.Drawing.Color.FromArgb(67, 56, 202)
+        Me.lblCount.Location = New System.Drawing.Point(700, 5)
+        Me.lblCount.AutoSize = False
         Me.lblCount.Name = "lblCount"
-        Me.lblCount.Size = New System.Drawing.Size(284, 16)
+        Me.lblCount.Size = New System.Drawing.Size(284, 18)
         Me.lblCount.TabIndex = 1
         Me.lblCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'pnlRuleT
+        '
+        Me.pnlRuleT.Location = New System.Drawing.Point(0, 58)
+        Me.pnlRuleT.Size = New System.Drawing.Size(1000, 4)
+        Me.pnlRuleT.Name = "pnlRuleT"
+        Me.pnlRuleT.TabIndex = 0
+        Me.pnlRuleT.BackColor = System.Drawing.Color.FromArgb(67, 56, 202)
+        '
+        'pnlRuleB
+        '
+        Me.pnlRuleB.Location = New System.Drawing.Point(0, 0)
+        Me.pnlRuleB.Size = New System.Drawing.Size(1000, 3)
+        Me.pnlRuleB.Name = "pnlRuleB"
+        Me.pnlRuleB.TabIndex = 0
+        Me.pnlRuleB.BackColor = System.Drawing.Color.FromArgb(200, 204, 232)
         '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(241, 241, 249)
+        Me.BackColor = System.Drawing.Color.FromArgb(244, 245, 252)
         Me.ClientSize = New System.Drawing.Size(1000, 630)
         Me.Controls.Add(Me.splOuter)
-        Me.Controls.Add(Me.pnlStatus)
         Me.Controls.Add(Me.pnlTools)
+        Me.Controls.Add(Me.pnlStatus)
         Me.Controls.Add(Me.pnlTop)
         Me.Controls.Add(Me.menuMain)
         Me.MainMenuStrip = Me.menuMain
@@ -528,6 +568,8 @@ Partial Class Form2
         Me.pnlTopPane.ResumeLayout(False)
         Me.pnlBottomPane.ResumeLayout(False)
         Me.pnlStatus.ResumeLayout(False)
+        Me.pnlRuleT.ResumeLayout(False)
+        Me.pnlRuleB.ResumeLayout(False)
         Me.ResumeLayout(False)
     End Sub
 End Class

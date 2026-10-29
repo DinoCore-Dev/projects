@@ -45,7 +45,7 @@ Other project zips in the same branch:
 | `Marcos_Angela_Compilation.zip` | `6c403e632ec30e0acbe2205e3f67790f` | 2.72 MB |
 | `Mayo_MhikeCharles_Compilation.zip` | `1338d96ad9fb1a0fcd9cfbf8035d585e` | 2.69 MB |
 | `Pastor_LorenzJames_Compilation.zip` | `16f7d98cb374b32c2355e8902205709c` | 2.56 MB |
-| `Sajor_Renz_Compilation.zip` | `089371fea0518065cf1f2f69ecca4e49` | 2.46 MB |
+| `Sajor_Renz_Compilation.zip` | `4e963cb276765a113e9f6032c5e53d7c` | 3.35 MB |
 | `Sonajo_ChristianPaolo_Compilation.zip` | `e60174de1737470666dd0ae04b57f053` | 2.44 MB |
 | `Viernes_MarkSyrel_Compilation.zip` | `8735a7fc76cc0207ec416db52094fc76` | 2.83 MB |
 
@@ -129,7 +129,7 @@ blank lines / author / `BSIT 3B` / `Subject  :  Integrative Programming` /
 | Gaudan, Darwin | `GAUDAN/` | moss / forest green | 10 | "Well done is better than well said." - Benjamin Franklin (*Poor Richard's Almanack*, 1737) |
 | Mayo, Mhike Charles | `MAYO/` | gold / bronze (dark) | 11 | "Education is the passport to the future, for tomorrow belongs to those who prepare for it today." - Malcolm X (1964) |
 | Viernes, Mark Syrel | `VIERNES/` | graphite + mint (dark, full redesign) | 12 | "If I have seen further, it is by standing on the shoulders of giants." - Isaac Newton |
-| Sajor, Renz | `SAJOR/` | indigo / violet | 13 | "Knowing is not enough; we must apply. Willing is not enough; we must do." - Johann Wolfgang von Goethe (*Wilhelm Meisters Wanderjahre*) |
+| Sajor, Renz | `SAJOR/` | indigo / lavender (light, full redesign) | 13 | "Knowing is not enough; we must apply. Willing is not enough; we must do." - Johann Wolfgang von Goethe (*Wilhelm Meisters Wanderjahre*) |
 
 Each identity also has its own app name (**<Surname> Explorer**), its own name / BSIT 3B on every
 console header, banner, author label, About form and MDI status strip, and its own photo.
@@ -183,6 +183,11 @@ an info-left / button-bottom tab form in Act 7, a left button rail in Act 9, a h
 a vertical tool rail in Act 10 Form 2 and Act 12, button bars in Act 11, a full-width grid above the field grid in Act 13 and a
 photo-right About card). Control names never change, so the code-behind still works. It is reproducible with
 `VIERNES/tools/apply_redesign.py` (see the docstring).
+
+**Sajor (code 13) is a second, different full redesign** ("Indigo Studio": light lavender pages, white cards with a coloured top strip,
+white title bars with an indigo underline, tiles, bottom action bars). It is not Viernes's dark design and uses other
+arrangements in every form of Activities 4-13. Control names never change. Reproducible with `SAJOR/tools/apply_redesign.py`.
+Sajor's Sample Output also uses its own values (for example 45 / 5 / 3, 82-86-88, $2,500 at 4% for 5 years, class grades 78-85-91-100).
 
 ## Activities (same 13 for every student)
 
