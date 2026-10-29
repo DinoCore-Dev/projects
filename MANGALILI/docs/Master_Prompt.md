@@ -89,8 +89,8 @@ c4) LAYOUT NG MGA FORM (Act 4 - 13): MAGKAIBA ang layout ng bawat identity sa la
      Bit 0/1/2/3 ng code = op0/op1/op2/op3 (ang op3 ay unang inaapply). Walang pareho ang mga code, kaya magkakaiba ang layout ng lahat.
    - Walang laman ng repo ang pwedeng may parehong code. Mga code ngayon: MANGALILI 0, SONAJO 1,
      LUCENA 2, DEGUZMAN 3, PASTOR 4, MARCOS 5, MARCELO 6, ANICIETE 7, ATIENZA 8, ALAP 9, GAUDAN 10, MAYO 11, VIERNES 12 (espesyal:
-     buong redesign na dark graphite + mint; tingnan ang `VIERNES/tools/apply_redesign.py`). Ang bagong
-     identity ay gumagamit ng susunod na hindi pa nagagamit (13 hanggang 15 ay may op3 na; lampas 15:
+     buong redesign na dark graphite + mint; tingnan ang `VIERNES/tools/apply_redesign.py`), SAJOR 13 (indigo; Franklin Gothic Medium + ink buttons). Ang bagong
+     identity ay gumagamit ng susunod na hindi pa nagagamit (14 at 15 ay may op3 na; lampas 15:
      dagdagan ang op ng bawat form).
    - Pangalan ng controls ang ginagamit ng code, kaya Location / Size / Dock lang ang nagbabago;
      huwag baguhin ang logic. I-rebuild ang `docs/figures` pagkatapos para tumugma ang Form Design
@@ -106,10 +106,10 @@ c5) FONT AT BUTTON STYLE (Act 4 - 13): MAGKAIBA rin ang font family at itsura ng
      Kung may kailangan lang ulitin: `python3 tools/style_variants.py --fit-only`.
    - Talahanayan (code - family - button style): 0 Segoe UI solid; 1 Courier New border2; 2 Georgia ghost2;
      3 Verdana bevel; 4 Calibri popup; 5 Cambria thin; 6 Times New Roman native; 7 Arial ghost3;
-     8 Consolas tonal; 9 Tahoma heavy; 10 Trebuchet MS inverse; 11 Candara halo. Bagong identity: kunin ang susunod na code at idagdag ang
+     8 Consolas tonal; 9 Tahoma heavy; 10 Trebuchet MS inverse; 11 Candara halo; 12 Corbel neon; 13 Franklin Gothic Medium ink. Bagong identity: kunin ang susunod na code at idagdag ang
      family sa `STYLES` at `FONT_TABLE` (kasama ang TTF na pamalit sa `tools/fonts/` para sa figure).
    - Ang figure ay gumagamit ng metric-compatible na pamalit (Cousine, Gelasio, Carlito, Caladea, Arimo, Tinos,
-     Inconsolata, Lato, Open Sans); ang Windows na ang gagamit ng totoong font sa VS2010. Bago mag-rebuild ng docs,
+     Inconsolata, Lato, Open Sans, Nunito Sans, Cabin, Libre Franklin); ang Windows na ang gagamit ng totoong font sa VS2010. Bago mag-rebuild ng docs,
      tapusin muna ang layout_variants at style_variants.
    - Pagkatapos ng `fit_fonts`: tingnan ang lahat ng figure ng Act 4 - 13 (lalo na ang malalapad na font: Courier New,
      Verdana, Tahoma). Walang text na putol sa gilid ng form, walang label na tumatama sa textbox, at walang tab na

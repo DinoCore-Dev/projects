@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 """Font and button-style variants for the form activities (Acts 4-13).
 
-Every identity gets its own STYLE CODE (0..12).  A style is
+Every identity gets its own STYLE CODE (0..13).  A style is
 
     * one font family that Visual Studio 2010 offers on any Windows PC
       (Segoe UI, Courier New, Georgia, Verdana, Calibri, Cambria, Arial,
-       Times New Roman, Consolas, Tahoma, Trebuchet MS, Candara, Corbel), and
+       Times New Roman, Consolas, Tahoma, Trebuchet MS, Candara, Corbel, Franklin Gothic Medium), and
     * one button look: borderless, 2px border, outline, 3D, popup, thin, native,
-      3px outline, tonal, heavy border, inverse (dark fill, light border) or halo (thick pale frame).
+      3px outline, tonal, heavy border, inverse (dark fill, light border), halo (thick pale frame), neon or ink (near-black fill,
+      pale accent text, 1px accent border).
 
 What the script rewrites inside the *.Designer.vb files (and the two forms built in code):
 
@@ -20,7 +21,7 @@ What the script rewrites inside the *.Designer.vb files (and the two forms built
 Control names, positions and event handlers stay the same, so the code-behind is untouched.
 Run once per identity folder (a marker file tools/style_code.txt stops a second run):
 
-    python3 tools/style_variants.py <STYLE_CODE 0-12>
+    python3 tools/style_variants.py <STYLE_CODE 0-13>
 """
 import colorsys
 import glob
@@ -48,6 +49,7 @@ STYLES = {
     10: ("Trebuchet MS", 0.98, "inverse"),
     11: ("Candara", 1.05, "halo"),
     12: ("Corbel", 1.00, "neon"),
+    13: ("Franklin Gothic Medium", 0.98, "ink"),
 }
 MIN_SIZE = 7.0
 FONT_KINDS = ("Label", "Button", "TextBox", "ComboBox", "DateTimePicker", "DataGridView", "GroupBox",
@@ -221,6 +223,14 @@ def restyle_one(text, name, style, accent):
             border_color = darker(base, 0.75)
         else:
             new_back, new_fore, border_color = darker(accent, 0.55), (255, 255, 255), mix_white(accent, 0.40)
+    elif style == "ink":
+        flat_name, border_size = "Flat", 1
+        if styled and not light:
+            new_back, new_fore, border_color = darker(base, 0.30), mix_white(base, 0.78), base
+        elif styled:
+            border_color = darker(base, 0.75)
+        else:
+            new_back, new_fore, border_color = darker(accent, 0.30), mix_white(accent, 0.78), accent
     elif style == "halo":
         flat_name, border_size = "Flat", 4
         if styled and not light:

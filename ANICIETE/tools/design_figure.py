@@ -15,7 +15,7 @@ FONT_MONO = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
 
 # Windows fonts that Visual Studio 2010 offers -> metric-compatible fonts shipped in tools/fonts
 # (Courier New = Cousine, Arial = Arimo, Times New Roman = Tinos, Calibri = Carlito,
-#  Cambria = Caladea, Georgia = Gelasio, Consolas = Inconsolata, Segoe UI = Open Sans,
+#  Cambria = Caladea, Georgia = Gelasio, Consolas = Inconsolata, Segoe UI = Open Sans, Franklin Gothic Medium = Libre Franklin,
 #  Verdana / Tahoma = DejaVu Sans).  Only the picture uses them; the program uses the real font.
 FONT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fonts")
 FONT_TABLE = {
@@ -32,6 +32,7 @@ FONT_TABLE = {
     "Trebuchet MS": ("Lato_400Regular.ttf", "Lato_700Bold.ttf", 1.03),
     "Candara": ("Cabin_400Regular.ttf", "Cabin_700Bold.ttf", 1.0),
     "Corbel": ("NunitoSans_400Regular.ttf", "NunitoSans_700Bold.ttf", 0.94),
+    "Franklin Gothic Medium": ("LibreFranklin_400Regular.ttf", "LibreFranklin_700Bold.ttf", 0.96),
     "Microsoft Sans Serif": ("Arimo_400Regular.ttf", "Arimo_700Bold.ttf", 0.97),
     "Lucida Console": ("DejaVuSansMono.ttf", "DejaVuSansMono-Bold.ttf", 0.9),
 }

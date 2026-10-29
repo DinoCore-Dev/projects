@@ -1,9 +1,9 @@
-# Activity Compilation - thirteen students, thirteen separate packages
+# Activity Compilation - fourteen students, fourteen separate packages
 
 Repository for the **Integrative Programming** activity compilation (13 activities each),
 built for **Visual Studio 2010 / .NET Framework 4.0**.
 
-The repository holds **thirteen separate, complete compilations** - one folder and one zip each:
+The repository holds **fourteen separate, complete compilations** - one folder and one zip each:
 
 | Student | Folder (source) | Download zip (one click) |
 |---------|-----------------|--------------|
@@ -20,8 +20,9 @@ The repository holds **thirteen separate, complete compilations** - one folder a
 | **Gaudan, Darwin** - BSIT 3B | `GAUDAN/` | [**Download**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/Gaudan_Darwin_Compilation.zip) `Gaudan_Darwin_Compilation.zip` |
 | **Mayo, Mhike Charles** - BSIT 3B | `MAYO/` | [**Download**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/Mayo_MhikeCharles_Compilation.zip) `Mayo_MhikeCharles_Compilation.zip` |
 | **Viernes, Mark Syrel** - BSIT 3B | `VIERNES/` | [**Download**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/Viernes_MarkSyrel_Compilation.zip) `Viernes_MarkSyrel_Compilation.zip` |
+| **Sajor, Renz** - BSIT 3B | `SAJOR/` | [**Download**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/Sajor_Renz_Compilation.zip) `Sajor_Renz_Compilation.zip` |
 
-All thirteen in one file: [**Download All_Compilations.zip**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/All_Compilations.zip) (the thirteen student zips).
+All fourteen in one file: [**Download All_Compilations.zip**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/All_Compilations.zip) (the fourteen student zips).
 
 Other project zips in the same branch:
 [**SmartBioStudentLog.zip**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/SmartBioStudentLog.zip) and [**QRLibrarySystem.zip**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/QRLibrarySystem.zip).
@@ -44,6 +45,7 @@ Other project zips in the same branch:
 | `Marcos_Angela_Compilation.zip` | `6c403e632ec30e0acbe2205e3f67790f` | 2.72 MB |
 | `Mayo_MhikeCharles_Compilation.zip` | `1338d96ad9fb1a0fcd9cfbf8035d585e` | 2.69 MB |
 | `Pastor_LorenzJames_Compilation.zip` | `16f7d98cb374b32c2355e8902205709c` | 2.56 MB |
+| `Sajor_Renz_Compilation.zip` | `089371fea0518065cf1f2f69ecca4e49` | 2.46 MB |
 | `Sonajo_ChristianPaolo_Compilation.zip` | `e60174de1737470666dd0ae04b57f053` | 2.44 MB |
 | `Viernes_MarkSyrel_Compilation.zip` | `8735a7fc76cc0207ec416db52094fc76` | 2.83 MB |
 
@@ -56,7 +58,7 @@ control names/types against the code-behind, no duplicate properties, no leftove
 **Build > Rebuild Solution** once in VS2010 after extracting; please report any compiler message.
 
 
-All thirteen zips have the same clean layout: the DOCX and one numbered
+All fourteen zips have the same clean layout: the DOCX and one numbered
 folder per activity (`01_ ... 13_ ...`). There is no PDF, no `START_HERE.txt` and no `.md` file and no `Form_Designs/` folder in
 the zip, and no nested second zip. (The PDF and `Master_Prompt.md` stay in each identity's `docs/`
 folder in the repo.)
@@ -127,6 +129,7 @@ blank lines / author / `BSIT 3B` / `Subject  :  Integrative Programming` /
 | Gaudan, Darwin | `GAUDAN/` | moss / forest green | 10 | "Well done is better than well said." - Benjamin Franklin (*Poor Richard's Almanack*, 1737) |
 | Mayo, Mhike Charles | `MAYO/` | gold / bronze (dark) | 11 | "Education is the passport to the future, for tomorrow belongs to those who prepare for it today." - Malcolm X (1964) |
 | Viernes, Mark Syrel | `VIERNES/` | graphite + mint (dark, full redesign) | 12 | "If I have seen further, it is by standing on the shoulders of giants." - Isaac Newton |
+| Sajor, Renz | `SAJOR/` | indigo / violet | 13 | "Knowing is not enough; we must apply. Willing is not enough; we must do." - Johann Wolfgang von Goethe (*Wilhelm Meisters Wanderjahre*) |
 
 Each identity also has its own app name (**<Surname> Explorer**), its own name / BSIT 3B on every
 console header, banner, author label, About form and MDI status strip, and its own photo.
@@ -140,7 +143,7 @@ other side of the form, button rows reversed, the rail moved to the right, heade
 author swapped, grid and details swapped on the CRUD forms, photo and text swapped on the About
 form, menu items re-ordered, and so on. Only `Location`, `Size`, `Dock`, `TextAlign` and the
 order of menu items change; the control names, and therefore the code-behind, stay the same.
-Because the thirteen codes are all different, no two identities share a layout, and the Form
+Because the fourteen codes are all different, no two identities share a layout, and the Form
 Design and Sample Output pictures in each document show that identity's own arrangement.
 The script runs once per folder (marker `tools/layout_code.txt`).
 
@@ -167,11 +170,12 @@ header that the wider font would push out of its box.
 | 10 | Gaudan | Trebuchet MS | inverse (dark fill, light border) |
 | 11 | Mayo | Candara | halo (thick pale frame) |
 | 12 | Viernes | Corbel | neon outline on a dark fill |
+| 13 | Sajor | Franklin Gothic Medium | ink (near-black fill, pale accent text, thin accent border) |
 
 The Form Design / Sample Output pictures are drawn with metric-compatible free fonts (Cousine,
-Gelasio, Carlito, Caladea, Arimo, Tinos, Inconsolata, Lato, Cabin, Nunito Sans, Open Sans) kept in each `tools/fonts/`;
+Gelasio, Carlito, Caladea, Arimo, Tinos, Inconsolata, Lato, Cabin, Nunito Sans, Libre Franklin, Open Sans) kept in each `tools/fonts/`;
 the real VB projects reference the Windows fonts only. Header text of list / grid columns is clipped with ".." when it does not fit, like the real control. Also in the repo root:
-`All_Compilations.zip` contains the thirteen student zips.
+`All_Compilations.zip` contains the fourteen student zips.
 
 **Viernes (code 12) is a full redesign, not a re-arrangement.** Every form of Activities 4-13 has a new composition
 (for example a top header + side rail in Act 4, a bottom bar in Act 5, a docked sidebar and a status badge in Acts 6 and 8,
@@ -218,7 +222,7 @@ back to its own XML file so the program still runs (`lblDatabase` shows which on
 * Submitted to: Drymlad Rebaja
 * School year: 2026 - 2027
 
-The other twelve identities (Mangalili, Lucena, Deguzman, Pastor, Marcos, Aniciete, Marcelo, Atienza, Alap, Gaudan, Mayo, Viernes) carry
+The other thirteen identities (Mangalili, Lucena, Deguzman, Pastor, Marcos, Aniciete, Marcelo, Atienza, Alap, Gaudan, Mayo, Viernes, Sajor) carry
 the same details with their own author / course identity. Addresses on the About form:
 
 | Student | Address |
@@ -234,6 +238,7 @@ the same details with their own author / course identity. Addresses on the About
 | Gaudan, Darwin | Santos, Quezon, Isabela |
 | Mayo, Mhike Charles | Catalina, Quirino, Isabela |
 | Viernes, Mark Syrel | Alunan, Quezon, Isabela |
+| Sajor, Renz | Minagbag, Quezon, Isabela |
 | Lucena, Lyka Joy | Villa Concepcion, Roxas, Isabela |
 | Deguzman, Liza Gaile | Purok Pag-asa, San Pedro, Mallig, Isabela |
 
