@@ -7,21 +7,54 @@ The repository holds **thirteen separate, complete compilations** - one folder a
 
 | Student | Folder (source) | Download zip (one click) |
 |---------|-----------------|--------------|
-| **Sonajo, Christian Paolo** - BSIT 3B | `SONAJO/` | [**Download**](Sonajo_ChristianPaolo_Compilation.zip?raw=true) `Sonajo_ChristianPaolo_Compilation.zip` |
-| **Mangalili, Fhetz Jherald** - BSIT 3B | `MANGALILI/` | [**Download**](Mangalili_FhetzJherald_Compilation.zip?raw=true) `Mangalili_FhetzJherald_Compilation.zip` |
-| **Lucena, Lyka Joy** - BSIT 3B | `LUCENA/` | [**Download**](Lucena_LykaJoy_Compilation.zip?raw=true) `Lucena_LykaJoy_Compilation.zip` |
-| **Deguzman, Liza Gaile** - BSIT 3B | `DEGUZMAN/` | [**Download**](Deguzman_LizaGaile_Compilation.zip?raw=true) `Deguzman_LizaGaile_Compilation.zip` |
-| **Pastor, Lorenz James** - BSIT 3B | `PASTOR/` | [**Download**](Pastor_LorenzJames_Compilation.zip?raw=true) `Pastor_LorenzJames_Compilation.zip` |
-| **Marcos, Angela** - BSIT 3B | `MARCOS/` | [**Download**](Marcos_Angela_Compilation.zip?raw=true) `Marcos_Angela_Compilation.zip` |
-| **Aniciete, Shane Antoinette** - BSIT 3B | `ANICIETE/` | [**Download**](Aniciete_ShaneAntoinette_Compilation.zip?raw=true) `Aniciete_ShaneAntoinette_Compilation.zip` |
-| **Marcelo, John Carlo** - BSIT 3B | `MARCELO/` | [**Download**](Marcelo_JohnCarlo_Compilation.zip?raw=true) `Marcelo_JohnCarlo_Compilation.zip` |
-| **Atienza, Argielyn** - BSIT 3B | `ATIENZA/` | [**Download**](Atienza_Argielyn_Compilation.zip?raw=true) `Atienza_Argielyn_Compilation.zip` |
-| **Alap, Adrian** - BSIT 3B | `ALAP/` | [**Download**](Alap_Adrian_Compilation.zip?raw=true) `Alap_Adrian_Compilation.zip` |
-| **Gaudan, Darwin** - BSIT 3B | `GAUDAN/` | [**Download**](Gaudan_Darwin_Compilation.zip?raw=true) `Gaudan_Darwin_Compilation.zip` |
-| **Mayo, Mhike Charles** - BSIT 3B | `MAYO/` | [**Download**](Mayo_MhikeCharles_Compilation.zip?raw=true) `Mayo_MhikeCharles_Compilation.zip` |
-| **Viernes, Mark Syrel** - BSIT 3B | `VIERNES/` | [**Download**](Viernes_MarkSyrel_Compilation.zip?raw=true) `Viernes_MarkSyrel_Compilation.zip` |
+| **Sonajo, Christian Paolo** - BSIT 3B | `SONAJO/` | [**Download**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/Sonajo_ChristianPaolo_Compilation.zip) `Sonajo_ChristianPaolo_Compilation.zip` |
+| **Mangalili, Fhetz Jherald** - BSIT 3B | `MANGALILI/` | [**Download**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/Mangalili_FhetzJherald_Compilation.zip) `Mangalili_FhetzJherald_Compilation.zip` |
+| **Lucena, Lyka Joy** - BSIT 3B | `LUCENA/` | [**Download**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/Lucena_LykaJoy_Compilation.zip) `Lucena_LykaJoy_Compilation.zip` |
+| **Deguzman, Liza Gaile** - BSIT 3B | `DEGUZMAN/` | [**Download**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/Deguzman_LizaGaile_Compilation.zip) `Deguzman_LizaGaile_Compilation.zip` |
+| **Pastor, Lorenz James** - BSIT 3B | `PASTOR/` | [**Download**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/Pastor_LorenzJames_Compilation.zip) `Pastor_LorenzJames_Compilation.zip` |
+| **Marcos, Angela** - BSIT 3B | `MARCOS/` | [**Download**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/Marcos_Angela_Compilation.zip) `Marcos_Angela_Compilation.zip` |
+| **Aniciete, Shane Antoinette** - BSIT 3B | `ANICIETE/` | [**Download**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/Aniciete_ShaneAntoinette_Compilation.zip) `Aniciete_ShaneAntoinette_Compilation.zip` |
+| **Marcelo, John Carlo** - BSIT 3B | `MARCELO/` | [**Download**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/Marcelo_JohnCarlo_Compilation.zip) `Marcelo_JohnCarlo_Compilation.zip` |
+| **Atienza, Argielyn** - BSIT 3B | `ATIENZA/` | [**Download**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/Atienza_Argielyn_Compilation.zip) `Atienza_Argielyn_Compilation.zip` |
+| **Alap, Adrian** - BSIT 3B | `ALAP/` | [**Download**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/Alap_Adrian_Compilation.zip) `Alap_Adrian_Compilation.zip` |
+| **Gaudan, Darwin** - BSIT 3B | `GAUDAN/` | [**Download**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/Gaudan_Darwin_Compilation.zip) `Gaudan_Darwin_Compilation.zip` |
+| **Mayo, Mhike Charles** - BSIT 3B | `MAYO/` | [**Download**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/Mayo_MhikeCharles_Compilation.zip) `Mayo_MhikeCharles_Compilation.zip` |
+| **Viernes, Mark Syrel** - BSIT 3B | `VIERNES/` | [**Download**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/Viernes_MarkSyrel_Compilation.zip) `Viernes_MarkSyrel_Compilation.zip` |
 
-All thirteen in one file: [**Download All_Compilations.zip**](All_Compilations.zip?raw=true) (the thirteen student zips).
+All thirteen in one file: [**Download All_Compilations.zip**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/All_Compilations.zip) (the thirteen student zips).
+
+Other project zips in the same branch:
+[**SmartBioStudentLog.zip**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/SmartBioStudentLog.zip) and [**QRLibrarySystem.zip**](https://github.com/DinoCore-Dev/projects/raw/arena/44beb882-projects/QRLibrarySystem.zip).
+
+> The links point to the branch `arena/44beb882-projects`. If a download looks old (browsers and GitHub cache raw files for a few
+> minutes), delete the old extracted folder, download again and compare the MD5 below.
+
+<details><summary>MD5 of the current student zips</summary>
+
+| Zip | MD5 | Size |
+|---|---|---|
+| `Alap_Adrian_Compilation.zip` | `5d0f70c88917dad88d6452a67979500d` | 2.33 MB |
+| `Aniciete_ShaneAntoinette_Compilation.zip` | `1af41f20eab757f3ec855c055228ab98` | 2.67 MB |
+| `Atienza_Argielyn_Compilation.zip` | `ceb1bac3c2354cf5be8389279f036428` | 2.57 MB |
+| `Deguzman_LizaGaile_Compilation.zip` | `ca1b3446523096086d8250d5cdd69075` | 2.24 MB |
+| `Gaudan_Darwin_Compilation.zip` | `e2073a52ab0f06230dbba950be29c52b` | 2.64 MB |
+| `Lucena_LykaJoy_Compilation.zip` | `7a37fc22c87db3f92ae7df41b2fb0c19` | 2.82 MB |
+| `Mangalili_FhetzJherald_Compilation.zip` | `fa8ccae3b7feb41ae93809fbcfb8b61f` | 2.47 MB |
+| `Marcelo_JohnCarlo_Compilation.zip` | `568abe339e53d11ce33f2e1700ef49e7` | 2.66 MB |
+| `Marcos_Angela_Compilation.zip` | `6c403e632ec30e0acbe2205e3f67790f` | 2.72 MB |
+| `Mayo_MhikeCharles_Compilation.zip` | `1338d96ad9fb1a0fcd9cfbf8035d585e` | 2.69 MB |
+| `Pastor_LorenzJames_Compilation.zip` | `16f7d98cb374b32c2355e8902205709c` | 2.56 MB |
+| `Sonajo_ChristianPaolo_Compilation.zip` | `e60174de1737470666dd0ae04b57f053` | 2.44 MB |
+| `Viernes_MarkSyrel_Compilation.zip` | `8735a7fc76cc0207ec416db52094fc76` | 2.83 MB |
+
+</details>
+
+### Visual Studio 2010 compatibility
+Every solution is `Format Version 11.00 / # Visual Studio 2010` and targets .NET Framework 4.0. No compiler is available in the
+build environment, so compatibility is checked **statically** (designer syntax, namespaces such as `System.Drawing.ContentAlignment`,
+control names/types against the code-behind, no duplicate properties, no leftover tokens from other identities). Always press
+**Build > Rebuild Solution** once in VS2010 after extracting; please report any compiler message.
+
 
 All thirteen zips have the same clean layout: the DOCX and one numbered
 folder per activity (`01_ ... 13_ ...`). There is no PDF, no `START_HERE.txt` and no `.md` file and no `Form_Designs/` folder in
