@@ -34,20 +34,20 @@ Other project zips in the same branch:
 
 | Zip | MD5 | Size |
 |---|---|---|
-| `Alap_Adrian_Compilation.zip` | `5d0f70c88917dad88d6452a67979500d` | 2.33 MB |
-| `Aniciete_ShaneAntoinette_Compilation.zip` | `1af41f20eab757f3ec855c055228ab98` | 2.67 MB |
-| `Atienza_Argielyn_Compilation.zip` | `ceb1bac3c2354cf5be8389279f036428` | 2.57 MB |
-| `Deguzman_LizaGaile_Compilation.zip` | `ca1b3446523096086d8250d5cdd69075` | 2.24 MB |
-| `Gaudan_Darwin_Compilation.zip` | `e2073a52ab0f06230dbba950be29c52b` | 2.64 MB |
-| `Lucena_LykaJoy_Compilation.zip` | `7a37fc22c87db3f92ae7df41b2fb0c19` | 2.82 MB |
-| `Mangalili_FhetzJherald_Compilation.zip` | `fa8ccae3b7feb41ae93809fbcfb8b61f` | 2.47 MB |
-| `Marcelo_JohnCarlo_Compilation.zip` | `568abe339e53d11ce33f2e1700ef49e7` | 2.66 MB |
-| `Marcos_Angela_Compilation.zip` | `6c403e632ec30e0acbe2205e3f67790f` | 2.72 MB |
-| `Mayo_MhikeCharles_Compilation.zip` | `1338d96ad9fb1a0fcd9cfbf8035d585e` | 2.69 MB |
-| `Pastor_LorenzJames_Compilation.zip` | `16f7d98cb374b32c2355e8902205709c` | 2.56 MB |
-| `Sajor_Renz_Compilation.zip` | `4e963cb276765a113e9f6032c5e53d7c` | 3.35 MB |
-| `Sonajo_ChristianPaolo_Compilation.zip` | `e60174de1737470666dd0ae04b57f053` | 2.44 MB |
-| `Viernes_MarkSyrel_Compilation.zip` | `8735a7fc76cc0207ec416db52094fc76` | 2.83 MB |
+| `Alap_Adrian_Compilation.zip` | `5d0f70c88917dad88d6452a67979500d` | 2.23 MB |
+| `Aniciete_ShaneAntoinette_Compilation.zip` | `db1bfefe31c6b128155e2ce327cbe2d1` | 3.02 MB |
+| `Atienza_Argielyn_Compilation.zip` | `ceb1bac3c2354cf5be8389279f036428` | 2.45 MB |
+| `Deguzman_LizaGaile_Compilation.zip` | `bad5e1bf8b86ca5ad625d4b89f939f49` | 4.90 MB |
+| `Gaudan_Darwin_Compilation.zip` | `2e488228897a6ee72b33b3176e11b5a1` | 5.28 MB |
+| `Lucena_LykaJoy_Compilation.zip` | `6314baaa6958ccf41a6f211d3f666b7d` | 5.45 MB |
+| `Mangalili_FhetzJherald_Compilation.zip` | `eb960ec449560a523251ed538fd06f32` | 2.83 MB |
+| `Marcelo_JohnCarlo_Compilation.zip` | `741ae1fd18420fc057982a81fa13a799` | 3.00 MB |
+| `Marcos_Angela_Compilation.zip` | `5d914d6f732d75048e1b3f35ba79158b` | 3.07 MB |
+| `Mayo_MhikeCharles_Compilation.zip` | `1338d96ad9fb1a0fcd9cfbf8035d585e` | 2.56 MB |
+| `Pastor_LorenzJames_Compilation.zip` | `fbc603c3dba2f7ff700e3ad637c43992` | 2.91 MB |
+| `Sajor_Renz_Compilation.zip` | `80c3e2205c53bf94e06e1d2157b665c5` | 6.11 MB |
+| `Sonajo_ChristianPaolo_Compilation.zip` | `e659fbb73043aebd6633cd7c87400183` | 2.80 MB |
+| `Viernes_MarkSyrel_Compilation.zip` | `68303445e96834c75edb1baa2e51588b` | 5.46 MB |
 
 </details>
 
@@ -176,6 +176,16 @@ The Form Design / Sample Output pictures are drawn with metric-compatible free f
 Gelasio, Carlito, Caladea, Arimo, Tinos, Inconsolata, Lato, Cabin, Nunito Sans, Libre Franklin, Open Sans) kept in each `tools/fonts/`;
 the real VB projects reference the Windows fonts only. Header text of list / grid columns is clipped with ".." when it does not fit, like the real control. Also in the repo root:
 `All_Compilations.zip` contains the fourteen student zips.
+
+**Extra system project inside the student zips.** Besides the DOCX and the 13 activity folders, some zips also contain one
+complete system folder, copied unchanged from the supplied project (`tools/extra_project.txt` + `tools/build_package.py` keep it on rebuild):
+
+| Folder in the zip | Students |
+|---|---|
+| `SmartBioStudentLog/` | Marcos (Angela), Aniciete (Shane), Mangalili (Fhetz), Sonajo, Pastor, Marcelo |
+| `QRLibrarySystem/` | Gaudan (Darwin), Sajor (Renz), Viernes (Mark), Deguzman (Gaile), Lucena (Lyka) |
+
+Atienza, Alap and Mayo have no extra system folder.
 
 **Viernes (code 12) is a full redesign, not a re-arrangement.** Every form of Activities 4-13 has a new composition
 (for example a top header + side rail in Act 4, a bottom bar in Act 5, a docked sidebar and a status badge in Acts 6 and 8,

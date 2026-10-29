@@ -185,6 +185,14 @@ def main():
                 raise SystemExit("missing activity folder: " + source)
             total += copy_tree(source_path, os.path.join(staging, folder_name))
 
+        # extra system project (shipped unchanged, as supplied) - name in tools/extra_project.txt
+        extra_file = os.path.join(ROOT, "tools", "extra_project.txt")
+        if os.path.exists(extra_file):
+            extra_name = open(extra_file).read().strip()
+            with zipfile.ZipFile(os.path.join(REPO, extra_name + ".zip")) as src:
+                src.extractall(staging, [n for n in src.namelist() if n.startswith(extra_name + "/")])
+            print("added extra project folder: " + extra_name)
+
         if os.path.exists(OUT_ZIP):
             os.remove(OUT_ZIP)
 
